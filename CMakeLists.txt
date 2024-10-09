@@ -6,18 +6,20 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+
+option(USE_SYSTEM_NCNN "Use sytem ncnn library" OFF)
 
 set(ALL_INCLUDE_DIRS)
 set(ALL_LIBRARIES)
 
 if(WIN32)
     # Add FFmpeg libraries and headers
-    set(FFMPEG_BASE_PATH ${PROJECT_SOURCE_DIR}/third_party/ffmpeg-7.1-full_build-shared)
+    set(FFMPEG_BASE_PATH ${CMAKE_SOURCE_DIR}/third_party/ffmpeg-shared)
     list(APPEND ALL_LIBRARIES
         ${FFMPEG_BASE_PATH}/lib/avformat.lib
         ${FFMPEG_BASE_PATH}/lib/avcodec.lib
@@ -27,6 +29,11 @@ if(WIN32)
         ${FFMPEG_BASE_PATH}/lib/avdevice.lib
     )
     list(APPEND ALL_INCLUDE_DIRS ${FFMPEG_BASE_PATH}/include)
+
+    # Add libvideo2x libraries and headers
+    set(LIBVIDEO2X_BASE_PATH ${CMAKE_SOURCE_DIR}/third_party/libvideo2x-shared)
+    list(APPEND ALL_LIBRARIES ${LIBVIDEO2X_BASE_PATH}/libvideo2x.lib)
+    list(APPEND ALL_INCLUDE_DIRS ${LIBVIDEO2X_BASE_PATH}/include)
 else()
     # Find the required packages using pkg-config
     find_package(PkgConfig REQUIRED)
@@ -54,26 +61,28 @@ list(REMOVE_DUPLICATES ALL_LIBRARIES)
 # Include ExternalProject module
 include(ExternalProject)
 
-# Add libreal-esrgan-ncnn-vulkan as an external project
-ExternalProject_Add(
-    libvideo2x
-    SOURCE_DIR ${PROJECT_SOURCE_DIR}/third_party/video2x
-    CMAKE_ARGS
-        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-        -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/libvideo2x_install
-        -DCMAKE_POSITION_INDEPENDENT_CODE=ON
-        -DUSE_SYSTEM_NCNN=ON
-    BUILD_ALWAYS ON
-    INSTALL_COMMAND ${CMAKE_COMMAND} --build . --target install --config ${CMAKE_BUILD_TYPE}
-)
+if(NOT WIN32)
+    # Add libreal-esrgan-ncnn-vulkan as an external project
+    ExternalProject_Add(
+        libvideo2x
+        SOURCE_DIR ${CMAKE_SOURCE_DIR}/third_party/video2x
+        CMAKE_ARGS
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/libvideo2x_install
+            -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+            -DUSE_SYSTEM_NCNN=${USE_SYSTEM_NCNN}
+        BUILD_ALWAYS ON
+        INSTALL_COMMAND ${CMAKE_COMMAND} --build . --target install --config ${CMAKE_BUILD_TYPE}
+    )
+endif()
 
-set(TS_FILES video2x-qt6_en_US.ts)
+set(TS_FILES src/video2x-qt6_en_US.ts)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        src/main.cpp
+        src/mainwindow.cpp
+        src/mainwindow.h
+        src/mainwindow.ui
         ${TS_FILES}
 )
 
@@ -81,6 +90,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(video2x-qt6
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        src/videoprocessingworker.h src/videoprocessingworker.cpp
+        src/filedroplistview.h src/filedroplistview.cpp
     )
 
 
@@ -103,13 +114,18 @@ endif()
 
 include_directories(
     ${ALL_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/third_party/video2x/include
 )
 
-set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.so)
-add_dependencies(video2x-qt6 libvideo2x)
+if(WIN32)
+    set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.lib)
+else()
+    add_dependencies(video2x-qt6 libvideo2x)
+    set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.so)
+endif()
 
-target_link_libraries(video2x-qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${ALL_LIBRARIES} ${LIBVIDEO2X_LIB})
+target_link_libraries(video2x-qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${ALL_LIBRARIES})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

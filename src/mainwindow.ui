@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1071</width>
-    <height>749</height>
+    <width>945</width>
+    <height>635</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Video2X</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -19,6 +19,12 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QGroupBox" name="groupBox_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="title">
          <string>Input Selection</string>
         </property>
@@ -27,8 +33,11 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_10">
          <item>
-          <widget class="QListView" name="inputSelectionListView">
+          <widget class="FileDropListView" name="inputSelectionListView">
            <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="dragEnabled">
             <bool>true</bool>
            </property>
            <property name="dragDropMode">
@@ -68,6 +77,12 @@
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
          <widget class="QTabWidget" name="tabWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -77,11 +92,40 @@
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_15">
             <item>
-             <widget class="QGroupBox" name="groupBox_7">
+             <widget class="QGroupBox" name="groupBox_4">
               <property name="title">
-               <string>Common</string>
+               <string>Filter Selection</string>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_12">
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <item>
+                <widget class="QComboBox" name="filterSelectionComboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>RealESRGAN</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>libplacebo</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="realesrganGroupBox">
+              <property name="title">
+               <string>RealESRGAN</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_16">
                  <item>
@@ -92,19 +136,10 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSpinBox" name="commonGpuIdSpinBox"/>
+                  <widget class="QSpinBox" name="realesrganGpuIdSpinBox"/>
                  </item>
                 </layout>
                </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QGroupBox" name="groupBox_5">
-              <property name="title">
-               <string>RealESRGAN</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_11">
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_6">
                  <item>
@@ -169,7 +204,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="groupBox_6">
+             <widget class="QGroupBox" name="libplaceboGroupBox">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -188,15 +223,14 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="libplaceboShaderNameLineEdit">
-                   <property name="text">
-                    <string>realesr-animevideov3</string>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_6">
                    <property name="text">
-                    <string>Select</string>
+                    <string>anime4k-mode-a</string>
                    </property>
                   </widget>
                  </item>
@@ -265,42 +299,6 @@
               </layout>
              </widget>
             </item>
-            <item>
-             <widget class="QGroupBox" name="groupBox_4">
-              <property name="title">
-               <string>Filter Selection</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_9">
-               <item>
-                <widget class="QComboBox" name="filterSelectionComboBox">
-                 <item>
-                  <property name="text">
-                   <string>RealESRGAN</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>libplacebo</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <spacer name="verticalSpacer">
-              <property name="orientation">
-               <enum>Qt::Orientation::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
            </layout>
           </widget>
           <widget class="QWidget" name="ffmpegSettingsTab">
@@ -337,7 +335,7 @@
               <item>
                <widget class="QLabel" name="label_6">
                 <property name="text">
-                 <string>codec</string>
+                 <string>Codec (-vcodec)</string>
                 </property>
                </widget>
               </item>
@@ -361,7 +359,7 @@
               <item>
                <widget class="QLabel" name="label_7">
                 <property name="text">
-                 <string>preset</string>
+                 <string>Preset (preset)</string>
                 </property>
                </widget>
               </item>
@@ -385,7 +383,7 @@
               <item>
                <widget class="QLabel" name="label_8">
                 <property name="text">
-                 <string>pixfmt</string>
+                 <string>Pixel Format (-pix_fmt)</string>
                 </property>
                </widget>
               </item>
@@ -409,7 +407,7 @@
               <item>
                <widget class="QLabel" name="label_9">
                 <property name="text">
-                 <string>bit rate</string>
+                 <string>Bit Rate (-b:v)</string>
                 </property>
                </widget>
               </item>
@@ -436,7 +434,7 @@
               <item>
                <widget class="QLabel" name="label_10">
                 <property name="text">
-                 <string>crf</string>
+                 <string>CRF (-crf)</string>
                 </property>
                </widget>
               </item>
@@ -459,17 +457,28 @@
              </layout>
             </item>
             <item>
-             <spacer name="verticalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Orientation::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="text">
+                 <string>Hardware Acceleration (-hwaccel)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="ffmpegHardwareAccelerationLineEdit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>none</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>
@@ -491,8 +500,17 @@
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QProgressBar" name="currentProgressBar">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>1</number>
+             </property>
              <property name="value">
               <number>0</number>
+             </property>
+             <property name="format">
+              <string>%v/%m (%p%)</string>
              </property>
             </widget>
            </item>
@@ -507,8 +525,17 @@
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
             <widget class="QProgressBar" name="overallProgressBar">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>1</number>
+             </property>
              <property name="value">
               <number>0</number>
+             </property>
+             <property name="format">
+              <string>%v/%m (%p%)</string>
              </property>
             </widget>
            </item>
@@ -533,12 +560,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="stopPushButton_2">
+         <widget class="QPushButton" name="stopPushButton">
           <property name="enabled">
            <bool>false</bool>
           </property>
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -559,8 +586,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1071</width>
-     <height>24</height>
+     <width>945</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -593,6 +620,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FileDropListView</class>
+   <extends>QListView</extends>
+   <header>filedroplistview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
