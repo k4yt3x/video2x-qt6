@@ -148,9 +148,9 @@ void MainWindow::on_startPausePushButton_clicked()
         if (m_procCtx != nullptr) {
             m_procCtx->pause = !m_procCtx->pause;
             if (m_procCtx->pause) {
-                ui->startPausePushButton->setText("Resume");
+                ui->startPausePushButton->setText("RESUME");
             } else {
-                ui->startPausePushButton->setText("Pause");
+                ui->startPausePushButton->setText("PAUSE");
             }
         }
         return;
@@ -184,12 +184,13 @@ void MainWindow::processNextVideo()
         } else {
             QMessageBox::information(this, "Processing complete", "All videos processed.");
         }
+        m_procStarted = false;
 
         ui->currentProgressBar->setMaximum(1);
         ui->currentProgressBar->setValue(1);
         ui->overallProgressBar->setMaximum(1);
         ui->overallProgressBar->setValue(1);
-        ui->startPausePushButton->setText("Start");
+        ui->startPausePushButton->setText("START");
         ui->stopPushButton->setEnabled(false);
         return;
     }
@@ -220,8 +221,7 @@ void MainWindow::processNextVideo()
 
         // Convert QString to UTF-8 for the model and store it
         QByteArray model_byte_array = ui->realesrganModelComboBox->currentText().toUtf8();
-        filter_config->config.realesrgan.model = strdup(
-            model_byte_array.constData()); // strdup for dynamic allocation
+        filter_config->config.realesrgan.model = strdup(model_byte_array.constData());
     } else if (ui->filterSelectionComboBox->currentIndex() == 1) {
         // Populate libplacebo filter config
         filter_config->filter_type = FILTER_LIBPLACEBO;
@@ -230,8 +230,7 @@ void MainWindow::processNextVideo()
 
         // Convert QString to UTF-8 for the shader path and store it
         QByteArray shader_byte_array = ui->libplaceboShaderNameLineEdit->text().toUtf8();
-        filter_config->config.libplacebo.shader_path = strdup(
-            shader_byte_array.constData()); // strdup for dynamic allocation
+        filter_config->config.libplacebo.shader_path = strdup(shader_byte_array.constData());
     } else {
         showErrorMessage("Invalid filter selected!");
         free(filter_config); // Clean up
@@ -248,12 +247,15 @@ void MainWindow::processNextVideo()
     }
 
     // Parse pixel format to AVPixelFormat in the main thread
-    enum AVPixelFormat pix_fmt = av_get_pix_fmt(ui->ffmpegPixFmtLineEdit->text().toUtf8());
-    if (pix_fmt == AV_PIX_FMT_NONE) {
-        showErrorMessage("Invalid FFmpeg pixel format.");
-        qWarning("Invalid FFmpeg pixel format.");
-        free(filter_config); // Clean up
-        return;
+    enum AVPixelFormat pix_fmt = AV_PIX_FMT_NONE;
+    if (ui->ffmpegPixFmtLineEdit->text().toUtf8() != "auto") {
+        pix_fmt = av_get_pix_fmt(ui->ffmpegPixFmtLineEdit->text().toUtf8());
+        if (pix_fmt == AV_PIX_FMT_NONE) {
+            showErrorMessage("Invalid FFmpeg pixel format.");
+            qWarning("Invalid FFmpeg pixel format.");
+            free(filter_config); // Clean up
+            return;
+        }
     }
 
     // Dynamically allocate memory for EncoderConfig and populate it
@@ -283,6 +285,7 @@ void MainWindow::processNextVideo()
 
     encoder_config->output_width = 0;  // To be filled by libvideo2x
     encoder_config->output_height = 0; // To be filled by libvideo2x
+    encoder_config->copy_streams = ui->ffmpegCopyStreamsCheckBox->isChecked();
     encoder_config->codec = codec->id;
     encoder_config->pix_fmt = pix_fmt;
     encoder_config->preset = preset_c_string;
@@ -336,7 +339,7 @@ void MainWindow::processNextVideo()
     thread->start();
 
     // Update buttons
-    ui->startPausePushButton->setText("Pause");
+    ui->startPausePushButton->setText("PAUSE");
     ui->stopPushButton->setEnabled(true);
 }
 
@@ -351,7 +354,7 @@ void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)
     }
 
     // Clean up memory for the worker and the thread
-    QObject *senderObj = sender(); // Get the sender object (the worker thread)
+    QObject *senderObj = sender();
     VideoProcessingWorker *worker = qobject_cast<VideoProcessingWorker *>(senderObj);
     if (worker) {
         worker->thread()->quit();
@@ -363,7 +366,6 @@ void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)
         worker->deleteLater();
     }
     m_procCtx = nullptr;
-    m_procStarted = false;
 
     // Move to the next video
     currentVideoIndex++;

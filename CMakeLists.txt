@@ -86,12 +86,18 @@ set(PROJECT_SOURCES
         ${TS_FILES}
 )
 
+
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    if(WIN32)
+        set(APP_RESOURCE_FILE "${CMAKE_CURRENT_SOURCE_DIR}/src/resources.rc")
+    endif()
     qt_add_executable(video2x-qt6
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         src/videoprocessingworker.h src/videoprocessingworker.cpp
         src/filedroplistview.h src/filedroplistview.cpp
+        ${APP_RESOURCE_FILE}
     )
 
 
