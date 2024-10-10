@@ -178,7 +178,7 @@ void MainWindow::on_startPausePushButton_clicked()
 
 void MainWindow::processNextVideo()
 {
-    if (currentVideoIndex >= videoList.size()) {
+    if (currentVideoIndex >= videoList.size() || m_procAborted) {
         if (m_procAborted) {
             QMessageBox::warning(this, "Processing aborted", "Video processing aborted!");
         } else {
@@ -192,6 +192,10 @@ void MainWindow::processNextVideo()
         ui->overallProgressBar->setValue(1);
         ui->startPausePushButton->setText("START");
         ui->stopPushButton->setEnabled(false);
+        ui->addFilesPushButton->setEnabled(true);
+        ui->deletedSelectedPushButton->setEnabled(true);
+        ui->clearPushButton->setEnabled(true);
+        ui->settingsTabWidget->setEnabled(true);
         return;
     }
 
@@ -341,6 +345,10 @@ void MainWindow::processNextVideo()
     // Update buttons
     ui->startPausePushButton->setText("PAUSE");
     ui->stopPushButton->setEnabled(true);
+    ui->addFilesPushButton->setEnabled(false);
+    ui->deletedSelectedPushButton->setEnabled(false);
+    ui->clearPushButton->setEnabled(false);
+    ui->settingsTabWidget->setEnabled(false);
 }
 
 void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)

@@ -76,7 +76,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
-         <widget class="QTabWidget" name="tabWidget">
+         <widget class="QTabWidget" name="settingsTabWidget">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
             <horstretch>0</horstretch>
