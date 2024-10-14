@@ -5,6 +5,7 @@
 // Constructor
 VideoProcessingWorker::VideoProcessingWorker(const QString &inputFilePath,
                                              const QString &outputFilePath,
+                                             Libvideo2xLogLevel logLevel,
                                              bool benchmark,
                                              AVHWDeviceType hwDeviceType,
                                              FilterConfig *filterConfig,
@@ -12,6 +13,7 @@ VideoProcessingWorker::VideoProcessingWorker(const QString &inputFilePath,
                                              VideoProcessingContext *status)
     : m_inputFilePath(inputFilePath)
     , m_outputFilePath(outputFilePath)
+    , m_logLevel(logLevel)
     , m_benchmark(benchmark)
     , m_hwDeviceType(hwDeviceType)
     , m_filterConfig(filterConfig)
@@ -42,6 +44,7 @@ void VideoProcessingWorker::processVideo()
     // Call the blocking process_video function (pure C function)
     bool success = process_video(m_inputFilePath.toUtf8().constData(),
                                  m_outputFilePath.toUtf8().constData(),
+                                 m_logLevel,
                                  m_benchmark,
                                  m_hwDeviceType,
                                  m_filterConfig,

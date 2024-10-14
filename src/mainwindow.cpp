@@ -1,15 +1,21 @@
 #include <QDebug>
 #include <QFileDialog>
+#include <QFont>
 #include <QMessageBox>
 #include <QModelIndexList>
 #include <QStringListModel>
 #include <QThread>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 extern "C" {
-#include "libvideo2x.h"
 #include <libavutil/hwcontext.h>
 #include <libavutil/pixdesc.h>
 #include <libavutil/pixfmt.h>
+#include <libvideo2x/libvideo2x.h>
+#include <libvideo2x/version.h>
 }
 
 #include "./ui_mainwindow.h"
@@ -26,10 +32,20 @@ MainWindow::MainWindow(QWidget *parent)
     m_procStarted = false;
     m_procAborted = false;
 
+    setWindowTitle("Video2X " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
+
     connect(ui->inputSelectionListView,
             &FileDropListView::filesDropped,
             this,
             &MainWindow::handleFilesDropped);
+
+    // Set filter setting visibility
+    ui->libplaceboGroupBox->setVisible(false);
+
+    // For non-Windows platforms, logs will be shown in the terminal
+#ifndef _WIN32
+    ui->showLogsCheckBox->setEnabled(false);
+#endif
 }
 
 MainWindow::~MainWindow()
@@ -37,11 +53,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void showErrorMessage(const QString &message)
+void MainWindow::showErrorMessage(const QString &message)
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Critical);
-    msgBox.setWindowTitle("Error");
+    msgBox.setWindowTitle(tr("Error"));
     msgBox.setText(message);
     msgBox.setStandardButtons(QMessageBox::Ok);
     msgBox.exec();
@@ -50,6 +66,35 @@ void showErrorMessage(const QString &message)
 void MainWindow::on_actionExit_triggered()
 {
     QApplication::quit();
+}
+
+bool MainWindow::changeLanguage(const QString &locale)
+{
+    if (m_translator.load("video2x-qt6_" + locale + ".qm")) {
+        qApp->installTranslator(&m_translator);
+    } else {
+        showErrorMessage("Failed to load translation for locale" + locale);
+        qDebug() << "Failed to load translation for locale:" << locale;
+        return false;
+    }
+    ui->retranslateUi(this);
+    return true;
+}
+
+void MainWindow::on_actionLanguageENUS_triggered()
+{
+    if (changeLanguage("en_US")) {
+        QFont mainWindowFont("Segoe UI");
+        this->setFont(mainWindowFont);
+    }
+}
+
+void MainWindow::on_actionLanguageZHCN_triggered()
+{
+    if (changeLanguage("zh_CN")) {
+        QFont mainWindowFont("Microsoft Yahei");
+        this->setFont(mainWindowFont);
+    }
 }
 
 void MainWindow::handleFilesDropped(const QStringList &fileNames)
@@ -111,26 +156,27 @@ void MainWindow::on_addFilesPushButton_clicked()
     model->setStringList(currentFiles);
 }
 
-void MainWindow::on_deletedSelectedPushButton_clicked()
+void MainWindow::on_deleteSelectedPushButton_clicked()
 {
     QStringListModel *model = qobject_cast<QStringListModel *>(ui->inputSelectionListView->model());
     if (!model) {
         return;
     }
 
-    // Get the selected indexes
     QModelIndexList selectedIndexes = ui->inputSelectionListView->selectionModel()->selectedIndexes();
     if (selectedIndexes.isEmpty()) {
         return;
     }
 
-    // Iterate over the selected indexes and remove items from the list
     QStringList fileList = model->stringList();
-    for (int i = selectedIndexes.size() - 1; i >= 0; --i) {
-        fileList.removeAt(selectedIndexes.at(i).row());
+
+    // Sort the selected indexes in reverse order to prevent index shifting issues
+    std::sort(selectedIndexes.rbegin(), selectedIndexes.rend());
+
+    for (const QModelIndex &index : selectedIndexes) {
+        fileList.removeAt(index.row());
     }
 
-    // Update the model with the modified list
     model->setStringList(fileList);
 }
 
@@ -148,9 +194,9 @@ void MainWindow::on_startPausePushButton_clicked()
         if (m_procCtx != nullptr) {
             m_procCtx->pause = !m_procCtx->pause;
             if (m_procCtx->pause) {
-                ui->startPausePushButton->setText("RESUME");
+                ui->startPausePushButton->setText(tr("RESUME"));
             } else {
-                ui->startPausePushButton->setText("PAUSE");
+                ui->startPausePushButton->setText(tr("PAUSE"));
             }
         }
         return;
@@ -160,8 +206,8 @@ void MainWindow::on_startPausePushButton_clicked()
     QStringListModel *model = qobject_cast<QStringListModel *>(ui->inputSelectionListView->model());
 
     if (!model || model->rowCount() == 0) {
-        showErrorMessage("No videos in the list to process.");
-        qWarning("No videos in the list to process.");
+        showErrorMessage(tr("The job queue is empty!"));
+        qWarning("The job queue is empty!");
         return;
     }
 
@@ -180,9 +226,9 @@ void MainWindow::processNextVideo()
 {
     if (currentVideoIndex >= videoList.size() || m_procAborted) {
         if (m_procAborted) {
-            QMessageBox::warning(this, "Processing aborted", "Video processing aborted!");
+            QMessageBox::warning(this, tr("Processing aborted"), tr("Video processing aborted!"));
         } else {
-            QMessageBox::information(this, "Processing complete", "All videos processed.");
+            QMessageBox::information(this, tr("Processing complete"), tr("All videos processed."));
         }
         m_procStarted = false;
 
@@ -190,10 +236,10 @@ void MainWindow::processNextVideo()
         ui->currentProgressBar->setValue(1);
         ui->overallProgressBar->setMaximum(1);
         ui->overallProgressBar->setValue(1);
-        ui->startPausePushButton->setText("START");
+        ui->startPausePushButton->setText(tr("START"));
         ui->stopPushButton->setEnabled(false);
         ui->addFilesPushButton->setEnabled(true);
-        ui->deletedSelectedPushButton->setEnabled(true);
+        ui->deleteSelectedPushButton->setEnabled(true);
         ui->clearPushButton->setEnabled(true);
         ui->settingsTabWidget->setEnabled(true);
         return;
@@ -212,8 +258,29 @@ void MainWindow::processNextVideo()
     // Dynamically allocate memory for FilterConfig and populate it
     FilterConfig *filter_config = (FilterConfig *) malloc(sizeof(FilterConfig));
     if (!filter_config) {
-        showErrorMessage("Failed to allocate memory for FilterConfig.");
+        showErrorMessage(tr("Failed to allocate memory for FilterConfig."));
         return;
+    }
+
+    // Parse log level
+    Libvideo2xLogLevel log_level;
+    if (ui->debugLogLevelComboBox->currentText() == "trace") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_TRACE;
+    } else if (ui->debugLogLevelComboBox->currentText() == "debug") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_DEBUG;
+    } else if (ui->debugLogLevelComboBox->currentText() == "info") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_INFO;
+    } else if (ui->debugLogLevelComboBox->currentText() == "warning") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_WARNING;
+    } else if (ui->debugLogLevelComboBox->currentText() == "error") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_ERROR;
+    } else if (ui->debugLogLevelComboBox->currentText() == "critical") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_CRITICAL;
+    } else if (ui->debugLogLevelComboBox->currentText() == "off") {
+        log_level = LIBVIDEO2X_LOG_LEVEL_OFF;
+    } else {
+        qWarning() << "Invalid log level specified. Defaulting to 'info'";
+        log_level = LIBVIDEO2X_LOG_LEVEL_INFO;
     }
 
     if (ui->filterSelectionComboBox->currentIndex() == 0) {
@@ -236,7 +303,7 @@ void MainWindow::processNextVideo()
         QByteArray shader_byte_array = ui->libplaceboShaderNameLineEdit->text().toUtf8();
         filter_config->config.libplacebo.shader_path = strdup(shader_byte_array.constData());
     } else {
-        showErrorMessage("Invalid filter selected!");
+        showErrorMessage(tr("Invalid filter selected!"));
         free(filter_config); // Clean up
         return;
     }
@@ -244,8 +311,8 @@ void MainWindow::processNextVideo()
     // Parse codec to AVCodec in the main thread before starting worker threads
     const AVCodec *codec = avcodec_find_encoder_by_name(ui->ffmpegCodecLineEdit->text().toUtf8());
     if (!codec) {
-        showErrorMessage("Invalid FFmpeg codec.");
-        qWarning("Invalid FFmpeg codec.");
+        showErrorMessage(tr("Invalid FFmpeg video codec."));
+        qWarning("Invalid FFmpeg video codec.");
         free(filter_config); // Clean up
         return;
     }
@@ -255,8 +322,8 @@ void MainWindow::processNextVideo()
     if (ui->ffmpegPixFmtLineEdit->text().toUtf8() != "auto") {
         pix_fmt = av_get_pix_fmt(ui->ffmpegPixFmtLineEdit->text().toUtf8());
         if (pix_fmt == AV_PIX_FMT_NONE) {
-            showErrorMessage("Invalid FFmpeg pixel format.");
-            qWarning("Invalid FFmpeg pixel format.");
+            showErrorMessage(tr("Invalid FFmpeg video pixel format."));
+            qWarning("Invalid FFmpeg video pixel format.");
             free(filter_config); // Clean up
             return;
         }
@@ -265,7 +332,7 @@ void MainWindow::processNextVideo()
     // Dynamically allocate memory for EncoderConfig and populate it
     EncoderConfig *encoder_config = (EncoderConfig *) malloc(sizeof(EncoderConfig));
     if (!encoder_config) {
-        showErrorMessage("Failed to allocate memory for EncoderConfig.");
+        showErrorMessage(tr("Failed to allocate memory for EncoderConfig."));
         free(filter_config); // Clean up
         return;
     }
@@ -276,7 +343,7 @@ void MainWindow::processNextVideo()
         hw_device_type = av_hwdevice_find_type_by_name(
             ui->ffmpegHardwareAccelerationLineEdit->text().toUtf8().constData());
         if (hw_device_type == AV_HWDEVICE_TYPE_NONE) {
-            showErrorMessage("Invalid hardware acceleration method.");
+            showErrorMessage(tr("Invalid hardware acceleration method."));
             free(filter_config);
             free(encoder_config);
             return;
@@ -316,6 +383,7 @@ void MainWindow::processNextVideo()
     // Create the worker and thread
     VideoProcessingWorker *worker = new VideoProcessingWorker(inputFilePath,
                                                               outputFilePath,
+                                                              log_level,
                                                               false,
                                                               hw_device_type,
                                                               filter_config,
@@ -346,7 +414,7 @@ void MainWindow::processNextVideo()
     ui->startPausePushButton->setText("PAUSE");
     ui->stopPushButton->setEnabled(true);
     ui->addFilesPushButton->setEnabled(false);
-    ui->deletedSelectedPushButton->setEnabled(false);
+    ui->deleteSelectedPushButton->setEnabled(false);
     ui->clearPushButton->setEnabled(false);
     ui->settingsTabWidget->setEnabled(false);
 }
@@ -358,7 +426,7 @@ void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)
 
     // Check the result of the video processing
     if (retValue) {
-        showErrorMessage(QString("Video processing failed for: %1").arg(inputFilePath));
+        showErrorMessage(QString(tr("Video processing failed for: %1")).arg(inputFilePath));
     }
 
     // Clean up memory for the worker and the thread
@@ -385,9 +453,13 @@ void MainWindow::on_filterSelectionComboBox_currentIndexChanged(int index)
     if (ui->filterSelectionComboBox->currentIndex() == 0) {
         ui->realesrganGroupBox->setEnabled(true);
         ui->libplaceboGroupBox->setEnabled(false);
+        ui->realesrganGroupBox->setVisible(true);
+        ui->libplaceboGroupBox->setVisible(false);
     } else if (ui->filterSelectionComboBox->currentIndex() == 1) {
         ui->realesrganGroupBox->setEnabled(false);
         ui->libplaceboGroupBox->setEnabled(true);
+        ui->realesrganGroupBox->setVisible(false);
+        ui->libplaceboGroupBox->setVisible(true);
     }
 }
 
@@ -400,4 +472,40 @@ void MainWindow::on_stopPushButton_clicked()
         }
         return;
     }
+}
+
+void MainWindow::on_debugShowLogsCheckBox_stateChanged(int isChecked)
+{
+#ifdef _WIN32
+    if (isChecked) {
+        AllocConsole();
+
+        FILE *f_out;
+        freopen_s(&f_out, "CONOUT$", "w", stdout);
+        FILE *f_err;
+        freopen_s(&f_err, "CONOUT$", "w", stderr);
+    } else {
+        HWND hwnd = GetConsoleWindow();
+        if (hwnd) {
+            FreeConsole();
+            ShowWindow(hwnd, SW_HIDE);
+        }
+    }
+#endif
+}
+
+void MainWindow::on_libplaceboSelectGlslShaderPushButton_clicked()
+{
+    // Open a file dialog to select a .glsl file
+    QString fileName = QFileDialog::getOpenFileName(this,
+                                                    tr("Select GLSL Shader"),
+                                                    QString(),
+                                                    tr("GLSL Files (*.glsl);;All Files (*.*)"));
+
+    // No file selected
+    if (fileName.isEmpty()) {
+        return;
+    }
+
+    ui->libplaceboShaderNameLineEdit->setText(fileName);
 }

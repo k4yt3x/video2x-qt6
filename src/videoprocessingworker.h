@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QString>
 
-#include "libvideo2x.h"
+#include <libvideo2x/libvideo2x.h>
 
 class VideoProcessingWorker : public QObject
 {
@@ -12,6 +12,7 @@ class VideoProcessingWorker : public QObject
 public:
     VideoProcessingWorker(const QString &inputFilePath,
                           const QString &outputFilePath,
+                          Libvideo2xLogLevel logLevel,
                           bool benchmark,
                           AVHWDeviceType hwDeviceType,
                           FilterConfig *filterConfig,
@@ -33,6 +34,7 @@ public slots:
 private:
     QString m_inputFilePath;
     QString m_outputFilePath;
+    Libvideo2xLogLevel m_logLevel;
     bool m_benchmark;
     AVHWDeviceType m_hwDeviceType;
     FilterConfig *m_filterConfig;

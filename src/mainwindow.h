@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTranslator>
 
 extern "C" {
-#include "libvideo2x.h"
+#include <libvideo2x/libvideo2x.h>
 }
 
 QT_BEGIN_NAMESPACE
@@ -27,13 +28,21 @@ private:
     void processNextVideo();
 
 private slots:
+    void showErrorMessage(const QString &message);
+
     void on_actionExit_triggered();
+
+    bool changeLanguage(const QString &locale);
+
+    void on_actionLanguageENUS_triggered();
+
+    void on_actionLanguageZHCN_triggered();
 
     void handleFilesDropped(const QStringList &fileNames);
 
     void on_addFilesPushButton_clicked();
 
-    void on_deletedSelectedPushButton_clicked();
+    void on_deleteSelectedPushButton_clicked();
 
     void on_clearPushButton_clicked();
 
@@ -45,10 +54,15 @@ private slots:
 
     void on_stopPushButton_clicked();
 
+    void on_debugShowLogsCheckBox_stateChanged(int arg1);
+
+    void on_libplaceboSelectGlslShaderPushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     VideoProcessingContext *m_procCtx;
     bool m_procStarted;
     bool m_procAborted;
+    QTranslator m_translator;
 };
 #endif // MAINWINDOW_H

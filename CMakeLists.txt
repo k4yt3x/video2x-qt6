@@ -76,17 +76,20 @@ if(NOT WIN32)
     )
 endif()
 
-set(TS_FILES src/video2x-qt6_en_US.ts)
+set(TS_FILES src/video2x-qt6_en_US.ts
+             src/video2x-qt6_zh_CN.ts)
 
 set(PROJECT_SOURCES
         src/main.cpp
         src/mainwindow.cpp
         src/mainwindow.h
         src/mainwindow.ui
+        src/videoprocessingworker.h
+        src/videoprocessingworker.cpp
+        src/filedroplistview.h
+        src/filedroplistview.cpp
         ${TS_FILES}
 )
-
-
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     if(WIN32)
@@ -95,13 +98,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(video2x-qt6
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/videoprocessingworker.h src/videoprocessingworker.cpp
-        src/filedroplistview.h src/filedroplistview.cpp
         ${APP_RESOURCE_FILE}
     )
 
-
-    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+    # qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 else()
     if(ANDROID)
         add_library(video2x-qt6 SHARED
@@ -115,8 +115,13 @@ else()
         )
     endif()
 
-    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+    # qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
+
+qt_add_translations(video2x-qt6 TS_FILES
+    ${TS_FILES}
+    LUPDATE_OPTIONS -no-obsolete
+)
 
 include_directories(
     ${ALL_INCLUDE_DIRS}
