@@ -477,7 +477,15 @@ void MainWindow::on_stopPushButton_clicked()
 void MainWindow::on_debugShowLogsCheckBox_stateChanged(int isChecked)
 {
 #ifdef _WIN32
+    HWND hwnd = GetConsoleWindow();
     if (isChecked) {
+        if (hwnd != nullptr) {
+            FreeConsole();
+            ShowWindow(hwnd, SW_HIDE);
+
+            fclose(stdout);
+            fclose(stderr);
+        }
         AllocConsole();
 
         FILE *f_out;
@@ -485,10 +493,12 @@ void MainWindow::on_debugShowLogsCheckBox_stateChanged(int isChecked)
         FILE *f_err;
         freopen_s(&f_err, "CONOUT$", "w", stderr);
     } else {
-        HWND hwnd = GetConsoleWindow();
         if (hwnd) {
             FreeConsole();
             ShowWindow(hwnd, SW_HIDE);
+
+            fclose(stdout);
+            fclose(stderr);
         }
     }
 #endif
