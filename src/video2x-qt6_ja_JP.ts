@@ -51,12 +51,12 @@
     <message>
       <location filename="mainwindow.ui" line="118" />
       <source>Filter Settings</source>
-      <translation>フィルタ設定</translation>
+      <translation>フィルター設定</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="130" />
       <source>Filter Selection</source>
-      <translation>フィルタを選択</translation>
+      <translation>フィルターを選択</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="154" />
