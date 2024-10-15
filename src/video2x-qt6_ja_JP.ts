@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS []>
 <TS version="2.1" language="ja_JP">
   <context>
@@ -183,7 +183,7 @@
     <message>
       <location filename="mainwindow.ui" line="427" />
       <source>Codec (-vcodec)</source>
-      <translation>コーデック （-vcodec）</translation>
+      <translation>コーデック (-vcodec)</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="440" />
@@ -198,7 +198,7 @@
     <message>
       <location filename="mainwindow.ui" line="454" />
       <source>Preset (preset)</source>
-      <translation>プリセット （-preset）</translation>
+      <translation>プリセット (-preset)</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="467" />
@@ -213,7 +213,7 @@
     <message>
       <location filename="mainwindow.ui" line="481" />
       <source>Pixel Format (-pix_fmt)</source>
-      <translation>ピクセル形式 （-pix_fmt）</translation>
+      <translation>ピクセル形式 (-pix_fmt)</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="494" />
@@ -228,7 +228,7 @@
     <message>
       <location filename="mainwindow.ui" line="508" />
       <source>Bit Rate (-b:v)</source>
-      <translation>ビットレート （-b:v）</translation>
+      <translation>ビットレート (-b:v)</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="515" />
@@ -349,7 +349,7 @@
     <message>
       <location filename="mainwindow.ui" line="737" />
       <source>Overall Progress</source>
-      <translation>总体进度</translation>
+      <translation>全体的な進捗</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="778" />
