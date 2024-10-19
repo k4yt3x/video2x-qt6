@@ -403,17 +403,17 @@
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="870"/>
+        <location filename="mainwindow.ui" line="871"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="875"/>
+        <location filename="mainwindow.ui" line="876"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="880"/>
+        <location filename="mainwindow.ui" line="881"/>
         <source>Português (Portugal)</source>
         <translation></translation>
     </message>
