@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS []>
+<!DOCTYPE TS[]>
 <TS version="2.1" language="ja_JP">
   <context>
     <name>MainWindow</name>
     <message>
       <location filename="mainwindow.ui" line="14" />
       <source>Video2X</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="29" />
@@ -67,18 +68,21 @@
       <location filename="mainwindow.ui" line="158" />
       <location filename="mainwindow.ui" line="180" />
       <source>RealESRGAN</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="163" />
       <location filename="mainwindow.ui" line="282" />
       <source>libplacebo</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="188" />
       <source>GPU ID</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="195" />
@@ -98,17 +102,20 @@
     <message>
       <location filename="mainwindow.ui" line="217" />
       <source>realesr-animevideov3</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="222" />
       <source>realesrgan-plus</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="227" />
       <source>realesrgan-plus-anime</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="239" />
@@ -123,7 +130,7 @@
     <message>
       <location filename="mainwindow.ui" line="290" />
       <source>Output Width</source>
-      <translation>出力の幅</translation>
+      <translation>出力する幅</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="303" />
@@ -133,7 +140,7 @@
     <message>
       <location filename="mainwindow.ui" line="323" />
       <source>Output Height</source>
-      <translation>出力の高さ</translation>
+      <translation>出力する高さ</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="336" />
@@ -153,7 +160,8 @@
     <message>
       <location filename="mainwindow.ui" line="372" />
       <source>anime4k-mode-a</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="381" />
@@ -178,7 +186,8 @@
     <message>
       <location filename="mainwindow.ui" line="416" />
       <source>.mp4</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="427" />
@@ -193,7 +202,8 @@
     <message>
       <location filename="mainwindow.ui" line="443" />
       <source>libx264</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="454" />
@@ -203,12 +213,13 @@
     <message>
       <location filename="mainwindow.ui" line="467" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的编码预设。较慢的预设提供更好的压缩效率（质量与文件大小的比率），而较快的预设会牺牲压缩效率以换取更快的编码速度。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – 默认预设&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用するエンコードのプリセットです。処理が遅いプリセットでは圧縮効率 (品質とファイルサイズの比率) が向上し、処理が速いプリセットでは圧縮効率が低下しますがエンコードが速くなります。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="470" />
       <source>slow</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="481" />
@@ -218,12 +229,13 @@
     <message>
       <location filename="mainwindow.ui" line="494" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specifies the pixel format for the output video. Determines how pixel data is stored, affecting color depth, transparency, and compatibility.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定输出视频的像素格式。将决定如何存储像素数据，影响色深、透明度和兼容性。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力する動画のピクセル形式を指定します。ピクセルデータの保存方法を決定することで色の深度、透明度、互換性に影響します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="497" />
       <source>auto</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="508" />
@@ -233,22 +245,24 @@
     <message>
       <location filename="mainwindow.ui" line="515" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the target bit rate for the output video, enabling constant bit rate (CBR) encoding. A value of 0 uses variable bit rate (VBR) for better quality at lower file sizes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置输出视频的目标比特率，启用恒定比特率（CBR）编码。值为 0 时使用可变比特率（VBR），在较小文件大小的情况下提供更好的质量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力する動画のビットレートを設定することで固定ビットレート (CBR) のエンコードを有効化します。値が 0 の場合は可変ビットレート (VBR) が使用され、ファイルサイズが小さくても画質が向上します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="518" />
       <source>bps</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="538" />
       <source>CRF (-crf)</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="545" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the Constant Rate Factor (CRF) to control video quality. Uses variable bit rate (VBR) encoding. &lt;/p&gt;&lt;p&gt;- 0-17: Visually lossless quality, large file sizes.&lt;/p&gt;&lt;p&gt;- 18-23: High quality, good balance between quality and file size (recommended range).&lt;/p&gt;&lt;p&gt;- 24-28: Medium quality, suitable for streaming, some artifacts may appear.&lt;/p&gt;&lt;p&gt;- 29+: Low quality, noticeable compression artifacts, smaller file sizes.&lt;/p&gt;&lt;p&gt;Lower values improve quality but increase file size, while higher values reduce quality and file size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置恒定速率因子（CRF）来控制视频质量。使用可变比特率（VBR）编码。&lt;/p&gt;&lt;p&gt;- 0-17: 视觉上无损质量，文件大小较大。&lt;/p&gt;&lt;p&gt;- 18-23: 高质量，在质量和文件大小之间有良好平衡（推荐范围）。&lt;/p&gt;&lt;p&gt;- 24-28: 中等质量，适合流媒体，可能出现一些压缩伪影。&lt;/p&gt;&lt;p&gt;- 29+: 低质量，压缩伪影明显，文件大小较小。&lt;/p&gt;&lt;p&gt;较低的值提高质量但增加文件大小，较高的值则降低质量并减少文件大小。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画の画質を制御するために一定のレート係数 (CRF) を設定します。可変ビットレート (VBR) のエンコードを使用します。&lt;/p&gt;&lt;p&gt;- 0-17: 視覚的にロスレスな画質、ファイルサイズが大きくなります。&lt;/p&gt;&lt;p&gt;- 18-23: 画質が高く、ファイルサイズのバランスが良いです (推奨範囲)。&lt;/p&gt;&lt;p&gt;- 24-28: 中程度の画質でストリーミング適していますが、アーティファクトな仕上がりになる場合があります。&lt;/p&gt;&lt;p&gt;- 29+: 低画質、圧縮されたアーティファクトが目立ちますがファイルサイズが小さくなります。&lt;/p&gt;&lt;p&gt;値を低くすると画質は向上しますがファイルサイズが大きくなり、値を大きくすると画質とファイルサイズは低下します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="568" />
@@ -258,17 +272,18 @@
     <message>
       <location filename="mainwindow.ui" line="581" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the hardware acceleration method to use. Currently not very stable, especially on Linux.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置要使用的硬件加速方法。目前不太稳定，特别是在 Linux 上。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用するハードウェアアクセラレーション方式を設定します。現在はあまり安定していません (特に Linux の環境)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="584" />
       <source>none</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="595" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check to copy audio and subtitle streams from the input video to the output video.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;勾选此选项以将音频和字幕流从输入视频复制到输出视频。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;チェックをすると入力の動画から出力の動画にオーディオと字幕のストリームがコピーされます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="598" />
@@ -288,47 +303,54 @@
     <message>
       <location filename="mainwindow.ui" line="626" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the verbosity of the log, where 'trace' is the most verbose, and 'none' is the least verbose, disabling all logging output.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置日志的详细程度，其中 “trace” 是最详细的，“none” 是最简略的，禁用所有日志输出。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ログの詳細を設定します。「trace」は詳細なログを出力「none」は最低限なログになり、すべてのログの出力が無効化されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="633" />
       <source>trace</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="638" />
       <source>debug</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="643" />
       <source>info</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="648" />
       <source>warning</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="653" />
       <source>error</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="658" />
       <source>critical</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="663" />
       <source>off</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="675" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the logs in a console window (Windows only). On other platforms, the logs will be printed in the terminal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在控制台窗口中显示日志（仅限Windows）。在其他平台上，日志将打印在终端中。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ログをコンソールウィンドウに表示します (Windows のみ)。他のプラットフォームではターミナルにログが出力されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="678" />
@@ -344,7 +366,8 @@
       <location filename="mainwindow.ui" line="727" />
       <location filename="mainwindow.ui" line="752" />
       <source>%v/%m (%p%)</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="737" />
@@ -354,7 +377,7 @@
     <message>
       <location filename="mainwindow.ui" line="778" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;When stopped: start processing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;When running: pause processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;停止时：开始处理。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;运行时：暂停处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;停止時: 処理を開始します。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;実行中: 処理を一時停止します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="784" />
@@ -365,7 +388,7 @@
     <message>
       <location filename="mainwindow.ui" line="806" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;Abort processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;処理を中止。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;処理を中止しています。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="812" />
@@ -395,7 +418,8 @@
     <message>
       <location filename="mainwindow.ui" line="860" />
       <source>Ctrl+Q</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="865" />
@@ -405,12 +429,14 @@
     <message>
       <location filename="mainwindow.ui" line="870" />
       <source>English (United States)</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="875" />
       <source>Japanese (日本語)</source>
-      <translation></translation>
+      <translation>
+      </translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="128" />
@@ -465,39 +491,39 @@
     <message>
       <location filename="mainwindow.cpp" line="261" />
       <source>Failed to allocate memory for FilterConfig.</source>
-      <translation>无法为 FilterConfig 分配内存。</translation>
+      <translation>FilterConfig のメモリ割り当てに失敗しました。</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="306" />
       <source>Invalid filter selected!</source>
-      <translation>选择了无效的滤镜！</translation>
+      <translation>無効なフィルターが選択されました!</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="314" />
       <source>Invalid FFmpeg video codec.</source>
       <oldsource>Invalid FFmpeg codec.</oldsource>
-      <translation>选择了无效的 FFmpeg 视频编码。</translation>
+      <translation>FFmpeg ビデオコーデックが無効です。</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="325" />
       <source>Invalid FFmpeg video pixel format.</source>
       <oldsource>Invalid FFmpeg pixel format.</oldsource>
-      <translation>选择了无效的 FFmpeg 视频像素格式。</translation>
+      <translation>FFmpeg ビデオピクセル形式が無効です。</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="335" />
       <source>Failed to allocate memory for EncoderConfig.</source>
-      <translation>无法为 EncoderConfig 分配内存。</translation>
+      <translation>EncoderConfig のメモリ割り当てに失敗しました。</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="346" />
       <source>Invalid hardware acceleration method.</source>
-      <translation>选择了无效的硬件加速模式。</translation>
+      <translation>ハードウェアアクセレーション方式が無効です。</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="429" />
       <source>Video processing failed for: %1</source>
-      <translation>处理视频 %1 时发生了错误</translation>
+      <translation>動画の処理に失敗しました: %1</translation>
     </message>
     <message>
       <location filename="mainwindow.cpp" line="501" />
