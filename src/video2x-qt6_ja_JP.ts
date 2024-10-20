@@ -12,12 +12,12 @@
     <message>
       <location filename="mainwindow.ui" line="29" />
       <source>Video Processing Job Queue</source>
-      <translation>動画処理のジョブキュー</translation>
+      <translation>動画処理ジョブキュー</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="43" />
       <source>Click the "Add File(s)" button or drag files into the job queue to add videos for processing.</source>
-      <translation>処理を行なう動画を追加するには｢ファイルを追加｣のボタンをクリックか、ファイルをジョブキューにドラッグしてください。</translation>
+      <translation>処理する動画を追加するには「ファイルを追加」ボタンをクリックするか、ファイルをジョブキューにドラッグしてください。</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="71" />
@@ -37,7 +37,7 @@
     <message>
       <location filename="mainwindow.ui" line="84" />
       <source>Delete Selected</source>
-      <translation>選択済みを消去</translation>
+      <translation>選択した項目を削除</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="91" />
@@ -47,7 +47,7 @@
     <message>
       <location filename="mainwindow.ui" line="94" />
       <source>Clear</source>
-      <translation>消去</translation>
+      <translation>全てを削除</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="118" />
@@ -62,7 +62,7 @@
     <message>
       <location filename="mainwindow.ui" line="154" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;- RealESRGAN: Higher quality but slower, with fixed scaling factor. Works better than Anime4K v4 with small (&amp;lt;720p) videos.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;- libplacebo (with Anime4K v4): Very fast, but is of lower quality. Works poorly with small (&amp;lt;720p) videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;動画の処理に使用するフィルターを選択してください。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;- RealESRGAN: 高画質ですが処理速度が遅く、スケーリングの係数は固定です。解像度が小さい動画 (&amp;lt;720p) では Anime4K v4 より上手く機能します。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;- libplacebo (Anime4K v4 を使用): 非常に高速ですが、画質は低くなります。解像度の低い動画 (&amp;lt;720p) では上手く機能しません。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;動画の処理に使用するフィルターを選択してください。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;- RealESRGAN: 高画質ですが処理速度が遅く、拡大倍率は固定です。解像度が小さい動画 (&amp;lt;720p) では Anime4K v4 より上手く機能します。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;- libplacebo (Anime4K v4 を使用): 非常に高速ですが、画質は低くなります。解像度の低い動画 (&amp;lt;720p) では上手く機能しません。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="158" />
@@ -120,7 +120,7 @@
     <message>
       <location filename="mainwindow.ui" line="239" />
       <source>Scaling Factor</source>
-      <translation>スケールの倍率</translation>
+      <translation>拡大倍率</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="252" />
@@ -224,7 +224,7 @@
     <message>
       <location filename="mainwindow.ui" line="481" />
       <source>Pixel Format (-pix_fmt)</source>
-      <translation>ピクセル形式 (-pix_fmt)</translation>
+      <translation>ピクセルフォーマット (-pix_fmt)</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="494" />
