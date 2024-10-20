@@ -12,7 +12,7 @@
     <message>
       <location filename="mainwindow.ui" line="29" />
       <source>Video Processing Job Queue</source>
-      <translation>動画処理ジョブキュー</translation>
+      <translation>動画処理のジョブキュー</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="43" />
@@ -37,7 +37,7 @@
     <message>
       <location filename="mainwindow.ui" line="84" />
       <source>Delete Selected</source>
-      <translation>選択した項目を削除</translation>
+      <translation>選択した項目を消去</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="91" />
@@ -47,7 +47,7 @@
     <message>
       <location filename="mainwindow.ui" line="94" />
       <source>Clear</source>
-      <translation>全てを削除</translation>
+      <translation>すべて消去</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="118" />
@@ -125,7 +125,7 @@
     <message>
       <location filename="mainwindow.ui" line="252" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The scaling factor to use. I.e., how many times larger you want the output to be.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用するスケーリング係数です。出力を何倍にしたいかを設定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する拡大係数です。出力を何倍にしたいかを設定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="290" />
@@ -224,7 +224,7 @@
     <message>
       <location filename="mainwindow.ui" line="481" />
       <source>Pixel Format (-pix_fmt)</source>
-      <translation>ピクセルフォーマット (-pix_fmt)</translation>
+      <translation>ピクセル形式 (-pix_fmt)</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="494" />
