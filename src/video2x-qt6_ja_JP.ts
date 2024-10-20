@@ -12,7 +12,7 @@
     <message>
       <location filename="mainwindow.ui" line="29" />
       <source>Video Processing Job Queue</source>
-      <translation>動画処理ジョブキュー</translation>
+      <translation>動画処理のジョブキュー</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="43" />
@@ -22,7 +22,7 @@
     <message>
       <location filename="mainwindow.ui" line="71" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select files to add to the job queue.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ジョブキューに追加するファイルを選択してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ジョブキューに追加するファイルを選択します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="74" />
@@ -32,17 +32,17 @@
     <message>
       <location filename="mainwindow.ui" line="81" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Delete the selected file(s) from the job queue.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;選択したファイルをジョブキューから削除します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;選択したファイルをジョブキューから消去します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="84" />
       <source>Delete Selected</source>
-      <translation>選択済みを削除</translation>
+      <translation>選択済みを消去</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="91" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all jobs from the job queue.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ジョブキューからすべてのジョブを削除します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ジョブキューからすべてのジョブを消去します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="94" />
@@ -87,7 +87,7 @@
     <message>
       <location filename="mainwindow.ui" line="195" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Vulkan GPU ID obtained when listing GPUs with Vulkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vulkan で GPU を一覧表示するときに取得する Vulkan GPU ID。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vulkan で GPU を一覧表示するときに取得する Vulkan GPU IDです。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="206" />
@@ -97,7 +97,7 @@
     <message>
       <location filename="mainwindow.ui" line="213" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RealESRGAN モデルを使用します。&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: アニメの動画に適しています&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: アニメ以外の動画に適しています&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RealESRGAN モデルを使用します。&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: アニメの動画に最適&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: アニメ以外の動画に最適&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="217" />
@@ -245,7 +245,7 @@
     <message>
       <location filename="mainwindow.ui" line="515" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the target bit rate for the output video, enabling constant bit rate (CBR) encoding. A value of 0 uses variable bit rate (VBR) for better quality at lower file sizes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力する動画のビットレートを設定することで固定ビットレート (CBR) のエンコードを有効化します。値が 0 の場合は可変ビットレート (VBR) が使用され、ファイルサイズが小さくても画質が向上します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力する動画のビットレートを設定することで固定ビットレート (CBR) のエンコードを有効化します。値が 0 の場合は可変ビットレート (VBR) が使用され、ファイルサイズが小さく画質が向上します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="518" />
@@ -388,7 +388,7 @@
     <message>
       <location filename="mainwindow.ui" line="806" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;Abort processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;処理を中止しています。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:9pt; font-weight:400;"&gt;処理を中止します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="812" />
@@ -424,7 +424,7 @@
     <message>
       <location filename="mainwindow.ui" line="865" />
       <source>About</source>
-      <translation>中止</translation>
+      <translation>バージョン情報</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="870" />
