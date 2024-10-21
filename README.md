@@ -6,7 +6,5 @@ The Qt6 graphical user interface for [Video2X](https://github.com/k4yt3x/video2x
 
 ## License
 
-This project is licensed under the [GNU General Public License Version 3 (GNU GPL v3)](https://www.gnu.org/licenses/gpl-3.0.txt)\
+This project is licensed under the [ISC license](LICENSE).\
 Copyright (C) 2024 K4YT3X.
-
-![GPLv3](https://www.gnu.org/graphics/gplv3-127x51.png)
