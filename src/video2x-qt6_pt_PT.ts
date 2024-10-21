@@ -61,7 +61,7 @@
     <message>
         <location filename="mainwindow.ui" line="154"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RealESRGAN: Higher quality but slower, with fixed scaling factor. Works better than Anime4K v4 with small (&amp;lt;720p) videos.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- libplacebo (with Anime4K v4): Very fast, but is of lower quality. Works poorly with small (&amp;lt;720p) videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Selecione o filtro que quer usar no processo do vídeo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RealESRGAN：Alta qualidade porém mais lento，com o fator de escala fixo. Funciona melhor que o Anime4K v4 com vídeos pequenos（&amp;lt;720p）&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- libplacebo（com Anime4K v4): Muito rápido, mas a qualidade é menor. Não funciona bem com vídeos pequenos. (&amp;lt;720p)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Selecione o filtro que quer usar no processo do vídeo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RealESRGAN: Alta qualidade porém mais lento，com o fator de escala fixo. Funciona melhor que o Anime4K v4 com vídeos pequenos(&amp;lt;720p)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- libplacebo(com Anime4K v4): Muito rápido, mas a qualidade é menor. Não funciona bem com vídeos pequenos. (&amp;lt;720p)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="158"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="mainwindow.ui" line="356"/>
         <source>GLSL Shader Name/Path</source>
-        <translation>Nome do Shader GLSL</translation>
+        <translation>Nome/Caminho do Shader GLSL</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="369"/>
@@ -183,7 +183,7 @@
     <message>
         <location filename="mainwindow.ui" line="427"/>
         <source>Codec (-vcodec)</source>
-        <translation>Codec（-vcodec)</translation>
+        <translation>Codec (-vcodec)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="440"/>
@@ -203,7 +203,7 @@
     <message>
         <location filename="mainwindow.ui" line="467"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A predefinição de codificação a utilizar. Uma predefinição mais lenta proporciona uma melhor eficiência de compressão (rácio da qualidade/tamanho do ficheiro), enquanto uma predefinição mais rápida resulta numa codificação mais rápida à custa da eficiência da compressão.&lt;/p&gt;&lt;p&gt;- ultra rápida&lt;/p&gt;&lt;p&gt;- super rápida&lt;/p&gt;&lt;p&gt;- muito rápida&lt;/p&gt;&lt;p&gt;- mais rápida&lt;/p&gt;&lt;p&gt;- rápida&lt;/p&gt;&lt;p&gt;- média&lt;/p&gt;&lt;p&gt;- lenta – predefinição padrão&lt;/p&gt;&lt;p&gt;- mais lenta&lt;/p&gt;&lt;p&gt;- muito lenta&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A predefinição de codificação a utilizar. Uma predefinição mais lenta proporciona uma melhor eficiência de compressão (rácio da qualidade/tamanho do ficheiro), enquanto uma predefinição mais rápida resulta numa codificação mais rápida à custa da eficiência da compressão.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – predefinição padrão&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="470"/>
@@ -233,7 +233,7 @@
     <message>
         <location filename="mainwindow.ui" line="515"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the target bit rate for the output video, enabling constant bit rate (CBR) encoding. A value of 0 uses variable bit rate (VBR) for better quality at lower file sizes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define a taxa de bits para o vídeo de saída, permitindo a codificação da taxa de bits constante (CBR). Um valor de 0 usa a taxa de bits variável (VBR) para melhor qualidade em tamanhos de arquivo menores.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define a taxa de bits alvo para o vídeo de saída, permitindo a codificação em taxa de bits constante (CBR). Um valor de 0 usa taxa de bits variável (VBR) para melhor qualidade em tamanhos de ficheiro menores.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="518"/>
@@ -248,12 +248,12 @@
     <message>
         <location filename="mainwindow.ui" line="545"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the Constant Rate Factor (CRF) to control video quality. Uses variable bit rate (VBR) encoding. &lt;/p&gt;&lt;p&gt;- 0-17: Visually lossless quality, large file sizes.&lt;/p&gt;&lt;p&gt;- 18-23: High quality, good balance between quality and file size (recommended range).&lt;/p&gt;&lt;p&gt;- 24-28: Medium quality, suitable for streaming, some artifacts may appear.&lt;/p&gt;&lt;p&gt;- 29+: Low quality, noticeable compression artifacts, smaller file sizes.&lt;/p&gt;&lt;p&gt;Lower values improve quality but increase file size, while higher values reduce quality and file size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define o fator de taxa constante (CRF) para controlar a qualidade do vídeo. Usa a variável da taxa de bits de codificação (VBR).&lt;/p&gt;&lt;p&gt;- 0-17: Qualidade sem perdas visuais, ficheiros de grandes dimensões.&lt;/p&gt;&lt;p&gt;- 18-23: Alta qualidade, bom equilíbrio entre qualidade e tamanho do ficheiro (gama recomendada).&lt;/p&gt;&lt;p&gt;- 24-28: Qualidade média, adequada para transmissão em fluxo contínuo, podem aparecer alguns artefatos.&lt;/p&gt;&lt;p&gt;- 29+: Baixa qualidade, artefatos de compressão perceptíveis, tamanho do ficheiro mais pequeno.&lt;/p&gt;&lt;p&gt;Valores mais baixos aumentam a qualidade mas também aumentam o tamanho do ficheiro, enquanto os valores mais altos reduzem a qualidade e também o tamanho do ficheiro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define o fator de taxa constante (CRF) para controlar a qualidade do vídeo. Usa codificação com taxa de bits variável (VBR).&lt;/p&gt;&lt;p&gt;- 0-17: Qualidade sem perdas visuais, ficheiros de grandes dimensões.&lt;/p&gt;&lt;p&gt;- 18-23: Alta qualidade, bom equilíbrio entre qualidade e tamanho do ficheiro (gama recomendada).&lt;/p&gt;&lt;p&gt;- 24-28: Qualidade média, adequada para streaming, podem aparecer alguns artefactos.&lt;/p&gt;&lt;p&gt;- 29+: Baixa qualidade, artefactos de compressão perceptíveis, tamanhos de ficheiro menores.&lt;/p&gt;&lt;p&gt;Valores mais baixos melhoram a qualidade mas aumentam o tamanho do ficheiro, enquanto valores mais altos reduzem a qualidade e o tamanho do ficheiro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="568"/>
         <source>Hardware Acceleration (-hwaccel)</source>
-        <translation>Aceleração do Hardware (-hwaccel)</translation>
+        <translation>Aceleração de Hardware (-hwaccel)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="581"/>
