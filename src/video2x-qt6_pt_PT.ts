@@ -4,11 +4,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="14"/>
-        <source>Video2X</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Video Processing Job Queue</source>
         <translation>Fila de Processos de Vídeo</translation>
@@ -288,7 +283,7 @@
     <message>
         <location filename="mainwindow.ui" line="626"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the verbosity of the log, where &apos;trace&apos; is the most verbose, and &apos;none&apos; is the least verbose, disabling all logging output.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define a verbosidade do registo, em que 'trace' é o mais detalhado e 'none' é o menos detalhado, desactivando toda a saída de registo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define a verbosidade do registo, em que &apos;trace&apos; é o mais detalhado e &apos;none&apos; é o menos detalhado, desactivando toda a saída de registo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="633"/>
@@ -358,7 +353,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="784"/>
-        <location filename="mainwindow.cpp" line="239"/>
+        <location filename="mainwindow.cpp" line="255"/>
         <source>START</source>
         <translation>EXECUTAR</translation>
     </message>
@@ -388,52 +383,57 @@
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="857"/>
+        <location filename="mainwindow.ui" line="859"/>
         <source>Exit</source>
         <translation>Sair</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="860"/>
+        <location filename="mainwindow.ui" line="862"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="865"/>
+        <location filename="mainwindow.ui" line="867"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="871"/>
+        <location filename="mainwindow.ui" line="872"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="876"/>
+        <location filename="mainwindow.ui" line="877"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="881"/>
+        <location filename="mainwindow.ui" line="882"/>
+        <source>日本語（日本）</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="887"/>
         <source>Português (Portugal)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="144"/>
         <source>Select Files</source>
         <translation>Selecionar Ficheiros</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="130"/>
+        <location filename="mainwindow.cpp" line="146"/>
         <source>All Files (*.*)</source>
         <translation>Todos os Ficheiros (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="197"/>
+        <location filename="mainwindow.cpp" line="213"/>
         <source>RESUME</source>
         <translation>CONTINUAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="199"/>
+        <location filename="mainwindow.cpp" line="215"/>
         <source>PAUSE</source>
         <translation>PAUSAR</translation>
     </message>
@@ -443,74 +443,74 @@
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="209"/>
+        <location filename="mainwindow.cpp" line="225"/>
         <source>The job queue is empty!</source>
         <translation>A fila de processos está vazia!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="229"/>
+        <location filename="mainwindow.cpp" line="245"/>
         <source>Processing aborted</source>
         <translation>Processo interrompido</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="229"/>
+        <location filename="mainwindow.cpp" line="245"/>
         <source>Video processing aborted!</source>
         <translation>O processo do vídeo foi interrompido!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="231"/>
+        <location filename="mainwindow.cpp" line="247"/>
         <source>Processing complete</source>
         <translation>Processo concluído</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="231"/>
+        <location filename="mainwindow.cpp" line="247"/>
         <source>All videos processed.</source>
         <translation>Todos os vídeos foram processados.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="261"/>
+        <location filename="mainwindow.cpp" line="277"/>
         <source>Failed to allocate memory for FilterConfig.</source>
         <translation>Falha ao alocar memória para o FilterConfig.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="306"/>
+        <location filename="mainwindow.cpp" line="322"/>
         <source>Invalid filter selected!</source>
         <translation>O filtro selecionado é inválido!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="314"/>
+        <location filename="mainwindow.cpp" line="330"/>
         <source>Invalid FFmpeg video codec.</source>
         <oldsource>Invalid FFmpeg codec.</oldsource>
         <translation>Codec de vídeo FFmpeg inválido.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="325"/>
+        <location filename="mainwindow.cpp" line="341"/>
         <source>Invalid FFmpeg video pixel format.</source>
         <oldsource>Invalid FFmpeg pixel format.</oldsource>
         <translation>Formato do pixel de vídeo FFmpeg inválido.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="335"/>
+        <location filename="mainwindow.cpp" line="351"/>
         <source>Failed to allocate memory for EncoderConfig.</source>
         <translation>Falha ao alocar memória para o FilterConfig.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="346"/>
+        <location filename="mainwindow.cpp" line="362"/>
         <source>Invalid hardware acceleration method.</source>
         <translation>Método de aceleração de hardware inválido.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="429"/>
+        <location filename="mainwindow.cpp" line="445"/>
         <source>Video processing failed for: %1</source>
         <translation>Falha no processo do vídeo para: %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="501"/>
+        <location filename="mainwindow.cpp" line="527"/>
         <source>Select GLSL Shader</source>
         <translation>Selecionar o Shader GLSL</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="503"/>
+        <location filename="mainwindow.cpp" line="529"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>Ficheiros GLSL (*.glsl);;Todos os Ficheiros (*.*)</translation>
     </message>

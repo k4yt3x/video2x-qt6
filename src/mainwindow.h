@@ -58,6 +58,10 @@ private slots:
 
     void on_libplaceboSelectGlslShaderPushButton_clicked();
 
+    void on_actionLanguageJAJP_triggered();
+
+    void on_actionLanguagePTPT_triggered();
+
 private:
     Ui::MainWindow *ui;
     VideoProcessingContext *m_procCtx;

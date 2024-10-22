@@ -4,11 +4,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="14"/>
-        <source>Video2X</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Video Processing Job Queue</source>
         <translation>视频处理任务队列</translation>
@@ -358,7 +353,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="784"/>
-        <location filename="mainwindow.cpp" line="239"/>
+        <location filename="mainwindow.cpp" line="255"/>
         <source>START</source>
         <translation>开始</translation>
     </message>
@@ -388,47 +383,57 @@
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="857"/>
+        <location filename="mainwindow.ui" line="859"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="860"/>
+        <location filename="mainwindow.ui" line="862"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="865"/>
+        <location filename="mainwindow.ui" line="867"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="870"/>
+        <location filename="mainwindow.ui" line="872"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="875"/>
+        <location filename="mainwindow.ui" line="877"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.ui" line="882"/>
+        <source>日本語（日本）</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="887"/>
+        <source>Português (Portugal)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="144"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="130"/>
+        <location filename="mainwindow.cpp" line="146"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="197"/>
+        <location filename="mainwindow.cpp" line="213"/>
         <source>RESUME</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="199"/>
+        <location filename="mainwindow.cpp" line="215"/>
         <source>PAUSE</source>
         <translation>暂停</translation>
     </message>
@@ -438,74 +443,74 @@
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="209"/>
+        <location filename="mainwindow.cpp" line="225"/>
         <source>The job queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="229"/>
+        <location filename="mainwindow.cpp" line="245"/>
         <source>Processing aborted</source>
         <translation>处理中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="229"/>
+        <location filename="mainwindow.cpp" line="245"/>
         <source>Video processing aborted!</source>
         <translation>视频处理已中止！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="231"/>
+        <location filename="mainwindow.cpp" line="247"/>
         <source>Processing complete</source>
         <translation>处理完成</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="231"/>
+        <location filename="mainwindow.cpp" line="247"/>
         <source>All videos processed.</source>
         <translation>所有视频已处理。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="261"/>
+        <location filename="mainwindow.cpp" line="277"/>
         <source>Failed to allocate memory for FilterConfig.</source>
         <translation>无法为 FilterConfig 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="306"/>
+        <location filename="mainwindow.cpp" line="322"/>
         <source>Invalid filter selected!</source>
         <translation>选择了无效的滤镜！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="314"/>
+        <location filename="mainwindow.cpp" line="330"/>
         <source>Invalid FFmpeg video codec.</source>
         <oldsource>Invalid FFmpeg codec.</oldsource>
         <translation>选择了无效的 FFmpeg 视频编码。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="325"/>
+        <location filename="mainwindow.cpp" line="341"/>
         <source>Invalid FFmpeg video pixel format.</source>
         <oldsource>Invalid FFmpeg pixel format.</oldsource>
         <translation>选择了无效的 FFmpeg 视频像素格式。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="335"/>
+        <location filename="mainwindow.cpp" line="351"/>
         <source>Failed to allocate memory for EncoderConfig.</source>
         <translation>无法为 EncoderConfig 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="346"/>
+        <location filename="mainwindow.cpp" line="362"/>
         <source>Invalid hardware acceleration method.</source>
         <translation>选择了无效的硬件加速模式。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="429"/>
+        <location filename="mainwindow.cpp" line="445"/>
         <source>Video processing failed for: %1</source>
         <translation>处理视频 %1 时发生了错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="501"/>
+        <location filename="mainwindow.cpp" line="527"/>
         <source>Select GLSL Shader</source>
         <translation>选择 GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="503"/>
+        <location filename="mainwindow.cpp" line="529"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL 文件 (*.glsl);;所有文件 (*.*)</translation>
     </message>

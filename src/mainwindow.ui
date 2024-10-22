@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>960</width>
-    <height>590</height>
+    <width>1020</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Video2X</string>
+   <string notr="true">Video2X</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -824,7 +824,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1017</width>
+     <width>1015</width>
      <height>21</height>
     </rect>
    </property>
@@ -846,6 +846,8 @@
     </property>
     <addaction name="actionLanguageENUS"/>
     <addaction name="actionLanguageZHCN"/>
+    <addaction name="actionLanguageJAJP"/>
+    <addaction name="actionLanguagePTPT"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuLanguage"/>
@@ -873,6 +875,16 @@
   <action name="actionLanguageZHCN">
    <property name="text">
     <string>中文（中国）</string>
+   </property>
+  </action>
+  <action name="actionLanguageJAJP">
+   <property name="text">
+    <string>日本語（日本）</string>
+   </property>
+  </action>
+  <action name="actionLanguagePTPT">
+   <property name="text">
+    <string>Português (Portugal)</string>
    </property>
   </action>
  </widget>

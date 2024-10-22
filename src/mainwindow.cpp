@@ -97,6 +97,22 @@ void MainWindow::on_actionLanguageZHCN_triggered()
     }
 }
 
+void MainWindow::on_actionLanguageJAJP_triggered()
+{
+    if (changeLanguage("ja_JP")) {
+        QFont mainWindowFont("Microsoft Yahei");
+        this->setFont(mainWindowFont);
+    }
+}
+
+void MainWindow::on_actionLanguagePTPT_triggered()
+{
+    if (changeLanguage("pt_PT")) {
+        QFont mainWindowFont("Segoe UI");
+        this->setFont(mainWindowFont);
+    }
+}
+
 void MainWindow::handleFilesDropped(const QStringList &fileNames)
 {
     // Get the current model
@@ -296,8 +312,8 @@ void MainWindow::processNextVideo()
     } else if (ui->filterSelectionComboBox->currentIndex() == 1) {
         // Populate libplacebo filter config
         filter_config->filter_type = FILTER_LIBPLACEBO;
-        filter_config->config.libplacebo.output_width = ui->libplaceboOutputWidthSpinBox->value();
-        filter_config->config.libplacebo.output_height = ui->libplaceboOutputHeightSpinBox->value();
+        filter_config->config.libplacebo.out_width = ui->libplaceboOutputWidthSpinBox->value();
+        filter_config->config.libplacebo.out_height = ui->libplaceboOutputHeightSpinBox->value();
 
         // Convert QString to UTF-8 for the shader path and store it
         QByteArray shader_byte_array = ui->libplaceboShaderNameLineEdit->text().toUtf8();
@@ -354,8 +370,8 @@ void MainWindow::processNextVideo()
     QByteArray preset_byte_array = ui->ffmpegPresetLineEdit->text().toUtf8();
     const char *preset_c_string = strdup(preset_byte_array.constData());
 
-    encoder_config->output_width = 0;  // To be filled by libvideo2x
-    encoder_config->output_height = 0; // To be filled by libvideo2x
+    encoder_config->out_width = 0;  // To be filled by libvideo2x
+    encoder_config->out_height = 0; // To be filled by libvideo2x
     encoder_config->copy_streams = ui->ffmpegCopyStreamsCheckBox->isChecked();
     encoder_config->codec = codec->id;
     encoder_config->pix_fmt = pix_fmt;

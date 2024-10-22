@@ -77,7 +77,9 @@ if(NOT WIN32)
 endif()
 
 set(TS_FILES src/video2x-qt6_en_US.ts
-             src/video2x-qt6_zh_CN.ts)
+             src/video2x-qt6_zh_CN.ts
+             src/video2x-qt6_ja_JP.ts
+             src/video2x-qt6_pt_PT.ts)
 
 set(PROJECT_SOURCES
         src/main.cpp
