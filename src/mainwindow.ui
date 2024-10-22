@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1020</width>
-    <height>650</height>
+    <height>656</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -714,6 +714,22 @@
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QProgressBar" name="currentProgressBar">
+             <property name="styleSheet">
+              <string notr="true">QProgressBar {
+    border: 1px solid palette(shadow);
+    border-radius: 5px;
+    text-align: center;
+    padding: 1px;
+    background: palette(base);
+}
+
+QProgressBar::chunk {
+    border-radius: 5px;
+    margin: 1px;
+    background-color: palette(highlight);
+}
+</string>
+             </property>
              <property name="minimum">
               <number>0</number>
              </property>
@@ -739,6 +755,22 @@
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
             <widget class="QProgressBar" name="overallProgressBar">
+             <property name="styleSheet">
+              <string notr="true">QProgressBar {
+    border: 1px solid palette(shadow);
+    border-radius: 5px;
+    text-align: center;
+    padding: 1px;
+    background: palette(base);
+}
+
+QProgressBar::chunk {
+    border-radius: 5px;
+    margin: 1px;
+    background-color: palette(highlight);
+}
+</string>
+             </property>
              <property name="minimum">
               <number>0</number>
              </property>
@@ -824,7 +856,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1015</width>
+     <width>1020</width>
      <height>21</height>
     </rect>
    </property>

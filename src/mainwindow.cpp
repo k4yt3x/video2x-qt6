@@ -18,9 +18,9 @@ extern "C" {
 #include <libvideo2x/version.h>
 }
 
-#include "./ui_mainwindow.h"
 #include "filedroplistview.h"
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include "videoprocessingworker.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -78,6 +78,8 @@ bool MainWindow::changeLanguage(const QString &locale)
         return false;
     }
     ui->retranslateUi(this);
+    qApp->processEvents();
+    qApp->setStyle(QApplication::style());
     return true;
 }
 
@@ -248,16 +250,17 @@ void MainWindow::processNextVideo()
         }
         m_procStarted = false;
 
-        ui->currentProgressBar->setMaximum(1);
-        ui->currentProgressBar->setValue(1);
-        ui->overallProgressBar->setMaximum(1);
-        ui->overallProgressBar->setValue(1);
+        // ui->currentProgressBar->setMaximum(1);
+        // ui->currentProgressBar->setValue(1);
+        // ui->overallProgressBar->setMaximum(1);
+        // ui->overallProgressBar->setValue(1);
         ui->startPausePushButton->setText(tr("START"));
         ui->stopPushButton->setEnabled(false);
         ui->addFilesPushButton->setEnabled(true);
         ui->deleteSelectedPushButton->setEnabled(true);
         ui->clearPushButton->setEnabled(true);
         ui->settingsTabWidget->setEnabled(true);
+        ui->menuLanguage->setEnabled(true);
         return;
     }
 
@@ -307,6 +310,7 @@ void MainWindow::processNextVideo()
         filter_config->config.realesrgan.scaling_factor = ui->realesrganScalingFactorSpinBox->value();
 
         // Convert QString to UTF-8 for the model and store it
+        // TODO: release the memory allocated with strdup
         QByteArray model_byte_array = ui->realesrganModelComboBox->currentText().toUtf8();
         filter_config->config.realesrgan.model = strdup(model_byte_array.constData());
     } else if (ui->filterSelectionComboBox->currentIndex() == 1) {
@@ -316,6 +320,7 @@ void MainWindow::processNextVideo()
         filter_config->config.libplacebo.out_height = ui->libplaceboOutputHeightSpinBox->value();
 
         // Convert QString to UTF-8 for the shader path and store it
+        // TODO: release the memory allocated with strdup
         QByteArray shader_byte_array = ui->libplaceboShaderNameLineEdit->text().toUtf8();
         filter_config->config.libplacebo.shader_path = strdup(shader_byte_array.constData());
     } else {
@@ -367,6 +372,7 @@ void MainWindow::processNextVideo()
     }
 
     // Populate encoder configuration
+    // TODO: release the memory allocated with strdup
     QByteArray preset_byte_array = ui->ffmpegPresetLineEdit->text().toUtf8();
     const char *preset_c_string = strdup(preset_byte_array.constData());
 
@@ -433,6 +439,7 @@ void MainWindow::processNextVideo()
     ui->deleteSelectedPushButton->setEnabled(false);
     ui->clearPushButton->setEnabled(false);
     ui->settingsTabWidget->setEnabled(false);
+    ui->menuLanguage->setEnabled(false);
 }
 
 void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)
