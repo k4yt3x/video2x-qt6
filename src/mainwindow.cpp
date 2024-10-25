@@ -46,6 +46,20 @@ MainWindow::MainWindow(QWidget *parent)
 #ifndef _WIN32
     ui->showLogsCheckBox->setEnabled(false);
 #endif
+
+    // Initialize translator
+    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    for (const QString &locale : uiLanguages) {
+        if (locale == "en_US") {
+            break;
+        }
+        const QString baseName = "video2x-qt6_" + QLocale(locale).name() + ".qm";
+        if (m_translator.load(baseName)) {
+            qApp->installTranslator(&m_translator);
+            ui->retranslateUi(this);
+            break;
+        }
+    }
 }
 
 MainWindow::~MainWindow()
@@ -70,12 +84,17 @@ void MainWindow::on_actionExit_triggered()
 
 bool MainWindow::changeLanguage(const QString &locale)
 {
-    if (m_translator.load("video2x-qt6_" + locale + ".qm")) {
-        qApp->installTranslator(&m_translator);
+    if (locale == "en_US") {
+        qApp->removeTranslator(&m_translator);
     } else {
-        showErrorMessage("Failed to load translation for locale" + locale);
-        qDebug() << "Failed to load translation for locale:" << locale;
-        return false;
+        if (m_translator.load("video2x-qt6_" + locale + ".qm")) {
+            qApp->removeTranslator(&m_translator);
+            qApp->installTranslator(&m_translator);
+        } else {
+            showErrorMessage("Failed to load translation for locale: " + locale);
+            qDebug() << "Failed to load translation for locale:" << locale;
+            return false;
+        }
     }
     ui->retranslateUi(this);
     qApp->processEvents();
