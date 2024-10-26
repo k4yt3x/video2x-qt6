@@ -1,10 +1,12 @@
 #include <QDebug>
+#include <QDesktopServices>
 #include <QFileDialog>
 #include <QFont>
 #include <QMessageBox>
 #include <QModelIndexList>
 #include <QStringListModel>
 #include <QThread>
+#include <QUrl>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -18,6 +20,7 @@ extern "C" {
 #include <libvideo2x/version.h>
 }
 
+#include "aboutdialog.h"
 #include "filedroplistview.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -32,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_procStarted = false;
     m_procAborted = false;
 
-    setWindowTitle("Video2X " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
+    setWindowTitle("Video2X Qt6 " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
 
     connect(ui->inputSelectionListView,
             &FileDropListView::filesDropped,
@@ -65,6 +68,18 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_actionReport_Bugs_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/issues/new"));
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    AboutDialog aboutDialog(this);
+    aboutDialog.setVersionString("Video2X Qt6 " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
+    aboutDialog.exec();
 }
 
 void MainWindow::showErrorMessage(const QString &message)
@@ -560,4 +575,14 @@ void MainWindow::on_libplaceboSelectGlslShaderPushButton_clicked()
     }
 
     ui->libplaceboShaderNameLineEdit->setText(fileName);
+}
+
+void MainWindow::on_realesrganModelComboBox_currentTextChanged(const QString &currentText)
+{
+    if (currentText == "realesr-animevideov3") {
+        ui->realesrganScalingFactorSpinBox->setMinimum(2);
+    } else {
+        ui->realesrganScalingFactorSpinBox->setValue(4);
+        ui->realesrganScalingFactorSpinBox->setMinimum(4);
+    }
 }

@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="aboutdialog.ui" line="20"/>
+        <source>About Video2X Qt6</source>
+        <translation>关于 Video2X Qt6</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="29"/>
@@ -87,8 +95,9 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="213"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的 RealESRGAN 模型。&lt;/p&gt;&lt;p&gt;- realesr-animevideov3：推荐用于动漫&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus：用于非动漫视频&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x): preferred for anime&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x): for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的 RealESRGAN 模型。不同的模型支持不同的放大倍率。&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x)：推荐用于动漫&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x)：用于非动漫视频&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="217"/>
@@ -197,8 +206,9 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="467"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的编码预设。较慢的预设提供更好的压缩效率（质量与文件大小的比率），而较快的预设会牺牲压缩效率以换取更快的编码速度。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – 默认预设&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – default preset&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的编码预设。较慢的预设提供更好的压缩效率（质量与文件大小的比率），而较快的预设会牺牲压缩效率以换取更快的编码速度。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – 默认预设&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="470"/>
@@ -336,181 +346,186 @@
         <translation>当前视频处理进度</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="727"/>
-        <location filename="mainwindow.ui" line="752"/>
+        <location filename="mainwindow.ui" line="743"/>
+        <location filename="mainwindow.ui" line="784"/>
         <source>%v/%m (%p%)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="737"/>
+        <location filename="mainwindow.ui" line="753"/>
         <source>Overall Progress</source>
         <translation>总体进度</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="778"/>
+        <location filename="mainwindow.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When stopped: start processing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When running: pause processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;停止时：开始处理。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;运行时：暂停处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="784"/>
-        <location filename="mainwindow.cpp" line="255"/>
+        <location filename="mainwindow.ui" line="816"/>
+        <location filename="mainwindow.cpp" line="291"/>
         <source>START</source>
         <translation>开始</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="806"/>
+        <location filename="mainwindow.ui" line="838"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;中止处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="812"/>
+        <location filename="mainwindow.ui" line="844"/>
         <source>STOP</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="833"/>
+        <location filename="mainwindow.ui" line="865"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="839"/>
+        <location filename="mainwindow.ui" line="871"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="845"/>
+        <location filename="mainwindow.ui" line="878"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="859"/>
+        <location filename="mainwindow.ui" line="892"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="862"/>
+        <location filename="mainwindow.ui" line="895"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="867"/>
+        <location filename="mainwindow.ui" line="900"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="872"/>
+        <location filename="mainwindow.ui" line="905"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="877"/>
+        <location filename="mainwindow.ui" line="910"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="882"/>
+        <location filename="mainwindow.ui" line="915"/>
         <source>日本語（日本）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="887"/>
+        <location filename="mainwindow.ui" line="920"/>
         <source>Português (Portugal)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="144"/>
+        <location filename="mainwindow.ui" line="925"/>
+        <source>Report Bugs...</source>
+        <translation>报告错误...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="180"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="146"/>
+        <location filename="mainwindow.cpp" line="182"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="213"/>
+        <location filename="mainwindow.cpp" line="249"/>
         <source>RESUME</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="215"/>
+        <location filename="mainwindow.cpp" line="251"/>
         <source>PAUSE</source>
         <translation>暂停</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="60"/>
+        <location filename="mainwindow.cpp" line="89"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="225"/>
+        <location filename="mainwindow.cpp" line="261"/>
         <source>The job queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="245"/>
+        <location filename="mainwindow.cpp" line="281"/>
         <source>Processing aborted</source>
         <translation>处理中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="245"/>
+        <location filename="mainwindow.cpp" line="281"/>
         <source>Video processing aborted!</source>
         <translation>视频处理已中止！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="283"/>
         <source>Processing complete</source>
         <translation>处理完成</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="283"/>
         <source>All videos processed.</source>
         <translation>所有视频已处理。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="277"/>
+        <location filename="mainwindow.cpp" line="314"/>
         <source>Failed to allocate memory for FilterConfig.</source>
         <translation>无法为 FilterConfig 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="322"/>
+        <location filename="mainwindow.cpp" line="361"/>
         <source>Invalid filter selected!</source>
         <translation>选择了无效的滤镜！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="330"/>
+        <location filename="mainwindow.cpp" line="369"/>
         <source>Invalid FFmpeg video codec.</source>
         <oldsource>Invalid FFmpeg codec.</oldsource>
         <translation>选择了无效的 FFmpeg 视频编码。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="341"/>
+        <location filename="mainwindow.cpp" line="380"/>
         <source>Invalid FFmpeg video pixel format.</source>
         <oldsource>Invalid FFmpeg pixel format.</oldsource>
         <translation>选择了无效的 FFmpeg 视频像素格式。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="351"/>
+        <location filename="mainwindow.cpp" line="390"/>
         <source>Failed to allocate memory for EncoderConfig.</source>
         <translation>无法为 EncoderConfig 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="362"/>
+        <location filename="mainwindow.cpp" line="401"/>
         <source>Invalid hardware acceleration method.</source>
         <translation>选择了无效的硬件加速模式。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="445"/>
+        <location filename="mainwindow.cpp" line="486"/>
         <source>Video processing failed for: %1</source>
         <translation>处理视频 %1 时发生了错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="527"/>
+        <location filename="mainwindow.cpp" line="568"/>
         <source>Select GLSL Shader</source>
         <translation>选择 GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="529"/>
+        <location filename="mainwindow.cpp" line="570"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL 文件 (*.glsl);;所有文件 (*.*)</translation>
     </message>

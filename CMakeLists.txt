@@ -90,6 +90,9 @@ set(PROJECT_SOURCES
         src/videoprocessingworker.cpp
         src/filedroplistview.h
         src/filedroplistview.cpp
+        src/aboutdialog.h
+        src/aboutdialog.cpp
+        src/aboutdialog.ui
         ${TS_FILES}
 )
 

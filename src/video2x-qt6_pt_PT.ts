@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="aboutdialog.ui" line="20"/>
+        <source>About Video2X Qt6</source>
+        <translation>Sobre o Video2X Qt6</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="29"/>
@@ -87,8 +95,9 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="213"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Os modelos do RealESRGAN para usar.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: Preferível para Anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: Para vídeos não anime&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x): preferred for anime&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x): for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Os modelos do RealESRGAN para usar.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x): Preferível para Anime&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x): Para vídeos não anime&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="217"/>
@@ -197,8 +206,9 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="467"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A predefinição de codificação a utilizar. Uma predefinição mais lenta proporciona uma melhor eficiência de compressão (rácio da qualidade/tamanho do ficheiro), enquanto uma predefinição mais rápida resulta numa codificação mais rápida à custa da eficiência da compressão.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – predefinição padrão&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – default preset&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A predefinição de codificação a utilizar. Uma predefinição mais lenta proporciona uma melhor eficiência de compressão (rácio da qualidade/tamanho do ficheiro), enquanto uma predefinição mais rápida resulta numa codificação mais rápida à custa da eficiência da compressão.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – predefinição padrão&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="470"/>
@@ -336,181 +346,186 @@
         <translation>Processo Atual</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="727"/>
-        <location filename="mainwindow.ui" line="752"/>
+        <location filename="mainwindow.ui" line="743"/>
+        <location filename="mainwindow.ui" line="784"/>
         <source>%v/%m (%p%)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="737"/>
+        <location filename="mainwindow.ui" line="753"/>
         <source>Overall Progress</source>
         <translation>Processo Geral</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="778"/>
+        <location filename="mainwindow.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When stopped: start processing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When running: pause processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Quando parado: executa o processo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Em execução: pausa o processo.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="784"/>
-        <location filename="mainwindow.cpp" line="255"/>
+        <location filename="mainwindow.ui" line="816"/>
+        <location filename="mainwindow.cpp" line="291"/>
         <source>START</source>
         <translation>EXECUTAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="806"/>
+        <location filename="mainwindow.ui" line="838"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Aborta o processo.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="812"/>
+        <location filename="mainwindow.ui" line="844"/>
         <source>STOP</source>
         <translation>PARAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="833"/>
+        <location filename="mainwindow.ui" line="865"/>
         <source>File</source>
         <translation>Ficheiro</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="839"/>
+        <location filename="mainwindow.ui" line="871"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="845"/>
+        <location filename="mainwindow.ui" line="878"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="859"/>
+        <location filename="mainwindow.ui" line="892"/>
         <source>Exit</source>
         <translation>Sair</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="862"/>
+        <location filename="mainwindow.ui" line="895"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="867"/>
+        <location filename="mainwindow.ui" line="900"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="872"/>
+        <location filename="mainwindow.ui" line="905"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="877"/>
+        <location filename="mainwindow.ui" line="910"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="882"/>
+        <location filename="mainwindow.ui" line="915"/>
         <source>日本語（日本）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="887"/>
+        <location filename="mainwindow.ui" line="920"/>
         <source>Português (Portugal)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="144"/>
+        <location filename="mainwindow.ui" line="925"/>
+        <source>Report Bugs...</source>
+        <translation>Reportar erros...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="180"/>
         <source>Select Files</source>
         <translation>Selecionar Ficheiros</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="146"/>
+        <location filename="mainwindow.cpp" line="182"/>
         <source>All Files (*.*)</source>
         <translation>Todos os Ficheiros (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="213"/>
+        <location filename="mainwindow.cpp" line="249"/>
         <source>RESUME</source>
         <translation>CONTINUAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="215"/>
+        <location filename="mainwindow.cpp" line="251"/>
         <source>PAUSE</source>
         <translation>PAUSAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="60"/>
+        <location filename="mainwindow.cpp" line="89"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="225"/>
+        <location filename="mainwindow.cpp" line="261"/>
         <source>The job queue is empty!</source>
         <translation>A fila de processos está vazia!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="245"/>
+        <location filename="mainwindow.cpp" line="281"/>
         <source>Processing aborted</source>
         <translation>Processo interrompido</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="245"/>
+        <location filename="mainwindow.cpp" line="281"/>
         <source>Video processing aborted!</source>
         <translation>O processo do vídeo foi interrompido!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="283"/>
         <source>Processing complete</source>
         <translation>Processo concluído</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="283"/>
         <source>All videos processed.</source>
         <translation>Todos os vídeos foram processados.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="277"/>
+        <location filename="mainwindow.cpp" line="314"/>
         <source>Failed to allocate memory for FilterConfig.</source>
         <translation>Falha ao alocar memória para o FilterConfig.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="322"/>
+        <location filename="mainwindow.cpp" line="361"/>
         <source>Invalid filter selected!</source>
         <translation>O filtro selecionado é inválido!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="330"/>
+        <location filename="mainwindow.cpp" line="369"/>
         <source>Invalid FFmpeg video codec.</source>
         <oldsource>Invalid FFmpeg codec.</oldsource>
         <translation>Codec de vídeo FFmpeg inválido.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="341"/>
+        <location filename="mainwindow.cpp" line="380"/>
         <source>Invalid FFmpeg video pixel format.</source>
         <oldsource>Invalid FFmpeg pixel format.</oldsource>
         <translation>Formato do pixel de vídeo FFmpeg inválido.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="351"/>
+        <location filename="mainwindow.cpp" line="390"/>
         <source>Failed to allocate memory for EncoderConfig.</source>
         <translation>Falha ao alocar memória para o FilterConfig.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="362"/>
+        <location filename="mainwindow.cpp" line="401"/>
         <source>Invalid hardware acceleration method.</source>
         <translation>Método de aceleração de hardware inválido.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="445"/>
+        <location filename="mainwindow.cpp" line="486"/>
         <source>Video processing failed for: %1</source>
         <translation>Falha no processo do vídeo para: %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="527"/>
+        <location filename="mainwindow.cpp" line="568"/>
         <source>Select GLSL Shader</source>
         <translation>Selecionar o Shader GLSL</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="529"/>
+        <location filename="mainwindow.cpp" line="570"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>Ficheiros GLSL (*.glsl);;Todos os Ficheiros (*.*)</translation>
     </message>

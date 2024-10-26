@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="aboutdialog.ui" line="20"/>
+        <source>About Video2X Qt6</source>
+        <translation>Video2X Qt6 について</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="29"/>
@@ -87,8 +95,9 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="213"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RealESRGAN モデルを使用します。&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: アニメの動画に最適&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: アニメ以外の動画に最適&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x): preferred for anime&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x): for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3: preferred for anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus-anime&lt;/p&gt;&lt;p&gt;- realesrgan-plus: for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RealESRGAN モデルを使用します。&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x): アニメの動画に最適&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x): アニメ以外の動画に最適&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="217"/>
@@ -197,8 +206,9 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="467"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用するエンコードのプリセットです。処理が遅いプリセットでは圧縮効率 (品質とファイルサイズの比率) が向上し、処理が速いプリセットでは圧縮効率が低下しますがエンコードが速くなります。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – default preset&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用するエンコードのプリセットです。処理が遅いプリセットでは圧縮効率 (品質とファイルサイズの比率) が向上し、処理が速いプリセットでは圧縮効率が低下しますがエンコードが速くなります。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – デフォルトプリセット&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="470"/>
@@ -336,181 +346,186 @@
         <translation>現在の進捗</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="727"/>
-        <location filename="mainwindow.ui" line="752"/>
+        <location filename="mainwindow.ui" line="743"/>
+        <location filename="mainwindow.ui" line="784"/>
         <source>%v/%m (%p%)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="737"/>
+        <location filename="mainwindow.ui" line="753"/>
         <source>Overall Progress</source>
         <translation>全体的な進捗</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="778"/>
+        <location filename="mainwindow.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When stopped: start processing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When running: pause processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;停止時: 処理を開始します。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;実行中: 処理を一時停止します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="784"/>
-        <location filename="mainwindow.cpp" line="255"/>
+        <location filename="mainwindow.ui" line="816"/>
+        <location filename="mainwindow.cpp" line="291"/>
         <source>START</source>
         <translation>開始</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="806"/>
+        <location filename="mainwindow.ui" line="838"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;処理を中止します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="812"/>
+        <location filename="mainwindow.ui" line="844"/>
         <source>STOP</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="833"/>
+        <location filename="mainwindow.ui" line="865"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="839"/>
+        <location filename="mainwindow.ui" line="871"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="845"/>
+        <location filename="mainwindow.ui" line="878"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="859"/>
+        <location filename="mainwindow.ui" line="892"/>
         <source>Exit</source>
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="862"/>
+        <location filename="mainwindow.ui" line="895"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="867"/>
+        <location filename="mainwindow.ui" line="900"/>
         <source>About</source>
         <translation>バージョン情報</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="872"/>
+        <location filename="mainwindow.ui" line="905"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="877"/>
+        <location filename="mainwindow.ui" line="910"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="882"/>
+        <location filename="mainwindow.ui" line="915"/>
         <source>日本語（日本）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="887"/>
+        <location filename="mainwindow.ui" line="920"/>
         <source>Português (Portugal)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="144"/>
+        <location filename="mainwindow.ui" line="925"/>
+        <source>Report Bugs...</source>
+        <translation>バグを報告...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="180"/>
         <source>Select Files</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="146"/>
+        <location filename="mainwindow.cpp" line="182"/>
         <source>All Files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="213"/>
+        <location filename="mainwindow.cpp" line="249"/>
         <source>RESUME</source>
         <translation>再開</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="215"/>
+        <location filename="mainwindow.cpp" line="251"/>
         <source>PAUSE</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="60"/>
+        <location filename="mainwindow.cpp" line="89"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="225"/>
+        <location filename="mainwindow.cpp" line="261"/>
         <source>The job queue is empty!</source>
         <translation>ジョブキューが空です!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="245"/>
+        <location filename="mainwindow.cpp" line="281"/>
         <source>Processing aborted</source>
         <translation>処理を中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="245"/>
+        <location filename="mainwindow.cpp" line="281"/>
         <source>Video processing aborted!</source>
         <translation>動画の処理が中止されました!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="283"/>
         <source>Processing complete</source>
         <translation>処理が完了しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="283"/>
         <source>All videos processed.</source>
         <translation>すべての動画の処理が完了しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="277"/>
+        <location filename="mainwindow.cpp" line="314"/>
         <source>Failed to allocate memory for FilterConfig.</source>
         <translation>FilterConfig のメモリ割り当てに失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="322"/>
+        <location filename="mainwindow.cpp" line="361"/>
         <source>Invalid filter selected!</source>
         <translation>無効なフィルターが選択されました!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="330"/>
+        <location filename="mainwindow.cpp" line="369"/>
         <source>Invalid FFmpeg video codec.</source>
         <oldsource>Invalid FFmpeg codec.</oldsource>
         <translation>FFmpeg ビデオコーデックが無効です。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="341"/>
+        <location filename="mainwindow.cpp" line="380"/>
         <source>Invalid FFmpeg video pixel format.</source>
         <oldsource>Invalid FFmpeg pixel format.</oldsource>
         <translation>FFmpeg ビデオピクセル形式が無効です。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="351"/>
+        <location filename="mainwindow.cpp" line="390"/>
         <source>Failed to allocate memory for EncoderConfig.</source>
         <translation>EncoderConfig のメモリ割り当てに失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="362"/>
+        <location filename="mainwindow.cpp" line="401"/>
         <source>Invalid hardware acceleration method.</source>
         <translation>ハードウェアアクセレーション方式が無効です。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="445"/>
+        <location filename="mainwindow.cpp" line="486"/>
         <source>Video processing failed for: %1</source>
         <translation>動画の処理に失敗しました: %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="527"/>
+        <location filename="mainwindow.cpp" line="568"/>
         <source>Select GLSL Shader</source>
         <translation>GLSL シェーダーを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="529"/>
+        <location filename="mainwindow.cpp" line="570"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL ファイル (*.glsl);;すべてのファイル (*.*)</translation>
     </message>

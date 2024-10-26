@@ -32,11 +32,19 @@ private slots:
 
     void on_actionExit_triggered();
 
+    void on_actionAbout_triggered();
+
+    void on_actionReport_Bugs_triggered();
+
     bool changeLanguage(const QString &locale);
 
     void on_actionLanguageENUS_triggered();
 
     void on_actionLanguageZHCN_triggered();
+
+    void on_actionLanguageJAJP_triggered();
+
+    void on_actionLanguagePTPT_triggered();
 
     void handleFilesDropped(const QStringList &fileNames);
 
@@ -58,9 +66,7 @@ private slots:
 
     void on_libplaceboSelectGlslShaderPushButton_clicked();
 
-    void on_actionLanguageJAJP_triggered();
-
-    void on_actionLanguagePTPT_triggered();
+    void on_realesrganModelComboBox_currentTextChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
