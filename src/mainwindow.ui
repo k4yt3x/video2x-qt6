@@ -212,19 +212,22 @@
                    <property name="toolTip">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;- realesr-animevideov3 (2x, 3x, 4x): preferred for anime&lt;br/&gt;- realesrgan-plus-anime (4x)&lt;br/&gt;- realesrgan-plus (4x): for non-anime videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
+                   <property name="currentText">
+                    <string notr="true">realesr-animevideov3</string>
+                   </property>
                    <item>
                     <property name="text">
-                     <string>realesr-animevideov3</string>
+                     <string notr="true">realesr-animevideov3</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>realesrgan-plus</string>
+                     <string notr="true">realesrgan-plus</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>realesrgan-plus-anime</string>
+                     <string notr="true">realesrgan-plus-anime</string>
                     </property>
                    </item>
                   </widget>
@@ -353,27 +356,55 @@
                  <item>
                   <widget class="QLabel" name="label_3">
                    <property name="text">
-                    <string>GLSL Shader Name/Path</string>
+                    <string>GLSL Shader</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="libplaceboShaderNameLineEdit">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
+                  <widget class="QComboBox" name="libplaceboGlslShaderComboBox">
+                   <property name="currentText">
+                    <string notr="true">anime4k-a</string>
                    </property>
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Name of or path to the MPV-compatible GLSL shader you want to use.&lt;/p&gt;&lt;p&gt;anime4k-mode-a is included with this program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="text">
-                    <string>anime4k-mode-a</string>
-                   </property>
+                   <item>
+                    <property name="text">
+                     <string notr="true">anime4k-a</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string notr="true">anime4k-b</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string notr="true">anime4k-c</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string notr="true">anime4k-a+a</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string notr="true">anime4k-b+b</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string notr="true">anime4k-c+a</string>
+                    </property>
+                   </item>
                   </widget>
                  </item>
                 </layout>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="libplaceboCustomGlslPathLineEdit">
+                 <property name="placeholderText">
+                  <string>Custom GLSL shader file path</string>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QPushButton" name="libplaceboSelectGlslShaderPushButton">
@@ -413,7 +444,7 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the container format for the output file, determining how audio, video, and metadata are stored.&lt;/p&gt;&lt;p&gt;E.g., .mp4, .mkv, .mov, .avi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>.mp4</string>
+                 <string notr="true">.mp4</string>
                 </property>
                </widget>
               </item>
@@ -440,7 +471,7 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects the video codec for encoding, affecting compression and compatibility.&lt;/p&gt;&lt;p&gt;E.g., libx264, libx265, h264_nvenc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>libx264</string>
+                 <string notr="true">libx264</string>
                 </property>
                </widget>
               </item>
@@ -467,7 +498,7 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – default preset&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>slow</string>
+                 <string notr="true">slow</string>
                 </property>
                </widget>
               </item>
@@ -494,7 +525,7 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specifies the pixel format for the output video. Determines how pixel data is stored, affecting color depth, transparency, and compatibility.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>auto</string>
+                 <string notr="true">auto</string>
                 </property>
                </widget>
               </item>
@@ -581,7 +612,7 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the hardware acceleration method to use. Currently not very stable, especially on Linux.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>none</string>
+                 <string notr="true">none</string>
                 </property>
                </widget>
               </item>
@@ -625,42 +656,45 @@
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the verbosity of the log, where 'trace' is the most verbose, and 'none' is the least verbose, disabling all logging output.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
+                <property name="currentText">
+                 <string notr="true">info</string>
+                </property>
                 <property name="currentIndex">
                  <number>2</number>
                 </property>
                 <item>
                  <property name="text">
-                  <string>trace</string>
+                  <string notr="true">trace</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>debug</string>
+                  <string notr="true">debug</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>info</string>
+                  <string notr="true">info</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>warning</string>
+                  <string notr="true">warning</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>error</string>
+                  <string notr="true">error</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>critical</string>
+                  <string notr="true">critical</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
-                  <string>off</string>
+                  <string notr="true">off</string>
                  </property>
                 </item>
                </widget>

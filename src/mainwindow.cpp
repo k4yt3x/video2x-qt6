@@ -355,7 +355,12 @@ void MainWindow::processNextVideo()
 
         // Convert QString to UTF-8 for the shader path and store it
         // TODO: release the memory allocated with strdup
-        QByteArray shader_byte_array = ui->libplaceboShaderNameLineEdit->text().toUtf8();
+        QByteArray shader_byte_array;
+        if (!ui->libplaceboCustomGlslPathLineEdit->text().isEmpty()) {
+            shader_byte_array = ui->libplaceboCustomGlslPathLineEdit->text().toUtf8();
+        } else {
+            shader_byte_array = ui->libplaceboGlslShaderComboBox->currentText().toUtf8();
+        }
         filter_config->config.libplacebo.shader_path = strdup(shader_byte_array.constData());
     } else {
         showErrorMessage(tr("Invalid filter selected!"));
@@ -422,10 +427,10 @@ void MainWindow::processNextVideo()
     // Dynamically allocate VideoProcessingContext on the heap
     VideoProcessingContext *status = (VideoProcessingContext *) malloc(sizeof(VideoProcessingContext));
     if (!status) {
-        showErrorMessage("Failed to allocate memory for VideoProcessingContext.");
-        free(filter_config);            // Clean up
-        free(encoder_config);           // Clean up
-        free((void *) preset_c_string); // Free copied string
+        showErrorMessage(tr("Failed to allocate memory for VideoProcessingContext."));
+        free(filter_config);
+        free(encoder_config);
+        free((void *) preset_c_string);
         return;
     }
     *status = {.processed_frames = 0,
@@ -483,7 +488,9 @@ void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)
 
     // Check the result of the video processing
     if (retValue) {
-        showErrorMessage(QString(tr("Video processing failed for: %1")).arg(inputFilePath));
+        showErrorMessage(QString(tr("Video processing failed for: %1.\nCheck logs for more "
+                                    "information. Enable logging in Debug > Show Logs."))
+                             .arg(inputFilePath));
     }
 
     // Clean up memory for the worker and the thread
@@ -574,7 +581,7 @@ void MainWindow::on_libplaceboSelectGlslShaderPushButton_clicked()
         return;
     }
 
-    ui->libplaceboShaderNameLineEdit->setText(fileName);
+    ui->libplaceboCustomGlslPathLineEdit->setText(fileName);
 }
 
 void MainWindow::on_realesrganModelComboBox_currentTextChanged(const QString &currentText)
