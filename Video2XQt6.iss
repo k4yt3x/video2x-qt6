@@ -1,13 +1,13 @@
 [Setup]
 AppName=Video2X Qt6
-AppVersion=6.0.0-beta.3
+AppVersion=6.0.0-beta.5
 AppId={{07D36A37-9C89-4ECD-9866-621351EB0886}
 ArchitecturesInstallIn64BitMode=x64compatible
 DefaultDirName={commonpf}\Video2X Qt6
 DefaultGroupName=Video2X Qt6
 DisableProgramGroupPage=yes
 OutputBaseFilename=video2x-qt6-windows-amd64-installer
-Compression=lzma
+Compression=lzma2
 SolidCompression=yes
 UninstallDisplayIcon=assets\video2x.ico
 
