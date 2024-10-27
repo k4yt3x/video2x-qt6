@@ -102,12 +102,12 @@
     <message>
         <location filename="mainwindow.ui" line="242"/>
         <source>Scaling Factor</source>
-        <translation>拡大倍率</translation>
+        <translation>スケーリング係数</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="255"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The scaling factor to use. I.e., how many times larger you want the output to be.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する拡大係数です。出力を何倍にしたいかを設定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用するスケーリング係数です。出力を何倍にしたいかを設定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="293"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="mainwindow.ui" line="366"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- anime4k-a: Optimized for 1080p anime&lt;br/&gt;- anime4k-b: Optimized for 720p anime&lt;br/&gt;- anime4k-c: Optimized for 480p anime&lt;br/&gt;- anime4k-a+a: Higher quality version of a&lt;br/&gt;- anime4k-b+b: Higher quality version of b&lt;br/&gt;- anime4k-c+a: Higher quality version of c&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ビデオ処理に使用される GLSL シェーダー。&lt;/p&gt;&lt;p&gt;- anime4k-a: 1080p アニメに最適化&lt;br/&gt;- anime4k-b: 720p アニメに最適化&lt;br/&gt;- anime4k-c: 480p アニメに最適化&lt;br/&gt;- anime4k-a+a: a の高品質バージョン&lt;br/&gt;- anime4k-b+b: b の高品質バージョン&lt;br/&gt;- anime4k-c+a: c の高品質バージョン&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画の処理に使用する GLSL シェーダー。&lt;/p&gt;&lt;p&gt;- anime4k-a: 1080p のアニメに最適化&lt;br/&gt;- anime4k-b: 720p のアニメに最適化&lt;br/&gt;- anime4k-c: 480p のアニメに最適化&lt;br/&gt;- anime4k-a+a: a の高画質版&lt;br/&gt;- anime4k-b+b: b の高画質版&lt;br/&gt;- anime4k-c+a: c の高画質版&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="408"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="mainwindow.ui" line="429"/>
         <source>FFmpeg Settings</source>
-        <translation>FFmpeg 設定</translation>
+        <translation>FFmpeg の設定</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="437"/>
@@ -453,7 +453,7 @@
         <location filename="mainwindow.cpp" line="491"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
-        <translation>ビデオ処理に失敗しました: %1。
+        <translation>動画の処理に失敗しました: %1 
 詳細はログを確認してください。「デバッグ &gt; ログを表示」でログを有効にしてください。</translation>
     </message>
     <message>
