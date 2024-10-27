@@ -147,7 +147,7 @@
     <message>
         <location filename="mainwindow.ui" line="429"/>
         <source>FFmpeg Settings</source>
-        <translation>FFmpeg 設定</translation>
+        <translation>FFmpeg の設定</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="437"/>
