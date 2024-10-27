@@ -135,7 +135,7 @@
     <message>
       <location filename="mainwindow.ui" line="366" />
       <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- anime4k-a: Optimized for 1080p anime&lt;br/&gt;- anime4k-b: Optimized for 720p anime&lt;br/&gt;- anime4k-c: Optimized for 480p anime&lt;br/&gt;- anime4k-a+a: Higher quality version of a&lt;br/&gt;- anime4k-b+b: Higher quality version of b&lt;br/&gt;- anime4k-c+a: Higher quality version of c&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ビデオ処理に使用される GLSL シェーダー。&lt;/p&gt;&lt;p&gt;- anime4k-a: 1080p アニメに最適化&lt;br/&gt;- anime4k-b: 720p アニメに最適化&lt;br/&gt;- anime4k-c: 480p アニメに最適化&lt;br/&gt;- anime4k-a+a: a の高画質版&lt;br/&gt;- anime4k-b+b: b の高画質版&lt;br/&gt;- anime4k-c+a: c の高画質版&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+      <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画の処理に使用する GLSL シェーダー。&lt;/p&gt;&lt;p&gt;- anime4k-a: 1080p アニメに最適化&lt;br/&gt;- anime4k-b: 720p アニメに最適化&lt;br/&gt;- anime4k-c: 480p アニメに最適化&lt;br/&gt;- anime4k-a+a: a の高画質版&lt;br/&gt;- anime4k-b+b: b の高画質版&lt;br/&gt;- anime4k-c+a: c の高画質版&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
       <location filename="mainwindow.ui" line="408" />
