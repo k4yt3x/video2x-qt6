@@ -344,12 +344,12 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="950"/>
-        <source>中文（中国）</source>
+        <source>中文 (中国)</source>
         <translation></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="955"/>
-        <source>日本語（日本）</source>
+        <source>日本語 (日本)</source>
         <translation></translation>
     </message>
     <message>
@@ -453,7 +453,7 @@
         <location filename="mainwindow.cpp" line="491"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
-        <translation>動画の処理に失敗しました: %1。
+        <translation>動画の処理に失敗しました: %1 
 詳細はログを確認してください。「デバッグ &gt; ログを表示」でログを有効にしてください。</translation>
     </message>
     <message>
