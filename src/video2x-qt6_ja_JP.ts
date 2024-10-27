@@ -344,12 +344,12 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="950"/>
-        <source>中文 (中国)</source>
+        <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="955"/>
-        <source>日本語 (日本)</source>
+        <source>日本語（日本）</source>
         <translation></translation>
     </message>
     <message>
