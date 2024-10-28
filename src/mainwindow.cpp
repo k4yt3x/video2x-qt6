@@ -92,6 +92,16 @@ void MainWindow::showErrorMessage(const QString &message)
     msgBox.exec();
 }
 
+void MainWindow::showWarningMessage(const QString &message)
+{
+    QMessageBox msgBox;
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setWindowTitle(tr("Warning"));
+    msgBox.setText(message);
+    msgBox.setStandardButtons(QMessageBox::Ok);
+    msgBox.exec();
+}
+
 void MainWindow::on_actionExit_triggered()
 {
     QApplication::quit();
@@ -258,8 +268,8 @@ void MainWindow::on_startPausePushButton_clicked()
     QStringListModel *model = qobject_cast<QStringListModel *>(ui->inputSelectionListView->model());
 
     if (!model || model->rowCount() == 0) {
-        showErrorMessage(tr("The job queue is empty!"));
-        qWarning("The job queue is empty!");
+        showWarningMessage(tr("The job queue is empty!"));
+        qWarning() << "Warning: Processing aborted; job queue empty";
         return;
     }
 
@@ -305,8 +315,18 @@ void MainWindow::processNextVideo()
 
     // Generate output filename alongside the original file directory
     QFileInfo fileInfo(inputFilePath);
-    QString outputFilePath = fileInfo.path() + "/" + fileInfo.completeBaseName() + ".processed."
-                             + fileInfo.suffix();
+    QString baseFilePath = fileInfo.path() + "/" + fileInfo.completeBaseName() + ".processed";
+    QString extension = "." + fileInfo.suffix();
+
+    QString outputFilePath = baseFilePath + extension;
+    int counter = 1;
+
+    // Check if the file exists, and if it does, keep incrementing the counter
+    while (QFileInfo::exists(outputFilePath)) {
+        qWarning() << "Warning: file `" << outputFilePath << "` already exists, finding a new name";
+        outputFilePath = baseFilePath + "." + QString::number(counter++) + extension;
+        qWarning() << "Warning: writing output file to `" << outputFilePath << "`";
+    }
 
     // Dynamically allocate memory for FilterConfig and populate it
     FilterConfig *filter_config = (FilterConfig *) malloc(sizeof(FilterConfig));
@@ -332,7 +352,7 @@ void MainWindow::processNextVideo()
     } else if (ui->debugLogLevelComboBox->currentText() == "off") {
         log_level = LIBVIDEO2X_LOG_LEVEL_OFF;
     } else {
-        qWarning() << "Invalid log level specified. Defaulting to 'info'";
+        qWarning() << "Warning: Invalid log level specified. Defaulting to 'info'";
         log_level = LIBVIDEO2X_LOG_LEVEL_INFO;
     }
 
@@ -355,16 +375,31 @@ void MainWindow::processNextVideo()
 
         // Convert QString to UTF-8 for the shader path and store it
         // TODO: release the memory allocated with strdup
-        QByteArray shader_byte_array;
+        QString shader_path;
         if (!ui->libplaceboCustomGlslPathLineEdit->text().isEmpty()) {
-            shader_byte_array = ui->libplaceboCustomGlslPathLineEdit->text().toUtf8();
+            shader_path = ui->libplaceboCustomGlslPathLineEdit->text();
         } else {
-            shader_byte_array = ui->libplaceboGlslShaderComboBox->currentText().toUtf8();
+            QMap<QString, QString> anime4kDisplayToFilenameMap
+                = {{"Anime4K v4 Mode A", "anime4k-v4-a"},
+                   {"Anime4K v4 Mode B", "anime4k-v4-b"},
+                   {"Anime4K v4 Mode C", "anime4k-v4-c"},
+                   {"Anime4K v4 Mode A+A", "anime4k-v4-a+a"},
+                   {"Anime4K v4 Mode B+B", "anime4k-v4-b+b"},
+                   {"Anime4K v4 Mode C+A", "anime4k-v4-c+a"},
+                   {"Anime4K v4.1 GAN", "anime4k-v4.1-gan"}};
+
+            shader_path = anime4kDisplayToFilenameMap.value(
+                ui->libplaceboGlslShaderComboBox->currentText());
+
+            if (shader_path.isEmpty()) {
+                qCritical() << "Error: Anime4K shader file name mapping not found";
+            }
+            qDebug() << "Processing using Anime4K shader file: " << shader_path;
         }
-        filter_config->config.libplacebo.shader_path = strdup(shader_byte_array.constData());
+        filter_config->config.libplacebo.shader_path = strdup(shader_path.toUtf8().constData());
     } else {
         showErrorMessage(tr("Invalid filter selected!"));
-        free(filter_config); // Clean up
+        free(filter_config);
         return;
     }
 
@@ -372,8 +407,8 @@ void MainWindow::processNextVideo()
     const AVCodec *codec = avcodec_find_encoder_by_name(ui->ffmpegCodecLineEdit->text().toUtf8());
     if (!codec) {
         showErrorMessage(tr("Invalid FFmpeg video codec."));
-        qWarning("Invalid FFmpeg video codec.");
-        free(filter_config); // Clean up
+        qCritical() << "Error: Invalid FFmpeg video codec";
+        free(filter_config);
         return;
     }
 
@@ -383,7 +418,7 @@ void MainWindow::processNextVideo()
         pix_fmt = av_get_pix_fmt(ui->ffmpegPixFmtLineEdit->text().toUtf8());
         if (pix_fmt == AV_PIX_FMT_NONE) {
             showErrorMessage(tr("Invalid FFmpeg video pixel format."));
-            qWarning("Invalid FFmpeg video pixel format.");
+            qCritical() << "Error Invalid FFmpeg video pixel format";
             free(filter_config); // Clean up
             return;
         }

@@ -363,39 +363,44 @@
                  <item>
                   <widget class="QComboBox" name="libplaceboGlslShaderComboBox">
                    <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- anime4k-a: Optimized for 1080p anime&lt;br/&gt;- anime4k-b: Optimized for 720p anime&lt;br/&gt;- anime4k-c: Optimized for 480p anime&lt;br/&gt;- anime4k-a+a: Higher quality version of a&lt;br/&gt;- anime4k-b+b: Higher quality version of b&lt;br/&gt;- anime4k-c+a: Higher quality version of c&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- Anime4K v4 Mode A: Optimized for 1080p anime&lt;br/&gt;- Anime4K v4 Mode B: Optimized for 720p anime&lt;br/&gt;- Anime4K v4 Mode C: Optimized for 480p anime&lt;br/&gt;- Anime4K v4 Mode A+A: Higher quality version of mode A&lt;br/&gt;- Anime4K v4 Mode B+B: Higher quality version of mode B&lt;br/&gt;- Anime4K v4 Mode C+A: Higher quality version of mode C&lt;br/&gt;- Anime4K v4.1 GAN: Experimental SRGAN shaders; delivers the highest quality but is slower than standard modes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="currentText">
-                    <string notr="true">anime4k-a</string>
+                    <string notr="true">Anime4K v4 Mode A</string>
                    </property>
                    <item>
                     <property name="text">
-                     <string notr="true">anime4k-a</string>
+                     <string notr="true">Anime4K v4 Mode A</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string notr="true">anime4k-b</string>
+                     <string notr="true">Anime4K v4 Mode B</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string notr="true">anime4k-c</string>
+                     <string notr="true">Anime4K v4 Mode C</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string notr="true">anime4k-a+a</string>
+                     <string notr="true">Anime4K v4 Mode A+A</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string notr="true">anime4k-b+b</string>
+                     <string notr="true">Anime4K v4 Mode B+B</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string notr="true">anime4k-c+a</string>
+                     <string notr="true">Anime4K v4 Mode C+A</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Anime4K v4.1 GAN</string>
                     </property>
                    </item>
                   </widget>

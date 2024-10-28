@@ -30,6 +30,8 @@ private:
 private slots:
     void showErrorMessage(const QString &message);
 
+    void showWarningMessage(const QString &message);
+
     void on_actionExit_triggered();
 
     void on_actionAbout_triggered();

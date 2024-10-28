@@ -453,7 +453,7 @@
         <location filename="mainwindow.cpp" line="491"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
-        <translation>動画の処理に失敗しました: %1 
+        <translation>動画の処理に失敗しました: %1。
 詳細はログを確認してください。「デバッグ &gt; ログを表示」でログを有効にしてください。</translation>
     </message>
     <message>
