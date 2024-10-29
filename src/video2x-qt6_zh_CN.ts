@@ -131,122 +131,123 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="366"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- anime4k-a: Optimized for 1080p anime&lt;br/&gt;- anime4k-b: Optimized for 720p anime&lt;br/&gt;- anime4k-c: Optimized for 480p anime&lt;br/&gt;- anime4k-a+a: Higher quality version of a&lt;br/&gt;- anime4k-b+b: Higher quality version of b&lt;br/&gt;- anime4k-c+a: Higher quality version of c&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于处理视频的 GLSL 着色器。&lt;/p&gt;&lt;p&gt;- anime4k-a: 针对 1080p 动漫优化&lt;br/&gt;- anime4k-b: 针对 720p 动漫优化&lt;br/&gt;- anime4k-c: 针对 480p 动漫优化&lt;br/&gt;- anime4k-a+a: a 的高质量版本&lt;br/&gt;- anime4k-b+b: b 的高质量版本&lt;br/&gt;- anime4k-c+a: c 的高质量版本&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- Anime4K v4 Mode A: Optimized for 1080p anime&lt;br/&gt;- Anime4K v4 Mode B: Optimized for 720p anime&lt;br/&gt;- Anime4K v4 Mode C: Optimized for 480p anime&lt;br/&gt;- Anime4K v4 Mode A+A: Higher quality version of mode A&lt;br/&gt;- Anime4K v4 Mode B+B: Higher quality version of mode B&lt;br/&gt;- Anime4K v4 Mode C+A: Higher quality version of mode C&lt;br/&gt;- Anime4K v4.1 GAN: Experimental SRGAN shaders; delivers the highest quality but is slower than standard modes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;- anime4k-a: Optimized for 1080p anime&lt;br/&gt;- anime4k-b: Optimized for 720p anime&lt;br/&gt;- anime4k-c: Optimized for 480p anime&lt;br/&gt;- anime4k-a+a: Higher quality version of a&lt;br/&gt;- anime4k-b+b: Higher quality version of b&lt;br/&gt;- anime4k-c+a: Higher quality version of c&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于处理视频的 GLSL 着色器。&lt;/p&gt;&lt;p&gt;- Anime4K v4 模式 A：针对 1080p 动漫优化&lt;br/&gt;- Anime4K v4 模式 B：针对 720p 动漫优化&lt;br/&gt;- Anime4K v4 模式 C：针对 480p 动漫优化&lt;br/&gt;- Anime4K v4 模式 A+A：模式 A 的高质量版本&lt;br/&gt;- Anime4K v4 模式 B+B：模式 B 的高质量版本&lt;br/&gt;- Anime4K v4 模式 C+A：模式 C 的高质量版本&lt;br/&gt;- Anime4K v4.1 GAN：实验性 SRGAN 着色器；提供最高质量，但速度较其它模式更慢&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="408"/>
+        <location filename="mainwindow.ui" line="413"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path to a custom MPV-compatible GLSL shader file. Leave empty to use the GLSL shader selected above for processing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;自定义兼容 MPV GLSL 着色器文件的路径。留空以使用上面选择的 GLSL 着色器进行处理。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="418"/>
+        <location filename="mainwindow.ui" line="423"/>
         <source>Select GLSL Shader File</source>
         <translation>选择 GLSL 着色器文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="429"/>
+        <location filename="mainwindow.ui" line="434"/>
         <source>FFmpeg Settings</source>
         <translation>FFmpeg 设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="437"/>
+        <location filename="mainwindow.ui" line="442"/>
         <source>Container Format (suffix)</source>
         <translation>视频容器格式（后缀）</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="450"/>
+        <location filename="mainwindow.ui" line="455"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the container format for the output file, determining how audio, video, and metadata are stored.&lt;/p&gt;&lt;p&gt;E.g., .mp4, .mkv, .mov, .avi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置输出文件的容器格式，将决定音频、视频和元数据的存储方式。&lt;/p&gt;&lt;p&gt;例如，.mp4, .mkv, .mov, .avi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="464"/>
+        <location filename="mainwindow.ui" line="469"/>
         <source>Codec (-vcodec)</source>
         <translation>视频编码 （-vcodec）</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="477"/>
+        <location filename="mainwindow.ui" line="482"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Selects the video codec for encoding, affecting compression and compatibility.&lt;/p&gt;&lt;p&gt;E.g., libx264, libx265, h264_nvenc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择用于编码的视频编码器，影响压缩率和兼容性。&lt;/p&gt;&lt;p&gt;例如，libx264, libx265, h264_nvenc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="491"/>
+        <location filename="mainwindow.ui" line="496"/>
         <source>Preset (preset)</source>
         <translation>预设 （-preset）</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="504"/>
+        <location filename="mainwindow.ui" line="509"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – default preset&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The encoding preset to use. A slower preset provides better compression efficiency (quality-to-file-size ratio), while a faster preset results in quicker encoding at the cost of compression efficiency.&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- superfast&lt;/p&gt;&lt;p&gt;- veryfast&lt;/p&gt;&lt;p&gt;- faster&lt;/p&gt;&lt;p&gt;- fast&lt;/p&gt;&lt;p&gt;- medium&lt;/p&gt;&lt;p&gt;- slow – default preset&lt;/p&gt;&lt;p&gt;- slower&lt;/p&gt;&lt;p&gt;- veryslow&lt;/p&gt;&lt;p&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的编码预设。较慢的预设提供更好的压缩效率（质量与文件大小的比率），而较快的预设会牺牲压缩效率以换取更快的编码速度。&lt;/p&gt;&lt;p&gt;- ultrafast&lt;/p&gt;&lt;p&gt;- ultrafast&lt;br/&gt;- superfast&lt;br/&gt;- veryfast&lt;br/&gt;- faster&lt;br/&gt;- fast&lt;br/&gt;- medium&lt;br/&gt;- slow – 默认预设&lt;br/&gt;- slower&lt;br/&gt;- veryslow&lt;br/&gt;- placebo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="518"/>
+        <location filename="mainwindow.ui" line="523"/>
         <source>Pixel Format (-pix_fmt)</source>
         <translation>像素格式 （-pix_fmt）</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="531"/>
+        <location filename="mainwindow.ui" line="536"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specifies the pixel format for the output video. Determines how pixel data is stored, affecting color depth, transparency, and compatibility.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定输出视频的像素格式。将决定如何存储像素数据，影响色深、透明度和兼容性。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="545"/>
+        <location filename="mainwindow.ui" line="550"/>
         <source>Bit Rate (-b:v)</source>
         <translation>视频码率 （-b:v）</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="552"/>
+        <location filename="mainwindow.ui" line="557"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the target bit rate for the output video, enabling constant bit rate (CBR) encoding. A value of 0 uses variable bit rate (VBR) for better quality at lower file sizes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置输出视频的目标比特率，启用恒定比特率（CBR）编码。值为 0 时使用可变比特率（VBR），在较小文件大小的情况下提供更好的质量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="555"/>
+        <location filename="mainwindow.ui" line="560"/>
         <source>bps</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="575"/>
+        <location filename="mainwindow.ui" line="580"/>
         <source>CRF (-crf)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="582"/>
+        <location filename="mainwindow.ui" line="587"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the Constant Rate Factor (CRF) to control video quality. Uses variable bit rate (VBR) encoding. &lt;/p&gt;&lt;p&gt;- 0-17: Visually lossless quality, large file sizes.&lt;/p&gt;&lt;p&gt;- 18-23: High quality, good balance between quality and file size (recommended range).&lt;/p&gt;&lt;p&gt;- 24-28: Medium quality, suitable for streaming, some artifacts may appear.&lt;/p&gt;&lt;p&gt;- 29+: Low quality, noticeable compression artifacts, smaller file sizes.&lt;/p&gt;&lt;p&gt;Lower values improve quality but increase file size, while higher values reduce quality and file size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置恒定速率因子（CRF）来控制视频质量。使用可变比特率（VBR）编码。&lt;/p&gt;&lt;p&gt;- 0-17: 视觉上无损质量，文件大小较大。&lt;/p&gt;&lt;p&gt;- 18-23: 高质量，在质量和文件大小之间有良好平衡（推荐范围）。&lt;/p&gt;&lt;p&gt;- 24-28: 中等质量，适合流媒体，可能出现一些压缩伪影。&lt;/p&gt;&lt;p&gt;- 29+: 低质量，压缩伪影明显，文件大小较小。&lt;/p&gt;&lt;p&gt;较低的值提高质量但增加文件大小，较高的值则降低质量并减少文件大小。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="605"/>
+        <location filename="mainwindow.ui" line="610"/>
         <source>Hardware Acceleration (-hwaccel)</source>
         <translation>硬件加速模式 （-hwaccel）</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="618"/>
+        <location filename="mainwindow.ui" line="623"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the hardware acceleration method to use. Currently not very stable, especially on Linux.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置要使用的硬件加速方法。目前不太稳定，特别是在 Linux 上。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="632"/>
+        <location filename="mainwindow.ui" line="637"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check to copy audio and subtitle streams from the input video to the output video.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;勾选此选项以将音频和字幕流从输入视频复制到输出视频。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="635"/>
+        <location filename="mainwindow.ui" line="640"/>
         <source>Copy audio and subtitle streams</source>
         <translation>复制音频和字母流</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="648"/>
+        <location filename="mainwindow.ui" line="653"/>
         <source>Debug</source>
         <translation>调试</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="656"/>
+        <location filename="mainwindow.ui" line="661"/>
         <source>Log Level</source>
         <translation>日志级别</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="663"/>
+        <location filename="mainwindow.ui" line="668"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the verbosity of the log, where &apos;trace&apos; is the most verbose, and &apos;none&apos; is the least verbose, disabling all logging output.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置日志的详细程度，其中 “trace” 是最详细的，“none” 是最简略的，禁用所有日志输出。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -256,129 +257,129 @@
         <translation>GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="411"/>
+        <location filename="mainwindow.ui" line="416"/>
         <source>Custom GLSL shader file path</source>
         <translation>自定义 GLSL 着色器文件路径</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="715"/>
+        <location filename="mainwindow.ui" line="720"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Displays the logs in a console window (Windows only). On other platforms, the logs will be printed in the terminal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在控制台窗口中显示日志（仅限Windows）。在其他平台上，日志将打印在终端中。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="718"/>
+        <location filename="mainwindow.ui" line="723"/>
         <source>Show Logs</source>
         <translation>显示日志窗口</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="752"/>
+        <location filename="mainwindow.ui" line="757"/>
         <source>Current Progress</source>
         <translation>当前视频处理进度</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="783"/>
-        <location filename="mainwindow.ui" line="824"/>
+        <location filename="mainwindow.ui" line="788"/>
+        <location filename="mainwindow.ui" line="829"/>
         <source>%v/%m (%p%)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="793"/>
+        <location filename="mainwindow.ui" line="798"/>
         <source>Overall Progress</source>
         <translation>总体进度</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="850"/>
+        <location filename="mainwindow.ui" line="855"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When stopped: start processing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;When running: pause processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;停止时：开始处理。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;运行时：暂停处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="856"/>
-        <location filename="mainwindow.cpp" line="291"/>
+        <location filename="mainwindow.ui" line="861"/>
+        <location filename="mainwindow.cpp" line="302"/>
         <source>START</source>
         <translation>开始</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="878"/>
+        <location filename="mainwindow.ui" line="883"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;中止处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="884"/>
+        <location filename="mainwindow.ui" line="889"/>
         <source>STOP</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="905"/>
+        <location filename="mainwindow.ui" line="910"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="911"/>
+        <location filename="mainwindow.ui" line="916"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="918"/>
+        <location filename="mainwindow.ui" line="923"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="932"/>
+        <location filename="mainwindow.ui" line="937"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="935"/>
+        <location filename="mainwindow.ui" line="940"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="940"/>
+        <location filename="mainwindow.ui" line="945"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="945"/>
+        <location filename="mainwindow.ui" line="950"/>
         <source>English (United States)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="950"/>
+        <location filename="mainwindow.ui" line="955"/>
         <source>中文（中国）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="955"/>
+        <location filename="mainwindow.ui" line="960"/>
         <source>日本語（日本）</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="960"/>
+        <location filename="mainwindow.ui" line="965"/>
         <source>Português (Portugal)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="965"/>
+        <location filename="mainwindow.ui" line="970"/>
         <source>Report Bugs...</source>
         <translation>报告错误...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="180"/>
+        <location filename="mainwindow.cpp" line="190"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="182"/>
+        <location filename="mainwindow.cpp" line="192"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="249"/>
+        <location filename="mainwindow.cpp" line="259"/>
         <source>RESUME</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="251"/>
+        <location filename="mainwindow.cpp" line="261"/>
         <source>PAUSE</source>
         <translation>暂停</translation>
     </message>
@@ -388,81 +389,86 @@
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="261"/>
+        <location filename="mainwindow.cpp" line="99"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="271"/>
         <source>The job queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="281"/>
+        <location filename="mainwindow.cpp" line="291"/>
         <source>Processing aborted</source>
         <translation>处理中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="281"/>
+        <location filename="mainwindow.cpp" line="291"/>
         <source>Video processing aborted!</source>
         <translation>视频处理已中止！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="283"/>
+        <location filename="mainwindow.cpp" line="294"/>
         <source>Processing complete</source>
         <translation>处理完成</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="283"/>
+        <location filename="mainwindow.cpp" line="294"/>
         <source>All videos processed.</source>
         <translation>所有视频已处理。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="314"/>
+        <location filename="mainwindow.cpp" line="335"/>
         <source>Failed to allocate memory for FilterConfig.</source>
         <translation>无法为 FilterConfig 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="366"/>
+        <location filename="mainwindow.cpp" line="402"/>
         <source>Invalid filter selected!</source>
         <translation>选择了无效的滤镜！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="374"/>
+        <location filename="mainwindow.cpp" line="410"/>
         <source>Invalid FFmpeg video codec.</source>
         <oldsource>Invalid FFmpeg codec.</oldsource>
         <translation>选择了无效的 FFmpeg 视频编码。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="385"/>
+        <location filename="mainwindow.cpp" line="421"/>
         <source>Invalid FFmpeg video pixel format.</source>
         <oldsource>Invalid FFmpeg pixel format.</oldsource>
         <translation>选择了无效的 FFmpeg 视频像素格式。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="395"/>
+        <location filename="mainwindow.cpp" line="431"/>
         <source>Failed to allocate memory for EncoderConfig.</source>
         <translation>无法为 EncoderConfig 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="406"/>
+        <location filename="mainwindow.cpp" line="442"/>
         <source>Invalid hardware acceleration method.</source>
         <translation>选择了无效的硬件加速模式。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="430"/>
+        <location filename="mainwindow.cpp" line="466"/>
         <source>Failed to allocate memory for VideoProcessingContext.</source>
         <translation>无法为 VideoProcessingContext 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="491"/>
+        <location filename="mainwindow.cpp" line="527"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
         <translation>视频处理失败: %1。
 请检查日志以获取更多信息。在“调试 &gt; 显示日志”中启用日志记录。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="575"/>
+        <location filename="mainwindow.cpp" line="611"/>
         <source>Select GLSL Shader</source>
         <translation>选择 GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="577"/>
+        <location filename="mainwindow.cpp" line="613"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL 文件 (*.glsl);;所有文件 (*.*)</translation>
     </message>

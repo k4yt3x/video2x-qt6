@@ -290,6 +290,7 @@ void MainWindow::processNextVideo()
         if (m_procAborted) {
             QMessageBox::warning(this, tr("Processing aborted"), tr("Video processing aborted!"));
         } else {
+            ui->currentProgressBar->setValue(ui->currentProgressBar->maximum());
             QMessageBox::information(this, tr("Processing complete"), tr("All videos processed."));
         }
         m_procStarted = false;

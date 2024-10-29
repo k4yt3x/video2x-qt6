@@ -400,7 +400,7 @@
                    </item>
                    <item>
                     <property name="text">
-                     <string>Anime4K v4.1 GAN</string>
+                     <string notr="true">Anime4K v4.1 GAN</string>
                     </property>
                    </item>
                   </widget>
