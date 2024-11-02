@@ -1,6 +1,9 @@
 #include "videoprocessingworker.h"
+
 #include <QDebug>
 #include <QThread>
+
+#include <iostream>
 
 // Constructor
 VideoProcessingWorker::VideoProcessingWorker(const QString &inputFilePath,
@@ -41,15 +44,48 @@ void VideoProcessingWorker::processVideo()
     });
     progressThread->start();
 
+#ifdef _WIN32
+    std::wstring inputFilePathWString = m_inputFilePath.toStdWString();
+    const wchar_t *inputFilePath = inputFilePathWString.c_str();
+
+    std::wstring outputFilePathWString = m_outputFilePath.toStdWString();
+    const wchar_t *outputFilePath = outputFilePathWString.c_str();
+#else
+    QByteArray inputFilePathUtf8 = m_inputFilePath.toUtf8();
+    const char *inputFilePath = inputFilePathUtf8.constData();
+
+    QByteArray outputFilePathUtf8 = m_outputFilePath.toUtf8();
+    const char *outputFilePath = outputFilePathUtf8.constData();
+#endif
+
     // Call the blocking process_video function (pure C function)
-    bool success = process_video(m_inputFilePath.toUtf8().constData(),
-                                 m_outputFilePath.toUtf8().constData(),
+    bool success = process_video(inputFilePath,
+                                 outputFilePath,
                                  m_logLevel,
                                  m_benchmark,
                                  m_hwDeviceType,
                                  m_filterConfig,
                                  m_encoderConfig,
                                  m_status);
+
+    // Free duplicated strings
+    if (m_encoderConfig->preset) {
+        free(const_cast<char *>(m_encoderConfig->preset));
+    }
+    if (m_filterConfig->filter_type == FILTER_LIBPLACEBO) {
+#ifdef _WIN32
+        free(const_cast<wchar_t *>(m_filterConfig->config.libplacebo.shader_path));
+#else
+        free(const_cast<char *>(m_filterConfig->config.libplacebo.shader_path));
+#endif
+    }
+    if (m_filterConfig->filter_type == FILTER_REALESRGAN) {
+#ifdef _WIN32
+        free(const_cast<wchar_t *>(m_filterConfig->config.realesrgan.model_name));
+#else
+        free(const_cast<char *>(m_filterConfig->config.realesrgan.model_name));
+#endif
+    }
 
     // Signal that processing has finished, so the progress monitoring loop can stop
     processingFinished = true;

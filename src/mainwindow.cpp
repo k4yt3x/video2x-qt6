@@ -1,3 +1,5 @@
+#include "mainwindow.h"
+
 #include <QDebug>
 #include <QDesktopServices>
 #include <QFileDialog>
@@ -10,6 +12,7 @@
 
 #ifdef _WIN32
 #include <Windows.h>
+#include <wchar.h>
 #endif
 
 extern "C" {
@@ -22,7 +25,6 @@ extern "C" {
 
 #include "aboutdialog.h"
 #include "filedroplistview.h"
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "videoprocessingworker.h"
 
@@ -318,7 +320,6 @@ void MainWindow::processNextVideo()
     QFileInfo fileInfo(inputFilePath);
     QString baseFilePath = fileInfo.path() + "/" + fileInfo.completeBaseName() + ".processed";
     QString extension = "." + fileInfo.suffix();
-
     QString outputFilePath = baseFilePath + extension;
     int counter = 1;
 
@@ -334,6 +335,8 @@ void MainWindow::processNextVideo()
     if (!filter_config) {
         showErrorMessage(tr("Failed to allocate memory for FilterConfig."));
         return;
+    } else {
+        memset(filter_config, 0, sizeof(FilterConfig));
     }
 
     // Parse log level
@@ -365,9 +368,13 @@ void MainWindow::processNextVideo()
         filter_config->config.realesrgan.scaling_factor = ui->realesrganScalingFactorSpinBox->value();
 
         // Convert QString to UTF-8 for the model and store it
-        // TODO: release the memory allocated with strdup
+#ifdef _WIN32
+        filter_config->config.realesrgan.model_name = _wcsdup(
+            ui->realesrganModelComboBox->currentText().toStdWString().c_str());
+#else
         QByteArray model_byte_array = ui->realesrganModelComboBox->currentText().toUtf8();
-        filter_config->config.realesrgan.model = strdup(model_byte_array.constData());
+        filter_config->config.realesrgan.model_name = _strdup(model_byte_array.constData());
+#endif
     } else if (ui->filterSelectionComboBox->currentIndex() == 1) {
         // Populate libplacebo filter config
         filter_config->filter_type = FILTER_LIBPLACEBO;
@@ -375,7 +382,6 @@ void MainWindow::processNextVideo()
         filter_config->config.libplacebo.out_height = ui->libplaceboOutputHeightSpinBox->value();
 
         // Convert QString to UTF-8 for the shader path and store it
-        // TODO: release the memory allocated with strdup
         QString shader_path;
         if (!ui->libplaceboCustomGlslPathLineEdit->text().isEmpty()) {
             shader_path = ui->libplaceboCustomGlslPathLineEdit->text();
@@ -397,7 +403,11 @@ void MainWindow::processNextVideo()
             }
             qDebug() << "Processing using Anime4K shader file: " << shader_path;
         }
-        filter_config->config.libplacebo.shader_path = strdup(shader_path.toUtf8().constData());
+#ifdef _WIN32
+        filter_config->config.libplacebo.shader_path = _wcsdup(shader_path.toStdWString().c_str());
+#else
+        filter_config->config.libplacebo.shader_path = _strdup(shader_path.toUtf8().constData());
+#endif
     } else {
         showErrorMessage(tr("Invalid filter selected!"));
         free(filter_config);
@@ -447,9 +457,8 @@ void MainWindow::processNextVideo()
     }
 
     // Populate encoder configuration
-    // TODO: release the memory allocated with strdup
     QByteArray preset_byte_array = ui->ffmpegPresetLineEdit->text().toUtf8();
-    const char *preset_c_string = strdup(preset_byte_array.constData());
+    const char *preset_c_string = _strdup(preset_byte_array.constData());
 
     encoder_config->out_width = 0;  // To be filled by libvideo2x
     encoder_config->out_height = 0; // To be filled by libvideo2x
