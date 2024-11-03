@@ -82,18 +82,20 @@ set(TS_FILES src/video2x-qt6_en_US.ts
              src/video2x-qt6_pt_PT.ts)
 
 set(PROJECT_SOURCES
-        src/main.cpp
-        src/mainwindow.cpp
-        src/mainwindow.h
-        src/mainwindow.ui
-        src/videoprocessingworker.h
-        src/videoprocessingworker.cpp
-        src/filedroplistview.h
-        src/filedroplistview.cpp
-        src/aboutdialog.h
-        src/aboutdialog.cpp
-        src/aboutdialog.ui
-        ${TS_FILES}
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.h
+    src/mainwindow.ui
+    src/videoprocessingworker.h
+    src/videoprocessingworker.cpp
+    src/filedroplistview.h
+    src/filedroplistview.cpp
+    src/aboutdialog.h
+    src/aboutdialog.cpp
+    src/aboutdialog.ui
+    src/timer.h
+    src/timer.cpp
+    ${TS_FILES}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

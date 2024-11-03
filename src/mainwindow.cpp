@@ -33,11 +33,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->resize(1020, 650);
     m_procCtx = nullptr;
     m_procStarted = false;
     m_procAborted = false;
 
     setWindowTitle("Video2X Qt6 " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
+    ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
 
     connect(ui->inputSelectionListView,
             &FileDropListView::filesDropped,
@@ -259,8 +261,10 @@ void MainWindow::on_startPausePushButton_clicked()
             m_procCtx->pause = !m_procCtx->pause;
             if (m_procCtx->pause) {
                 ui->startPausePushButton->setText(tr("RESUME"));
+                m_timer.pause();
             } else {
                 ui->startPausePushButton->setText(tr("PAUSE"));
+                m_timer.resume();
             }
         }
         return;
@@ -289,6 +293,7 @@ void MainWindow::on_startPausePushButton_clicked()
 void MainWindow::processNextVideo()
 {
     if (currentVideoIndex >= videoList.size() || m_procAborted) {
+        // Video processing ended
         if (m_procAborted) {
             QMessageBox::warning(this, tr("Processing aborted"), tr("Video processing aborted!"));
         } else {
@@ -296,6 +301,7 @@ void MainWindow::processNextVideo()
             QMessageBox::information(this, tr("Processing complete"), tr("All videos processed."));
         }
         m_procStarted = false;
+        m_timer.stop();
 
         // ui->currentProgressBar->setMaximum(1);
         // ui->currentProgressBar->setValue(1);
@@ -308,13 +314,18 @@ void MainWindow::processNextVideo()
         ui->clearPushButton->setEnabled(true);
         ui->settingsTabWidget->setEnabled(true);
         ui->menuLanguage->setEnabled(true);
+        ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
         return;
     }
 
     // Reset progress bar
     ui->currentProgressBar->setValue(0);
 
+    // Start timer
+    m_timer.start();
+
     QString inputFilePath = videoList[currentVideoIndex];
+    ui->statusbar->showMessage(tr("Status: ") + tr("Processing file ") + inputFilePath);
 
     // Generate output filename alongside the original file directory
     QFileInfo fileInfo(inputFilePath);
@@ -508,8 +519,68 @@ void MainWindow::processNextVideo()
             [this](int totalFrames, int processedFrames) {
                 qDebug() << "Processing: " << processedFrames << "/" << totalFrames << "("
                          << (float) processedFrames / (float) totalFrames << ")";
+
+                // Set progress bar
                 ui->currentProgressBar->setMaximum(totalFrames);
                 ui->currentProgressBar->setValue(processedFrames);
+
+                // Get elapsed time
+                int64_t elapsedMilliseconds = m_timer.getElapsedTime();
+
+                // Calculate average frames per second
+                double elapsedSecondsPerFrame = processedFrames
+                                                / (static_cast<double>(elapsedMilliseconds) / 1000);
+                QString elapsedSecondsString = QString::number(elapsedSecondsPerFrame);
+                ui->framesPerSecondLabel->setText(elapsedSecondsString);
+
+                // Convert to hours, minutes, and seconds
+                int hours = elapsedMilliseconds / (1000 * 60 * 60);
+                int minutes = (elapsedMilliseconds / (1000 * 60)) % 60;
+                int seconds = (elapsedMilliseconds / 1000) % 60;
+
+                // Format the time as HH:mm:ss
+                QString elapsedString = QString("%1:%2:%3")
+                                            .arg(hours, 2, 10, QChar('0'))
+                                            .arg(minutes, 2, 10, QChar('0'))
+                                            .arg(seconds, 2, 10, QChar('0'));
+
+                // Set the text for the time elapsed label
+                ui->timeElapsedLabel->setText(elapsedString);
+
+                // Calculate average time per frame (in milliseconds)
+                double avgTimePerFrame = static_cast<double>(elapsedMilliseconds) / processedFrames;
+
+                // Calculate remaining frames
+                int remainingFrames = totalFrames - processedFrames;
+
+                // Estimate remaining time in milliseconds
+                double remainingMilliseconds = avgTimePerFrame * remainingFrames;
+
+                // Check if remaining time is greater than one day or negative
+                const double millisecondsInADay = 24 * 60 * 60 * 1000;
+                QString remainingString;
+
+                if (remainingMilliseconds >= millisecondsInADay) {
+                    // If remaining time is greater than one day
+                    remainingString = QString::number(static_cast<int>(remainingMilliseconds
+                                                                       / millisecondsInADay))
+                                      + tr(" days");
+                } else {
+                    // Convert to hours, minutes, and seconds
+                    int remainingMillisecondsInt = static_cast<int>(remainingMilliseconds);
+                    int hoursRemaining = remainingMillisecondsInt / (1000 * 60 * 60);
+                    int minutesRemaining = (remainingMillisecondsInt / (1000 * 60)) % 60;
+                    int secondsRemaining = (remainingMillisecondsInt / 1000) % 60;
+
+                    // Format the time as HH:mm:ss
+                    remainingString = QString("%1:%2:%3")
+                                          .arg(hoursRemaining, 2, 10, QChar('0'))
+                                          .arg(minutesRemaining, 2, 10, QChar('0'))
+                                          .arg(secondsRemaining, 2, 10, QChar('0'));
+                }
+
+                // Set the text for the time remaining label
+                ui->timeRemainingLabel->setText(remainingString);
             });
     connect(worker, &VideoProcessingWorker::finished, this, &MainWindow::onVideoProcessingFinished);
 
@@ -578,6 +649,7 @@ void MainWindow::on_stopPushButton_clicked()
         if (m_procCtx != nullptr) {
             m_procCtx->abort = true;
             m_procAborted = true;
+            m_timer.pause();
         }
         return;
     }

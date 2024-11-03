@@ -3,8 +3,6 @@
 #include <QDebug>
 #include <QThread>
 
-#include <iostream>
-
 // Constructor
 VideoProcessingWorker::VideoProcessingWorker(const QString &inputFilePath,
                                              const QString &outputFilePath,

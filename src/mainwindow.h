@@ -8,6 +8,8 @@ extern "C" {
 #include <libvideo2x/libvideo2x.h>
 }
 
+#include "timer.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -76,5 +78,6 @@ private:
     bool m_procStarted;
     bool m_procAborted;
     QTranslator m_translator;
+    Timer m_timer;
 };
 #endif // MAINWINDOW_H
