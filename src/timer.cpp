@@ -16,7 +16,7 @@ Timer::~Timer()
 void Timer::start()
 {
     if (running) {
-        return;
+        stop();
     }
 
     running = true;

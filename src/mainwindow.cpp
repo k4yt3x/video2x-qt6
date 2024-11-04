@@ -33,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->resize(1020, 650);
+    this->resize(1020, 600);
     m_procCtx = nullptr;
     m_procStarted = false;
     m_procAborted = false;
@@ -48,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Set filter setting visibility
     ui->libplaceboGroupBox->setVisible(false);
+    ui->stopPushButton->setVisible(false);
 
     // For non-Windows platforms, logs will be shown in the terminal
 #ifndef _WIN32
@@ -309,6 +310,7 @@ void MainWindow::processNextVideo()
         // ui->overallProgressBar->setValue(1);
         ui->startPausePushButton->setText(tr("START"));
         ui->stopPushButton->setEnabled(false);
+        ui->stopPushButton->setVisible(false);
         ui->addFilesPushButton->setEnabled(true);
         ui->deleteSelectedPushButton->setEnabled(true);
         ui->clearPushButton->setEnabled(true);
@@ -590,6 +592,7 @@ void MainWindow::processNextVideo()
     // Update buttons
     ui->startPausePushButton->setText("PAUSE");
     ui->stopPushButton->setEnabled(true);
+    ui->stopPushButton->setVisible(true);
     ui->addFilesPushButton->setEnabled(false);
     ui->deleteSelectedPushButton->setEnabled(false);
     ui->clearPushButton->setEnabled(false);
