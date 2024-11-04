@@ -14,6 +14,7 @@ public:
                           const QString &outputFilePath,
                           Libvideo2xLogLevel logLevel,
                           bool benchmark,
+                          uint32_t vkDeviceIndex,
                           AVHWDeviceType hwDeviceType,
                           FilterConfig *filterConfig,
                           EncoderConfig *encoderConfig,
@@ -36,6 +37,7 @@ private:
     QString m_outputFilePath;
     Libvideo2xLogLevel m_logLevel;
     bool m_benchmark;
+    uint32_t m_vkDeviceIndex;
     AVHWDeviceType m_hwDeviceType;
     FilterConfig *m_filterConfig;
     EncoderConfig *m_encoderConfig;

@@ -26,58 +26,39 @@ public:
 
 private:
     int currentVideoIndex;
-    QStringList videoList;
-    void processNextVideo();
-
-private slots:
-    void showErrorMessage(const QString &message);
-
-    void showWarningMessage(const QString &message);
-
-    void on_actionExit_triggered();
-
-    void on_actionAbout_triggered();
-
-    void on_actionReport_Bugs_triggered();
-
-    bool changeLanguage(const QString &locale);
-
-    void on_actionLanguageENUS_triggered();
-
-    void on_actionLanguageZHCN_triggered();
-
-    void on_actionLanguageJAJP_triggered();
-
-    void on_actionLanguagePTPT_triggered();
-
-    void handleFilesDropped(const QStringList &fileNames);
-
-    void on_addFilesPushButton_clicked();
-
-    void on_deleteSelectedPushButton_clicked();
-
-    void on_clearPushButton_clicked();
-
-    void on_startPausePushButton_clicked();
-
-    void onVideoProcessingFinished(bool success, QString inputFilePath);
-
-    void on_filterSelectionComboBox_currentIndexChanged(int index);
-
-    void on_stopPushButton_clicked();
-
-    void on_debugShowLogsCheckBox_stateChanged(int arg1);
-
-    void on_libplaceboSelectGlslShaderPushButton_clicked();
-
-    void on_realesrganModelComboBox_currentTextChanged(const QString &arg1);
-
-private:
     Ui::MainWindow *ui;
     VideoProcessingContext *m_procCtx;
     bool m_procStarted;
     bool m_procAborted;
     QTranslator m_translator;
     Timer m_timer;
+    QStringList videoList;
+
+    void populateVulkanDevices();
+    void processNextVideo();
+    void execErrorMessage(const QString &message);
+    void openErrorMessage(const QString &message);
+    void execWarningMessage(const QString &message);
+    bool changeLanguage(const QString &locale);
+    void handleFilesDropped(const QStringList &fileNames);
+    void on_VideoProcessingFinished(bool success, QString inputFilePath);
+
+private slots:
+    void on_actionExit_triggered();
+    void on_actionAbout_triggered();
+    void on_actionReport_Bugs_triggered();
+    void on_actionLanguageENUS_triggered();
+    void on_actionLanguageZHCN_triggered();
+    void on_actionLanguageJAJP_triggered();
+    void on_actionLanguagePTPT_triggered();
+    void on_addFilesPushButton_clicked();
+    void on_deleteSelectedPushButton_clicked();
+    void on_clearPushButton_clicked();
+    void on_startPausePushButton_clicked();
+    void on_filterSelectionComboBox_currentIndexChanged(int index);
+    void on_stopPushButton_clicked();
+    void on_debugShowLogsCheckBox_stateChanged(int arg1);
+    void on_libplaceboSelectGlslShaderPushButton_clicked();
+    void on_realesrganModelComboBox_currentTextChanged(const QString &arg1);
 };
 #endif // MAINWINDOW_H

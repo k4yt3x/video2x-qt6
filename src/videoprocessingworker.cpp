@@ -8,6 +8,7 @@ VideoProcessingWorker::VideoProcessingWorker(const QString &inputFilePath,
                                              const QString &outputFilePath,
                                              Libvideo2xLogLevel logLevel,
                                              bool benchmark,
+                                             uint32_t vkDeviceIndex,
                                              AVHWDeviceType hwDeviceType,
                                              FilterConfig *filterConfig,
                                              EncoderConfig *encoderConfig,
@@ -16,6 +17,7 @@ VideoProcessingWorker::VideoProcessingWorker(const QString &inputFilePath,
     , m_outputFilePath(outputFilePath)
     , m_logLevel(logLevel)
     , m_benchmark(benchmark)
+    , m_vkDeviceIndex(vkDeviceIndex)
     , m_hwDeviceType(hwDeviceType)
     , m_filterConfig(filterConfig)
     , m_encoderConfig(encoderConfig)
@@ -61,6 +63,7 @@ void VideoProcessingWorker::processVideo()
                                  outputFilePath,
                                  m_logLevel,
                                  m_benchmark,
+                                 m_vkDeviceIndex,
                                  m_hwDeviceType,
                                  m_filterConfig,
                                  m_encoderConfig,

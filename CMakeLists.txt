@@ -17,6 +17,9 @@ option(USE_SYSTEM_NCNN "Use sytem ncnn library" OFF)
 set(ALL_INCLUDE_DIRS)
 set(ALL_LIBRARIES)
 
+find_package(Vulkan REQUIRED)
+list(APPEND ALL_LIBRARIES Vulkan::Vulkan)
+
 if(WIN32)
     # Add FFmpeg libraries and headers
     set(FFMPEG_BASE_PATH ${CMAKE_SOURCE_DIR}/third_party/ffmpeg-shared)

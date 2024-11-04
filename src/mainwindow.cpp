@@ -23,6 +23,8 @@ extern "C" {
 #include <libvideo2x/version.h>
 }
 
+#include <vulkan/vulkan.h>
+
 #include "aboutdialog.h"
 #include "filedroplistview.h"
 #include "ui_mainwindow.h"
@@ -33,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->resize(1020, 600);
+    this->resize(1020, 580);
     m_procCtx = nullptr;
     m_procStarted = false;
     m_procAborted = false;
@@ -49,6 +51,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Set filter setting visibility
     ui->libplaceboGroupBox->setVisible(false);
     ui->stopPushButton->setVisible(false);
+
+    // Populate available Vulkan-enabled GPUs
+    populateVulkanDevices();
 
     // For non-Windows platforms, logs will be shown in the terminal
 #ifndef _WIN32
@@ -75,6 +80,59 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::populateVulkanDevices()
+{
+    // Set default placeholder text
+    ui->gpuSelectionComboBox->addItem(tr("No GPUs with Vulkan support found!"));
+
+    // Create a Vulkan instance
+    VkInstance instance;
+    VkInstanceCreateInfo create_info{};
+    create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
+    if (vkCreateInstance(&create_info, nullptr, &instance) != VK_SUCCESS) {
+        qDebug() << "Failed to create Vulkan instance.";
+        return;
+    }
+
+    // Enumerate physical devices
+    uint32_t device_count = 0;
+    VkResult result = vkEnumeratePhysicalDevices(instance, &device_count, nullptr);
+    if (result != VK_SUCCESS) {
+        qDebug() << "Failed to enumerate Vulkan physical devices.";
+        vkDestroyInstance(instance, nullptr);
+        return;
+    }
+
+    // Check if any devices are found
+    if (device_count == 0) {
+        qDebug() << "No Vulkan physical devices found.";
+        vkDestroyInstance(instance, nullptr);
+        return;
+    }
+
+    // Get physical device properties
+    std::vector<VkPhysicalDevice> physical_devices(device_count);
+    result = vkEnumeratePhysicalDevices(instance, &device_count, physical_devices.data());
+    if (result != VK_SUCCESS) {
+        qDebug() << "Failed to enumerate Vulkan physical devices.";
+        vkDestroyInstance(instance, nullptr);
+        return;
+    }
+
+    // Populate GPU information
+    ui->gpuSelectionComboBox->clear();
+    for (uint32_t i = 0; i < device_count; i++) {
+        VkPhysicalDevice device = physical_devices[i];
+        VkPhysicalDeviceProperties device_properties;
+        vkGetPhysicalDeviceProperties(device, &device_properties);
+        ui->gpuSelectionComboBox->addItem(QString::number(i) + ". " + device_properties.deviceName);
+        qDebug() << "Found Vulkan device: " << device_properties.deviceName;
+    }
+
+    // Clean up Vulkan instance
+    vkDestroyInstance(instance, nullptr);
+}
+
 void MainWindow::on_actionReport_Bugs_triggered()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/issues/new"));
@@ -87,7 +145,7 @@ void MainWindow::on_actionAbout_triggered()
     aboutDialog.exec();
 }
 
-void MainWindow::showErrorMessage(const QString &message)
+void MainWindow::execErrorMessage(const QString &message)
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Critical);
@@ -97,7 +155,18 @@ void MainWindow::showErrorMessage(const QString &message)
     msgBox.exec();
 }
 
-void MainWindow::showWarningMessage(const QString &message)
+void MainWindow::openErrorMessage(const QString &message)
+{
+    auto *msgBox = new QMessageBox(this);
+    msgBox->setIcon(QMessageBox::Critical);
+    msgBox->setWindowTitle(tr("Error"));
+    msgBox->setText(message);
+    msgBox->setStandardButtons(QMessageBox::Ok);
+    connect(msgBox, &QMessageBox::finished, msgBox, &QMessageBox::deleteLater);
+    msgBox->open();
+}
+
+void MainWindow::execWarningMessage(const QString &message)
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Warning);
@@ -121,7 +190,7 @@ bool MainWindow::changeLanguage(const QString &locale)
             qApp->removeTranslator(&m_translator);
             qApp->installTranslator(&m_translator);
         } else {
-            showErrorMessage("Failed to load translation for locale: " + locale);
+            execErrorMessage("Failed to load translation for locale: " + locale);
             qDebug() << "Failed to load translation for locale:" << locale;
             return false;
         }
@@ -275,7 +344,7 @@ void MainWindow::on_startPausePushButton_clicked()
     QStringListModel *model = qobject_cast<QStringListModel *>(ui->inputSelectionListView->model());
 
     if (!model || model->rowCount() == 0) {
-        showWarningMessage(tr("The job queue is empty!"));
+        execWarningMessage(tr("The job queue is empty!"));
         qWarning() << "Warning: Processing aborted; job queue empty";
         return;
     }
@@ -346,7 +415,7 @@ void MainWindow::processNextVideo()
     // Dynamically allocate memory for FilterConfig and populate it
     FilterConfig *filter_config = (FilterConfig *) malloc(sizeof(FilterConfig));
     if (!filter_config) {
-        showErrorMessage(tr("Failed to allocate memory for FilterConfig."));
+        execErrorMessage(tr("Failed to allocate memory for FilterConfig."));
         return;
     } else {
         memset(filter_config, 0, sizeof(FilterConfig));
@@ -376,7 +445,6 @@ void MainWindow::processNextVideo()
     if (ui->filterSelectionComboBox->currentIndex() == 0) {
         // Populate RealESRGAN filter config
         filter_config->filter_type = FILTER_REALESRGAN;
-        filter_config->config.realesrgan.gpuid = ui->realesrganGpuIdSpinBox->value();
         filter_config->config.realesrgan.tta_mode = 0;
         filter_config->config.realesrgan.scaling_factor = ui->realesrganScalingFactorSpinBox->value();
 
@@ -422,7 +490,7 @@ void MainWindow::processNextVideo()
         filter_config->config.libplacebo.shader_path = _strdup(shader_path.toUtf8().constData());
 #endif
     } else {
-        showErrorMessage(tr("Invalid filter selected!"));
+        execErrorMessage(tr("Invalid filter selected!"));
         free(filter_config);
         return;
     }
@@ -430,7 +498,7 @@ void MainWindow::processNextVideo()
     // Parse codec to AVCodec in the main thread before starting worker threads
     const AVCodec *codec = avcodec_find_encoder_by_name(ui->ffmpegCodecLineEdit->text().toUtf8());
     if (!codec) {
-        showErrorMessage(tr("Invalid FFmpeg video codec."));
+        execErrorMessage(tr("Invalid FFmpeg video codec."));
         qCritical() << "Error: Invalid FFmpeg video codec";
         free(filter_config);
         return;
@@ -441,7 +509,7 @@ void MainWindow::processNextVideo()
     if (ui->ffmpegPixFmtLineEdit->text().toUtf8() != "auto") {
         pix_fmt = av_get_pix_fmt(ui->ffmpegPixFmtLineEdit->text().toUtf8());
         if (pix_fmt == AV_PIX_FMT_NONE) {
-            showErrorMessage(tr("Invalid FFmpeg video pixel format."));
+            execErrorMessage(tr("Invalid FFmpeg video pixel format."));
             qCritical() << "Error Invalid FFmpeg video pixel format";
             free(filter_config); // Clean up
             return;
@@ -451,7 +519,7 @@ void MainWindow::processNextVideo()
     // Dynamically allocate memory for EncoderConfig and populate it
     EncoderConfig *encoder_config = (EncoderConfig *) malloc(sizeof(EncoderConfig));
     if (!encoder_config) {
-        showErrorMessage(tr("Failed to allocate memory for EncoderConfig."));
+        execErrorMessage(tr("Failed to allocate memory for EncoderConfig."));
         free(filter_config); // Clean up
         return;
     }
@@ -462,7 +530,7 @@ void MainWindow::processNextVideo()
         hw_device_type = av_hwdevice_find_type_by_name(
             ui->ffmpegHardwareAccelerationLineEdit->text().toUtf8().constData());
         if (hw_device_type == AV_HWDEVICE_TYPE_NONE) {
-            showErrorMessage(tr("Invalid hardware acceleration method."));
+            execErrorMessage(tr("Invalid hardware acceleration method."));
             free(filter_config);
             free(encoder_config);
             return;
@@ -485,7 +553,7 @@ void MainWindow::processNextVideo()
     // Dynamically allocate VideoProcessingContext on the heap
     VideoProcessingContext *status = (VideoProcessingContext *) malloc(sizeof(VideoProcessingContext));
     if (!status) {
-        showErrorMessage(tr("Failed to allocate memory for VideoProcessingContext."));
+        execErrorMessage(tr("Failed to allocate memory for VideoProcessingContext."));
         free(filter_config);
         free(encoder_config);
         free((void *) preset_c_string);
@@ -500,14 +568,16 @@ void MainWindow::processNextVideo()
     m_procCtx = status;
 
     // Create the worker and thread
-    VideoProcessingWorker *worker = new VideoProcessingWorker(inputFilePath,
-                                                              outputFilePath,
-                                                              log_level,
-                                                              false,
-                                                              hw_device_type,
-                                                              filter_config,
-                                                              encoder_config,
-                                                              status);
+    VideoProcessingWorker *worker
+        = new VideoProcessingWorker(inputFilePath,
+                                    outputFilePath,
+                                    log_level,
+                                    false,
+                                    ui->gpuSelectionComboBox->currentIndex(),
+                                    hw_device_type,
+                                    filter_config,
+                                    encoder_config,
+                                    status);
     QThread *thread = new QThread;
 
     // Move the worker to the thread
@@ -584,7 +654,7 @@ void MainWindow::processNextVideo()
                 // Set the text for the time remaining label
                 ui->timeRemainingLabel->setText(remainingString);
             });
-    connect(worker, &VideoProcessingWorker::finished, this, &MainWindow::onVideoProcessingFinished);
+    connect(worker, &VideoProcessingWorker::finished, this, &MainWindow::on_VideoProcessingFinished);
 
     // Start the thread
     thread->start();
@@ -600,14 +670,14 @@ void MainWindow::processNextVideo()
     ui->menuLanguage->setEnabled(false);
 }
 
-void MainWindow::onVideoProcessingFinished(bool retValue, QString inputFilePath)
+void MainWindow::on_VideoProcessingFinished(bool retValue, QString inputFilePath)
 {
     // Update the overall progress bar
     ui->overallProgressBar->setValue(currentVideoIndex + 1);
 
     // Check the result of the video processing
     if (retValue) {
-        showErrorMessage(QString(tr("Video processing failed for: %1.\nCheck logs for more "
+        openErrorMessage(QString(tr("Video processing failed for: %1.\nCheck logs for more "
                                     "information. Enable logging in Debug > Show Logs."))
                              .arg(inputFilePath));
     }
