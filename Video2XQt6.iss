@@ -1,6 +1,6 @@
 [Setup]
 AppName=Video2X Qt6
-AppVersion=6.1.0
+AppVersion=6.1.1
 AppId={{07D36A37-9C89-4ECD-9866-621351EB0886}
 ArchitecturesInstallIn64BitMode=x64compatible
 DefaultDirName={commonpf}\Video2X Qt6
