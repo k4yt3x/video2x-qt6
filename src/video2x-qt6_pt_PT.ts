@@ -502,24 +502,24 @@
         <translation>Falha ao alocar memória para o VideoProcessingContext.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="639"/>
+        <location filename="mainwindow.cpp" line="643"/>
         <source> days</source>
         <translation> dias</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="680"/>
+        <location filename="mainwindow.cpp" line="684"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
         <translation>O processamento de vídeo falhou para: %1.
 Verifique os registos para mais informações. Ative o registo em Depuração &gt; Mostrar Registos.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="765"/>
+        <location filename="mainwindow.cpp" line="769"/>
         <source>Select GLSL Shader</source>
         <translation>Selecionar o Shader GLSL</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="767"/>
+        <location filename="mainwindow.cpp" line="771"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>Ficheiros GLSL (*.glsl);;Todos os Ficheiros (*.*)</translation>
     </message>

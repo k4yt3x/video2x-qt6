@@ -502,24 +502,24 @@
         <translation>VideoProcessingContext のメモリ割り当てに失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="639"/>
+        <location filename="mainwindow.cpp" line="643"/>
         <source> days</source>
         <translation> 日</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="680"/>
+        <location filename="mainwindow.cpp" line="684"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
         <translation>動画の処理に失敗しました: %1。
 詳細はログを確認してください。「デバッグ &gt; ログを表示」でログを有効にしてください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="765"/>
+        <location filename="mainwindow.cpp" line="769"/>
         <source>Select GLSL Shader</source>
         <translation>GLSL シェーダーを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="767"/>
+        <location filename="mainwindow.cpp" line="771"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL ファイル (*.glsl);;すべてのファイル (*.*)</translation>
     </message>

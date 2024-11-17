@@ -502,24 +502,24 @@
         <translation>无法为 VideoProcessingContext 分配内存。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="639"/>
+        <location filename="mainwindow.cpp" line="643"/>
         <source> days</source>
         <translation> 天</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="680"/>
+        <location filename="mainwindow.cpp" line="684"/>
         <source>Video processing failed for: %1.
 Check logs for more information. Enable logging in Debug &gt; Show Logs.</source>
         <translation>视频处理失败: %1。
 请检查日志以获取更多信息。在“调试 &gt; 显示日志”中启用日志记录。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="765"/>
+        <location filename="mainwindow.cpp" line="769"/>
         <source>Select GLSL Shader</source>
         <translation>选择 GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="767"/>
+        <location filename="mainwindow.cpp" line="771"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL 文件 (*.glsl);;所有文件 (*.*)</translation>
     </message>

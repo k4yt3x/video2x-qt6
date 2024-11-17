@@ -33,7 +33,8 @@ void VideoProcessingWorker::processVideo()
     // Start monitoring the progress in another thread
     QThread *progressThread = QThread::create([this, &processingFinished]() {
         while (!processingFinished) {
-            QThread::msleep(100); // Sleep to avoid busy-waiting
+            // Sleep for 100 ms between updates (10 updates/s)
+            QThread::msleep(100);
 
             // Ensure that process_video sets total_frames and updates processed_frames
             if (m_status->total_frames > 0) {

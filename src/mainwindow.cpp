@@ -602,7 +602,7 @@ void MainWindow::processNextVideo()
                 // Calculate average frames per second
                 double elapsedSecondsPerFrame = processedFrames
                                                 / (static_cast<double>(elapsedMilliseconds) / 1000);
-                QString elapsedSecondsString = QString::number(elapsedSecondsPerFrame);
+                QString elapsedSecondsString = QString::number(elapsedSecondsPerFrame, 'f', 4);
                 ui->framesPerSecondLabel->setText(elapsedSecondsString);
 
                 // Convert to hours, minutes, and seconds
@@ -634,9 +634,13 @@ void MainWindow::processNextVideo()
 
                 if (remainingMilliseconds >= millisecondsInADay) {
                     // If remaining time is greater than one day
-                    remainingString = QString::number(static_cast<int>(remainingMilliseconds
-                                                                       / millisecondsInADay))
-                                      + tr(" days");
+                    int remainingDays = static_cast<int>(remainingMilliseconds / millisecondsInADay);
+                    if (remainingDays < 0) {
+                        remainingString = "?";
+                    } else {
+                        remainingString = QString::number(remainingDays);
+                    }
+                    remainingString += tr(" days");
                 } else {
                     // Convert to hours, minutes, and seconds
                     int remainingMillisecondsInt = static_cast<int>(remainingMilliseconds);
