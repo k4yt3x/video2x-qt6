@@ -48,6 +48,9 @@ MainWindow::MainWindow(QWidget *parent)
             this,
             &MainWindow::handleFilesDropped);
 
+    // Connect lossless checkbox
+    connect(ui->ffmpegLosslessCheckBox, &QCheckBox::stateChanged, this, &MainWindow::on_losslessCheckBox_stateChanged);
+
     // Set filter setting visibility
     ui->libplaceboGroupBox->setVisible(false);
     ui->stopPushButton->setVisible(false);
@@ -78,6 +81,22 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_losslessCheckBox_stateChanged(int state) {
+    // Update the internal lossless encoding flag
+    m_losslessEncodingEnabled = (state == Qt::Checked);
+
+    // Disable/enable other conflicting UI elements
+    ui->ffmpegCrfDoubleSpinBox->setEnabled(!m_losslessEncodingEnabled);
+    ui->ffmpegBitRateSpinBox->setEnabled(!m_losslessEncodingEnabled);
+
+    // Optional: Update the status bar to reflect the change
+    if (m_losslessEncodingEnabled) {
+        ui->statusbar->showMessage(tr("Lossless encoding enabled"));
+    } else {
+        ui->statusbar->showMessage(tr("Lossless encoding disabled"));
+    }
 }
 
 void MainWindow::populateVulkanDevices()
