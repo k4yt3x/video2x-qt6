@@ -613,6 +613,16 @@
              </layout>
             </item>
             <item>
+             <widget class="QCheckBox" name="ffmpegLosslessCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lossless encoding. Overrides CRF and bitrate settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Enable Lossless Encoding</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
                <widget class="QLabel" name="label_13">
