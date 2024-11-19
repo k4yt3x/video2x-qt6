@@ -60,5 +60,6 @@ private slots:
     void on_debugShowLogsCheckBox_stateChanged(int arg1);
     void on_libplaceboSelectGlslShaderPushButton_clicked();
     void on_realesrganModelComboBox_currentTextChanged(const QString &arg1);
+    void on_losslessCheckBox_stateChanged(int state);
 };
 #endif // MAINWINDOW_H
