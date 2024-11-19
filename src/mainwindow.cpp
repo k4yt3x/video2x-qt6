@@ -568,6 +568,11 @@ void MainWindow::processNextVideo()
     encoder_config->preset = preset_c_string;
     encoder_config->bit_rate = ui->ffmpegBitRateSpinBox->value();
     encoder_config->crf = static_cast<float>(ui->ffmpegCrfDoubleSpinBox->value());
+    if (m_losslessEncodingEnabled) {
+    encoder_config->additional_params = _strdup("lossless=1:scenecut=40:open-gop=0");
+    } else {
+        encoder_config->additional_params = nullptr; // Ensure this is cleared
+    }
 
     // Dynamically allocate VideoProcessingContext on the heap
     VideoProcessingContext *status = (VideoProcessingContext *) malloc(sizeof(VideoProcessingContext));
