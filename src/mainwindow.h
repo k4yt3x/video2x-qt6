@@ -42,6 +42,7 @@ private:
     bool changeLanguage(const QString &locale);
     void handleFilesDropped(const QStringList &fileNames);
     void on_VideoProcessingFinished(bool success, QString inputFilePath);
+    bool m_losslessEncodingEnabled = false;
 
 private slots:
     void on_actionExit_triggered();
