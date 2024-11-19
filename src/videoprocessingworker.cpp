@@ -59,6 +59,11 @@ void VideoProcessingWorker::processVideo()
     const char *outputFilePath = outputFilePathUtf8.constData();
 #endif
 
+    // lossless checkbox
+    if (m_encoderConfig->additional_params) {
+        av_opt_set(m_encoderConfig->priv_data, "x265-params", m_encoderConfig->additional_params, 0);
+    }
+  
     // Call the blocking process_video function (pure C function)
     bool success = process_video(inputFilePath,
                                  outputFilePath,
