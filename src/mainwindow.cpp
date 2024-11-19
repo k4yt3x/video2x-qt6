@@ -714,6 +714,10 @@ void MainWindow::on_VideoProcessingFinished(bool retValue, QString inputFilePath
     QObject *senderObj = sender();
     VideoProcessingWorker *worker = qobject_cast<VideoProcessingWorker *>(senderObj);
     if (worker) {
+        EncoderConfig *encoderConfig = worker->getEncoderConfig();
+        if (encoderConfig && encoderConfig->additional_params) {
+            free((void *) encoderConfig->additional_params);
+        }
         worker->thread()->quit();
         worker->thread()->wait();
         worker->thread()->deleteLater();
