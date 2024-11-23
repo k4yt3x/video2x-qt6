@@ -401,7 +401,7 @@ void MainWindow::processNextVideo()
     // Generate output filename alongside the original file directory
     QFileInfo fileInfo(inputFilePath);
     QString baseFilePath = fileInfo.path() + "/" + fileInfo.completeBaseName() + ".processed";
-    QString extension = "." + fileInfo.suffix();
+    QString extension = "." + ui->ffmpegContainerFormatLineEdit->text();
     QString outputFilePath = baseFilePath + extension;
     int counter = 1;
 
