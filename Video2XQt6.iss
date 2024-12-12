@@ -32,10 +32,29 @@ Filename: "{app}\video2x-qt6.exe"; Description: "Launch Video2X Qt6"; Flags: now
 
 [Code]
 function NeedsVCRuntime(): Boolean;
+var
+  RegResult: Boolean;
+  MajorVersion, MinorVersion: Cardinal;
 begin
-  Result := not RegKeyExists(HKLM, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64');
-  if not Result then
-    Result := not FileExists(ExpandConstant('{win}\System32\vcruntime140_threads.dll'));
+  Result := True;
+
+  if RegKeyExists(HKLM, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\X64') then
+  begin
+    RegResult := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\X64', 'Major', MajorVersion);
+    if RegResult then
+    begin
+      RegResult := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\X64', 'Minor', MinorVersion);
+      if RegResult and ((MajorVersion > 14) or ((MajorVersion = 14) and (MinorVersion >= 40))) then
+      begin
+        Result := False;
+        Exit;
+      end;
+    end;
+  end;
+
+  if not FileExists(ExpandConstant('{win}\System32\vcruntime140_threads.dll')) then
+    Result := True;
+
   if Result then
     ExtractTemporaryFile('VC_redist.x64.exe');
 end;
