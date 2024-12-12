@@ -88,5 +88,6 @@ private slots:
     void on_pausePushButton_clicked();
     void on_resumePushButton_clicked();
     void on_abortPushButton_clicked();
+    void on_logsCheckBox_checkStateChanged(const Qt::CheckState &arg1);
 };
 #endif // MAINWINDOW_H

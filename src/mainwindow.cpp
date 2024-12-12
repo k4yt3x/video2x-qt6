@@ -49,6 +49,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->resumePushButton->setVisible(false);
     ui->abortPushButton->setVisible(false);
 
+    // Do not show the logs checkbox on Linux/macOS as they will be printed to the terminal
+#ifndef _WIN32
+    ui->logsCheckBox->setVisible(false);
+    ui->logsVerticalLine->setVisible(false);
+#endif
+
     // Setup tasks table model
     m_taskTableModel = new QStandardItemModel(this);
     m_taskTableModel->setHorizontalHeaderLabels(QStringList() << tr("File Name") << tr("Processor")
@@ -58,7 +64,6 @@ MainWindow::MainWindow(QWidget *parent)
     // Set table column width after initialization completes
     QTimer::singleShot(0, this, [this]() {
         int totalWidth = ui->tasksTableView->viewport()->width();
-        // TODO: Recalculate this
         double columnWidthPercentages[] = {0.25, 0.2, 0.4, 0.1};
         for (int i = 0; i < m_taskTableModel->columnCount(); ++i) {
             ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
@@ -535,6 +540,35 @@ void MainWindow::on_abortPushButton_clicked()
         }
         return;
     }
+}
+
+void MainWindow::on_logsCheckBox_checkStateChanged(const Qt::CheckState &checkState)
+{
+#ifdef _WIN32
+    HWND hwnd = GetConsoleWindow();
+    if (checkState == Qt::CheckState::Checked) {
+        ui->logsCheckBox->setEnabled(false);
+
+        if (hwnd == nullptr) {
+            if (!AllocConsole()) {
+                execErrorMessage(tr("Failed to allocate the logging console."));
+                return;
+            }
+        }
+
+        // Redirect stdout and stderr
+        FILE *f_out = nullptr;
+        FILE *f_err = nullptr;
+        if (freopen_s(&f_out, "CONOUT$", "w", stdout) != 0) {
+            execErrorMessage(tr("Failed to redirect standard output to the logging console."));
+            return;
+        }
+        if (freopen_s(&f_err, "CONOUT$", "w", stderr) != 0) {
+            execErrorMessage(tr("Failed to redirect standard error to the logging console."));
+            return;
+        }
+    }
+#endif
 }
 
 void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path inputFilePath)

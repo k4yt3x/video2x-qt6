@@ -40,16 +40,6 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
                                                                 << tr("Option") << tr("Value"));
     ui->customEncoderOptionsTableView->setModel(m_customEncoderOptionsTableModel);
 
-    // Set table column width after initialization completes
-    QTimer::singleShot(0, this, [this]() {
-        int totalWidth = ui->customEncoderOptionsTableView->viewport()->width();
-        for (int i = 0; i < m_customEncoderOptionsTableModel->columnCount(); ++i) {
-            ui->customEncoderOptionsTableView
-                ->setColumnWidth(i,
-                                 totalWidth / m_customEncoderOptionsTableModel->columnCount() - 1);
-        }
-    });
-
     // Append an empty row
     QStandardItem *optionItem = new QStandardItem("");
     QStandardItem *valueItem = new QStandardItem("");
@@ -679,14 +669,14 @@ void TaskConfigDialog::on_applyPushButton_clicked()
 {
     // Validate codec
     if (avcodec_find_encoder_by_name(ui->codecLineEdit->text().toUtf8().constData()) == nullptr) {
-        execErrorMessage("Invalid codec value: '" + ui->codecLineEdit->text() + "'");
+        execErrorMessage(tr("Invalid codec value: '") + ui->codecLineEdit->text() + "'");
         return;
     }
 
     // Validate pix_fmt
     if (ui->pixFmtLineEdit->text() != "auto"
         && av_get_pix_fmt(ui->pixFmtLineEdit->text().toUtf8().constData()) == AV_PIX_FMT_NONE) {
-        execErrorMessage("Invalid pix_fmt value: '" + ui->pixFmtLineEdit->text() + "'");
+        execErrorMessage(tr("Invalid pix_fmt value: '") + ui->pixFmtLineEdit->text() + "'");
         return;
     }
 
@@ -694,7 +684,7 @@ void TaskConfigDialog::on_applyPushButton_clicked()
     if (ui->hwaccelLineEdit->text() != "none"
         && av_hwdevice_find_type_by_name(ui->hwaccelLineEdit->text().toUtf8().constData())
                == AV_HWDEVICE_TYPE_NONE) {
-        execErrorMessage("Invalid hwaccel value: '" + ui->hwaccelLineEdit->text() + "'");
+        execErrorMessage(tr("Invalid hwaccel value: '") + ui->hwaccelLineEdit->text() + "'");
         return;
     }
 
@@ -703,7 +693,7 @@ void TaskConfigDialog::on_applyPushButton_clicked()
         std::filesystem::path glslPath(
             ui->libplaceboCustomGlslShaderPathLineEdit->text().toUtf8().constData());
         if (!std::filesystem::exists(glslPath)) {
-            execErrorMessage("libplacebo GLSL shader file not found: '"
+            execErrorMessage(tr("libplacebo GLSL shader file not found: '")
                              + ui->libplaceboCustomGlslShaderPathLineEdit->text() + "'");
             return;
         }

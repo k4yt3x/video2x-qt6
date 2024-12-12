@@ -493,8 +493,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>340</width>
-                <height>564</height>
+                <width>339</width>
+                <height>518</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -503,7 +503,7 @@
                  <item>
                   <widget class="QLabel" name="label_6">
                    <property name="text">
-                    <string>suffix</string>
+                    <string notr="true">suffix</string>
                    </property>
                   </widget>
                  </item>
@@ -516,7 +516,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>.mp4</string>
+                    <string notr="true">.mp4</string>
                    </property>
                   </widget>
                  </item>
@@ -527,7 +527,7 @@
                  <item>
                   <widget class="QLabel" name="label_11">
                    <property name="text">
-                    <string>codec</string>
+                    <string notr="true">codec</string>
                    </property>
                   </widget>
                  </item>
@@ -540,7 +540,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>libx264</string>
+                    <string notr="true">libx264</string>
                    </property>
                   </widget>
                  </item>
@@ -551,7 +551,7 @@
                  <item>
                   <widget class="QLabel" name="label_15">
                    <property name="text">
-                    <string>pix_fmt</string>
+                    <string notr="true">pix_fmt</string>
                    </property>
                   </widget>
                  </item>
@@ -564,7 +564,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>auto</string>
+                    <string notr="true">auto</string>
                    </property>
                   </widget>
                  </item>
@@ -575,7 +575,7 @@
                  <item>
                   <widget class="QLabel" name="label_7">
                    <property name="text">
-                    <string>bit_rate</string>
+                    <string notr="true">bit_rate</string>
                    </property>
                   </widget>
                  </item>
@@ -593,7 +593,7 @@
                  <item>
                   <widget class="QLabel" name="label_12">
                    <property name="text">
-                    <string>rc_buffer_size</string>
+                    <string notr="true">rc_buffer_size</string>
                    </property>
                   </widget>
                  </item>
@@ -611,7 +611,7 @@
                  <item>
                   <widget class="QLabel" name="label_16">
                    <property name="text">
-                    <string>rc_min_rate</string>
+                    <string notr="true">rc_min_rate</string>
                    </property>
                   </widget>
                  </item>
@@ -629,7 +629,7 @@
                  <item>
                   <widget class="QLabel" name="label_8">
                    <property name="text">
-                    <string>rc_max_rate</string>
+                    <string notr="true">rc_max_rate</string>
                    </property>
                   </widget>
                  </item>
@@ -647,7 +647,7 @@
                  <item>
                   <widget class="QLabel" name="label_13">
                    <property name="text">
-                    <string>qmin</string>
+                    <string notr="true">qmin</string>
                    </property>
                   </widget>
                  </item>
@@ -671,7 +671,7 @@
                  <item>
                   <widget class="QLabel" name="label_9">
                    <property name="text">
-                    <string>qmax</string>
+                    <string notr="true">qmax</string>
                    </property>
                   </widget>
                  </item>
@@ -695,7 +695,7 @@
                  <item>
                   <widget class="QLabel" name="label_17">
                    <property name="text">
-                    <string>gop_size</string>
+                    <string notr="true">gop_size</string>
                    </property>
                   </widget>
                  </item>
@@ -719,7 +719,7 @@
                  <item>
                   <widget class="QLabel" name="label_14">
                    <property name="text">
-                    <string>max_b_frames</string>
+                    <string notr="true">max_b_frames</string>
                    </property>
                   </widget>
                  </item>
@@ -743,7 +743,7 @@
                  <item>
                   <widget class="QLabel" name="label_10">
                    <property name="text">
-                    <string>keyint_min</string>
+                    <string notr="true">keyint_min</string>
                    </property>
                   </widget>
                  </item>
@@ -767,7 +767,7 @@
                  <item>
                   <widget class="QLabel" name="label_18">
                    <property name="text">
-                    <string>refs</string>
+                    <string notr="true">refs</string>
                    </property>
                   </widget>
                  </item>
@@ -791,7 +791,7 @@
                  <item>
                   <widget class="QLabel" name="label_19">
                    <property name="text">
-                    <string>thread_count</string>
+                    <string notr="true">thread_count</string>
                    </property>
                   </widget>
                  </item>
@@ -809,7 +809,7 @@
                  <item>
                   <widget class="QLabel" name="label_20">
                    <property name="text">
-                    <string>delay</string>
+                    <string notr="true">delay</string>
                    </property>
                   </widget>
                  </item>
@@ -827,7 +827,7 @@
                  <item>
                   <widget class="QLabel" name="label_21">
                    <property name="text">
-                    <string>hwaccel</string>
+                    <string notr="true">hwaccel</string>
                    </property>
                   </widget>
                  </item>
@@ -840,7 +840,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>none</string>
+                    <string notr="true">none</string>
                    </property>
                   </widget>
                  </item>
@@ -918,7 +918,7 @@
      <item>
       <widget class="QPushButton" name="cancelPushButton">
        <property name="text">
-        <string>Canacel</string>
+        <string>Cancel</string>
        </property>
       </widget>
      </item>
