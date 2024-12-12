@@ -1,28 +1,17 @@
-#include "filedroplistview.h"
+#include "filedroptableview.h"
 
-#include <QStringListModel>
-
-FileDropListView::FileDropListView(QWidget *parent)
-    : QListView(parent)
+FileDropTableView::FileDropTableView(QWidget *parent)
+    : QTableView(parent)
 {
-    this->setModel(new QStringListModel(this));
     setDragEnabled(true);
     setAcceptDrops(true);
     setDropIndicatorShown(true);
-    setDragDropMode(QAbstractItemView::DragDrop);
+    setDragDropMode(QAbstractItemView::DropOnly);
+    // If you need a model, set it externally:
+    // setModel(yourModel);
 }
 
-void FileDropListView::dragEnterEvent(QDragEnterEvent *event)
-{
-    // Check if the MIME data contains URLs or the "text/uri-list" format
-    if (event->mimeData()->hasFormat("text/uri-list")) {
-        event->acceptProposedAction();
-    } else {
-        event->ignore();
-    }
-}
-
-void FileDropListView::dragMoveEvent(QDragMoveEvent *event)
+void FileDropTableView::dragEnterEvent(QDragEnterEvent *event)
 {
     if (event->mimeData()->hasFormat("text/uri-list")) {
         event->acceptProposedAction();
@@ -31,20 +20,26 @@ void FileDropListView::dragMoveEvent(QDragMoveEvent *event)
     }
 }
 
-void FileDropListView::dropEvent(QDropEvent *event)
+void FileDropTableView::dragMoveEvent(QDragMoveEvent *event)
 {
-    // Check if the MIME data contains "text/uri-list"
+    if (event->mimeData()->hasFormat("text/uri-list")) {
+        event->acceptProposedAction();
+    } else {
+        event->ignore();
+    }
+}
+
+void FileDropTableView::dropEvent(QDropEvent *event)
+{
     if (event->mimeData()->hasFormat("text/uri-list")) {
         QStringList fileNames;
         for (const QUrl &url : event->mimeData()->urls()) {
-            // Convert URL to local file path and add to the list
             QString localFile = url.toLocalFile();
             if (!localFile.isEmpty()) {
                 fileNames << localFile;
             }
         }
 
-        // Emit the signal with the list of file names
         emit filesDropped(fileNames);
         event->acceptProposedAction();
     } else {

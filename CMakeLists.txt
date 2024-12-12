@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(video2x-qt6 VERSION 6.0.0 LANGUAGES CXX)
+project(video2x-qt6 VERSION 6.1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -85,49 +85,39 @@ set(TS_FILES src/video2x-qt6_en_US.ts
              src/video2x-qt6_pt_PT.ts)
 
 set(PROJECT_SOURCES
+    src/aboutdialog.cpp
+    src/aboutdialog.h
+    src/aboutdialog.ui
+    src/filedroptableview.cpp
+    src/filedroptableview.h
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
     src/mainwindow.ui
-    src/videoprocessingworker.h
-    src/videoprocessingworker.cpp
-    src/filedroplistview.h
-    src/filedroplistview.cpp
-    src/aboutdialog.h
-    src/aboutdialog.cpp
-    src/aboutdialog.ui
-    src/timer.h
+    src/taskconfig.h
+    src/taskconfigdialog.cpp
+    src/taskconfigdialog.h
+    src/taskconfigdialog.ui
+    src/taskprocessor.cpp
+    src/taskprocessor.h
     src/timer.cpp
+    src/timer.h
+    src/utils.cpp
+    src/utils.h
     ${TS_FILES}
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    if(WIN32)
-        set(APP_RESOURCE_FILE "${CMAKE_CURRENT_SOURCE_DIR}/src/resources.rc")
-    endif()
-    qt_add_executable(video2x-qt6
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        ${APP_RESOURCE_FILE}
-    )
-
-    # qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-else()
-    if(ANDROID)
-        add_library(video2x-qt6 SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(video2x-qt6
-            ${PROJECT_SOURCES}
-        )
-    endif()
-
-    # qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+if(WIN32)
+    set(APP_RESOURCE_FILE "${CMAKE_CURRENT_SOURCE_DIR}/src/resources.rc")
 endif()
 
+qt_add_executable(video2x-qt6
+    MANUAL_FINALIZATION
+    ${PROJECT_SOURCES}
+    ${APP_RESOURCE_FILE}
+)
+
+# qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 qt_add_translations(video2x-qt6 TS_FILES
     ${TS_FILES}
     LUPDATE_OPTIONS -no-obsolete
@@ -148,12 +138,6 @@ endif()
 
 target_link_libraries(video2x-qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${ALL_LIBRARIES})
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.video2x-qt6)
-endif()
 set_target_properties(video2x-qt6 PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
@@ -169,6 +153,4 @@ install(TARGETS video2x-qt6
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(video2x-qt6)
-endif()
+qt_finalize_executable(video2x-qt6)
