@@ -318,7 +318,7 @@
         <location filename="mainwindow.cpp" line="45"/>
         <location filename="mainwindow.cpp" line="184"/>
         <source>idle</source>
-        <translation>Inactif</translation>
+        <translation>inactif</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="238"/>
