@@ -197,7 +197,7 @@
     <message>
         <location filename="mainwindow.cpp" line="119"/>
         <source>paused</source>
-        <translation>En pause</translation>
+        <translation>suspendu</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="148"/>
