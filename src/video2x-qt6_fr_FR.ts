@@ -145,8 +145,8 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="478"/>
-        <source>À propos</source>
-        <translation></translation>
+        <source>About</source>
+        <translation>À propos</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="483"/>
