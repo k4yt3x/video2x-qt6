@@ -92,6 +92,9 @@
               <bold>true</bold>
              </font>
             </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RealESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Works for both real-life and anime videos. Slower than Anime4K but provides better quality.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Supports any MPV-compatible GLSL shader. The built-in Anime4K shader is for anime only. It is very fast, but provides slightly lower quality than RealESRGAN.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="currentIndex">
              <number>1</number>
             </property>
@@ -123,6 +126,9 @@
               <pointsize>10</pointsize>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RIFE: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <item>
              <property name="text">
@@ -286,6 +292,9 @@
             </item>
             <item>
              <widget class="QComboBox" name="realesrganModelComboBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="currentIndex">
                <number>2</number>
               </property>
@@ -328,6 +337,12 @@
             </item>
             <item>
              <widget class="QComboBox" name="libplaceboGlslShaderComboBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;: Optimized for 1080p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;: Optimized for 720p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;: Optimized for 480p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;: Higher quality version of mode A&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;: Higher quality version of mode B&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;: Higher quality version of mode C&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: Experimental SRGAN shaders; delivers the highest quality but is slower than standard modes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="currentIndex">
+               <number>3</number>
+              </property>
               <item>
                <property name="text">
                 <string notr="true">Anime4K v4 Mode A</string>
@@ -369,6 +384,9 @@
           </item>
           <item>
            <widget class="QLineEdit" name="libplaceboCustomGlslShaderPathLineEdit">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path to a custom MPV-compatible GLSL shader file. Leave empty to use the GLSL shader selected above for processing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="placeholderText">
              <string>Custom GLSL shader file path</string>
             </property>
@@ -401,6 +419,9 @@
             </item>
             <item>
              <widget class="QComboBox" name="rifeModelComboBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RIFE model to use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="currentIndex">
                <number>10</number>
               </property>
@@ -493,8 +514,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>339</width>
-                <height>518</height>
+                <width>340</width>
+                <height>564</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -515,8 +536,11 @@
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
-                    <string notr="true">.mp4</string>
+                    <string notr="true">.mkv</string>
                    </property>
                   </widget>
                  </item>
@@ -538,6 +562,9 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
                     <string notr="true">libx264</string>
@@ -563,6 +590,9 @@
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string notr="true">auto</string>
                    </property>
@@ -581,6 +611,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="bitRateSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="maximum">
                     <number>2147483647</number>
                    </property>
@@ -599,6 +632,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="rcBufferSizeSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="maximum">
                     <number>2147483647</number>
                    </property>
@@ -617,6 +653,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="rcMinRateSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="maximum">
                     <number>2147483647</number>
                    </property>
@@ -635,6 +674,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="rcMaxRateSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="maximum">
                     <number>2147483647</number>
                    </property>
@@ -653,6 +695,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="qMinSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="minimum">
                     <number>-1</number>
                    </property>
@@ -677,6 +722,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="qMaxSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="minimum">
                     <number>-1</number>
                    </property>
@@ -701,6 +749,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="gopSizeSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="minimum">
                     <number>-1</number>
                    </property>
@@ -725,6 +776,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="maxBFramesSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="minimum">
                     <number>-1</number>
                    </property>
@@ -749,6 +803,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="keyIntMinSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="minimum">
                     <number>-1</number>
                    </property>
@@ -773,6 +830,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="refsSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="minimum">
                     <number>-1</number>
                    </property>
@@ -797,6 +857,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="threadCountSpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="maximum">
                     <number>2147483647</number>
                    </property>
@@ -815,6 +878,9 @@
                  </item>
                  <item>
                   <widget class="QSpinBox" name="delaySpinBox">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="maximum">
                     <number>2147483647</number>
                    </property>
@@ -833,11 +899,17 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="hwaccelLineEdit">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
                     <string notr="true">none</string>
