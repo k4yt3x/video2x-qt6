@@ -501,17 +501,14 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     // Set UI based on ProcessingMode and processor_type
     if (procMode == video2x::processors::ProcessingMode::Filter) {
         // Filter Mode
-        ui->outputWidthSpinBox->setValue(taskConfig.procCfg.width);
-        ui->outputHeightSpinBox->setValue(taskConfig.procCfg.height);
-        ui->scalingFactorSpinBox->setValue(taskConfig.procCfg.scaling_factor);
-
         switch (taskConfig.procCfg.processor_type) {
         case video2x::processors::ProcessorType::Libplacebo: {
             ui->filterSelectionComboBox->setCurrentIndex(0);
-            // Retrieve LibplaceboConfig
+            ui->outputWidthSpinBox->setValue(taskConfig.procCfg.width);
+            ui->outputHeightSpinBox->setValue(taskConfig.procCfg.height);
+
             video2x::processors::LibplaceboConfig libplaceboConfig
                 = std::get<video2x::processors::LibplaceboConfig>(taskConfig.procCfg.config);
-            // If a shader_path is set, try to map it back to UI fields
 #ifdef _WIN32
             QString shaderName = QString::fromWCharArray(libplaceboConfig.shader_path.c_str());
 #else
@@ -537,6 +534,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
         }
         case video2x::processors::ProcessorType::RealESRGAN: {
             ui->filterSelectionComboBox->setCurrentIndex(1);
+            ui->scalingFactorSpinBox->setValue(taskConfig.procCfg.scaling_factor);
 
             video2x::processors::RealESRGANConfig realesrganConfig
                 = std::get<video2x::processors::RealESRGANConfig>(taskConfig.procCfg.config);
@@ -555,12 +553,12 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
         }
     } else {
         // Interpolate Mode
-        ui->frameRateMultiplierSpinBox->setValue(taskConfig.procCfg.frm_rate_mul);
-        ui->sceneDetectionThresholdDoubleSpinBox->setValue(taskConfig.procCfg.scn_det_thresh);
-
         switch (taskConfig.procCfg.processor_type) {
         case video2x::processors::ProcessorType::RIFE: {
             ui->interpolationSelectionComboBox->setCurrentIndex(0);
+            ui->frameRateMultiplierSpinBox->setValue(taskConfig.procCfg.frm_rate_mul);
+            ui->sceneDetectionThresholdDoubleSpinBox->setValue(taskConfig.procCfg.scn_det_thresh);
+
             video2x::processors::RIFEConfig rifeConfig = std::get<video2x::processors::RIFEConfig>(
                 taskConfig.procCfg.config);
 #ifdef _WIN32
