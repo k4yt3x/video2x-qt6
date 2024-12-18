@@ -339,7 +339,7 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 
     // Set the output suffix based on the first input file's suffix
     QFileInfo fileInfo = QFileInfo(fileNames[0]);
-    dialog.setOutputSuffix("." + fileInfo.completeSuffix());
+    dialog.setOutputSuffix("." + fileInfo.suffix());
 
     // Show the dialog and wait for it to return
     if (dialog.exec() != QDialog::Accepted) {
