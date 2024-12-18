@@ -500,7 +500,7 @@ void MainWindow::on_startPushButton_clicked()
 void MainWindow::on_pausePushButton_clicked()
 {
     if (m_currentTaskProcessor != nullptr) {
-        VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
+        video2x::VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
         {
             if (videoProcessor != nullptr) {
                 videoProcessor->pause();
@@ -514,7 +514,7 @@ void MainWindow::on_pausePushButton_clicked()
 void MainWindow::on_resumePushButton_clicked()
 {
     if (m_currentTaskProcessor != nullptr) {
-        VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
+        video2x::VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
         {
             if (videoProcessor != nullptr) {
                 videoProcessor->resume();
@@ -529,7 +529,7 @@ void MainWindow::on_abortPushButton_clicked()
 {
     if (m_procStarted) {
         if (m_currentTaskProcessor != nullptr) {
-            VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
+            video2x::VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
             {
                 if (videoProcessor != nullptr) {
                     videoProcessor->abort();
@@ -681,7 +681,11 @@ void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
         } else {
             remainingString = QString::number(remainingDays);
         }
-        remainingString += tr(" days");
+        if (remainingDays == 1) {
+            remainingString += tr(" day");
+        } else {
+            remainingString += tr(" days");
+        }
     } else {
         // Convert to hours, minutes, and seconds
         int remainingMillisecondsInt = static_cast<int>(remainingMilliseconds);
