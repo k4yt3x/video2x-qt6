@@ -5,8 +5,12 @@
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QFont>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QMessageBox>
 #include <QModelIndexList>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QThread>
 #include <QTimer>
 #include <QUrl>
@@ -45,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
 
     // Set default component visibility
+    ui->upgradeCommandLinkButton->setVisible(false);
+    ui->closeUpgradePushButton->setVisible(false);
     ui->pausePushButton->setVisible(false);
     ui->resumePushButton->setVisible(false);
     ui->abortPushButton->setVisible(false);
@@ -196,6 +202,9 @@ MainWindow::MainWindow(QWidget *parent)
             break;
         }
     }
+
+    // Check for available upgrades
+    checkUpgrade();
 }
 
 MainWindow::~MainWindow()
@@ -220,6 +229,17 @@ void MainWindow::on_actionAbout_triggered()
     aboutDialog.exec();
 }
 
+void MainWindow::on_upgradeCommandLinkButton_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/releases/latest"));
+}
+
+void MainWindow::on_closeUpgradePushButton_clicked()
+{
+    ui->upgradeCommandLinkButton->setVisible(false);
+    ui->closeUpgradePushButton->setVisible(false);
+}
+
 void MainWindow::execErrorMessage(const QString &message)
 {
     QMessageBox msgBox;
@@ -238,6 +258,60 @@ void MainWindow::execWarningMessage(const QString &message)
     msgBox.setText(message);
     msgBox.setStandardButtons(QMessageBox::Ok);
     msgBox.exec();
+}
+
+void MainWindow::checkUpgrade()
+{
+    // Create a network manager to handle the HTTP request
+    auto *networkManager = new QNetworkAccessManager(this);
+
+    // Prepare the API request to get the latest release info from GitHub
+    QNetworkRequest apiRequest(QUrl("https://api.github.com/repos/k4yt3x/video2x/releases/latest"));
+    apiRequest.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    // Send the GET request
+    QNetworkReply *apiReply = networkManager->get(apiRequest);
+
+    // Handle the API response
+    connect(apiReply, &QNetworkReply::finished, this, [this, apiReply]() {
+        // Check for network errors
+        if (apiReply->error() != QNetworkReply::NoError) {
+            qDebug() << "Network error:" << apiReply->errorString();
+            apiReply->deleteLater();
+            return;
+        }
+
+        // Parse the JSON response
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(apiReply->readAll());
+        if (jsonResponse.isNull() || !jsonResponse.isObject()) {
+            qDebug() << "Error parsing JSON response.";
+            apiReply->deleteLater();
+            return;
+        }
+
+        // Extract the tag_name field (latest version) from the JSON response
+        QJsonObject responseObject = jsonResponse.object();
+        if (!responseObject.contains("tag_name")) {
+            qDebug() << "No tag_name field in JSON response.";
+            apiReply->deleteLater();
+            return;
+        }
+
+        QString latestReleaseVersion = responseObject["tag_name"].toString();
+        qDebug() << "Latest version:" << latestReleaseVersion;
+
+        // Compare the latest version with the current version
+        if (latestReleaseVersion > LIBVIDEO2X_VERSION_STRING) {
+            ui->upgradeCommandLinkButton->setVisible(true);
+            ui->closeUpgradePushButton->setVisible(true);
+            qDebug() << "An upgrade is available.";
+        } else {
+            qDebug() << "No upgrade available.";
+        }
+
+        // Clean up the reply object
+        apiReply->deleteLater();
+    });
 }
 
 void MainWindow::setDefaultProgressBarStyle(QProgressBar *progressBar)

@@ -38,6 +38,7 @@ private:
     void execErrorMessage(const QString &message);
     void execWarningMessage(const QString &message);
 
+    void checkUpgrade();
     bool changeLanguage(const QString &locale);
     void handleFilesDropped(const QStringList &fileNames);
     void addFilesWithConfig(const QStringList &fileNames);
@@ -71,6 +72,10 @@ private slots:
     void on_actionExit_triggered();
     void on_actionReport_Bugs_triggered();
     void on_actionAbout_triggered();
+
+    // Check upgrades
+    void on_upgradeCommandLinkButton_clicked();
+    void on_closeUpgradePushButton_clicked();
 
     // Changing language
     void on_actionLanguageENUS_triggered();
