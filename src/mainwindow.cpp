@@ -49,8 +49,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
 
     // Set default component visibility
-    ui->upgradeCommandLinkButton->setVisible(false);
-    ui->closeUpgradePushButton->setVisible(false);
+    ui->updateCommandLinkButton->setVisible(false);
+    ui->neverShowUpdatePushButton->setVisible(false);
+    ui->closeUpdatePushButton->setVisible(false);
     ui->pausePushButton->setVisible(false);
     ui->resumePushButton->setVisible(false);
     ui->abortPushButton->setVisible(false);
@@ -60,21 +61,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->logsCheckBox->setVisible(false);
     ui->logsVerticalLine->setVisible(false);
 #endif
-
-    // Setup tasks table model
-    m_taskTableModel = new QStandardItemModel(this);
-    m_taskTableModel->setHorizontalHeaderLabels(QStringList() << tr("File Name") << tr("Processor")
-                                                              << tr("Progress") << tr("Edit"));
-    ui->tasksTableView->setModel(m_taskTableModel);
-
-    // Set table column width after initialization completes
-    QTimer::singleShot(0, this, [this]() {
-        int totalWidth = ui->tasksTableView->viewport()->width();
-        double columnWidthPercentages[] = {0.25, 0.2, 0.4, 0.1};
-        for (int i = 0; i < m_taskTableModel->columnCount(); ++i) {
-            ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
-        }
-    });
 
     // Connect the QTableView filesDropped signal to the handler
     connect(ui->tasksTableView,
@@ -189,22 +175,52 @@ MainWindow::MainWindow(QWidget *parent)
         ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
     });
 
+    // Load the configs
+    m_config = m_configManager.loadConfig();
+
     // Initialize translator
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        if (locale == "en_US") {
-            break;
-        }
-        const QString baseName = "video2x-qt6_" + QLocale(locale).name() + ".qm";
-        if (m_translator.load(baseName)) {
-            qApp->installTranslator(&m_translator);
-            ui->retranslateUi(this);
-            break;
+    if (m_config.translation.has_value()) {
+        changeLanguage(m_config.translation.value());
+    } else {
+        const QString baseName = "video2x-qt6_" + QLocale::system().name() + ".qm";
+        if (QFile::exists(baseName)) {
+            changeLanguage(QLocale::system().name());
         }
     }
 
     // Check for available upgrades
-    checkUpgrade();
+    if (m_config.checkUpgrades.has_value()) {
+        if (m_config.checkUpgrades.value()) {
+            checkUpdate();
+        }
+    } else {
+        QMessageBox::StandardButton reply = QMessageBox::question(
+            this,
+            tr("Automatic Updates"),
+            tr("Would you like the application to automatically check for updates?"),
+            QMessageBox::Yes | QMessageBox::No);
+
+        m_config.checkUpgrades = reply == QMessageBox::Yes;
+        m_configManager.saveConfig(m_config);
+
+        if (reply == QMessageBox::Yes) {
+            checkUpdate();
+        }
+    }
+
+    // Setup tasks table model
+    m_taskTableModel = new QStandardItemModel(this);
+    updateTaskTableHeaders();
+    ui->tasksTableView->setModel(m_taskTableModel);
+
+    // Set table column width after initialization completes
+    QTimer::singleShot(0, this, [this]() {
+        int totalWidth = ui->tasksTableView->viewport()->width();
+        double columnWidthPercentages[] = {0.25, 0.2, 0.4, 0.1};
+        for (int i = 0; i < m_taskTableModel->columnCount(); ++i) {
+            ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
+        }
+    });
 }
 
 MainWindow::~MainWindow()
@@ -215,6 +231,25 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionExit_triggered()
 {
     QApplication::quit();
+}
+
+void MainWindow::on_actionRestore_Defaults_triggered()
+{
+    QMessageBox msgBox;
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setWindowTitle(tr("Restore Default Settings"));
+    msgBox.setText(tr("Are you sure you want to erase all custom settings?"));
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
+    if (reply == QMessageBox::Yes) {
+        m_configManager.removeConfig();
+        QMessageBox::information(this,
+                                 tr("Default Settings Restored"),
+                                 tr("The default settings have been restored.\nRestart the "
+                                    "application for changes to take effect."));
+    }
 }
 
 void MainWindow::on_actionReport_Bugs_triggered()
@@ -229,15 +264,25 @@ void MainWindow::on_actionAbout_triggered()
     aboutDialog.exec();
 }
 
-void MainWindow::on_upgradeCommandLinkButton_clicked()
+void MainWindow::on_updateCommandLinkButton_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/releases/latest"));
 }
 
-void MainWindow::on_closeUpgradePushButton_clicked()
+void MainWindow::on_neverShowUpdatePushButton_clicked()
 {
-    ui->upgradeCommandLinkButton->setVisible(false);
-    ui->closeUpgradePushButton->setVisible(false);
+    ui->updateCommandLinkButton->setVisible(false);
+    ui->neverShowUpdatePushButton->setVisible(false);
+    ui->closeUpdatePushButton->setVisible(false);
+    m_config.checkUpgrades = false;
+    m_configManager.saveConfig(m_config);
+}
+
+void MainWindow::on_closeUpdatePushButton_clicked()
+{
+    ui->updateCommandLinkButton->setVisible(false);
+    ui->neverShowUpdatePushButton->setVisible(false);
+    ui->closeUpdatePushButton->setVisible(false);
 }
 
 void MainWindow::execErrorMessage(const QString &message)
@@ -260,7 +305,15 @@ void MainWindow::execWarningMessage(const QString &message)
     msgBox.exec();
 }
 
-void MainWindow::checkUpgrade()
+void MainWindow::updateTaskTableHeaders()
+{
+    if (m_taskTableModel != nullptr) {
+        m_taskTableModel->setHorizontalHeaderLabels(
+            QStringList() << tr("File Name") << tr("Processor") << tr("Progress") << tr("Edit"));
+    }
+}
+
+void MainWindow::checkUpdate()
 {
     // Create a network manager to handle the HTTP request
     auto *networkManager = new QNetworkAccessManager(this);
@@ -302,8 +355,9 @@ void MainWindow::checkUpgrade()
 
         // Compare the latest version with the current version
         if (latestReleaseVersion > LIBVIDEO2X_VERSION_STRING) {
-            ui->upgradeCommandLinkButton->setVisible(true);
-            ui->closeUpgradePushButton->setVisible(true);
+            ui->updateCommandLinkButton->setVisible(true);
+            ui->neverShowUpdatePushButton->setVisible(true);
+            ui->closeUpdatePushButton->setVisible(true);
             qDebug() << "An upgrade is available.";
         } else {
             qDebug() << "No upgrade available.";
@@ -353,55 +407,65 @@ QProgressBar *MainWindow::getCurrentProgressBar()
 
 bool MainWindow::changeLanguage(const QString &locale)
 {
+    QString fontName;
+
     if (locale == "en_US") {
         qApp->removeTranslator(&m_translator);
+        fontName = "Segoe UI";
     } else {
         if (m_translator.load("video2x-qt6_" + locale + ".qm")) {
             qApp->removeTranslator(&m_translator);
             qApp->installTranslator(&m_translator);
+
+            if (locale == "zh_CN" || locale == "ja_JP") {
+                fontName = "Microsoft Yahei";
+            } else if (locale == "pt_PT") {
+                fontName = "Segoe UI";
+            } else {
+                execErrorMessage("Locale not supported: " + locale);
+                qDebug() << "Locale not supported:" << locale;
+                return false;
+            }
         } else {
             execErrorMessage("Failed to load translation for locale: " + locale);
             qDebug() << "Failed to load translation for locale:" << locale;
             return false;
         }
     }
+
+    QFont mainWindowFont(fontName);
+    this->setFont(mainWindowFont);
+
     ui->retranslateUi(this);
+    updateTaskTableHeaders();
     qApp->processEvents();
     qApp->setStyle(QApplication::style());
+
+    m_config.translation = locale;
+    m_configManager.saveConfig(m_config);
     return true;
 }
 
 void MainWindow::on_actionLanguageENUS_triggered()
 {
-    if (changeLanguage("en_US")) {
-        QFont mainWindowFont("Segoe UI");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("en_US");
 }
 
 void MainWindow::on_actionLanguageZHCN_triggered()
 {
-    if (changeLanguage("zh_CN")) {
-        QFont mainWindowFont("Microsoft Yahei");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("zh_CN");
 }
 
 void MainWindow::on_actionLanguageJAJP_triggered()
 {
-    if (changeLanguage("ja_JP")) {
-        QFont mainWindowFont("Microsoft Yahei");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("ja_JP");
 }
 
 void MainWindow::on_actionLanguagePTPT_triggered()
 {
-    if (changeLanguage("pt_PT")) {
-        QFont mainWindowFont("Segoe UI");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("pt_PT");
 }
+
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 {
     if (fileNames.isEmpty()) {

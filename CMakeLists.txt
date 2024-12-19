@@ -76,6 +76,8 @@ set(PROJECT_SOURCES
     src/aboutdialog.cpp
     src/aboutdialog.h
     src/aboutdialog.ui
+    src/configmanager.cpp
+    src/configmanager.h
     src/filedroptableview.cpp
     src/filedroptableview.h
     src/main.cpp

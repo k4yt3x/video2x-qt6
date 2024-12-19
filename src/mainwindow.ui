@@ -18,19 +18,50 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
-       <widget class="QCommandLinkButton" name="upgradeCommandLinkButton">
+       <widget class="QCommandLinkButton" name="updateCommandLinkButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>Upgrade available! Click to open the download page.</string>
+         <string>Update available! Click to open the download page.</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="closeUpgradePushButton">
+       <widget class="QPushButton" name="neverShowUpdatePushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 10px 10px;</string>
+        </property>
+        <property name="text">
+         <string>Never Show Again</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closeUpdatePushButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 10px 10px;</string>
         </property>
         <property name="text">
          <string/>
@@ -481,7 +512,14 @@ QProgressBar::chunk {
     <addaction name="actionLanguageJAJP"/>
     <addaction name="actionLanguagePTPT"/>
    </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionRestore_Defaults"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuSettings"/>
    <addaction name="menuLanguage"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -528,6 +566,11 @@ QProgressBar::chunk {
   <action name="actionReport_Bugs">
    <property name="text">
     <string>Report Bugs...</string>
+   </property>
+  </action>
+  <action name="actionRestore_Defaults">
+   <property name="text">
+    <string>Restore Default Settings</string>
    </property>
   </action>
  </widget>

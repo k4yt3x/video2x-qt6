@@ -10,6 +10,7 @@
 
 #include <libvideo2x/libvideo2x.h>
 
+#include "configmanager.h"
 #include "taskprocessor.h"
 #include "timer.h"
 
@@ -38,7 +39,8 @@ private:
     void execErrorMessage(const QString &message);
     void execWarningMessage(const QString &message);
 
-    void checkUpgrade();
+    void updateTaskTableHeaders();
+    void checkUpdate();
     bool changeLanguage(const QString &locale);
     void handleFilesDropped(const QStringList &fileNames);
     void addFilesWithConfig(const QStringList &fileNames);
@@ -49,11 +51,15 @@ private:
 
     Ui::MainWindow *ui;
 
+    // Video2X Qt6 Configs
+    ConfigManager m_configManager;
+    Video2XConfig m_config;
+
     // Main UI QTranslator
     QTranslator m_translator;
 
     // TODO: Remove
-    QStandardItemModel *m_taskTableModel;
+    QStandardItemModel *m_taskTableModel = nullptr;
 
     // Video processing runtime states
     int m_currentVideoIndex = 0;
@@ -70,12 +76,13 @@ private slots:
 
     // File menu
     void on_actionExit_triggered();
+    void on_actionRestore_Defaults_triggered();
     void on_actionReport_Bugs_triggered();
     void on_actionAbout_triggered();
 
-    // Check upgrades
-    void on_upgradeCommandLinkButton_clicked();
-    void on_closeUpgradePushButton_clicked();
+    // Check updates
+    void on_updateCommandLinkButton_clicked();
+    void on_closeUpdatePushButton_clicked();
 
     // Changing language
     void on_actionLanguageENUS_triggered();
@@ -94,5 +101,6 @@ private slots:
     void on_resumePushButton_clicked();
     void on_abortPushButton_clicked();
     void on_logsCheckBox_checkStateChanged(const Qt::CheckState &arg1);
+    void on_neverShowUpdatePushButton_clicked();
 };
 #endif // MAINWINDOW_H
