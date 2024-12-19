@@ -419,7 +419,7 @@ bool MainWindow::changeLanguage(const QString &locale)
 
             if (locale == "zh_CN" || locale == "ja_JP") {
                 fontName = "Microsoft Yahei";
-            } else if (locale == "pt_PT") {
+            } else if (locale == "pt_PT" || locale == "fr_FR") {
                 fontName = "Segoe UI";
             } else {
                 execErrorMessage("Locale not supported: " + locale);
@@ -464,6 +464,11 @@ void MainWindow::on_actionLanguageJAJP_triggered()
 void MainWindow::on_actionLanguagePTPT_triggered()
 {
     changeLanguage("pt_PT");
+}
+
+void MainWindow::on_actionLanguageFRFR_triggered()
+{
+    changeLanguage("fr_FR");
 }
 
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)

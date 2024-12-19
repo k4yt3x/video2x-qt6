@@ -86,7 +86,7 @@
     <message>
         <location filename="mainwindow.ui" line="185"/>
         <source>CLEAR</source>
-        <translation>>VIDER</translation>
+        <translation>&gt;VIDER</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="249"/>
@@ -144,52 +144,27 @@
         <translation>Langue</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="532"/>
+        <location filename="mainwindow.ui" line="533"/>
         <source>Exit</source>
         <translation>Fermer</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="535"/>
+        <location filename="mainwindow.ui" line="536"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="543"/>
+        <location filename="mainwindow.ui" line="544"/>
         <source>About</source>
         <translation>À propos</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="548"/>
-        <source>English (United States)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="553"/>
-        <source>中文（中国）</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="558"/>
-        <source>日本語（日本）</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="563"/>
-        <source>Português (Portugal)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="498"/>
-        <source>Français (France)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="568"/>
+        <location filename="mainwindow.ui" line="569"/>
         <source>Report Bugs...</source>
         <translation>Signaler des erreurs...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="573"/>
+        <location filename="mainwindow.ui" line="574"/>
         <location filename="mainwindow.cpp" line="240"/>
         <source>Restore Default Settings</source>
         <translation>Restaurer les paramètres par défaut</translation>
@@ -205,9 +180,9 @@
         <translation>Processeur</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="517"/>
+        <location filename="mainwindow.ui" line="518"/>
         <location filename="mainwindow.cpp" line="312"/>
-        <location filename="mainwindow.cpp" line="545"/>
+        <location filename="mainwindow.cpp" line="550"/>
         <source>Edit</source>
         <translation>Éditer</translation>
     </message>
@@ -275,67 +250,67 @@ Relancez l&apos;application pour que les modifications prennent effet.</translat
         <translation>Pas encore traité</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="490"/>
+        <location filename="mainwindow.cpp" line="495"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>Une erreur interne s&apos;est produite lors de la lecture des options de la tâche.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="559"/>
+        <location filename="mainwindow.cpp" line="564"/>
         <source>Edit Task</source>
         <translation>Éditer la tâche</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="572"/>
+        <location filename="mainwindow.cpp" line="577"/>
         <source>Failed to parse task configs.</source>
         <translation>Échec de lecture des configurations des tâches.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="594"/>
+        <location filename="mainwindow.cpp" line="599"/>
         <source>Select Files</source>
         <translation>Sélectionner des fichiers</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="596"/>
+        <location filename="mainwindow.cpp" line="601"/>
         <source>All Files (*.*)</source>
         <translation>Tous les fichiers (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="625"/>
+        <location filename="mainwindow.cpp" line="630"/>
         <source>The task queue is empty!</source>
         <translation>La file d&apos;attente des tâches est vide!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="692"/>
+        <location filename="mainwindow.cpp" line="697"/>
         <source>Failed to allocate the logging console.</source>
         <translation>Échec de l&apos;allocation de la console de journalisation.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="701"/>
+        <location filename="mainwindow.cpp" line="706"/>
         <source>Failed to redirect standard output to the logging console.</source>
         <translation>Échec de la redirection de la sortie standard vers la console de journalisation.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="705"/>
+        <location filename="mainwindow.cpp" line="710"/>
         <source>Failed to redirect standard error to the logging console.</source>
         <translation>Échec de la redirection d&apos;erreur standard vers la console de journalisation.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Aborted</source>
         <translation>Annulé</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Failed</source>
         <translation>Échoué</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="823"/>
+        <location filename="mainwindow.cpp" line="828"/>
         <source> day</source>
         <translation> jour</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="896"/>
+        <location filename="mainwindow.cpp" line="901"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Échec de la génération du nom du fichier de sortie pour le fichier: </translation>
     </message>
@@ -359,7 +334,7 @@ Relancez l&apos;application pour que les modifications prennent effet.</translat
         <location filename="mainwindow.cpp" line="110"/>
         <location filename="mainwindow.cpp" line="132"/>
         <location filename="mainwindow.cpp" line="175"/>
-        <location filename="mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="895"/>
         <source>Status: </source>
         <translation>Statut: </translation>
     </message>
@@ -375,12 +350,12 @@ Relancez l&apos;application pour que les modifications prennent effet.</translat
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="895"/>
         <source>Processing file </source>
         <translation>Traitement du fichier </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="825"/>
+        <location filename="mainwindow.cpp" line="830"/>
         <source> days</source>
         <translation> jours</translation>
     </message>

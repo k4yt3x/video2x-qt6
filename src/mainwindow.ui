@@ -511,6 +511,7 @@ QProgressBar::chunk {
     <addaction name="actionLanguageZHCN"/>
     <addaction name="actionLanguageJAJP"/>
     <addaction name="actionLanguagePTPT"/>
+    <addaction name="actionLanguageFRFR"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
@@ -545,22 +546,22 @@ QProgressBar::chunk {
   </action>
   <action name="actionLanguageENUS">
    <property name="text">
-    <string>English (United States)</string>
+    <string notr="true">English (United States)</string>
    </property>
   </action>
   <action name="actionLanguageZHCN">
    <property name="text">
-    <string>中文（中国）</string>
+    <string notr="true">中文（中国）</string>
    </property>
   </action>
   <action name="actionLanguageJAJP">
    <property name="text">
-    <string>日本語（日本）</string>
+    <string notr="true">日本語（日本）</string>
    </property>
   </action>
   <action name="actionLanguagePTPT">
    <property name="text">
-    <string>Português (Portugal)</string>
+    <string notr="true">Português (Portugal)</string>
    </property>
   </action>
   <action name="actionReport_Bugs">
@@ -571,6 +572,11 @@ QProgressBar::chunk {
   <action name="actionRestore_Defaults">
    <property name="text">
     <string>Restore Default Settings</string>
+   </property>
+  </action>
+  <action name="actionLanguageFRFR">
+   <property name="text">
+    <string notr="true">Français (France)</string>
    </property>
   </action>
  </widget>

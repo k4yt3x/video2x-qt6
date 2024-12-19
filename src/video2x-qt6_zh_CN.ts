@@ -144,47 +144,27 @@
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="532"/>
+        <location filename="mainwindow.ui" line="533"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="535"/>
+        <location filename="mainwindow.ui" line="536"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="543"/>
+        <location filename="mainwindow.ui" line="544"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="548"/>
-        <source>English (United States)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="553"/>
-        <source>中文（中国）</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="558"/>
-        <source>日本語（日本）</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="563"/>
-        <source>Português (Portugal)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="568"/>
+        <location filename="mainwindow.ui" line="569"/>
         <source>Report Bugs...</source>
         <translation>报告错误...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="573"/>
+        <location filename="mainwindow.ui" line="574"/>
         <location filename="mainwindow.cpp" line="240"/>
         <source>Restore Default Settings</source>
         <translation>恢复默认设置</translation>
@@ -200,9 +180,9 @@
         <translation>处理器</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="517"/>
+        <location filename="mainwindow.ui" line="518"/>
         <location filename="mainwindow.cpp" line="312"/>
-        <location filename="mainwindow.cpp" line="545"/>
+        <location filename="mainwindow.cpp" line="550"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -270,67 +250,67 @@ Restart the application for changes to take effect.</source>
         <translation>尚未处理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="490"/>
+        <location filename="mainwindow.cpp" line="495"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>解析任务选项时发生了内部错误。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="559"/>
+        <location filename="mainwindow.cpp" line="564"/>
         <source>Edit Task</source>
         <translation>编辑任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="572"/>
+        <location filename="mainwindow.cpp" line="577"/>
         <source>Failed to parse task configs.</source>
         <translation>无法解析任务配置。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="594"/>
+        <location filename="mainwindow.cpp" line="599"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="596"/>
+        <location filename="mainwindow.cpp" line="601"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="625"/>
+        <location filename="mainwindow.cpp" line="630"/>
         <source>The task queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="692"/>
+        <location filename="mainwindow.cpp" line="697"/>
         <source>Failed to allocate the logging console.</source>
         <translation>分配日志控制台失败。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="701"/>
+        <location filename="mainwindow.cpp" line="706"/>
         <source>Failed to redirect standard output to the logging console.</source>
         <translation>无法将标准输出重定向到日志控制台。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="705"/>
+        <location filename="mainwindow.cpp" line="710"/>
         <source>Failed to redirect standard error to the logging console.</source>
         <translation>无法将标准错误重定向到日志控制台。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Aborted</source>
         <translation>已中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Failed</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="823"/>
+        <location filename="mainwindow.cpp" line="828"/>
         <source> day</source>
         <translation> 天</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="896"/>
+        <location filename="mainwindow.cpp" line="901"/>
         <source>Failed to generate output file name for file: </source>
         <translation>无法为文件生成输出文件名: </translation>
     </message>
@@ -354,7 +334,7 @@ Restart the application for changes to take effect.</source>
         <location filename="mainwindow.cpp" line="110"/>
         <location filename="mainwindow.cpp" line="132"/>
         <location filename="mainwindow.cpp" line="175"/>
-        <location filename="mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="895"/>
         <source>Status: </source>
         <translation>状态： </translation>
     </message>
@@ -370,12 +350,12 @@ Restart the application for changes to take effect.</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="895"/>
         <source>Processing file </source>
         <translation>正在处理文件 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="825"/>
+        <location filename="mainwindow.cpp" line="830"/>
         <source> days</source>
         <translation> 天</translation>
     </message>

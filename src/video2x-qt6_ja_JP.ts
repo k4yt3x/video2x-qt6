@@ -144,47 +144,27 @@
         <translation>言語</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="532"/>
+        <location filename="mainwindow.ui" line="533"/>
         <source>Exit</source>
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="535"/>
+        <location filename="mainwindow.ui" line="536"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="543"/>
+        <location filename="mainwindow.ui" line="544"/>
         <source>About</source>
         <translation>バージョン情報</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="548"/>
-        <source>English (United States)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="553"/>
-        <source>中文（中国）</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="558"/>
-        <source>日本語（日本）</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="563"/>
-        <source>Português (Portugal)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="568"/>
+        <location filename="mainwindow.ui" line="569"/>
         <source>Report Bugs...</source>
         <translation>バグを報告...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="573"/>
+        <location filename="mainwindow.ui" line="574"/>
         <location filename="mainwindow.cpp" line="240"/>
         <source>Restore Default Settings</source>
         <translation>設定を初期状態に戻す</translation>
@@ -200,9 +180,9 @@
         <translation>プロセッサ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="517"/>
+        <location filename="mainwindow.ui" line="518"/>
         <location filename="mainwindow.cpp" line="312"/>
-        <location filename="mainwindow.cpp" line="545"/>
+        <location filename="mainwindow.cpp" line="550"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
@@ -270,67 +250,67 @@ Restart the application for changes to take effect.</source>
         <translation>未処理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="490"/>
+        <location filename="mainwindow.cpp" line="495"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>タスクオプションの解析中に内部エラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="559"/>
+        <location filename="mainwindow.cpp" line="564"/>
         <source>Edit Task</source>
         <translation>タスクを編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="572"/>
+        <location filename="mainwindow.cpp" line="577"/>
         <source>Failed to parse task configs.</source>
         <translation>タスク設定の解析に失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="594"/>
+        <location filename="mainwindow.cpp" line="599"/>
         <source>Select Files</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="596"/>
+        <location filename="mainwindow.cpp" line="601"/>
         <source>All Files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="625"/>
+        <location filename="mainwindow.cpp" line="630"/>
         <source>The task queue is empty!</source>
         <translation>タスクキューが空です！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="692"/>
+        <location filename="mainwindow.cpp" line="697"/>
         <source>Failed to allocate the logging console.</source>
         <translation>ログコンソールの割り当てに失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="701"/>
+        <location filename="mainwindow.cpp" line="706"/>
         <source>Failed to redirect standard output to the logging console.</source>
         <translation>標準出力をログコンソールにリダイレクトすることに失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="705"/>
+        <location filename="mainwindow.cpp" line="710"/>
         <source>Failed to redirect standard error to the logging console.</source>
         <translation>標準エラーをログコンソールにリダイレクトすることに失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Aborted</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="823"/>
+        <location filename="mainwindow.cpp" line="828"/>
         <source> day</source>
         <translation> 日</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="896"/>
+        <location filename="mainwindow.cpp" line="901"/>
         <source>Failed to generate output file name for file: </source>
         <translation>ファイルの出力ファイル名の生成に失敗しました: </translation>
     </message>
@@ -354,7 +334,7 @@ Restart the application for changes to take effect.</source>
         <location filename="mainwindow.cpp" line="110"/>
         <location filename="mainwindow.cpp" line="132"/>
         <location filename="mainwindow.cpp" line="175"/>
-        <location filename="mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="895"/>
         <source>Status: </source>
         <translation>ステータス： </translation>
     </message>
@@ -370,12 +350,12 @@ Restart the application for changes to take effect.</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="895"/>
         <source>Processing file </source>
         <translation>処理中のファイル </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="825"/>
+        <location filename="mainwindow.cpp" line="830"/>
         <source> days</source>
         <translation> 日</translation>
     </message>
