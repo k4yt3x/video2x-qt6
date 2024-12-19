@@ -17,19 +17,19 @@ void TaskProcessor::on_processVideo()
     bool processingFinished = false;
 
     // Create video processor object
-    VideoProcessor videoProcessor = VideoProcessor(m_taskConfigs.procCfg,
-                                                   m_taskConfigs.encCfg,
-                                                   m_taskConfigs.vkDeviceIndex,
-                                                   m_taskConfigs.hwDeviceType,
-                                                   m_taskConfigs.logLevel,
-                                                   m_taskConfigs.benchmark);
+    video2x::VideoProcessor videoProcessor = video2x::VideoProcessor(m_taskConfigs.procCfg,
+                                                                     m_taskConfigs.encCfg,
+                                                                     m_taskConfigs.vkDeviceIndex,
+                                                                     m_taskConfigs.hwDeviceType,
+                                                                     m_taskConfigs.logLevel,
+                                                                     m_taskConfigs.benchmark);
     m_videoProcessor = &videoProcessor;
 
     // Start monitoring the progress in another thread
     QThread *progressUpdaterThread = QThread::create([this, &videoProcessor, &processingFinished]() {
         while (!processingFinished) {
             if (m_videoProcessor != nullptr
-                && m_videoProcessor->get_state() != VideoProcessorState::Paused) {
+                && m_videoProcessor->get_state() != video2x::VideoProcessorState::Paused) {
                 // Sleep for 100 ms between updates (10 updates/s)
                 QThread::msleep(100);
 

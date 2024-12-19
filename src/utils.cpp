@@ -3,19 +3,19 @@
 #include <QFileInfo>
 #include <QMap>
 
-std::optional<Video2xLogLevel> findLogLevelByName(const QString &logLevelName)
+std::optional<video2x::logutils::Video2xLogLevel> findLogLevelByName(const QString &logLevelName)
 {
     // Static map to store the mapping
-    static const std::unordered_map<QString, Video2xLogLevel> logLevelMap
-        = {{QString("trace"), Video2xLogLevel::Trace},
-           {QString("debug"), Video2xLogLevel::Debug},
-           {QString("info"), Video2xLogLevel::Info},
-           {QString("warning"), Video2xLogLevel::Warning},
-           {QString("warn"), Video2xLogLevel::Warning},
-           {QString("error"), Video2xLogLevel::Error},
-           {QString("critical"), Video2xLogLevel::Critical},
-           {QString("off"), Video2xLogLevel::Off},
-           {QString("none"), Video2xLogLevel::Off}};
+    static const std::unordered_map<QString, video2x::logutils::Video2xLogLevel> logLevelMap
+        = {{QString("trace"), video2x::logutils::Video2xLogLevel::Trace},
+           {QString("debug"), video2x::logutils::Video2xLogLevel::Debug},
+           {QString("info"), video2x::logutils::Video2xLogLevel::Info},
+           {QString("warning"), video2x::logutils::Video2xLogLevel::Warning},
+           {QString("warn"), video2x::logutils::Video2xLogLevel::Warning},
+           {QString("error"), video2x::logutils::Video2xLogLevel::Error},
+           {QString("critical"), video2x::logutils::Video2xLogLevel::Critical},
+           {QString("off"), video2x::logutils::Video2xLogLevel::Off},
+           {QString("none"), video2x::logutils::Video2xLogLevel::Off}};
 
     // Lookup the log level in the map
     auto it = logLevelMap.find(logLevelName);
@@ -119,14 +119,14 @@ std::optional<QString> generateNewFileName(QString fileName, QString extension)
     return std::nullopt;
 }
 
-QString convertProcessorTypeToQString(ProcessorType procType)
+QString convertProcessorTypeToQString(video2x::processors::ProcessorType procType)
 {
     switch (procType) {
-    case ProcessorType::Libplacebo:
+    case video2x::processors::ProcessorType::Libplacebo:
         return "libplacebo";
-    case ProcessorType::RealESRGAN:
+    case video2x::processors::ProcessorType::RealESRGAN:
         return "RealESRGAN";
-    case ProcessorType::RIFE:
+    case video2x::processors::ProcessorType::RIFE:
         return "RIFE";
     default:
         return "Unknown";

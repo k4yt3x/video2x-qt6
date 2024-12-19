@@ -40,9 +40,14 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
                                                                 << tr("Option") << tr("Value"));
     ui->customEncoderOptionsTableView->setModel(m_customEncoderOptionsTableModel);
 
-    // Append an empty row
-    QStandardItem *optionItem = new QStandardItem("");
-    QStandardItem *valueItem = new QStandardItem("");
+    // Add preset custom option crf=20
+    QStandardItem *optionItem = new QStandardItem("crf");
+    QStandardItem *valueItem = new QStandardItem("20");
+    m_customEncoderOptionsTableModel->appendRow(QList<QStandardItem *>() << optionItem << valueItem);
+
+    // Add preset custom option preset=slow
+    optionItem = new QStandardItem("preset");
+    valueItem = new QStandardItem("slow");
     m_customEncoderOptionsTableModel->appendRow(QList<QStandardItem *>() << optionItem << valueItem);
 
     // Set components default visibility
@@ -284,13 +289,13 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
     taskConfig.vkDeviceIndex = ui->vulkanDeviceSelectionComboBox->currentIndex();
 
     // Processing mode selection
-    ProcessingMode procMode;
+    video2x::processors::ProcessingMode procMode;
     switch (ui->processingModeSelectionComboBox->currentIndex()) {
     case 0:
-        procMode = ProcessingMode::Filter;
+        procMode = video2x::processors::ProcessingMode::Filter;
         break;
     case 1:
-        procMode = ProcessingMode::Interpolate;
+        procMode = video2x::processors::ProcessingMode::Interpolate;
         break;
     default:
         qCritical() << "Unknown processing mode: "
@@ -299,13 +304,13 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
     }
 
     // Processor type
-    if (procMode == ProcessingMode::Filter) {
+    if (procMode == video2x::processors::ProcessingMode::Filter) {
         switch (ui->filterSelectionComboBox->currentIndex()) {
         case 0: { // libplacebo
-            taskConfig.procCfg.processor_type = ProcessorType::Libplacebo;
+            taskConfig.procCfg.processor_type = video2x::processors::ProcessorType::Libplacebo;
             taskConfig.procCfg.width = ui->outputWidthSpinBox->value();
             taskConfig.procCfg.height = ui->outputHeightSpinBox->value();
-            LibplaceboConfig libplaceboConfig;
+            video2x::processors::LibplaceboConfig libplaceboConfig;
             if (ui->libplaceboCustomGlslShaderPathLineEdit->text().isEmpty()) {
                 std::optional<QString> anime4kShaderNameOpt = findAnime4kFileNameByDisplayName(
                     ui->libplaceboGlslShaderComboBox->currentText());
@@ -337,9 +342,9 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             break;
         }
         case 1: { // RealESRGAN
-            taskConfig.procCfg.processor_type = ProcessorType::RealESRGAN;
+            taskConfig.procCfg.processor_type = video2x::processors::ProcessorType::RealESRGAN;
             taskConfig.procCfg.scaling_factor = ui->scalingFactorSpinBox->value();
-            RealESRGANConfig realesrgan_config;
+            video2x::processors::RealESRGANConfig realesrgan_config;
 #ifdef _WIN32
             realesrgan_config.model_name = ui->realesrganModelComboBox->currentText().toStdWString();
 #else
@@ -352,13 +357,13 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             qCritical() << "Unknown filter type: " << ui->filterSelectionComboBox->currentIndex();
             return std::nullopt;
         }
-    } else if (procMode == ProcessingMode::Interpolate) {
+    } else if (procMode == video2x::processors::ProcessingMode::Interpolate) {
         switch (ui->interpolationSelectionComboBox->currentIndex()) {
         case 0: {
-            taskConfig.procCfg.processor_type = ProcessorType::RIFE;
+            taskConfig.procCfg.processor_type = video2x::processors::ProcessorType::RIFE;
             taskConfig.procCfg.frm_rate_mul = ui->frameRateMultiplierSpinBox->value();
             taskConfig.procCfg.scn_det_thresh = ui->sceneDetectionThresholdDoubleSpinBox->value();
-            RIFEConfig rifeConfig;
+            video2x::processors::RIFEConfig rifeConfig;
 
             std::optional<QString> rifeModelNameOpt = findRifeModelNameByDisplayName(
                 ui->rifeModelComboBox->currentText());
@@ -474,16 +479,16 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     ui->vulkanDeviceSelectionComboBox->setCurrentIndex(taskConfig.vkDeviceIndex);
 
     // Determine ProcessingMode by processor_type
-    ProcessingMode procMode;
+    video2x::processors::ProcessingMode procMode;
     switch (taskConfig.procCfg.processor_type) {
-    case ProcessorType::Libplacebo:
-    case ProcessorType::RealESRGAN:
-        procMode = ProcessingMode::Filter;
+    case video2x::processors::ProcessorType::Libplacebo:
+    case video2x::processors::ProcessorType::RealESRGAN:
+        procMode = video2x::processors::ProcessingMode::Filter;
         ui->processingModeSelectionComboBox->setCurrentIndex(0); // Filter mode
         break;
 
-    case ProcessorType::RIFE:
-        procMode = ProcessingMode::Interpolate;
+    case video2x::processors::ProcessorType::RIFE:
+        procMode = video2x::processors::ProcessingMode::Interpolate;
         ui->processingModeSelectionComboBox->setCurrentIndex(1); // Interpolate mode
         break;
 
@@ -494,19 +499,16 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     }
 
     // Set UI based on ProcessingMode and processor_type
-    if (procMode == ProcessingMode::Filter) {
+    if (procMode == video2x::processors::ProcessingMode::Filter) {
         // Filter Mode
-        ui->outputWidthSpinBox->setValue(taskConfig.procCfg.width);
-        ui->outputHeightSpinBox->setValue(taskConfig.procCfg.height);
-        ui->scalingFactorSpinBox->setValue(taskConfig.procCfg.scaling_factor);
-
         switch (taskConfig.procCfg.processor_type) {
-        case ProcessorType::Libplacebo: {
+        case video2x::processors::ProcessorType::Libplacebo: {
             ui->filterSelectionComboBox->setCurrentIndex(0);
-            // Retrieve LibplaceboConfig
-            LibplaceboConfig libplaceboConfig = std::get<LibplaceboConfig>(
-                taskConfig.procCfg.config);
-            // If a shader_path is set, try to map it back to UI fields
+            ui->outputWidthSpinBox->setValue(taskConfig.procCfg.width);
+            ui->outputHeightSpinBox->setValue(taskConfig.procCfg.height);
+
+            video2x::processors::LibplaceboConfig libplaceboConfig
+                = std::get<video2x::processors::LibplaceboConfig>(taskConfig.procCfg.config);
 #ifdef _WIN32
             QString shaderName = QString::fromWCharArray(libplaceboConfig.shader_path.c_str());
 #else
@@ -530,11 +532,12 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
 
             break;
         }
-        case ProcessorType::RealESRGAN: {
+        case video2x::processors::ProcessorType::RealESRGAN: {
             ui->filterSelectionComboBox->setCurrentIndex(1);
+            ui->scalingFactorSpinBox->setValue(taskConfig.procCfg.scaling_factor);
 
-            RealESRGANConfig realesrganConfig = std::get<RealESRGANConfig>(
-                taskConfig.procCfg.config);
+            video2x::processors::RealESRGANConfig realesrganConfig
+                = std::get<video2x::processors::RealESRGANConfig>(taskConfig.procCfg.config);
 #ifdef _WIN32
             QString modelName = QString::fromWCharArray(realesrganConfig.model_name.c_str());
 #else
@@ -550,13 +553,14 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
         }
     } else {
         // Interpolate Mode
-        ui->frameRateMultiplierSpinBox->setValue(taskConfig.procCfg.frm_rate_mul);
-        ui->sceneDetectionThresholdDoubleSpinBox->setValue(taskConfig.procCfg.scn_det_thresh);
-
         switch (taskConfig.procCfg.processor_type) {
-        case ProcessorType::RIFE: {
+        case video2x::processors::ProcessorType::RIFE: {
             ui->interpolationSelectionComboBox->setCurrentIndex(0);
-            RIFEConfig rifeConfig = std::get<RIFEConfig>(taskConfig.procCfg.config);
+            ui->frameRateMultiplierSpinBox->setValue(taskConfig.procCfg.frm_rate_mul);
+            ui->sceneDetectionThresholdDoubleSpinBox->setValue(taskConfig.procCfg.scn_det_thresh);
+
+            video2x::processors::RIFEConfig rifeConfig = std::get<video2x::processors::RIFEConfig>(
+                taskConfig.procCfg.config);
 #ifdef _WIN32
             QString rifeModelName = QString::fromWCharArray(rifeConfig.model_name.c_str());
 #else
@@ -588,7 +592,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     ui->copyStreamsCheckBox->setChecked(taskConfig.encCfg.copy_streams);
 
     // frameRateMultiplier (only relevant if Interpolate)
-    if (procMode == ProcessingMode::Interpolate) {
+    if (procMode == video2x::processors::ProcessingMode::Interpolate) {
         ui->frameRateMultiplierSpinBox->setValue(taskConfig.procCfg.frm_rate_mul);
     } else {
         ui->frameRateMultiplierSpinBox->setValue(0);

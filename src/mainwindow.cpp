@@ -5,8 +5,12 @@
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QFont>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QMessageBox>
 #include <QModelIndexList>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QThread>
 #include <QTimer>
 #include <QUrl>
@@ -45,6 +49,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
 
     // Set default component visibility
+    ui->updateCommandLinkButton->setVisible(false);
+    ui->neverShowUpdatePushButton->setVisible(false);
+    ui->closeUpdatePushButton->setVisible(false);
     ui->pausePushButton->setVisible(false);
     ui->resumePushButton->setVisible(false);
     ui->abortPushButton->setVisible(false);
@@ -54,21 +61,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->logsCheckBox->setVisible(false);
     ui->logsVerticalLine->setVisible(false);
 #endif
-
-    // Setup tasks table model
-    m_taskTableModel = new QStandardItemModel(this);
-    m_taskTableModel->setHorizontalHeaderLabels(QStringList() << tr("File Name") << tr("Processor")
-                                                              << tr("Progress") << tr("Edit"));
-    ui->tasksTableView->setModel(m_taskTableModel);
-
-    // Set table column width after initialization completes
-    QTimer::singleShot(0, this, [this]() {
-        int totalWidth = ui->tasksTableView->viewport()->width();
-        double columnWidthPercentages[] = {0.25, 0.2, 0.4, 0.1};
-        for (int i = 0; i < m_taskTableModel->columnCount(); ++i) {
-            ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
-        }
-    });
 
     // Connect the QTableView filesDropped signal to the handler
     connect(ui->tasksTableView,
@@ -183,19 +175,52 @@ MainWindow::MainWindow(QWidget *parent)
         ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
     });
 
+    // Load the configs
+    m_config = m_configManager.loadConfig();
+
     // Initialize translator
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        if (locale == "en_US") {
-            break;
-        }
-        const QString baseName = "video2x-qt6_" + QLocale(locale).name() + ".qm";
-        if (m_translator.load(baseName)) {
-            qApp->installTranslator(&m_translator);
-            ui->retranslateUi(this);
-            break;
+    if (m_config.translation.has_value()) {
+        changeLanguage(m_config.translation.value());
+    } else {
+        const QString baseName = "video2x-qt6_" + QLocale::system().name() + ".qm";
+        if (QFile::exists(baseName)) {
+            changeLanguage(QLocale::system().name());
         }
     }
+
+    // Check for available upgrades
+    if (m_config.checkUpgrades.has_value()) {
+        if (m_config.checkUpgrades.value()) {
+            checkUpdate();
+        }
+    } else {
+        QMessageBox::StandardButton reply = QMessageBox::question(
+            this,
+            tr("Automatic Updates"),
+            tr("Would you like the application to automatically check for updates?"),
+            QMessageBox::Yes | QMessageBox::No);
+
+        m_config.checkUpgrades = reply == QMessageBox::Yes;
+        m_configManager.saveConfig(m_config);
+
+        if (reply == QMessageBox::Yes) {
+            checkUpdate();
+        }
+    }
+
+    // Setup tasks table model
+    m_taskTableModel = new QStandardItemModel(this);
+    updateTaskTableHeaders();
+    ui->tasksTableView->setModel(m_taskTableModel);
+
+    // Set table column width after initialization completes
+    QTimer::singleShot(0, this, [this]() {
+        int totalWidth = ui->tasksTableView->viewport()->width();
+        double columnWidthPercentages[] = {0.25, 0.2, 0.4, 0.1};
+        for (int i = 0; i < m_taskTableModel->columnCount(); ++i) {
+            ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
+        }
+    });
 }
 
 MainWindow::~MainWindow()
@@ -208,6 +233,25 @@ void MainWindow::on_actionExit_triggered()
     QApplication::quit();
 }
 
+void MainWindow::on_actionRestore_Defaults_triggered()
+{
+    QMessageBox msgBox;
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setWindowTitle(tr("Restore Default Settings"));
+    msgBox.setText(tr("Are you sure you want to erase all custom settings?"));
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
+    if (reply == QMessageBox::Yes) {
+        m_configManager.removeConfig();
+        QMessageBox::information(this,
+                                 tr("Default Settings Restored"),
+                                 tr("The default settings have been restored.\nRestart the "
+                                    "application for changes to take effect."));
+    }
+}
+
 void MainWindow::on_actionReport_Bugs_triggered()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/issues/new"));
@@ -218,6 +262,27 @@ void MainWindow::on_actionAbout_triggered()
     AboutDialog aboutDialog(this);
     aboutDialog.setVersionString("Video2X Qt6 " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
     aboutDialog.exec();
+}
+
+void MainWindow::on_updateCommandLinkButton_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/releases/latest"));
+}
+
+void MainWindow::on_neverShowUpdatePushButton_clicked()
+{
+    ui->updateCommandLinkButton->setVisible(false);
+    ui->neverShowUpdatePushButton->setVisible(false);
+    ui->closeUpdatePushButton->setVisible(false);
+    m_config.checkUpgrades = false;
+    m_configManager.saveConfig(m_config);
+}
+
+void MainWindow::on_closeUpdatePushButton_clicked()
+{
+    ui->updateCommandLinkButton->setVisible(false);
+    ui->neverShowUpdatePushButton->setVisible(false);
+    ui->closeUpdatePushButton->setVisible(false);
 }
 
 void MainWindow::execErrorMessage(const QString &message)
@@ -238,6 +303,69 @@ void MainWindow::execWarningMessage(const QString &message)
     msgBox.setText(message);
     msgBox.setStandardButtons(QMessageBox::Ok);
     msgBox.exec();
+}
+
+void MainWindow::updateTaskTableHeaders()
+{
+    if (m_taskTableModel != nullptr) {
+        m_taskTableModel->setHorizontalHeaderLabels(
+            QStringList() << tr("File Name") << tr("Processor") << tr("Progress") << tr("Edit"));
+    }
+}
+
+void MainWindow::checkUpdate()
+{
+    // Create a network manager to handle the HTTP request
+    auto *networkManager = new QNetworkAccessManager(this);
+
+    // Prepare the API request to get the latest release info from GitHub
+    QNetworkRequest apiRequest(QUrl("https://api.github.com/repos/k4yt3x/video2x/releases/latest"));
+    apiRequest.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    // Send the GET request
+    QNetworkReply *apiReply = networkManager->get(apiRequest);
+
+    // Handle the API response
+    connect(apiReply, &QNetworkReply::finished, this, [this, apiReply]() {
+        // Check for network errors
+        if (apiReply->error() != QNetworkReply::NoError) {
+            qDebug() << "Network error:" << apiReply->errorString();
+            apiReply->deleteLater();
+            return;
+        }
+
+        // Parse the JSON response
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(apiReply->readAll());
+        if (jsonResponse.isNull() || !jsonResponse.isObject()) {
+            qDebug() << "Error parsing JSON response.";
+            apiReply->deleteLater();
+            return;
+        }
+
+        // Extract the tag_name field (latest version) from the JSON response
+        QJsonObject responseObject = jsonResponse.object();
+        if (!responseObject.contains("tag_name")) {
+            qDebug() << "No tag_name field in JSON response.";
+            apiReply->deleteLater();
+            return;
+        }
+
+        QString latestReleaseVersion = responseObject["tag_name"].toString();
+        qDebug() << "Latest version:" << latestReleaseVersion;
+
+        // Compare the latest version with the current version
+        if (latestReleaseVersion > LIBVIDEO2X_VERSION_STRING) {
+            ui->updateCommandLinkButton->setVisible(true);
+            ui->neverShowUpdatePushButton->setVisible(true);
+            ui->closeUpdatePushButton->setVisible(true);
+            qDebug() << "An upgrade is available.";
+        } else {
+            qDebug() << "No upgrade available.";
+        }
+
+        // Clean up the reply object
+        apiReply->deleteLater();
+    });
 }
 
 void MainWindow::setDefaultProgressBarStyle(QProgressBar *progressBar)
@@ -279,55 +407,65 @@ QProgressBar *MainWindow::getCurrentProgressBar()
 
 bool MainWindow::changeLanguage(const QString &locale)
 {
+    QString fontName;
+
     if (locale == "en_US") {
         qApp->removeTranslator(&m_translator);
+        fontName = "Segoe UI";
     } else {
         if (m_translator.load("video2x-qt6_" + locale + ".qm")) {
             qApp->removeTranslator(&m_translator);
             qApp->installTranslator(&m_translator);
+
+            if (locale == "zh_CN" || locale == "ja_JP") {
+                fontName = "Microsoft Yahei";
+            } else if (locale == "pt_PT") {
+                fontName = "Segoe UI";
+            } else {
+                execErrorMessage("Locale not supported: " + locale);
+                qDebug() << "Locale not supported:" << locale;
+                return false;
+            }
         } else {
             execErrorMessage("Failed to load translation for locale: " + locale);
             qDebug() << "Failed to load translation for locale:" << locale;
             return false;
         }
     }
+
+    QFont mainWindowFont(fontName);
+    this->setFont(mainWindowFont);
+
     ui->retranslateUi(this);
+    updateTaskTableHeaders();
     qApp->processEvents();
     qApp->setStyle(QApplication::style());
+
+    m_config.translation = locale;
+    m_configManager.saveConfig(m_config);
     return true;
 }
 
 void MainWindow::on_actionLanguageENUS_triggered()
 {
-    if (changeLanguage("en_US")) {
-        QFont mainWindowFont("Segoe UI");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("en_US");
 }
 
 void MainWindow::on_actionLanguageZHCN_triggered()
 {
-    if (changeLanguage("zh_CN")) {
-        QFont mainWindowFont("Microsoft Yahei");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("zh_CN");
 }
 
 void MainWindow::on_actionLanguageJAJP_triggered()
 {
-    if (changeLanguage("ja_JP")) {
-        QFont mainWindowFont("Microsoft Yahei");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("ja_JP");
 }
 
 void MainWindow::on_actionLanguagePTPT_triggered()
 {
-    if (changeLanguage("pt_PT")) {
-        QFont mainWindowFont("Segoe UI");
-        this->setFont(mainWindowFont);
-    }
+    changeLanguage("pt_PT");
 }
+
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 {
     if (fileNames.isEmpty()) {
@@ -338,8 +476,8 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
     TaskConfigDialog dialog(this);
 
     // Set the output suffix based on the first input file's suffix
-    QFileInfo fileInfo = QFileInfo(fileNames[0]);
-    dialog.setOutputSuffix("." + fileInfo.completeSuffix());
+    // QFileInfo fileInfo = QFileInfo(fileNames[0]);
+    // dialog.setOutputSuffix("." + fileInfo.suffix());
 
     // Show the dialog and wait for it to return
     if (dialog.exec() != QDialog::Accepted) {
@@ -500,7 +638,7 @@ void MainWindow::on_startPushButton_clicked()
 void MainWindow::on_pausePushButton_clicked()
 {
     if (m_currentTaskProcessor != nullptr) {
-        VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
+        video2x::VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
         {
             if (videoProcessor != nullptr) {
                 videoProcessor->pause();
@@ -514,7 +652,7 @@ void MainWindow::on_pausePushButton_clicked()
 void MainWindow::on_resumePushButton_clicked()
 {
     if (m_currentTaskProcessor != nullptr) {
-        VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
+        video2x::VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
         {
             if (videoProcessor != nullptr) {
                 videoProcessor->resume();
@@ -529,7 +667,7 @@ void MainWindow::on_abortPushButton_clicked()
 {
     if (m_procStarted) {
         if (m_currentTaskProcessor != nullptr) {
-            VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
+            video2x::VideoProcessor *videoProcessor = m_currentTaskProcessor->getVideoProcessor();
             {
                 if (videoProcessor != nullptr) {
                     videoProcessor->abort();
@@ -681,7 +819,11 @@ void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
         } else {
             remainingString = QString::number(remainingDays);
         }
-        remainingString += tr(" days");
+        if (remainingDays == 1) {
+            remainingString += tr(" day");
+        } else {
+            remainingString += tr(" days");
+        }
     } else {
         // Convert to hours, minutes, and seconds
         int remainingMillisecondsInt = static_cast<int>(remainingMilliseconds);

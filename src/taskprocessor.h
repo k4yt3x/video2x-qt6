@@ -18,7 +18,7 @@ public:
     const TaskConfig &getTaskConfigs() const { return m_taskConfigs; }
 
     // Getter for the video processor
-    VideoProcessor *getVideoProcessor() { return m_videoProcessor; }
+    video2x::VideoProcessor *getVideoProcessor() { return m_videoProcessor; }
 
 signals:
     void on_progressUpdated(int totalFrames, int processedFrames);
@@ -29,7 +29,7 @@ public slots:
 
 private:
     TaskConfig m_taskConfigs;
-    VideoProcessor *m_videoProcessor = nullptr;
+    video2x::VideoProcessor *m_videoProcessor = nullptr;
 };
 
 #endif // TASKPROCESSOR_H

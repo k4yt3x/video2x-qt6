@@ -8,11 +8,11 @@
 struct TaskConfig
 {
     // VideoProcessor parameters
-    ProcessorConfig procCfg;
-    EncoderConfig encCfg;
+    video2x::processors::ProcessorConfig procCfg;
+    video2x::encoder::EncoderConfig encCfg;
     uint32_t vkDeviceIndex;
     AVHWDeviceType hwDeviceType;
-    Video2xLogLevel logLevel;
+    video2x::logutils::Video2xLogLevel logLevel;
     bool benchmark = false;
 
     // VideoProcessor::process parameters
