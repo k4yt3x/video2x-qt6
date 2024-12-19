@@ -86,7 +86,7 @@
     <message>
         <location filename="mainwindow.ui" line="185"/>
         <source>CLEAR</source>
-        <translation>&gt;VIDER</translation>
+        <translation>VIDER</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="249"/>
