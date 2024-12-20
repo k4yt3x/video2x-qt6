@@ -66,14 +66,14 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
     connect(ui->processingModeSelectionComboBox,
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
-            [this](int index) {
+            [this](int) {
                 emit ui->filterSelectionComboBox->currentIndexChanged(
                     ui->filterSelectionComboBox->currentIndex());
             });
     connect(ui->processingModeSelectionComboBox,
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
-            [this](int index) {
+            [this](int) {
                 emit ui->interpolationSelectionComboBox->currentIndexChanged(
                     ui->interpolationSelectionComboBox->currentIndex());
             });
@@ -275,7 +275,7 @@ void TaskConfigDialog::populateVulkanDevices()
         vkGetPhysicalDeviceProperties(device, &device_properties);
         ui->vulkanDeviceSelectionComboBox->addItem(QString::number(i) + ". "
                                                    + device_properties.deviceName);
-        video2x::logger()->info("Found Vulkan device: {}.", device_properties.deviceName);
+        video2x::logger()->debug("Found Vulkan device: {}.", device_properties.deviceName);
     }
 
     // Clean up Vulkan instance

@@ -31,6 +31,7 @@ extern "C" {
 
 #include "aboutdialog.h"
 #include "filedroptableview.h"
+#include "qttexteditsink.h"
 #include "taskconfigdialog.h"
 #include "utils.h"
 
@@ -43,11 +44,17 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    ui->setupUi(this);
+
     // Initialize logger
+    std::shared_ptr<QtTextEditSink> loggerSink = std::make_shared<QtTextEditSink>();
+    loggerSink->setTextEdit(ui->logsTextEdit);
+    std::vector<spdlog::sink_ptr> sinks = {loggerSink};
+    video2x::logger_manager::LoggerManager::instance()
+        .reconfigure_logger("video2x", sinks, "[%Y-%m-%d %H:%M:%S] [%^%l%$] %v");
+
     video2x::logger_manager::LoggerManager::instance().hook_ffmpeg_logging();
     video2x::logger()->info("Starting Video2X Qt6 {}", LIBVIDEO2X_VERSION_STRING);
-
-    ui->setupUi(this);
 
     // Dynamically set the Window title + library version
     setWindowTitle("Video2X Qt6 " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
@@ -57,15 +64,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->updateCommandLinkButton->setVisible(false);
     ui->neverShowUpdatePushButton->setVisible(false);
     ui->closeUpdatePushButton->setVisible(false);
+
+    ui->logsDockWidget->setVisible(false);
+
     ui->pausePushButton->setVisible(false);
     ui->resumePushButton->setVisible(false);
     ui->abortPushButton->setVisible(false);
-
-    // Do not show the logs checkbox on Linux/macOS as they will be printed to the terminal
-#ifndef _WIN32
-    ui->logsCheckBox->setVisible(false);
-    ui->logsVerticalLine->setVisible(false);
-#endif
 
     // Connect the QTableView filesDropped signal to the handler
     connect(ui->tasksTableView,
@@ -288,6 +292,40 @@ void MainWindow::on_closeUpdatePushButton_clicked()
     ui->updateCommandLinkButton->setVisible(false);
     ui->neverShowUpdatePushButton->setVisible(false);
     ui->closeUpdatePushButton->setVisible(false);
+}
+
+void MainWindow::on_logLevelComboBox_currentIndexChanged(int index)
+{
+    video2x::logger()->set_level(static_cast<spdlog::level::level_enum>(index));
+}
+
+void MainWindow::on_saveLogsAsPushButton_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+                                                    tr("Save Logs As"),
+                                                    "video2x-qt6.log",
+                                                    tr("Text Log Files (*.log);;All Files (*)"));
+    if (fileName.isEmpty()) {
+        return;
+    }
+
+    // Open the file for writing
+    QFile logFile(fileName);
+    if (!logFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        execErrorMessage(tr("Cannot open log file %1 for writing: %2")
+                             .arg(QFileInfo(fileName).fileName(), logFile.errorString()));
+        return;
+    }
+
+    // Write the contents of the logsTextEdit to the file
+    QTextStream out(&logFile);
+    out << ui->logsTextEdit->toPlainText();
+    logFile.close();
+
+    // Show a success message
+    QMessageBox::information(this,
+                             tr("Save Logs"),
+                             tr("Logs successfully saved to %1").arg(fileName));
 }
 
 void MainWindow::execErrorMessage(const QString &message)
@@ -629,6 +667,11 @@ void MainWindow::on_clearPushButton_clicked()
     m_taskTableModel->removeRows(0, m_taskTableModel->rowCount());
 }
 
+void MainWindow::on_toggleLogsPushButton_clicked()
+{
+    ui->logsDockWidget->setVisible(!ui->logsDockWidget->isVisible());
+}
+
 void MainWindow::on_startPushButton_clicked()
 {
     // Check if the task queue is empty
@@ -691,35 +734,6 @@ void MainWindow::on_abortPushButton_clicked()
     }
 }
 
-void MainWindow::on_logsCheckBox_checkStateChanged(const Qt::CheckState &checkState)
-{
-#ifdef _WIN32
-    HWND hwnd = GetConsoleWindow();
-    if (checkState == Qt::CheckState::Checked) {
-        ui->logsCheckBox->setEnabled(false);
-
-        if (hwnd == nullptr) {
-            if (!AllocConsole()) {
-                execErrorMessage(tr("Failed to allocate the logging console."));
-                return;
-            }
-        }
-
-        // Redirect stdout and stderr
-        FILE *f_out = nullptr;
-        FILE *f_err = nullptr;
-        if (freopen_s(&f_out, "CONOUT$", "w", stdout) != 0) {
-            execErrorMessage(tr("Failed to redirect standard output to the logging console."));
-            return;
-        }
-        if (freopen_s(&f_err, "CONOUT$", "w", stderr) != 0) {
-            execErrorMessage(tr("Failed to redirect standard error to the logging console."));
-            return;
-        }
-    }
-#endif
-}
-
 void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path inputFilePath)
 {
     // Set the current job's progress bar to 100%
@@ -774,10 +788,11 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
 
 void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
 {
-    video2x::logger()->info("Processing frames: {}/{} ({:.2f}%).",
-        processedFrames,
-        totalFrames,
-        static_cast<float>(processedFrames) / static_cast<float>(totalFrames) * 100);
+    video2x::logger()->debug("Processing frames: {}/{} ({:.2f}%).",
+                             processedFrames,
+                             totalFrames,
+                             static_cast<float>(processedFrames) / static_cast<float>(totalFrames)
+                                 * 100);
 
     // Get the progress bar for the current row
     QProgressBar *progressBar = getCurrentProgressBar();

@@ -82,6 +82,7 @@ private slots:
 
     // Check updates
     void on_updateCommandLinkButton_clicked();
+    void on_neverShowUpdatePushButton_clicked();
     void on_closeUpdatePushButton_clicked();
 
     // Changing language
@@ -96,12 +97,15 @@ private slots:
     void on_deleteSelectedPushButton_clicked();
     void on_clearPushButton_clicked();
 
+    // Logs
+    void on_toggleLogsPushButton_clicked();
+    void on_logLevelComboBox_currentIndexChanged(int index);
+    void on_saveLogsAsPushButton_clicked();
+
     // Processing control buttons
     void on_startPushButton_clicked();
     void on_pausePushButton_clicked();
     void on_resumePushButton_clicked();
     void on_abortPushButton_clicked();
-    void on_logsCheckBox_checkStateChanged(const Qt::CheckState &arg1);
-    void on_neverShowUpdatePushButton_clicked();
 };
 #endif // MAINWINDOW_H

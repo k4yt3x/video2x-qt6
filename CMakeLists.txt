@@ -4,6 +4,24 @@ project(video2x-qt6 VERSION 6.2.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Set global compile options for all targets
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    add_compile_options(/W4 /permissive-)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    add_compile_options(-Wall -Wextra -Wpedantic -Wconversion -Wshadow)
+endif()
+
+# Set the default optimization flags for Release builds
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+        add_compile_options(/Ox /Ot /GL /DNDEBUG)
+        add_link_options(/LTCG /OPT:REF /OPT:ICF)
+    elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        add_compile_options(-O3 -march=native -ffunction-sections -fdata-sections)
+        add_link_options(-Wl,-s -flto -Wl,--gc-sections)
+    endif()
+endif()
+
 option(USE_SYSTEM_SPDLOG "Use system spdlog library" OFF)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network LinguistTools)
@@ -95,6 +113,8 @@ set(PROJECT_SOURCES
     src/mainwindow.cpp
     src/mainwindow.h
     src/mainwindow.ui
+    src/qttexteditsink.cpp
+    src/qttexteditsink.h
     src/taskconfig.h
     src/taskconfigdialog.cpp
     src/taskconfigdialog.h
