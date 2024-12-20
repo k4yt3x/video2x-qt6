@@ -3,29 +3,6 @@
 #include <QFileInfo>
 #include <QMap>
 
-std::optional<video2x::logutils::Video2xLogLevel> findLogLevelByName(const QString &logLevelName)
-{
-    // Static map to store the mapping
-    static const std::unordered_map<QString, video2x::logutils::Video2xLogLevel> logLevelMap
-        = {{QString("trace"), video2x::logutils::Video2xLogLevel::Trace},
-           {QString("debug"), video2x::logutils::Video2xLogLevel::Debug},
-           {QString("info"), video2x::logutils::Video2xLogLevel::Info},
-           {QString("warning"), video2x::logutils::Video2xLogLevel::Warning},
-           {QString("warn"), video2x::logutils::Video2xLogLevel::Warning},
-           {QString("error"), video2x::logutils::Video2xLogLevel::Error},
-           {QString("critical"), video2x::logutils::Video2xLogLevel::Critical},
-           {QString("off"), video2x::logutils::Video2xLogLevel::Off},
-           {QString("none"), video2x::logutils::Video2xLogLevel::Off}};
-
-    // Lookup the log level in the map
-    auto it = logLevelMap.find(logLevelName);
-    if (it != logLevelMap.end()) {
-        return it->second;
-    }
-
-    return std::nullopt;
-}
-
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName)
 {
     static const QMap<QString, QString> anime4kDisplayToFileNameMap

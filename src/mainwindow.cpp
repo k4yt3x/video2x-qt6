@@ -25,6 +25,7 @@ extern "C" {
 #include <libavutil/pixfmt.h>
 }
 
+#include <libvideo2x/logger_manager.h>
 #include <libvideo2x/version.h>
 #include <vulkan/vulkan.h>
 
@@ -42,6 +43,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    // Initialize logger
+    video2x::logger_manager::LoggerManager::instance().hook_ffmpeg_logging();
+    video2x::logger()->info("Starting Video2X Qt6 {}", LIBVIDEO2X_VERSION_STRING);
+
     ui->setupUi(this);
 
     // Dynamically set the Window title + library version
@@ -329,7 +334,8 @@ void MainWindow::checkUpdate()
     connect(apiReply, &QNetworkReply::finished, this, [this, apiReply]() {
         // Check for network errors
         if (apiReply->error() != QNetworkReply::NoError) {
-            qDebug() << "Network error:" << apiReply->errorString();
+            video2x::logger()->error("Network error occurred while checking for updates: {}.",
+                                     apiReply->errorString().toStdString());
             apiReply->deleteLater();
             return;
         }
@@ -337,7 +343,7 @@ void MainWindow::checkUpdate()
         // Parse the JSON response
         QJsonDocument jsonResponse = QJsonDocument::fromJson(apiReply->readAll());
         if (jsonResponse.isNull() || !jsonResponse.isObject()) {
-            qDebug() << "Error parsing JSON response.";
+            video2x::logger()->error("Failed to parse JSON response while checking for updates.");
             apiReply->deleteLater();
             return;
         }
@@ -345,22 +351,22 @@ void MainWindow::checkUpdate()
         // Extract the tag_name field (latest version) from the JSON response
         QJsonObject responseObject = jsonResponse.object();
         if (!responseObject.contains("tag_name")) {
-            qDebug() << "No tag_name field in JSON response.";
+            video2x::logger()->error("No 'tag_name' field found in JSON response while checking for updates.");
             apiReply->deleteLater();
             return;
         }
 
         QString latestReleaseVersion = responseObject["tag_name"].toString();
-        qDebug() << "Latest version:" << latestReleaseVersion;
+        video2x::logger()->debug("Latest version on GitHub: {}.", latestReleaseVersion.toStdString());
 
         // Compare the latest version with the current version
         if (latestReleaseVersion > LIBVIDEO2X_VERSION_STRING) {
             ui->updateCommandLinkButton->setVisible(true);
             ui->neverShowUpdatePushButton->setVisible(true);
             ui->closeUpdatePushButton->setVisible(true);
-            qDebug() << "An upgrade is available.";
+            video2x::logger()->debug("Upgrade available: {}.", latestReleaseVersion.toStdString());
         } else {
-            qDebug() << "No upgrade available.";
+            video2x::logger()->debug("No upgrades available.");
         }
 
         // Clean up the reply object
@@ -423,12 +429,12 @@ bool MainWindow::changeLanguage(const QString &locale)
                 fontName = "Segoe UI";
             } else {
                 execErrorMessage("Locale not supported: " + locale);
-                qDebug() << "Locale not supported:" << locale;
+                video2x::logger()->error("Unsupported locale: {}.", locale.toStdString());
                 return false;
             }
         } else {
             execErrorMessage("Failed to load translation for locale: " + locale);
-            qDebug() << "Failed to load translation for locale:" << locale;
+            video2x::logger()->error("Failed to load translation for locale: {}.", locale.toStdString());
             return false;
         }
     }
@@ -628,7 +634,7 @@ void MainWindow::on_startPushButton_clicked()
     // Check if the task queue is empty
     if (m_taskTableModel->rowCount() == 0) {
         execWarningMessage(tr("The task queue is empty!"));
-        qWarning() << "Warning: Processing aborted; task queue empty";
+        video2x::logger()->warn("Processing aborted: task queue is empty.");
         return;
     }
 
@@ -768,8 +774,10 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
 
 void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
 {
-    qDebug() << "Processing: " << processedFrames << "/" << totalFrames << "("
-             << (float) processedFrames / (float) totalFrames << ")";
+    video2x::logger()->info("Processing frames: {}/{} ({:.2f}%).",
+        processedFrames,
+        totalFrames,
+        static_cast<float>(processedFrames) / static_cast<float>(totalFrames) * 100);
 
     // Get the progress bar for the current row
     QProgressBar *progressBar = getCurrentProgressBar();

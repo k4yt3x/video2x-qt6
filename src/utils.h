@@ -8,8 +8,6 @@
 
 #include <libvideo2x/libvideo2x.h>
 
-std::optional<video2x::logutils::Video2xLogLevel> findLogLevelByName(const QString &log_level_name);
-
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName);
 
 std::optional<QString> findAnime4kDisplayNameByFileName(const QString &fileName);

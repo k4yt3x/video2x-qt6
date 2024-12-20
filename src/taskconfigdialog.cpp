@@ -10,6 +10,7 @@ extern "C" {
 #include <libavutil/hwcontext.h>
 }
 
+#include <libvideo2x/logger_manager.h>
 #include <vulkan/vulkan.h>
 
 #include "utils.h"
@@ -237,7 +238,7 @@ void TaskConfigDialog::populateVulkanDevices()
     VkInstanceCreateInfo create_info{};
     create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     if (vkCreateInstance(&create_info, nullptr, &instance) != VK_SUCCESS) {
-        qDebug() << "Failed to create Vulkan instance.";
+        video2x::logger()->error("Failed to create Vulkan instance.");
         return;
     }
 
@@ -245,14 +246,14 @@ void TaskConfigDialog::populateVulkanDevices()
     uint32_t device_count = 0;
     VkResult result = vkEnumeratePhysicalDevices(instance, &device_count, nullptr);
     if (result != VK_SUCCESS) {
-        qDebug() << "Failed to enumerate Vulkan physical devices.";
+        video2x::logger()->error("Failed to enumerate Vulkan physical devices.");
         vkDestroyInstance(instance, nullptr);
         return;
     }
 
     // Check if any devices are found
     if (device_count == 0) {
-        qDebug() << "No Vulkan physical devices found.";
+        video2x::logger()->warn("No Vulkan-compatible physical devices found.");
         vkDestroyInstance(instance, nullptr);
         return;
     }
@@ -261,7 +262,7 @@ void TaskConfigDialog::populateVulkanDevices()
     std::vector<VkPhysicalDevice> physical_devices(device_count);
     result = vkEnumeratePhysicalDevices(instance, &device_count, physical_devices.data());
     if (result != VK_SUCCESS) {
-        qDebug() << "Failed to enumerate Vulkan physical devices.";
+        video2x::logger()->error("Failed to enumerate Vulkan physical devices.");
         vkDestroyInstance(instance, nullptr);
         return;
     }
@@ -274,7 +275,7 @@ void TaskConfigDialog::populateVulkanDevices()
         vkGetPhysicalDeviceProperties(device, &device_properties);
         ui->vulkanDeviceSelectionComboBox->addItem(QString::number(i) + ". "
                                                    + device_properties.deviceName);
-        qDebug() << "Found Vulkan device: " << device_properties.deviceName;
+        video2x::logger()->info("Found Vulkan device: {}.", device_properties.deviceName);
     }
 
     // Clean up Vulkan instance
@@ -298,8 +299,8 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
         procMode = video2x::processors::ProcessingMode::Interpolate;
         break;
     default:
-        qCritical() << "Unknown processing mode: "
-                    << ui->processingModeSelectionComboBox->currentIndex();
+        video2x::logger()->error("Unknown processing mode selected: {}.",
+            ui->processingModeSelectionComboBox->currentIndex());
         return std::nullopt;
     }
 
@@ -318,8 +319,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
                 // This parse should always succeed and return a value
                 // If it does not, the text in the UI or the parse is wrong
                 if (!anime4kShaderNameOpt.has_value()) {
-                    qCritical()
-                        << "An internal error occurred while parsing the Anime4K shader name.";
+                    video2x::logger()->error("Failed to parse Anime4K shader name.");
                     return std::nullopt;
                 }
 
@@ -354,7 +354,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             break;
         }
         default:
-            qCritical() << "Unknown filter type: " << ui->filterSelectionComboBox->currentIndex();
+            video2x::logger()->error("Unknown filter type: {}.", ui->filterSelectionComboBox->currentIndex());
             return std::nullopt;
         }
     } else if (procMode == video2x::processors::ProcessingMode::Interpolate) {
@@ -371,7 +371,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             // This parse should always succeed and return a value
             // If it does not, the text in the UI or the parse is wrong
             if (!rifeModelNameOpt.has_value()) {
-                qCritical() << "An internal error occurred while parsing the RIFE model name.";
+                video2x::logger()->error("Failed to parse RIFE model name.");
                 return std::nullopt;
             }
 
@@ -385,8 +385,8 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             break;
         }
         default:
-            qCritical() << "Unknown interpolator type: "
-                        << ui->interpolationSelectionComboBox->currentIndex();
+            video2x::logger()->error("Unknown interpolator type: {}", 
+                ui->interpolationSelectionComboBox->currentIndex());
             return std::nullopt;
         }
     }
@@ -420,7 +420,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
     const AVCodec *codec = avcodec_find_encoder_by_name(
         ui->codecLineEdit->text().toUtf8().constData());
     if (codec == nullptr) {
-        qCritical() << "Invalid codec value: '" + ui->codecLineEdit->text() + "'";
+        video2x::logger()->error("Invalid codec specified: '{}'.", ui->codecLineEdit->text().toStdString());
         return std::nullopt;
     }
     taskConfig.encCfg.codec = codec->id;
@@ -431,7 +431,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
     if (ui->pixFmtLineEdit->text() != "auto") {
         taskConfig.encCfg.pix_fmt = av_get_pix_fmt(ui->pixFmtLineEdit->text().toUtf8().constData());
         if (taskConfig.encCfg.pix_fmt == AV_PIX_FMT_NONE) {
-            qCritical() << "Invalid pix_fmt value: '" << ui->pixFmtLineEdit->text() + "'";
+            video2x::logger()->error("Invalid pix_fmt value: '{}'", ui->pixFmtLineEdit->text().toStdString());
             return std::nullopt;
         }
     }
@@ -442,7 +442,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
         taskConfig.hwDeviceType = av_hwdevice_find_type_by_name(
             ui->hwaccelLineEdit->text().toUtf8().constData());
         if (taskConfig.hwDeviceType == AV_HWDEVICE_TYPE_NONE) {
-            qCritical() << "Invalid hwaccel value: '" << ui->hwaccelLineEdit->text() << "'";
+            video2x::logger()->error("Invalid hwaccel value: '{}'", ui->hwaccelLineEdit->text().toStdString());
             return std::nullopt;
         }
     }
@@ -494,7 +494,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
 
     default:
         // Unknown processor type, handle gracefully
-        qCritical() << "Unknown processor type in taskConfig";
+        video2x::logger()->error("Unknown processor type in taskConfig");
         return;
     }
 
@@ -548,7 +548,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
         }
         default:
             // Unknown filter type, handle gracefully
-            qCritical() << "Unknown filter processor type.";
+            video2x::logger()->error("Unknown filter processor type.");
             return;
         }
     } else {
@@ -580,7 +580,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
             break;
         }
         default:
-            qCritical() << "Unknown interpolation processor type.";
+            video2x::logger()->error("Unknown interpolation processor type.");
             return;
         }
     }

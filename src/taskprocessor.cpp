@@ -3,6 +3,8 @@
 #include <QDebug>
 #include <QThread>
 
+#include <libvideo2x/logger_manager.h>
+
 #include "taskconfig.h"
 
 // Constructor
@@ -21,7 +23,6 @@ void TaskProcessor::on_processVideo()
                                                                      m_taskConfigs.encCfg,
                                                                      m_taskConfigs.vkDeviceIndex,
                                                                      m_taskConfigs.hwDeviceType,
-                                                                     m_taskConfigs.logLevel,
                                                                      m_taskConfigs.benchmark);
     m_videoProcessor = &videoProcessor;
 

@@ -2,3 +2,6 @@
 	path = third_party/video2x
 	url = https://github.com/k4yt3x/video2x.git
 	branch = dev
+[submodule "third_party/spdlog"]
+	path = third_party/spdlog
+	url = https://github.com/gabime/spdlog.git

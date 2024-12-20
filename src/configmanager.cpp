@@ -1,9 +1,9 @@
 #include "configmanager.h"
 
-#include <QDebug>
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <libvideo2x/logger_manager.h>
 
 ConfigManager::ConfigManager() {}
 
@@ -15,7 +15,7 @@ bool ConfigManager::initializeConfigPath()
     if (_wgetenv_s(&size, localAppData, 1024, L"LOCALAPPDATA") == 0 && size > 0) {
         m_configFilePath = std::filesystem::path(localAppData) / L"video2x-qt6/video2x-qt6.json";
     } else {
-        qWarning() << "Failed to retrieve LOCALAPPDATA environment variable";
+        video2x::logger()->warn("Failed to retrieve LOCALAPPDATA environment variable.");
         return false;
     }
 #else
@@ -28,7 +28,7 @@ bool ConfigManager::initializeConfigPath()
             m_configFilePath = std::filesystem::path(homeDir)
                                / ".config/video2x-qt6/video2x-qt6.json";
         } else {
-            qWarning() << "Failed to retrieve HOME environment variable";
+            video2x::logger()->warn("Failed to retrieve HOME environment variable.");
             return false;
         }
     }
@@ -40,20 +40,20 @@ bool ConfigManager::initializeConfigPath()
 Video2XConfig ConfigManager::loadConfig()
 {
     if (!initializeConfigPath()) {
-        qWarning() << "Config path initialization failed";
+        video2x::logger()->warn("Configuration path initialization failed.");
         return {};
     }
 
     Video2XConfig config;
 
     if (!std::filesystem::is_regular_file(m_configFilePath)) {
-        qDebug() << "The config file does not exist; nothing to load";
+        video2x::logger()->info("No existing configuration file found.");
         return config;
     }
 
     QFile file(QString::fromStdWString(m_configFilePath.wstring()));
     if (!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Failed to open config file for reading";
+        video2x::logger()->warn("Failed to open configuration file for reading.");
         return config;
     }
 
@@ -62,7 +62,7 @@ Video2XConfig ConfigManager::loadConfig()
 
     QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
     if (jsonDoc.isNull() || !jsonDoc.isObject()) {
-        qWarning() << "Failed to parse config file as JSON";
+        video2x::logger()->warn("Failed to parse configuration file as valid JSON.");
         return config;
     }
 
@@ -80,7 +80,7 @@ Video2XConfig ConfigManager::loadConfig()
 bool ConfigManager::saveConfig(const Video2XConfig &config)
 {
     if (!initializeConfigPath()) {
-        qWarning() << "Config path initialization failed";
+        video2x::logger()->warn("Configuration path initialization failed.");
         return false;
     }
 
@@ -88,10 +88,10 @@ bool ConfigManager::saveConfig(const Video2XConfig &config)
     std::filesystem::path configDir = m_configFilePath.parent_path();
     if (!std::filesystem::exists(configDir)) {
         try {
-            qDebug() << "Creating the config directory";
+            video2x::logger()->info("Creating configuration directory.");
             std::filesystem::create_directories(configDir);
         } catch (const std::filesystem::filesystem_error &e) {
-            qWarning() << "Failed to create config directories:" << e.what();
+            video2x::logger()->warn("Failed to create configuration directories: {}.", e.what());
             return false;
         }
     }
@@ -108,7 +108,7 @@ bool ConfigManager::saveConfig(const Video2XConfig &config)
 
     QFile file(QString::fromStdWString(m_configFilePath.wstring()));
     if (!file.open(QIODevice::WriteOnly)) {
-        qWarning() << "Failed to open config file for writing";
+        video2x::logger()->warn("Failed to open configuration file for writing.");
         return false;
     }
 
@@ -120,7 +120,7 @@ bool ConfigManager::saveConfig(const Video2XConfig &config)
 bool ConfigManager::removeConfig()
 {
     if (!initializeConfigPath()) {
-        qWarning() << "Config path initialization failed";
+        video2x::logger()->warn("Configuration path initialization failed.");
         return false;
     }
 
@@ -130,7 +130,7 @@ bool ConfigManager::removeConfig()
             && std::filesystem::is_regular_file(m_configFilePath)) {
             std::filesystem::remove(m_configFilePath);
         } else {
-            qWarning() << "Config file does not exist or is not a regular file";
+            video2x::logger()->warn("Configuration file does not exist or is not a regular file.");
             return false;
         }
 
@@ -142,7 +142,7 @@ bool ConfigManager::removeConfig()
 
         return true;
     } catch (const std::filesystem::filesystem_error &e) {
-        qWarning() << "Failed to remove config file or directory:" << e.what();
+        video2x::logger()->warn("Failed to remove configuration file or directory: {}.", e.what());
         return false;
     }
 }

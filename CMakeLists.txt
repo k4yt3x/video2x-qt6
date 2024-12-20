@@ -4,6 +4,8 @@ project(video2x-qt6 VERSION 6.2.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(USE_SYSTEM_SPDLOG "Use system spdlog library" OFF)
+
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network LinguistTools)
 
 qt_standard_project_setup()
@@ -48,6 +50,14 @@ else()
         list(APPEND FFMPEG_INCLUDE_DIRS ${${PKG}_INCLUDE_DIRS})
         list(APPEND FFMPEG_LIBS ${${PKG}_LIBRARIES})
     endforeach()
+endif()
+
+if(USE_SYSTEM_SPDLOG)
+    find_package(spdlog REQUIRED)
+    set(SPDLOG_LIB spdlog::spdlog)
+else()
+    add_subdirectory(third_party/spdlog)
+    set(SPDLOG_LIB spdlog::spdlog_header_only)
 endif()
 
 if(NOT WIN32)
@@ -114,6 +124,7 @@ qt_add_translations(video2x-qt6 TS_FILES
 )
 
 target_include_directories(video2x-qt6 PRIVATE
+    ${spdlog_INCLUDE_DIRS}
     ${FFMPEG_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/third_party/video2x/include
@@ -131,6 +142,7 @@ target_link_libraries(video2x-qt6 PRIVATE
     Qt::Widgets
     Qt::Network
     Vulkan::Vulkan
+    ${SPDLOG_LIB}
     ${FFMPEG_LIBS}
 )
 
