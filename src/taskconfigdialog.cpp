@@ -538,6 +538,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     switch (taskConfig.procCfg.processor_type) {
     case video2x::processors::ProcessorType::Libplacebo:
     case video2x::processors::ProcessorType::RealESRGAN:
+    case video2x::processors::ProcessorType::RealCUGAN:
         procMode = video2x::processors::ProcessingMode::Filter;
         ui->processingModeSelectionComboBox->setCurrentIndex(0); // Filter mode
         break;
@@ -602,7 +603,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
             break;
         }
         case video2x::processors::ProcessorType::RealCUGAN: {
-            ui->filterSelectionComboBox->setCurrentIndex(1);
+            ui->filterSelectionComboBox->setCurrentIndex(2);
             ui->scalingFactorSpinBox->setValue(taskConfig.procCfg.scaling_factor);
             ui->noiseLevelSpinBox->setValue(taskConfig.procCfg.noise_level);
 
