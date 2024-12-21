@@ -8,6 +8,10 @@
 
 #include <libvideo2x/libvideo2x.h>
 
+#ifdef _WIN32
+bool isVCRuntimeRequirementMet();
+#endif
+
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName);
 
 std::optional<QString> findAnime4kDisplayNameByFileName(const QString &fileName);

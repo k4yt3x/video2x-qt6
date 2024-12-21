@@ -3,7 +3,9 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
+
 #include <libvideo2x/logger_manager.h>
+#include <libvideo2x/version.h>
 
 ConfigManager::ConfigManager() {}
 
@@ -67,8 +69,8 @@ Video2XConfig ConfigManager::loadConfig()
     }
 
     QJsonObject jsonObject = jsonDoc.object();
-    if (jsonObject.contains(CHECKUPGRADES_KEY) && jsonObject[CHECKUPGRADES_KEY].isBool()) {
-        config.checkUpgrades = jsonObject[CHECKUPGRADES_KEY].toBool();
+    if (jsonObject.contains(CHECK_UPGRADES_KEY) && jsonObject[CHECK_UPGRADES_KEY].isBool()) {
+        config.checkUpgrades = jsonObject[CHECK_UPGRADES_KEY].toBool();
     }
     if (jsonObject.contains(TRANSLATION_KEY) && jsonObject[TRANSLATION_KEY].isString()) {
         config.translation = jsonObject[TRANSLATION_KEY].toString();
@@ -97,8 +99,9 @@ bool ConfigManager::saveConfig(const Video2XConfig &config)
     }
 
     QJsonObject jsonObject;
+    jsonObject[CONFIG_VERSION_KEY] = LIBVIDEO2X_VERSION_STRING;
     if (config.checkUpgrades.has_value()) {
-        jsonObject[CHECKUPGRADES_KEY] = config.checkUpgrades.value();
+        jsonObject[CHECK_UPGRADES_KEY] = config.checkUpgrades.value();
     }
     if (config.translation.has_value()) {
         jsonObject[TRANSLATION_KEY] = config.translation.value();

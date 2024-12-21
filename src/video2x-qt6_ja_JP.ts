@@ -13,7 +13,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="212"/>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Progress</source>
         <translation>進行</translation>
     </message>
@@ -175,162 +175,162 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="662"/>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="257"/>
         <source>Restore Default Settings</source>
         <translation>設定を初期状態に戻す</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>File Name</source>
         <translation>ファイル名</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Processor</source>
         <translation>プロセッサ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="511"/>
-        <location filename="mainwindow.cpp" line="353"/>
-        <location filename="mainwindow.cpp" line="592"/>
+        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="602"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="118"/>
+        <location filename="mainwindow.cpp" line="128"/>
         <source>paused</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="147"/>
+        <location filename="mainwindow.cpp" line="157"/>
         <source>Processing Aborted</source>
         <translation>処理が中止されました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="148"/>
+        <location filename="mainwindow.cpp" line="158"/>
         <source>Video processing was aborted.</source>
         <translation>ビデオ処理が中止されました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="151"/>
-        <location filename="mainwindow.cpp" line="155"/>
+        <location filename="mainwindow.cpp" line="161"/>
+        <location filename="mainwindow.cpp" line="165"/>
         <source>Processing Finished</source>
         <translation>処理が完了しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="152"/>
+        <location filename="mainwindow.cpp" line="162"/>
         <source>Video processing finished with errors.</source>
         <translation>ビデオ処理がエラー付きで完了しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="156"/>
+        <location filename="mainwindow.cpp" line="166"/>
         <source>All videos have been processed successfully.</source>
         <translation>すべてのビデオが正常に処理されました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="206"/>
+        <location filename="mainwindow.cpp" line="216"/>
         <source>Automatic Updates</source>
         <translation>自動更新</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="207"/>
+        <location filename="mainwindow.cpp" line="217"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>アプリケーションが自動的に更新を確認するようにしますか？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="248"/>
+        <location filename="mainwindow.cpp" line="258"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>すべてのカスタム設定を消去してもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="256"/>
+        <location filename="mainwindow.cpp" line="266"/>
         <source>Default Settings Restored</source>
         <translation>初期設定に戻しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="257"/>
+        <location filename="mainwindow.cpp" line="267"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>初期設定に戻しました。
 変更を適用するにはアプリケーションを再起動してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="303"/>
+        <location filename="mainwindow.cpp" line="313"/>
         <source>Save Logs As</source>
         <translation>ログを保存</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="305"/>
+        <location filename="mainwindow.cpp" line="315"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>テキストログファイル (*.log);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="313"/>
+        <location filename="mainwindow.cpp" line="323"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>ログファイル %1 を書き込み用に開けません: %2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="325"/>
+        <location filename="mainwindow.cpp" line="335"/>
         <source>Save Logs</source>
         <translation>ログを保存</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="326"/>
+        <location filename="mainwindow.cpp" line="336"/>
         <source>Logs successfully saved to %1</source>
         <translation>ログは %1 に正常に保存されました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="419"/>
+        <location filename="mainwindow.cpp" line="429"/>
         <source>Not yet processed</source>
         <translation>未処理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="537"/>
+        <location filename="mainwindow.cpp" line="547"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>タスクオプションの解析中に内部エラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="616"/>
         <source>Edit Task</source>
         <translation>タスクを編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="619"/>
+        <location filename="mainwindow.cpp" line="629"/>
         <source>Failed to parse task configs.</source>
         <translation>タスク設定の解析に失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="641"/>
+        <location filename="mainwindow.cpp" line="651"/>
         <source>Select Files</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="643"/>
+        <location filename="mainwindow.cpp" line="653"/>
         <source>All Files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="677"/>
+        <location filename="mainwindow.cpp" line="687"/>
         <source>The task queue is empty!</source>
         <translation>タスクキューが空です！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="743"/>
+        <location filename="mainwindow.cpp" line="753"/>
         <source>Aborted</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="743"/>
+        <location filename="mainwindow.cpp" line="753"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="849"/>
+        <location filename="mainwindow.cpp" line="859"/>
         <source> day</source>
         <translation> 日</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="922"/>
+        <location filename="mainwindow.cpp" line="933"/>
         <source>Failed to generate output file name for file: </source>
         <translation>ファイルの出力ファイル名の生成に失敗しました: </translation>
     </message>
@@ -345,37 +345,46 @@ Restart the application for changes to take effect.</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="333"/>
+        <location filename="mainwindow.cpp" line="343"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
-        <location filename="mainwindow.cpp" line="118"/>
-        <location filename="mainwindow.cpp" line="140"/>
-        <location filename="mainwindow.cpp" line="182"/>
-        <location filename="mainwindow.cpp" line="916"/>
+        <location filename="mainwindow.cpp" line="71"/>
+        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="150"/>
+        <location filename="mainwindow.cpp" line="192"/>
+        <location filename="mainwindow.cpp" line="926"/>
         <source>Status: </source>
         <translation>ステータス： </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
-        <location filename="mainwindow.cpp" line="182"/>
+        <location filename="mainwindow.cpp" line="52"/>
+        <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
+
+This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
+        <translation>Visual C++ 再頒布可能パッケージがインストールされていないか、インストールされているバージョンが必要な最低バージョン（v14.42）を満たしていません。
+
+このため、ソフトウェアが正しく動作しない可能性があります。互換性を確保するために、最新バージョンに更新してください。</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="71"/>
+        <location filename="mainwindow.cpp" line="192"/>
         <source>idle</source>
         <translation>待機中</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="343"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="916"/>
+        <location filename="mainwindow.cpp" line="926"/>
         <source>Processing file </source>
         <translation>処理中のファイル </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="851"/>
+        <location filename="mainwindow.cpp" line="861"/>
         <source> days</source>
         <translation> 日</translation>
     </message>

@@ -3,6 +3,37 @@
 #include <QFileInfo>
 #include <QMap>
 
+#ifdef _WIN32
+#include <QSettings>
+#include <Windows.h>
+
+bool isVCRuntimeRequirementMet()
+{
+    const QString registryKey
+        = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\VisualStudio\\14.0\\VC\\Runtimes\\x64";
+    const DWORD requiredMajor = 14;
+    const DWORD requiredMinor = 42;
+
+    QSettings reg(registryKey, QSettings::NativeFormat);
+
+    // Check if the registry key exists
+    if (!reg.contains("Major") || !reg.contains("Minor")) {
+        return false;
+    }
+
+    DWORD installedMajor = reg.value("Major").toUInt();
+    DWORD installedMinor = reg.value("Minor").toUInt();
+
+    // Check if the installed version meets the requirement
+    if (installedMajor > requiredMajor
+        || (installedMajor == requiredMajor && installedMinor >= requiredMinor)) {
+        return true;
+    }
+
+    return false;
+}
+#endif
+
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName)
 {
     static const QMap<QString, QString> anime4kDisplayToFileNameMap

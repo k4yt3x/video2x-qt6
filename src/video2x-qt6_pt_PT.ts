@@ -13,7 +13,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="212"/>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Progress</source>
         <translation>Progresso</translation>
     </message>
@@ -175,162 +175,162 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="662"/>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="257"/>
         <source>Restore Default Settings</source>
         <translation>Restaurar Definições Padrão</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>File Name</source>
         <translation>Nome do Ficheiro</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Processor</source>
         <translation>Processador</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="511"/>
-        <location filename="mainwindow.cpp" line="353"/>
-        <location filename="mainwindow.cpp" line="592"/>
+        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="602"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="118"/>
+        <location filename="mainwindow.cpp" line="128"/>
         <source>paused</source>
         <translation>pausado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="147"/>
+        <location filename="mainwindow.cpp" line="157"/>
         <source>Processing Aborted</source>
         <translation>Processamento Abortado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="148"/>
+        <location filename="mainwindow.cpp" line="158"/>
         <source>Video processing was aborted.</source>
         <translation>O processamento de vídeo foi abortado.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="151"/>
-        <location filename="mainwindow.cpp" line="155"/>
+        <location filename="mainwindow.cpp" line="161"/>
+        <location filename="mainwindow.cpp" line="165"/>
         <source>Processing Finished</source>
         <translation>Processamento Concluído</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="152"/>
+        <location filename="mainwindow.cpp" line="162"/>
         <source>Video processing finished with errors.</source>
         <translation>O processamento de vídeo foi concluído com erros.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="156"/>
+        <location filename="mainwindow.cpp" line="166"/>
         <source>All videos have been processed successfully.</source>
         <translation>Todos os vídeos foram processados com sucesso.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="206"/>
+        <location filename="mainwindow.cpp" line="216"/>
         <source>Automatic Updates</source>
         <translation>Atualizações Automáticas</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="207"/>
+        <location filename="mainwindow.cpp" line="217"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>Gostaria que a aplicação verificasse atualizações automaticamente?</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="248"/>
+        <location filename="mainwindow.cpp" line="258"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>Tem a certeza de que deseja apagar todas as definições personalizadas?</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="256"/>
+        <location filename="mainwindow.cpp" line="266"/>
         <source>Default Settings Restored</source>
         <translation>Definições Padrão Restauradas</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="257"/>
+        <location filename="mainwindow.cpp" line="267"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>As definições padrão foram restauradas.
 Reinicie a aplicação para que as alterações tenham efeito.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="303"/>
+        <location filename="mainwindow.cpp" line="313"/>
         <source>Save Logs As</source>
         <translation>Salvar Registros Como</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="305"/>
+        <location filename="mainwindow.cpp" line="315"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>Arquivos de Log de Texto (*.log);;Todos os Arquivos (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="313"/>
+        <location filename="mainwindow.cpp" line="323"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>Não é possível abrir o arquivo de log %1 para escrita: %2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="325"/>
+        <location filename="mainwindow.cpp" line="335"/>
         <source>Save Logs</source>
         <translation>Salvar Registros</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="326"/>
+        <location filename="mainwindow.cpp" line="336"/>
         <source>Logs successfully saved to %1</source>
         <translation>Registros salvos com sucesso em %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="419"/>
+        <location filename="mainwindow.cpp" line="429"/>
         <source>Not yet processed</source>
         <translation>Não processado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="537"/>
+        <location filename="mainwindow.cpp" line="547"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>Ocorreu um erro interno ao analisar as opções da tarefa.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="616"/>
         <source>Edit Task</source>
         <translation>Editar Tarefa</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="619"/>
+        <location filename="mainwindow.cpp" line="629"/>
         <source>Failed to parse task configs.</source>
         <translation>Falha ao analisar as configurações da tarefa.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="641"/>
+        <location filename="mainwindow.cpp" line="651"/>
         <source>Select Files</source>
         <translation>Selecionar Ficheiros</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="643"/>
+        <location filename="mainwindow.cpp" line="653"/>
         <source>All Files (*.*)</source>
         <translation>Todos os Ficheiros (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="677"/>
+        <location filename="mainwindow.cpp" line="687"/>
         <source>The task queue is empty!</source>
         <translation>A fila de tarefas está vazia!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="743"/>
+        <location filename="mainwindow.cpp" line="753"/>
         <source>Aborted</source>
         <translation>Abortado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="743"/>
+        <location filename="mainwindow.cpp" line="753"/>
         <source>Failed</source>
         <translation>Falhou</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="849"/>
+        <location filename="mainwindow.cpp" line="859"/>
         <source> day</source>
         <translation> dia</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="922"/>
+        <location filename="mainwindow.cpp" line="933"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Falha ao gerar o nome do ficheiro de saída para o ficheiro: </translation>
     </message>
@@ -345,37 +345,46 @@ Reinicie a aplicação para que as alterações tenham efeito.</translation>
         <translation>PAUSAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="333"/>
+        <location filename="mainwindow.cpp" line="343"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
-        <location filename="mainwindow.cpp" line="118"/>
-        <location filename="mainwindow.cpp" line="140"/>
-        <location filename="mainwindow.cpp" line="182"/>
-        <location filename="mainwindow.cpp" line="916"/>
+        <location filename="mainwindow.cpp" line="71"/>
+        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="150"/>
+        <location filename="mainwindow.cpp" line="192"/>
+        <location filename="mainwindow.cpp" line="926"/>
         <source>Status: </source>
         <translation>Estado: </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
-        <location filename="mainwindow.cpp" line="182"/>
+        <location filename="mainwindow.cpp" line="52"/>
+        <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
+
+This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
+        <translation>O Visual C++ Redistributable não está instalado ou a versão instalada não atende ao requisito mínimo (v14.42).
+
+Isso pode causar mau funcionamento do software. Por favor, atualize para a versão mais recente para garantir a compatibilidade.</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="71"/>
+        <location filename="mainwindow.cpp" line="192"/>
         <source>idle</source>
         <translation>Inativo</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="343"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="916"/>
+        <location filename="mainwindow.cpp" line="926"/>
         <source>Processing file </source>
         <translation>A processar o ficheiro </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="851"/>
+        <location filename="mainwindow.cpp" line="861"/>
         <source> days</source>
         <translation> dias</translation>
     </message>

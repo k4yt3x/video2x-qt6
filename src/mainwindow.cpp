@@ -228,6 +228,16 @@ MainWindow::MainWindow(QWidget *parent)
             ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
         }
     });
+
+// Check if the required VC runtime is installed
+#ifdef _WIN32
+    if (!isVCRuntimeRequirementMet()) {
+        execWarningMessage(tr(
+            "The Visual C++ Redistributable is either not installed or the installed version does "
+            "not meet the minimum required version (v14.42).\n\nThis may cause the software to "
+            "function improperly. Please update to the latest version to ensure compatibility."));
+    }
+#endif
 }
 
 MainWindow::~MainWindow()

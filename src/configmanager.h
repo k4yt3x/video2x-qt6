@@ -6,7 +6,8 @@
 #include <QString>
 #include <filesystem>
 
-#define CHECKUPGRADES_KEY "checkUpgrades"
+#define CONFIG_VERSION_KEY "configVersion"
+#define CHECK_UPGRADES_KEY "checkUpgrades"
 #define TRANSLATION_KEY "translation"
 
 struct Video2XConfig

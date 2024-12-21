@@ -13,7 +13,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="212"/>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Progress</source>
         <translation>进度</translation>
     </message>
@@ -175,162 +175,162 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="662"/>
-        <location filename="mainwindow.cpp" line="247"/>
+        <location filename="mainwindow.cpp" line="257"/>
         <source>Restore Default Settings</source>
         <translation>恢复默认设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>File Name</source>
         <translation>文件名</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Processor</source>
         <translation>处理器</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="511"/>
-        <location filename="mainwindow.cpp" line="353"/>
-        <location filename="mainwindow.cpp" line="592"/>
+        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="602"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="118"/>
+        <location filename="mainwindow.cpp" line="128"/>
         <source>paused</source>
         <translation>已暂停</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="147"/>
+        <location filename="mainwindow.cpp" line="157"/>
         <source>Processing Aborted</source>
         <translation>处理已中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="148"/>
+        <location filename="mainwindow.cpp" line="158"/>
         <source>Video processing was aborted.</source>
         <translation>视频处理已中止。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="151"/>
-        <location filename="mainwindow.cpp" line="155"/>
+        <location filename="mainwindow.cpp" line="161"/>
+        <location filename="mainwindow.cpp" line="165"/>
         <source>Processing Finished</source>
         <translation>处理已完成</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="152"/>
+        <location filename="mainwindow.cpp" line="162"/>
         <source>Video processing finished with errors.</source>
         <translation>视频处理完成，但出现了一些错误。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="156"/>
+        <location filename="mainwindow.cpp" line="166"/>
         <source>All videos have been processed successfully.</source>
         <translation>所有视频均已成功处理完成。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="206"/>
+        <location filename="mainwindow.cpp" line="216"/>
         <source>Automatic Updates</source>
         <translation>自动更新</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="207"/>
+        <location filename="mainwindow.cpp" line="217"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>您希望应用程序自动检查可用的更新吗？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="248"/>
+        <location filename="mainwindow.cpp" line="258"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>您确定要清除所有自定义设置吗？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="256"/>
+        <location filename="mainwindow.cpp" line="266"/>
         <source>Default Settings Restored</source>
         <translation>已恢复到默认设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="257"/>
+        <location filename="mainwindow.cpp" line="267"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>已恢复到默认设置。
 重新启动应用程序以使更改生效。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="303"/>
+        <location filename="mainwindow.cpp" line="313"/>
         <source>Save Logs As</source>
         <translation>保存日志为</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="305"/>
+        <location filename="mainwindow.cpp" line="315"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>文本日志文件 (*.log);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="313"/>
+        <location filename="mainwindow.cpp" line="323"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>无法打开日志文件 %1 进行写入：%2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="325"/>
+        <location filename="mainwindow.cpp" line="335"/>
         <source>Save Logs</source>
         <translation>保存日志</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="326"/>
+        <location filename="mainwindow.cpp" line="336"/>
         <source>Logs successfully saved to %1</source>
         <translation>已将日志成功保存到 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="419"/>
+        <location filename="mainwindow.cpp" line="429"/>
         <source>Not yet processed</source>
         <translation>尚未处理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="537"/>
+        <location filename="mainwindow.cpp" line="547"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>解析任务选项时发生了内部错误。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="616"/>
         <source>Edit Task</source>
         <translation>编辑任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="619"/>
+        <location filename="mainwindow.cpp" line="629"/>
         <source>Failed to parse task configs.</source>
         <translation>无法解析任务配置。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="641"/>
+        <location filename="mainwindow.cpp" line="651"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="643"/>
+        <location filename="mainwindow.cpp" line="653"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="677"/>
+        <location filename="mainwindow.cpp" line="687"/>
         <source>The task queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="743"/>
+        <location filename="mainwindow.cpp" line="753"/>
         <source>Aborted</source>
         <translation>已中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="743"/>
+        <location filename="mainwindow.cpp" line="753"/>
         <source>Failed</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="849"/>
+        <location filename="mainwindow.cpp" line="859"/>
         <source> day</source>
         <translation> 天</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="922"/>
+        <location filename="mainwindow.cpp" line="933"/>
         <source>Failed to generate output file name for file: </source>
         <translation>无法为文件生成输出文件名: </translation>
     </message>
@@ -345,37 +345,46 @@ Restart the application for changes to take effect.</source>
         <translation>暂停</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="333"/>
+        <location filename="mainwindow.cpp" line="343"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
-        <location filename="mainwindow.cpp" line="118"/>
-        <location filename="mainwindow.cpp" line="140"/>
-        <location filename="mainwindow.cpp" line="182"/>
-        <location filename="mainwindow.cpp" line="916"/>
+        <location filename="mainwindow.cpp" line="71"/>
+        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="150"/>
+        <location filename="mainwindow.cpp" line="192"/>
+        <location filename="mainwindow.cpp" line="926"/>
         <source>Status: </source>
         <translation>状态： </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
-        <location filename="mainwindow.cpp" line="182"/>
+        <location filename="mainwindow.cpp" line="52"/>
+        <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
+
+This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
+        <translation>Visual C++ 可再发行组件未安装或已安装版本未满足最低要求版本 (v14.42)。
+
+这可能导致软件无法正常运行。请更新到最新版本以确保兼容性。</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="71"/>
+        <location filename="mainwindow.cpp" line="192"/>
         <source>idle</source>
         <translation>空闲</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="343"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="916"/>
+        <location filename="mainwindow.cpp" line="926"/>
         <source>Processing file </source>
         <translation>正在处理文件 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="851"/>
+        <location filename="mainwindow.cpp" line="861"/>
         <source> days</source>
         <translation> 天</translation>
     </message>
