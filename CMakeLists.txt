@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(video2x-qt6 VERSION 6.2.0 LANGUAGES CXX)
+project(video2x-qt6 VERSION 6.3.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

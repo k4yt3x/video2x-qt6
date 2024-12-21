@@ -1,6 +1,6 @@
 [Setup]
 AppName=Video2X Qt6
-AppVersion=6.2.0
+AppVersion=6.3.0
 AppId={{07D36A37-9C89-4ECD-9866-621351EB0886}
 ArchitecturesInstallIn64BitMode=x64compatible
 DefaultDirName={commonpf}\Video2X Qt6
@@ -29,6 +29,9 @@ Name: "{userprograms}\Video2X Qt6\Video2X Qt6"; Filename: "{app}\video2x-qt6.exe
 [Run]
 Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/passive /norestart"; Check: NeedsVCRuntime; Flags: waituntilterminated
 Filename: "{app}\video2x-qt6.exe"; Description: "Launch Video2X Qt6"; Flags: nowait postinstall skipifsilent
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{localappdata}\video2x-qt6"
 
 [Code]
 function NeedsVCRuntime(): Boolean;
