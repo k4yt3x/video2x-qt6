@@ -14,6 +14,7 @@
 #include <QThread>
 #include <QTimer>
 #include <QUrl>
+#include <QVersionNumber>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -397,22 +398,33 @@ void MainWindow::checkUpdate()
         // Extract the tag_name field (latest version) from the JSON response
         QJsonObject responseObject = jsonResponse.object();
         if (!responseObject.contains("tag_name")) {
-            video2x::logger()->error("No 'tag_name' field found in JSON response while checking for updates.");
+            video2x::logger()->error(
+                "No 'tag_name' field found in JSON response while checking for updates.");
             apiReply->deleteLater();
             return;
         }
 
         QString latestReleaseVersion = responseObject["tag_name"].toString();
-        video2x::logger()->debug("Latest version on GitHub: {}.", latestReleaseVersion.toStdString());
+        video2x::logger()->debug("Latest version on GitHub: {}.",
+                                 latestReleaseVersion.toStdString());
 
-        // Compare the latest version with the current version
-        if (latestReleaseVersion > LIBVIDEO2X_VERSION_STRING) {
-            ui->updateCommandLinkButton->setVisible(true);
-            ui->neverShowUpdatePushButton->setVisible(true);
-            ui->closeUpdatePushButton->setVisible(true);
-            video2x::logger()->debug("Upgrade available: {}.", latestReleaseVersion.toStdString());
+        // Use QVersionNumber for SemVer parsing and comparison
+        QVersionNumber latestVersion = QVersionNumber::fromString(latestReleaseVersion);
+        QVersionNumber currentVersion = QVersionNumber::fromString(
+            QString(LIBVIDEO2X_VERSION_STRING));
+
+        if (!latestVersion.isNull() && !currentVersion.isNull()) {
+            if (latestVersion > currentVersion) {
+                ui->updateCommandLinkButton->setVisible(true);
+                ui->neverShowUpdatePushButton->setVisible(true);
+                ui->closeUpdatePushButton->setVisible(true);
+                video2x::logger()->debug("Upgrade available: {}.",
+                                         latestReleaseVersion.toStdString());
+            } else {
+                video2x::logger()->debug("No upgrades available.");
+            }
         } else {
-            video2x::logger()->debug("No upgrades available.");
+            video2x::logger()->error("Failed to parse version strings for comparison.");
         }
 
         // Clean up the reply object
