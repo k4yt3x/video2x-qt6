@@ -2,7 +2,7 @@
 
 The Qt6 graphical user interface for [Video2X](https://github.com/k4yt3x/video2x). You can download the releases on Video2X's [releases page](https://github.com/k4yt3x/video2x/releases). Build instructions and usages are available on the [documentation site](https://docs.video2x.org/).
 
-![6.2.0-screenshot](https://github.com/user-attachments/assets/68c6d65b-89a2-4553-a783-f5e663aa1313)
+![6.3.0-screenshot]((https://github.com/user-attachments/assets/c5442f84-5ffc-4476-915f-a0fc188a2cb3)
 
 ## Translations
 
