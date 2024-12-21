@@ -9,7 +9,7 @@ DisableProgramGroupPage=yes
 OutputBaseFilename=video2x-qt6-windows-amd64-installer
 Compression=lzma2/max
 SolidCompression=yes
-UninstallDisplayIcon=assets\video2x.ico
+UninstallDisplayIcon={app}\video2x-qt6.exe
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
