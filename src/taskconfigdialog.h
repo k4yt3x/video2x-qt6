@@ -17,7 +17,7 @@ class TaskConfigDialog : public QDialog
 public:
     explicit TaskConfigDialog(QWidget *parent = nullptr);
     ~TaskConfigDialog();
-    void updateScalingFactorRange();
+    void updateScalingFactorAndNoiseLevelRange();
     void execErrorMessage(const QString &message);
     std::optional<TaskConfig> getTaskConfig();
     void setTaskConfig(const TaskConfig &taskConfig);

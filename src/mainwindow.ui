@@ -597,7 +597,11 @@ QProgressBar::chunk {
       </layout>
      </item>
      <item>
-      <widget class="QTextEdit" name="logsTextEdit"/>
+      <widget class="QTextEdit" name="logsTextEdit">
+       <property name="lineWrapMode">
+        <enum>QTextEdit::LineWrapMode::NoWrap</enum>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="saveLogsAsPushButton">

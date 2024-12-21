@@ -92,7 +92,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->addFilesPushButton->setEnabled(false);
         ui->deleteSelectedPushButton->setEnabled(false);
         ui->clearPushButton->setEnabled(false);
-        ui->menuLanguage->setEnabled(false);
 
         // Disable all edit buttons
         int rowCount = m_taskTableModel->rowCount();
@@ -169,7 +168,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->addFilesPushButton->setEnabled(true);
         ui->deleteSelectedPushButton->setEnabled(true);
         ui->clearPushButton->setEnabled(true);
-        ui->menuLanguage->setEnabled(true);
 
         // Enable all edit buttons
         int rowCount = m_taskTableModel->rowCount();
@@ -753,7 +751,7 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
             }
         } else {
             setProgressBarColor(progressBar, "green");
-            progressBar->setValue(progressBar->maximum());
+            progressBar->setMaximum(progressBar->value());
             progressBar->setFormat("%v/%m (%p%)");
         }
     }
@@ -919,6 +917,7 @@ void MainWindow::processNextVideo()
 
     // Set the outFname
     std::optional<QString> outputFilePath = generateNewFileName(inputFileName,
+                                                                taskConfig.procCfg.processor_type,
                                                                 taskConfig.outputSuffix);
     if (!outputFilePath.has_value()) {
         execErrorMessage(tr("Failed to generate output file name for file: ") + inputFileName);

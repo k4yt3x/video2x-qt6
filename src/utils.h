@@ -16,8 +16,12 @@ std::optional<QString> findRifeModelNameByDisplayName(const QString &displayName
 
 std::optional<QString> findRifeDisplayNameByModelName(const QString &modelName);
 
-std::optional<QString> generateNewFileName(QString fileName, QString extension);
+std::optional<QString> generateNewFileName(QString fileName,
+                                           video2x::processors::ProcessorType procType,
+                                           QString extension);
 
 QString convertProcessorTypeToQString(video2x::processors::ProcessorType procType);
+
+QString convertProcessorTypeToLowerCaseQString(video2x::processors::ProcessorType procType);
 
 #endif // UTILS_H

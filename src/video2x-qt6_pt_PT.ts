@@ -13,7 +13,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="212"/>
-        <location filename="mainwindow.cpp" line="312"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Progress</source>
         <translation>Progresso</translation>
     </message>
@@ -33,7 +33,7 @@
         <translation>Tempo restante:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="386"/>
+        <location filename="mainwindow.ui" line="357"/>
         <source>START</source>
         <translation>EXECUTAR</translation>
     </message>
@@ -94,268 +94,288 @@
         <translation>A processar: %v/%m (%p%)</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="349"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Click to show the logging console. This is best enabled before processing any files. Once enabled, the console cannot be closed.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Clique para mostrar a consola de registos. É melhor ativar antes de processar quaisquer ficheiros. Uma vez ativada, a consola não pode ser fechada.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="352"/>
+        <location filename="mainwindow.ui" line="466"/>
         <source>LOGS</source>
         <translation>Registos</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="380"/>
+        <location filename="mainwindow.ui" line="351"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Start processing the tasks in the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Inicie o processamento das tarefas na fila.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="411"/>
+        <location filename="mainwindow.ui" line="382"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pause task processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pausar o processamento de tarefas.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="439"/>
+        <location filename="mainwindow.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Resume processing tasks.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Retomar o processamento de tarefas.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="467"/>
+        <location filename="mainwindow.ui" line="438"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort task processing. Video2X will attempt to save the processed content.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abortar o processamento de tarefas. O Video2X tentará guardar o conteúdo processado.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="473"/>
+        <location filename="mainwindow.ui" line="444"/>
         <source>ABORT</source>
         <translation>Abortar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="495"/>
+        <location filename="mainwindow.ui" line="488"/>
         <source>File</source>
         <translation>Ficheiro</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="501"/>
+        <location filename="mainwindow.ui" line="494"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="508"/>
+        <location filename="mainwindow.ui" line="501"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="533"/>
+        <location filename="mainwindow.ui" line="526"/>
+        <source>Logs</source>
+        <translation>Registos</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="551"/>
+        <source>Log Level</source>
+        <translation>Nível de Registro</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="609"/>
+        <source>Save As...</source>
+        <translation>Salvar como...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="621"/>
         <source>Exit</source>
         <translation>Sair</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="536"/>
+        <location filename="mainwindow.ui" line="624"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="544"/>
+        <location filename="mainwindow.ui" line="632"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="569"/>
+        <location filename="mainwindow.ui" line="657"/>
         <source>Report Bugs...</source>
         <translation>Reportar erros...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="574"/>
-        <location filename="mainwindow.cpp" line="240"/>
+        <location filename="mainwindow.ui" line="662"/>
+        <location filename="mainwindow.cpp" line="247"/>
         <source>Restore Default Settings</source>
         <translation>Restaurar Definições Padrão</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="312"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>File Name</source>
         <translation>Nome do Ficheiro</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="312"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Processor</source>
         <translation>Processador</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="518"/>
-        <location filename="mainwindow.cpp" line="312"/>
-        <location filename="mainwindow.cpp" line="550"/>
+        <location filename="mainwindow.ui" line="511"/>
+        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="592"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="110"/>
+        <location filename="mainwindow.cpp" line="118"/>
         <source>paused</source>
         <translation>pausado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="139"/>
+        <location filename="mainwindow.cpp" line="147"/>
         <source>Processing Aborted</source>
         <translation>Processamento Abortado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="140"/>
+        <location filename="mainwindow.cpp" line="148"/>
         <source>Video processing was aborted.</source>
         <translation>O processamento de vídeo foi abortado.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="143"/>
-        <location filename="mainwindow.cpp" line="147"/>
+        <location filename="mainwindow.cpp" line="151"/>
+        <location filename="mainwindow.cpp" line="155"/>
         <source>Processing Finished</source>
         <translation>Processamento Concluído</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="144"/>
+        <location filename="mainwindow.cpp" line="152"/>
         <source>Video processing finished with errors.</source>
         <translation>O processamento de vídeo foi concluído com erros.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="148"/>
+        <location filename="mainwindow.cpp" line="156"/>
         <source>All videos have been processed successfully.</source>
         <translation>Todos os vídeos foram processados com sucesso.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="199"/>
+        <location filename="mainwindow.cpp" line="206"/>
         <source>Automatic Updates</source>
         <translation>Atualizações Automáticas</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="200"/>
+        <location filename="mainwindow.cpp" line="207"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>Gostaria que a aplicação verificasse atualizações automaticamente?</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="241"/>
+        <location filename="mainwindow.cpp" line="248"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>Tem a certeza de que deseja apagar todas as definições personalizadas?</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="249"/>
+        <location filename="mainwindow.cpp" line="256"/>
         <source>Default Settings Restored</source>
         <translation>Definições Padrão Restauradas</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="250"/>
+        <location filename="mainwindow.cpp" line="257"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>As definições padrão foram restauradas.
 Reinicie a aplicação para que as alterações tenham efeito.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="377"/>
+        <location filename="mainwindow.cpp" line="303"/>
+        <source>Save Logs As</source>
+        <translation>Salvar Registros Como</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="305"/>
+        <source>Text Log Files (*.log);;All Files (*)</source>
+        <translation>Arquivos de Log de Texto (*.log);;Todos os Arquivos (*)</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="313"/>
+        <source>Cannot open log file %1 for writing: %2</source>
+        <translation>Não é possível abrir o arquivo de log %1 para escrita: %2</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="325"/>
+        <source>Save Logs</source>
+        <translation>Salvar Registros</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="326"/>
+        <source>Logs successfully saved to %1</source>
+        <translation>Registros salvos com sucesso em %1</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="419"/>
         <source>Not yet processed</source>
         <translation>Não processado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="495"/>
+        <location filename="mainwindow.cpp" line="537"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>Ocorreu um erro interno ao analisar as opções da tarefa.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="564"/>
+        <location filename="mainwindow.cpp" line="606"/>
         <source>Edit Task</source>
         <translation>Editar Tarefa</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="577"/>
+        <location filename="mainwindow.cpp" line="619"/>
         <source>Failed to parse task configs.</source>
         <translation>Falha ao analisar as configurações da tarefa.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="599"/>
+        <location filename="mainwindow.cpp" line="641"/>
         <source>Select Files</source>
         <translation>Selecionar Ficheiros</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="601"/>
+        <location filename="mainwindow.cpp" line="643"/>
         <source>All Files (*.*)</source>
         <translation>Todos os Ficheiros (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="630"/>
+        <location filename="mainwindow.cpp" line="677"/>
         <source>The task queue is empty!</source>
         <translation>A fila de tarefas está vazia!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="697"/>
-        <source>Failed to allocate the logging console.</source>
-        <translation>Falha ao alocar a consola de registos.</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="706"/>
-        <source>Failed to redirect standard output to the logging console.</source>
-        <translation>Falha ao redirecionar a saída padrão para a consola de registos.</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="710"/>
-        <source>Failed to redirect standard error to the logging console.</source>
-        <translation>Falha ao redirecionar o erro padrão para a consola de registos.</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="725"/>
+        <location filename="mainwindow.cpp" line="743"/>
         <source>Aborted</source>
         <translation>Abortado</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="725"/>
+        <location filename="mainwindow.cpp" line="743"/>
         <source>Failed</source>
         <translation>Falhou</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="828"/>
+        <location filename="mainwindow.cpp" line="849"/>
         <source> day</source>
         <translation> dia</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="901"/>
+        <location filename="mainwindow.cpp" line="922"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Falha ao gerar o nome do ficheiro de saída para o ficheiro: </translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="442"/>
+        <location filename="mainwindow.ui" line="413"/>
         <source>RESUME</source>
         <translation>CONTINUAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="414"/>
+        <location filename="mainwindow.ui" line="385"/>
         <source>PAUSE</source>
         <translation>PAUSAR</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="292"/>
+        <location filename="mainwindow.cpp" line="333"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="49"/>
-        <location filename="mainwindow.cpp" line="110"/>
-        <location filename="mainwindow.cpp" line="132"/>
-        <location filename="mainwindow.cpp" line="175"/>
-        <location filename="mainwindow.cpp" line="895"/>
+        <location filename="mainwindow.cpp" line="61"/>
+        <location filename="mainwindow.cpp" line="118"/>
+        <location filename="mainwindow.cpp" line="140"/>
+        <location filename="mainwindow.cpp" line="182"/>
+        <location filename="mainwindow.cpp" line="916"/>
         <source>Status: </source>
         <translation>Estado: </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="49"/>
-        <location filename="mainwindow.cpp" line="175"/>
+        <location filename="mainwindow.cpp" line="61"/>
+        <location filename="mainwindow.cpp" line="182"/>
         <source>idle</source>
         <translation>Inativo</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="302"/>
+        <location filename="mainwindow.cpp" line="343"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="895"/>
+        <location filename="mainwindow.cpp" line="916"/>
         <source>Processing file </source>
         <translation>A processar o ficheiro </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="830"/>
+        <location filename="mainwindow.cpp" line="851"/>
         <source> days</source>
         <translation> dias</translation>
     </message>
@@ -399,279 +419,313 @@ Reinicie a aplicação para que as alterações tenham efeito.</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="96"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RealESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Works for both real-life and anime videos. Slower than Anime4K but provides better quality.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Supports any MPV-compatible GLSL shader. The built-in Anime4K shader is for anime only. It is very fast, but provides slightly lower quality than RealESRGAN.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Selecione o filtro que pretende utilizar para processar o vídeo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RealESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Funciona tanto para vídeos reais como para anime. Mais lento que o Anime4K, mas oferece melhor qualidade.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Suporta qualquer shader GLSL compatível com MPV. O shader Anime4K incorporado é apenas para anime. É muito rápido, mas oferece qualidade ligeiramente inferior ao RealESRGAN.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Supports any MPV-compatible GLSL shader. The built-in Anime4K shader is for anime only. It is very fast, but provides slightly lower quality than Real-ESRGAN and Real-CUGAN.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• Real-ESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Works for both real-life and anime videos. Provides the best quality, but slower.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• Real-CUGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Bilibili&apos;s anime super resolution model. Supports different levels of denoising.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RealESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Works for both real-life and anime videos. Slower than Anime4K but provides better quality.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Supports any MPV-compatible GLSL shader. The built-in Anime4K shader is for anime only. It is very fast, but provides slightly lower quality than RealESRGAN.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Selecione o filtro que deseja usar para processar o vídeo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Suporta qualquer shader GLSL compatível com MPV. O shader integrado Anime4K é apenas para animes. É muito rápido, mas oferece qualidade ligeiramente inferior ao Real-ESRGAN e Real-CUGAN.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• Real-ESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Funciona tanto para vídeos de vida real quanto para animes. Oferece a melhor qualidade, mas é mais lento.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• Real-CUGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Modelo de super resolução de animes da Bilibili. Suporta diferentes níveis de redução de ruído.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="119"/>
+        <location filename="taskconfigdialog.ui" line="127"/>
         <source>3. Interpolator Selection</source>
         <translation>3. Seleção do Interpolador</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="131"/>
+        <location filename="taskconfigdialog.ui" line="139"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RIFE: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Selecione o interpolador de frames a utilizar para processar o vídeo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Mais adequado para vídeos de ação real.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="146"/>
+        <location filename="taskconfigdialog.ui" line="154"/>
         <source>4. Filter Options</source>
         <translation>4. Opções de Filtro</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="154"/>
+        <location filename="taskconfigdialog.ui" line="162"/>
         <source>Output Width</source>
         <translation>Largura da Saída</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="178"/>
+        <location filename="taskconfigdialog.ui" line="186"/>
         <source>Output Height</source>
         <translation>Altura da Saída</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="202"/>
+        <location filename="taskconfigdialog.ui" line="210"/>
         <source>Scaling Factor</source>
         <translation>Fator de Escala</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="227"/>
+        <location filename="taskconfigdialog.ui" line="234"/>
+        <source>Noise Level</source>
+        <translation>Nível de Ruído</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.ui" line="249"/>
         <source>4. Frame Interpolation Options</source>
         <translation>4. Opções de Interpolação de Quadros</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="235"/>
+        <location filename="taskconfigdialog.ui" line="257"/>
         <source>Frame Rate Multiplier</source>
         <translation>Multiplicador da Taxa de Quadros</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="259"/>
+        <location filename="taskconfigdialog.ui" line="281"/>
         <source>Scene Detection Threshold</source>
         <translation>Limite de Deteção de Alteração de Cena</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="281"/>
-        <source>5. RealESRGAN Options</source>
-        <translation>5. Opções do RealESRGAN</translation>
+        <location filename="taskconfigdialog.ui" line="385"/>
+        <source>5. Real-ESRGAN Options</source>
+        <translation>5. Opções do Real-ESRGAN</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="289"/>
-        <location filename="taskconfigdialog.ui" line="416"/>
+        <location filename="taskconfigdialog.ui" line="393"/>
+        <location filename="taskconfigdialog.ui" line="438"/>
+        <location filename="taskconfigdialog.ui" line="528"/>
         <source>Model</source>
         <translation>Modelo</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="296"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;O modelo RealESRGAN a utilizar. Modelos diferentes suportam rácios de ampliação específicos.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferido para vídeos de anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): para vídeos de anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): para vídeos da vida real&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="taskconfigdialog.ui" line="326"/>
+        <location filename="taskconfigdialog.ui" line="303"/>
         <source>5. libplacebo Options</source>
         <translation>5. Opções do libplacebo</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="334"/>
+        <location filename="taskconfigdialog.ui" line="311"/>
         <source>GLSL Shader</source>
         <translation>GLSL Shader</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="341"/>
+        <location filename="taskconfigdialog.ui" line="318"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;: Optimized for 1080p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;: Optimized for 720p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;: Optimized for 480p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;: Higher quality version of mode A&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;: Higher quality version of mode B&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;: Higher quality version of mode C&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: Experimental SRGAN shaders; delivers the highest quality but is slower than standard modes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;O shader GLSL usado para processar o vídeo.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;: Otimizado para anime 1080p&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;: Otimizado para anime 720p&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;: Otimizado para anime 480p&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;: Versão de maior qualidade do modo A&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;: Versão de maior qualidade do modo B&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;: Versão de maior qualidade do modo C&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: Shaders SRGAN experimentais; oferece a melhor qualidade mas é mais lento que os modos padrão&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="388"/>
+        <location filename="taskconfigdialog.ui" line="365"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path to a custom MPV-compatible GLSL shader file. Leave empty to use the GLSL shader selected above for processing.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Caminho para um ficheiro shader GLSL compatível com MPV. Deixe vazio para usar o shader GLSL selecionado acima para processamento.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="391"/>
+        <location filename="taskconfigdialog.ui" line="368"/>
         <source>Custom GLSL shader file path</source>
         <translation>Caminho do ficheiro de shader GLSL personalizado</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="398"/>
+        <location filename="taskconfigdialog.ui" line="375"/>
         <source>Select Custom GLSL Shader File</source>
         <translation>Selecionar Ficheiro de Shader GLSL Personalizado</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="408"/>
+        <location filename="taskconfigdialog.ui" line="400"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;O modelo RealESRGAN a ser usado. Modelos diferentes suportam relações de escala específicas.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferido para vídeos de anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): para vídeos de anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): para vídeos de vida real&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.ui" line="430"/>
+        <source>5. Real-CUGAN Options</source>
+        <translation>5. Opções do Real-CUGAN</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.ui" line="474"/>
+        <source>Threads</source>
+        <translation>Threads</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.ui" line="495"/>
+        <source>Sync Gap</source>
+        <translation>Lacuna de Sincronização</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.ui" line="502"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Especifique o modo de lacuna de sincronização.&lt;/p&gt;&lt;p&gt;• 0: Sem sincronização&lt;br/&gt;• 1: Sincronização precisa&lt;br/&gt;• 2: Sincronização aproximada&lt;br/&gt;• 3: Sincronização muito aproximada&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.ui" line="520"/>
         <source>5. RIFE Options</source>
         <translation>5. Opções do RIFE</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="423"/>
+        <location filename="taskconfigdialog.ui" line="535"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RIFE model to use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;O modelo RIFE a utilizar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="494"/>
+        <location filename="taskconfigdialog.ui" line="606"/>
         <source>Encoder Options</source>
         <translation>Opções do Codificador</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="504"/>
+        <location filename="taskconfigdialog.ui" line="616"/>
         <source>Standard Options</source>
         <translation>Opções Padrão</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="540"/>
+        <location filename="taskconfigdialog.ui" line="652"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o sufixo do ficheiro de saída. Isto é usado para determinar o formato do contentor. Opções comuns são:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: O formato de contentor MP4. Compatível com a maioria dos leitores de vídeo.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: O formato de contentor Matroska. Compatível com a maioria dos codecs de vídeo/áudio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="567"/>
+        <location filename="taskconfigdialog.ui" line="679"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Especifique o codec para codificar ou descodificar fluxos de mídia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="594"/>
+        <location filename="taskconfigdialog.ui" line="706"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o formato de píxel para codificação ou descodificação de vídeo (ex.: yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="615"/>
+        <location filename="taskconfigdialog.ui" line="727"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina a taxa de bits média alvo para codificação em bits por segundo (ex.: 1000000 para 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="636"/>
+        <location filename="taskconfigdialog.ui" line="748"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o tamanho do buffer de fluxo de bits para codificação em bits por segundo (ex.: 500000 para 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="657"/>
+        <location filename="taskconfigdialog.ui" line="769"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina a taxa de bits mínima em bits por segundo (ex.: 500000 para 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="678"/>
+        <location filename="taskconfigdialog.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina a taxa de bits máxima em bits por segundo (ex.: 5000000 para 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="699"/>
+        <location filename="taskconfigdialog.ui" line="811"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o quantizador mínimo, controlando o nível mínimo de compressão (valores menores produzem maior qualidade).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="726"/>
+        <location filename="taskconfigdialog.ui" line="838"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o quantizador máximo, controlando o nível máximo de compressão (valores maiores produzem menor qualidade).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="753"/>
+        <location filename="taskconfigdialog.ui" line="865"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o número de imagens em um grupo de imagens, especificando o número de frames entre keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="780"/>
+        <location filename="taskconfigdialog.ui" line="892"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o número máximo de frames B entre frames não B.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="807"/>
+        <location filename="taskconfigdialog.ui" line="919"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o tamanho mínimo do GOP.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="834"/>
+        <location filename="taskconfigdialog.ui" line="946"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina o número máximo de frames de referência usados para previsão.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="861"/>
+        <location filename="taskconfigdialog.ui" line="973"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Especifique o número de threads para codificação ou descodificação (0 seleciona automaticamente).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="882"/>
+        <location filename="taskconfigdialog.ui" line="994"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Especifique o atraso do codec em frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="912"/>
+        <location filename="taskconfigdialog.ui" line="1024"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ative a aceleração por hardware, principalmente para descodificação. Esta opção ainda não está totalmente funcional e deve ter um impacto insignificante no desempenho.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="924"/>
+        <location filename="taskconfigdialog.ui" line="1036"/>
         <source>Copy audio and subtitle streams</source>
         <translation>Copiar fluxos de áudio e de legendas</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="939"/>
+        <location filename="taskconfigdialog.ui" line="1051"/>
         <source>Custom Options</source>
         <translation>Opções Personalizadas</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="960"/>
+        <location filename="taskconfigdialog.ui" line="1072"/>
         <source>Add</source>
         <translation>Adicionar</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="967"/>
+        <location filename="taskconfigdialog.ui" line="1079"/>
         <source>Remove Selected</source>
         <translation>Remover Selecionado</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="986"/>
+        <location filename="taskconfigdialog.ui" line="1098"/>
         <source>Apply</source>
         <translation>Aplicar</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="993"/>
+        <location filename="taskconfigdialog.ui" line="1105"/>
         <source>Cancel</source>
         <oldsource>Canacel</oldsource>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="40"/>
+        <location filename="taskconfigdialog.cpp" line="47"/>
         <source>Option</source>
         <translation>Opção</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="40"/>
+        <location filename="taskconfigdialog.cpp" line="47"/>
         <source>Value</source>
         <translation>Valor</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="199"/>
+        <location filename="taskconfigdialog.cpp" line="211"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="233"/>
+        <location filename="taskconfigdialog.cpp" line="274"/>
         <source>No GPUs with Vulkan support found!</source>
         <translation>Nenhuma GPU com suporte a Vulkan encontrada!</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="676"/>
+        <location filename="taskconfigdialog.cpp" line="752"/>
+        <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
+Allowed values are -1, 0, and 3</source>
+        <translation>Nível de ruído inválido para o modelo Real-CUGAN &apos;models-pro&apos;.  
+Os valores permitidos são -1, 0 e 3</translation>
+    </message>
+    <message>
+        <location filename="taskconfigdialog.cpp" line="759"/>
         <source>Invalid codec value: &apos;</source>
         <translation>Valor de codec inválido: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="683"/>
+        <location filename="taskconfigdialog.cpp" line="766"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>Valor de pix_fmt inválido: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="691"/>
+        <location filename="taskconfigdialog.cpp" line="774"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>Valor de hwaccel inválido: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="700"/>
+        <location filename="taskconfigdialog.cpp" line="783"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>Ficheiro de shader GLSL do libplacebo não encontrado: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="741"/>
+        <location filename="taskconfigdialog.cpp" line="824"/>
         <source>Select GLSL Shader</source>
         <translation>Selecionar o Shader GLSL</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="743"/>
+        <location filename="taskconfigdialog.cpp" line="826"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>Ficheiros GLSL (*.glsl);;Todos os Ficheiros (*.*)</translation>
     </message>

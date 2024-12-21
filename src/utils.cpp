@@ -77,10 +77,13 @@ std::optional<QString> findRifeDisplayNameByModelName(const QString &modelName)
     return std::nullopt;
 }
 
-std::optional<QString> generateNewFileName(QString fileName, QString extension)
+std::optional<QString> generateNewFileName(QString fileName,
+                                           video2x::processors::ProcessorType procType,
+                                           QString extension)
 {
     QFileInfo fileInfo(fileName);
-    QString baseFilePath = fileInfo.path() + "/" + fileInfo.completeBaseName() + ".processed";
+    QString baseFilePath = fileInfo.path() + "/" + fileInfo.completeBaseName() + "."
+                           + convertProcessorTypeToLowerCaseQString(procType);
     QString outputFilePath = baseFilePath + extension;
     int counter = 1;
 
@@ -102,10 +105,28 @@ QString convertProcessorTypeToQString(video2x::processors::ProcessorType procTyp
     case video2x::processors::ProcessorType::Libplacebo:
         return "libplacebo";
     case video2x::processors::ProcessorType::RealESRGAN:
-        return "RealESRGAN";
+        return "Real-ESRGAN";
+    case video2x::processors::ProcessorType::RealCUGAN:
+        return "Real-CUGAN";
     case video2x::processors::ProcessorType::RIFE:
         return "RIFE";
     default:
         return "Unknown";
+    }
+}
+
+QString convertProcessorTypeToLowerCaseQString(video2x::processors::ProcessorType procType)
+{
+    switch (procType) {
+    case video2x::processors::ProcessorType::Libplacebo:
+        return "libplacebo";
+    case video2x::processors::ProcessorType::RealESRGAN:
+        return "realesrgan";
+    case video2x::processors::ProcessorType::RealCUGAN:
+        return "realcugan";
+    case video2x::processors::ProcessorType::RIFE:
+        return "rife";
+    default:
+        return "unknown";
     }
 }

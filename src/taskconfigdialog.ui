@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>420</width>
-    <height>926</height>
+    <width>410</width>
+    <height>1100</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -93,7 +93,10 @@
              </font>
             </property>
             <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RealESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Works for both real-life and anime videos. Slower than Anime4K but provides better quality.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Supports any MPV-compatible GLSL shader. The built-in Anime4K shader is for anime only. It is very fast, but provides slightly lower quality than RealESRGAN.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the filter you want to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• libplacebo&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Supports any MPV-compatible GLSL shader. The built-in Anime4K shader is for anime only. It is very fast, but provides slightly lower quality than Real-ESRGAN and Real-CUGAN.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• Real-ESRGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Works for both real-life and anime videos. Provides the best quality, but slower.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:700;&quot;&gt;• Real-CUGAN&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Bilibili's anime super resolution model. Supports different levels of denoising.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="currentText">
+             <string notr="true">Real-ESRGAN</string>
             </property>
             <property name="currentIndex">
              <number>1</number>
@@ -105,7 +108,12 @@
             </item>
             <item>
              <property name="text">
-              <string notr="true">RealESRGAN</string>
+              <string notr="true">Real-ESRGAN</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Real-CUGAN</string>
              </property>
             </item>
            </widget>
@@ -218,6 +226,20 @@
             </item>
            </layout>
           </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_27">
+            <item>
+             <widget class="QLabel" name="noiseLevelLabel">
+              <property name="text">
+               <string>Noise Level</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="noiseLevelSpinBox"/>
+            </item>
+           </layout>
+          </item>
          </layout>
         </widget>
        </item>
@@ -268,51 +290,6 @@
               <property name="value">
                <double>100.000000000000000</double>
               </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="realesrganOptionsGroupBox">
-         <property name="title">
-          <string>5. RealESRGAN Options</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLabel" name="label">
-              <property name="text">
-               <string>Model</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="realesrganModelComboBox">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="currentIndex">
-               <number>2</number>
-              </property>
-              <item>
-               <property name="text">
-                <string notr="true">realesrgan-plus</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">realesrgan-plus-anime</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string notr="true">realesr-animevideov3</string>
-               </property>
-              </item>
              </widget>
             </item>
            </layout>
@@ -398,6 +375,141 @@
              <string>Select Custom GLSL Shader File</string>
             </property>
            </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="realesrganOptionsGroupBox">
+         <property name="title">
+          <string>5. Real-ESRGAN Options</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="realesrganModelComboBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <item>
+               <property name="text">
+                <string notr="true">realesrgan-plus</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">realesrgan-plus-anime</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">realesr-animevideov3</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="realcuganOptionsGroupBox">
+         <property name="title">
+          <string>5. Real-CUGAN Options</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_16">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_28">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="realcuganModelComboBox">
+              <property name="currentText">
+               <string notr="true">models-se</string>
+              </property>
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <item>
+               <property name="text">
+                <string notr="true">models-nose</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">models-pro</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">models-se</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_29">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Threads</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="realcuganThreadsSpinBox">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>2147483647</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_30">
+            <item>
+             <widget class="QLabel" name="label_23">
+              <property name="text">
+               <string>Sync Gap</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="realcuganSyncGapSpinBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="maximum">
+               <number>3</number>
+              </property>
+              <property name="value">
+               <number>3</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -514,8 +626,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>340</width>
-                <height>564</height>
+                <width>344</width>
+                <height>569</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">

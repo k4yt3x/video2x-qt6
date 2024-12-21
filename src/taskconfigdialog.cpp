@@ -22,12 +22,18 @@ extern "C" {
 // Filter selection
 #define PLACEBO_MODE 0
 #define ESRGAN_MODE 1
+#define CUGAN_MODE 2
 
 // Interpolation selection
 #define RIFE_MODE 0
 
-// RealESRGAN models
+// Real-ESRGAN models
 #define REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3 2
+
+// Real-CUGAN models
+#define REALCUGAN_MODEL_NOSE 0
+#define REALCUGAN_MODEL_PRO 1
+#define REALCUGAN_MODEL_SE 2
 
 TaskConfigDialog::TaskConfigDialog(QWidget *parent)
     : QDialog(parent)
@@ -55,12 +61,16 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
     ui->interpolatorSelectionGroupBox->setVisible(false);
     ui->frameInterpolationOptionsGroupBox->setVisible(false);
     ui->libplaceboOptionsGroupBox->setVisible(false);
+    ui->realcuganOptionsGroupBox->setVisible(false);
     ui->rifeOptionsGroupBox->setVisible(false);
 
     ui->outputWidthLabel->setVisible(false);
     ui->outputHeightLabel->setVisible(false);
     ui->outputWidthSpinBox->setVisible(false);
     ui->outputHeightSpinBox->setVisible(false);
+
+    ui->noiseLevelLabel->setVisible(false);
+    ui->noiseLevelSpinBox->setVisible(false);
 
     // Make processing mode updates also trigger filter/interpolator selection updates
     connect(ui->processingModeSelectionComboBox,
@@ -88,37 +98,29 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
             this,
             [this](int index) { ui->filterOptionsGroupBox->setVisible(index == FILTER_MODE); });
 
-    // Output width and height
     connect(ui->filterSelectionComboBox,
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
-            [this](int index) { ui->outputWidthLabel->setVisible(index == PLACEBO_MODE); });
-    connect(ui->filterSelectionComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            [this](int index) { ui->outputWidthSpinBox->setVisible(index == PLACEBO_MODE); });
-    connect(ui->filterSelectionComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            [this](int index) { ui->outputHeightLabel->setVisible(index == PLACEBO_MODE); });
-    connect(ui->filterSelectionComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            [this](int index) { ui->outputHeightSpinBox->setVisible(index == PLACEBO_MODE); });
+            [this](int index) {
+                // Output width and height
+                ui->outputWidthLabel->setVisible(index == PLACEBO_MODE);
+                ui->outputWidthSpinBox->setVisible(index == PLACEBO_MODE);
+                ui->outputHeightLabel->setVisible(index == PLACEBO_MODE);
+                ui->outputHeightSpinBox->setVisible(index == PLACEBO_MODE);
 
-    // Scaling factor
+                // Scaling factor
+                ui->scalingFactorLabel->setVisible(index == ESRGAN_MODE || index == CUGAN_MODE);
+                ui->scalingFactorSpinBox->setVisible(index == ESRGAN_MODE || index == CUGAN_MODE);
+
+                // Noise level
+                ui->noiseLevelLabel->setVisible(index == CUGAN_MODE);
+                ui->noiseLevelSpinBox->setVisible(index == CUGAN_MODE);
+            });
+
     connect(ui->filterSelectionComboBox,
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
-            [this](int index) { ui->scalingFactorLabel->setVisible(index == ESRGAN_MODE); });
-    connect(ui->filterSelectionComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            [this](int index) { ui->scalingFactorSpinBox->setVisible(index == ESRGAN_MODE); });
-    connect(ui->filterSelectionComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            &TaskConfigDialog::updateScalingFactorRange);
+            &TaskConfigDialog::updateScalingFactorAndNoiseLevelRange);
 
     // Frame interpolation options
     connect(ui->processingModeSelectionComboBox,
@@ -144,31 +146,40 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
             this,
             [this](int index) { ui->frameRateMultiplierSpinBox->setVisible(index == RIFE_MODE); });
 
-    // RealESRGAN options
+    // Filter selection
     connect(ui->filterSelectionComboBox,
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
             [this](int index) {
-                ui->realesrganOptionsGroupBox->setVisible(
-                    ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
-                    && index == ESRGAN_MODE);
-            });
-    connect(ui->realesrganModelComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            &TaskConfigDialog::updateScalingFactorRange);
-
-    // libplacebo options
-    connect(ui->filterSelectionComboBox,
-            QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this,
-            [this](int index) {
+                // libplacebo options
                 ui->libplaceboOptionsGroupBox->setVisible(
                     ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
                     && index == PLACEBO_MODE);
+
+                // Real-ESRGAN options
+                ui->realesrganOptionsGroupBox->setVisible(
+                    ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
+                    && index == ESRGAN_MODE);
+
+                // Real-CUGAN options
+                ui->realcuganOptionsGroupBox->setVisible(
+                    ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
+                    && index == CUGAN_MODE);
             });
 
-    // RIFE options
+    // Real-ESRGAN options
+    connect(ui->realesrganModelComboBox,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            &TaskConfigDialog::updateScalingFactorAndNoiseLevelRange);
+
+    // Real-CUGAN options
+    connect(ui->realcuganModelComboBox,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            &TaskConfigDialog::updateScalingFactorAndNoiseLevelRange);
+
+    // Interpolation selection
     connect(ui->interpolationSelectionComboBox,
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
@@ -203,28 +214,57 @@ void TaskConfigDialog::execErrorMessage(const QString &message)
     msgBox.exec();
 }
 
-void TaskConfigDialog::updateScalingFactorRange()
+void TaskConfigDialog::updateScalingFactorAndNoiseLevelRange()
 {
     if (ui->filterSelectionComboBox->currentIndex() == ESRGAN_MODE) {
-        // For RealESRGAN, the maximum scaling factor is 4
+        // For Real-ESRGAN, the maximum scaling factor is 4
         ui->scalingFactorSpinBox->setMaximum(4);
 
-        // Set minimum scaling factor for RealESRGAN
+        // Set minimum scaling factor for Real-ESRGAN
         if (ui->realesrganModelComboBox->currentIndex() == REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3) {
             ui->scalingFactorSpinBox->setMinimum(2);
         } else {
             ui->scalingFactorSpinBox->setMinimum(4);
+        }
+    } else if (ui->filterSelectionComboBox->currentIndex() == CUGAN_MODE) {
+        // For Real-CUGAN, the minimum scaling factor is 2
+        ui->scalingFactorSpinBox->setMinimum(2);
+
+        // Set maximum scaling factor and noise level for Real-CUGAN
+        switch (ui->realcuganModelComboBox->currentIndex()) {
+        case REALCUGAN_MODEL_NOSE:
+            ui->scalingFactorSpinBox->setMaximum(2);
+            ui->noiseLevelSpinBox->setMinimum(0);
+            ui->noiseLevelSpinBox->setMaximum(0);
+            break;
+        case REALCUGAN_MODEL_PRO:
+            ui->scalingFactorSpinBox->setMaximum(3);
+            ui->noiseLevelSpinBox->setMinimum(-1);
+            ui->noiseLevelSpinBox->setMaximum(3);
+            break;
+        case REALCUGAN_MODEL_SE:
+        default:
+            ui->scalingFactorSpinBox->setMaximum(4);
+            ui->noiseLevelSpinBox->setMinimum(-1);
+            ui->noiseLevelSpinBox->setMaximum(3);
+            break;
         }
     } else {
         ui->scalingFactorSpinBox->setMinimum(1);
         ui->scalingFactorSpinBox->setMaximum(99);
     }
 
-    // Clamp scaling factor is within the allowed range
+    // Clamp scaling factor within the allowed range
     if (ui->scalingFactorSpinBox->value() > ui->scalingFactorSpinBox->maximum()) {
         ui->scalingFactorSpinBox->setValue(ui->scalingFactorSpinBox->maximum());
     } else if (ui->scalingFactorSpinBox->value() < ui->scalingFactorSpinBox->minimum()) {
         ui->scalingFactorSpinBox->setValue(ui->scalingFactorSpinBox->minimum());
+    }
+
+    // Clamp noise level within the allowed range
+    if (ui->noiseLevelSpinBox->value() > ui->noiseLevelSpinBox->maximum()
+        || ui->noiseLevelSpinBox->value() < ui->noiseLevelSpinBox->minimum()) {
+        ui->noiseLevelSpinBox->setValue(0);
     }
 }
 
@@ -307,7 +347,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
     // Processor type
     if (procMode == video2x::processors::ProcessingMode::Filter) {
         switch (ui->filterSelectionComboBox->currentIndex()) {
-        case 0: { // libplacebo
+        case PLACEBO_MODE: { // libplacebo
             taskConfig.procCfg.processor_type = video2x::processors::ProcessorType::Libplacebo;
             taskConfig.procCfg.width = ui->outputWidthSpinBox->value();
             taskConfig.procCfg.height = ui->outputHeightSpinBox->value();
@@ -341,7 +381,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             taskConfig.procCfg.config = libplaceboConfig;
             break;
         }
-        case 1: { // RealESRGAN
+        case ESRGAN_MODE: { // Real-ESRGAN
             taskConfig.procCfg.processor_type = video2x::processors::ProcessorType::RealESRGAN;
             taskConfig.procCfg.scaling_factor = ui->scalingFactorSpinBox->value();
             video2x::processors::RealESRGANConfig realesrgan_config;
@@ -351,6 +391,21 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             realesrgan_config.model_name = ui->realesrganModelComboBox->currentText().toStdString();
 #endif
             taskConfig.procCfg.config = realesrgan_config;
+            break;
+        }
+        case CUGAN_MODE: { // Real-CUGAN
+            taskConfig.procCfg.processor_type = video2x::processors::ProcessorType::RealCUGAN;
+            taskConfig.procCfg.scaling_factor = ui->scalingFactorSpinBox->value();
+            taskConfig.procCfg.noise_level = ui->noiseLevelSpinBox->value();
+            video2x::processors::RealCUGANConfig realcugan_config;
+#ifdef _WIN32
+            realcugan_config.model_name = ui->realcuganModelComboBox->currentText().toStdWString();
+#else
+            realcugan_config.model_name = ui->realcuganModelComboBox->currentText().toStdString();
+#endif
+            realcugan_config.num_threads = ui->realcuganThreadsSpinBox->value();
+            realcugan_config.syncgap = ui->realcuganSyncGapSpinBox->value();
+            taskConfig.procCfg.config = realcugan_config;
             break;
         }
         default:
@@ -546,6 +601,23 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
             ui->realesrganModelComboBox->setCurrentText(modelName);
             break;
         }
+        case video2x::processors::ProcessorType::RealCUGAN: {
+            ui->filterSelectionComboBox->setCurrentIndex(1);
+            ui->scalingFactorSpinBox->setValue(taskConfig.procCfg.scaling_factor);
+            ui->noiseLevelSpinBox->setValue(taskConfig.procCfg.noise_level);
+
+            video2x::processors::RealCUGANConfig realcuganConfig
+                = std::get<video2x::processors::RealCUGANConfig>(taskConfig.procCfg.config);
+#ifdef _WIN32
+            QString modelName = QString::fromWCharArray(realcuganConfig.model_name.c_str());
+#else
+            QString modelName = QString::fromStdString(realesrganConfig.model_name);
+#endif
+            ui->realcuganModelComboBox->setCurrentText(modelName);
+            ui->realcuganThreadsSpinBox->setValue(realcuganConfig.num_threads);
+            ui->realcuganSyncGapSpinBox->setValue(realcuganConfig.syncgap);
+            break;
+        }
         default:
             // Unknown filter type, handle gracefully
             video2x::logger()->error("Unknown filter processor type.");
@@ -671,6 +743,17 @@ void TaskConfigDialog::setOutputSuffix(QString suffix)
 
 void TaskConfigDialog::on_applyPushButton_clicked()
 {
+    // Validate Real-CUGAN noise level for models-pro
+    if (ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
+        && ui->filterSelectionComboBox->currentIndex() == CUGAN_MODE
+        && ui->realcuganModelComboBox->currentIndex() == REALCUGAN_MODEL_PRO
+        && ui->noiseLevelSpinBox->value() > 0 && ui->noiseLevelSpinBox->value() < 3) {
+        execErrorMessage(
+            tr("Invalid noise level for Real-CUGAN model 'models-pro'.\nAllowed values "
+               "are -1, 0, and 3"));
+        return;
+    }
+
     // Validate codec
     if (avcodec_find_encoder_by_name(ui->codecLineEdit->text().toUtf8().constData()) == nullptr) {
         execErrorMessage(tr("Invalid codec value: '") + ui->codecLineEdit->text() + "'");
