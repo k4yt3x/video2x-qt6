@@ -22,7 +22,8 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
     endif()
 endif()
 
-option(USE_SYSTEM_SPDLOG "Use system spdlog library" OFF)
+option(USE_EXTERNAL_SPDLOG "Use the system-provided spdlog library" ON)
+option(USE_EXTERNAL_VIDEO2X "Use the system-provided video2x" OFF)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network LinguistTools)
 
@@ -68,9 +69,14 @@ else()
         list(APPEND FFMPEG_INCLUDE_DIRS ${${PKG}_INCLUDE_DIRS})
         list(APPEND FFMPEG_LIBS ${${PKG}_LIBRARIES})
     endforeach()
+
+    if(USE_EXTERNAL_VIDEO2X)
+	set(LIBVIDEO2X_BASE_PATH "/usr" CACHE STRING "Base path of libvideo2x")
+        list(APPEND FFMPEG_LIBS ${LIBVIDEO2X_BASE_PATH}/lib/libvideo2x.so)
+    endif()
 endif()
 
-if(USE_SYSTEM_SPDLOG)
+if(USE_EXTERNAL_SPDLOG)
     find_package(spdlog REQUIRED)
     set(SPDLOG_LIB spdlog::spdlog)
 else()
@@ -78,7 +84,7 @@ else()
     set(SPDLOG_LIB spdlog::spdlog_header_only)
 endif()
 
-if(NOT WIN32)
+if((NOT USE_EXTERNAL_VIDEO2X) AND (NOT WIN32))
     # Include ExternalProject module
     include(ExternalProject)
 
@@ -150,11 +156,13 @@ target_include_directories(video2x-qt6 PRIVATE
     ${CMAKE_SOURCE_DIR}/third_party/video2x/include
 )
 
-if(WIN32)
-    set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.lib)
-else()
-    add_dependencies(video2x-qt6 libvideo2x)
-    set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.so)
+if(NOT USE_EXTERNAL_VIDEO2X)
+    if(WIN32)
+        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.lib)
+    else()
+        add_dependencies(video2x-qt6 libvideo2x)
+        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x_install/lib/libvideo2x.so)
+    endif()
 endif()
 
 target_link_libraries(video2x-qt6 PRIVATE
@@ -174,9 +182,11 @@ install(TARGETS video2x-qt6
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-qt_generate_deploy_app_script(
-    TARGET video2x-qt6
-    OUTPUT_SCRIPT deploy_script
-    NO_UNSUPPORTED_PLATFORM_ERROR
-)
-install(SCRIPT ${deploy_script})
+if(WIN32)
+    qt_generate_deploy_app_script(
+        TARGET video2x-qt6
+        OUTPUT_SCRIPT deploy_script
+        NO_UNSUPPORTED_PLATFORM_ERROR
+    )
+    install(SCRIPT ${deploy_script})
+endif()

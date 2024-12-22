@@ -367,7 +367,7 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
 #ifdef _WIN32
                 libplaceboConfig.shader_path = anime4kShaderName.toStdWString();
 #else
-                libplacebo_config.shader_path = anime4kShaderName.toStdString();
+                libplaceboConfig.shader_path = anime4kShaderName.toStdString();
 #endif
             } else {
 #ifdef _WIN32
@@ -612,7 +612,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
 #ifdef _WIN32
             QString modelName = QString::fromWCharArray(realcuganConfig.model_name.c_str());
 #else
-            QString modelName = QString::fromStdString(realesrganConfig.model_name);
+            QString modelName = QString::fromStdString(realcuganConfig.model_name);
 #endif
             ui->realcuganModelComboBox->setCurrentText(modelName);
             ui->realcuganThreadsSpinBox->setValue(realcuganConfig.num_threads);
