@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Video2X Qt6
+Comment=The Qt6 GUI for Video2X
+Exec=video2x-qt6
+Icon=video2x
+Type=Application
+Terminal=false
+Categories=Video;Utility;Qt
