@@ -227,9 +227,9 @@ if(WIN32)
     install(SCRIPT ${deploy_script})
 elseif(LINUX)
     install(FILES resources/video2x-qt6.desktop
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
     )
     install(FILES resources/video2x.png
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/1024x1024/apps
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/1024x1024/apps
     )
 endif()
