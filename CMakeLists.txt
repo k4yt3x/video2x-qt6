@@ -225,4 +225,11 @@ if(WIN32)
         NO_UNSUPPORTED_PLATFORM_ERROR
     )
     install(SCRIPT ${deploy_script})
+elseif(LINUX)
+    install(FILES resources/video2x-qt6.desktop
+	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
+    )
+    install(FILES resources/video2x.png
+	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/1024x1024/apps
+    )
 endif()
