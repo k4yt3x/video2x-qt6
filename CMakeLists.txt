@@ -117,7 +117,7 @@ if(USE_EXTERNAL_VIDEO2X)
     list(APPEND VIDEO2X_QT6_LIBS Video2X::libvideo2x)
 elseif(USE_SHARED_VIDEO2X)
     # Add libvideo2x shared libraries and headers
-    set(LIBVIDEO2X_BASE_PATH ${CMAKE_SOURCE_DIR}/third_party/libvideo2x-shared)
+    set(LIBVIDEO2X_BASE_PATH ${CMAKE_SOURCE_DIR}/third_party/video2x-install)
     list(APPEND VIDEO2X_QT6_LIBS ${LIBVIDEO2X_BASE_PATH}/libvideo2x.lib)
     list(APPEND VIDEO2X_QT6_INCLUDE_DIRS ${LIBVIDEO2X_BASE_PATH}/include)
 else()
@@ -130,7 +130,7 @@ else()
         SOURCE_DIR ${CMAKE_SOURCE_DIR}/third_party/video2x
         CMAKE_ARGS
             -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/libvideo2x-install
+            -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/video2x-install
             -DCMAKE_POSITION_INDEPENDENT_CODE=ON
         BUILD_ALWAYS ON
         INSTALL_COMMAND ${CMAKE_COMMAND} --build . --target install --config ${CMAKE_BUILD_TYPE}
@@ -197,13 +197,10 @@ target_include_directories(video2x-qt6 PRIVATE
 
 if(NOT USE_EXTERNAL_VIDEO2X AND NOT USE_SHARED_VIDEO2X)
     add_dependencies(video2x-qt6 Video2X)
-endif()
-
-if(USE_SHARED_VIDEO2X)
     if(WIN32)
-        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x-install/lib/libvideo2x.lib)
+        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.lib)
     else()
-        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/libvideo2x-install/lib/libvideo2x.so)
+        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.so)
     endif()
     list(APPEND VIDEO2X_QT6_LIBS ${LIBVIDEO2X_LIB})
 endif()
