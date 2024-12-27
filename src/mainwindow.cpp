@@ -477,7 +477,7 @@ bool MainWindow::changeLanguage(const QString &locale)
         qApp->removeTranslator(&m_translator);
         fontName = "Segoe UI";
     } else {
-        if (m_translator.load("video2x-qt6_" + locale + ".qm")) {
+        if (m_translator.load(":/i18n/video2x-qt6_" + locale + ".qm")) {
             qApp->removeTranslator(&m_translator);
             qApp->installTranslator(&m_translator);
 

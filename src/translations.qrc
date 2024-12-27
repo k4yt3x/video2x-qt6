@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/i18n">
+        <file>video2x-qt6_en_US.qm</file>
+        <file>video2x-qt6_zh_CN.qm</file>
+        <file>video2x-qt6_ja_JP.qm</file>
+        <file>video2x-qt6_pt_PT.qm</file>
+        <file>video2x-qt6_fr_FR.qm</file>
+    </qresource>
+</RCC>

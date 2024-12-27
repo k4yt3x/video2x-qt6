@@ -169,6 +169,7 @@ set(PROJECT_SOURCES
     src/timer.h
     src/utils.cpp
     src/utils.h
+    src/translations.qrc
     ${TS_FILES}
 )
 
@@ -183,9 +184,10 @@ qt_add_executable(video2x-qt6
     ${APP_RESOURCE_FILE}
 )
 
-qt_add_translations(video2x-qt6 TS_FILES
-    ${TS_FILES}
+qt_add_translations(video2x-qt6
+    TS_FILES ${TS_FILES}
     LUPDATE_OPTIONS -no-obsolete
+    RESOURCE_PREFIX "/i18n"
 )
 
 target_include_directories(video2x-qt6 PRIVATE
