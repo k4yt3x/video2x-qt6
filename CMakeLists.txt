@@ -228,7 +228,40 @@ elseif(LINUX)
     install(FILES resources/video2x-qt6.desktop
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
     )
-    install(FILES resources/video2x.png
+    install(DIRECTORY resources/icons/16x16/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/16x16/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/24x24/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/24x24/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/32x32/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/32x32/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/48x48/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/48x48/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/64x64/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/64x64/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/128x128/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/128x128/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/256x256/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/256x256/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/512x512/
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/512x512/apps
+        FILES_MATCHING PATTERN "*.png"
+    )
+    install(DIRECTORY resources/icons/1024x1024/
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/1024x1024/apps
+        FILES_MATCHING PATTERN "*.png"
     )
 endif()
