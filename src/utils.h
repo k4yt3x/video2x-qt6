@@ -24,6 +24,8 @@ std::optional<QString> generateNewFileName(QString fileName,
                                            video2x::processors::ProcessorType procType,
                                            QString extension);
 
+QString getDefaultFontForLocale(const QString &locale);
+
 QString convertProcessorTypeToQString(video2x::processors::ProcessorType procType);
 
 QString convertProcessorTypeToLowerCaseQString(video2x::processors::ProcessorType procType);

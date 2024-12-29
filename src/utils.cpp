@@ -130,6 +130,19 @@ std::optional<QString> generateNewFileName(QString fileName,
     return std::nullopt;
 }
 
+QString getDefaultFontForLocale(const QString &locale)
+{
+    static const QMap<QString, QString> localeToFontNameMap = {{"zh_CN", "Microsoft YaHei UI"},
+                                                               {"ja_JP", "Yu Gothic UI"}};
+
+    if (localeToFontNameMap.contains(locale)) {
+        return localeToFontNameMap.value(locale);
+    }
+
+    // Use Segoe UI for all other languages
+    return "Segoe UI";
+}
+
 QString convertProcessorTypeToQString(video2x::processors::ProcessorType procType)
 {
     switch (procType) {

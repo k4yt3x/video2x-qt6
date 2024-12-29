@@ -471,40 +471,32 @@ QProgressBar *MainWindow::getCurrentProgressBar()
 
 bool MainWindow::changeLanguage(const QString &locale)
 {
-    QString fontName;
+    // Remove the currently installed translator
+    qApp->removeTranslator(&m_translator);
 
-    if (locale == "en_US") {
-        qApp->removeTranslator(&m_translator);
-        fontName = "Segoe UI";
-    } else {
+    // Apply the new translator if the local is not en_US (default language)
+    if (locale != "en_US") {
         if (m_translator.load(":/i18n/video2x-qt6_" + locale + ".qm")) {
-            qApp->removeTranslator(&m_translator);
             qApp->installTranslator(&m_translator);
-
-            if (locale == "zh_CN" || locale == "ja_JP") {
-                fontName = "Microsoft Yahei";
-            } else if (locale == "pt_PT" || locale == "fr_FR") {
-                fontName = "Segoe UI";
-            } else {
-                execErrorMessage("Locale not supported: " + locale);
-                video2x::logger()->error("Unsupported locale: {}.", locale.toStdString());
-                return false;
-            }
         } else {
             execErrorMessage("Failed to load translation for locale: " + locale);
-            video2x::logger()->error("Failed to load translation for locale: {}.", locale.toStdString());
+            video2x::logger()->error("Failed to load translation for locale: {}.",
+                                     locale.toStdString());
             return false;
         }
     }
 
-    QFont mainWindowFont(fontName);
+    // Set the new UI font
+    QFont mainWindowFont(getDefaultFontForLocale(locale));
     this->setFont(mainWindowFont);
 
+    // Retranslate UI components and refresh styles
     ui->retranslateUi(this);
     updateTaskTableHeaders();
     qApp->processEvents();
     qApp->setStyle(QApplication::style());
 
+    // Save translation settings to config
     m_config.translation = locale;
     m_configManager.saveConfig(m_config);
     return true;
