@@ -91,7 +91,7 @@
     <message>
         <location filename="mainwindow.ui" line="249"/>
         <source>Currently processing: %v/%m (%p%)</source>
-        <translation>正在处理: %v/%m (%p%)</translation>
+        <translation>正在处理：%v/%m (%p%)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="466"/>
@@ -332,7 +332,7 @@ Restart the application for changes to take effect.</source>
     <message>
         <location filename="mainwindow.cpp" line="933"/>
         <source>Failed to generate output file name for file: </source>
-        <translation>无法为文件生成输出文件名: </translation>
+        <translation>无法为文件生成输出文件名：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="413"/>
@@ -363,7 +363,7 @@ Restart the application for changes to take effect.</source>
         <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
 
 This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
-        <translation>Visual C++ 可再发行组件未安装或已安装版本未满足最低要求版本 (v14.42)。
+        <translation>Visual C++ 可再发行组件未安装或已安装版本未满足最低要求版本（v14.42）。
 
 这可能导致软件无法正常运行。请更新到最新版本以确保兼容性。</translation>
     </message>
@@ -441,7 +441,7 @@ This may cause the software to function improperly. Please update to the latest 
         <location filename="taskconfigdialog.ui" line="139"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RIFE: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;请选择用于处理视频的帧插值器。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: 最适合三次元视频。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;请选择用于处理视频的帧插值器。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;：最适合三次元视频。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="154"/>
@@ -508,7 +508,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="318"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;: Optimized for 1080p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;: Optimized for 720p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;: Optimized for 480p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;: Higher quality version of mode A&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;: Higher quality version of mode B&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;: Higher quality version of mode C&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: Experimental SRGAN shaders; delivers the highest quality but is slower than standard modes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于处理视频的 GLSL 着色器。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;: 为 1080p 动漫优化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;: 为 720p 动漫优化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;: 为 480p 动漫优化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;: 模式 A 的高质量版本&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;: 模式 B 的高质量版本&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;: 模式 C 的高质量版本&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: 实验性 SRGAN 着色器；提供最高质量但比标准模式更慢&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于处理视频的 GLSL 着色器。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;：为 1080p 动漫优化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;：为 720p 动漫优化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;：为 480p 动漫优化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;：模式 A 的高质量版本&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;：模式 B 的高质量版本&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;：模式 C 的高质量版本&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;：实验性 SRGAN 着色器；提供最高质量但比标准模式更慢&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="365"/>
@@ -528,7 +528,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="400"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要使用的 RealESRGAN 模型。不同的模型支持特定的缩放比例。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x)：适用于动漫视频&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x)：用于动漫视频&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x)：用于真实生活视频&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要使用的 RealESRGAN 模型。不同的模型支持特定的缩放比例。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt;（2x、3x、4x）：适用于动漫视频&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt;（4x）：用于动漫视频&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt;（4x）：用于真实生活视频&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="430"/>
@@ -548,7 +548,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="502"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定同步间隙模式。&lt;/p&gt;&lt;p&gt;• 0: 无同步&lt;br/&gt;• 1: 精确同步&lt;br/&gt;• 2: 粗略同步&lt;br/&gt;• 3: 非常粗略同步&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定同步间隙模式。&lt;/p&gt;&lt;p&gt;• 0：无同步&lt;br/&gt;• 1：精确同步&lt;br/&gt;• 2：粗略同步&lt;br/&gt;• 3：非常粗略同步&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="520"/>
@@ -573,7 +573,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="652"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置输出文件的后缀。这将用于确定容器格式。常见选项包括:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: MP4 容器格式。与大多数视频播放器兼容。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: Matroska 容器格式。与大多数视频/音频编解码器兼容。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置输出文件的后缀。这将用于确定容器格式。常见选项包括:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;：MP4 容器格式。与大多数视频播放器兼容。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;：Matroska 容器格式。与大多数视频/音频编解码器兼容。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="679"/>
@@ -583,27 +583,27 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="706"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置用于视频编码或解码的像素格式（例如: yuv420p, rgb24）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置用于视频编码或解码的像素格式（例如：yuv420p, rgb24）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="727"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置编码的目标平均比特率，以每秒比特数为单位（例如: 1000000 表示 1 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置编码的目标平均比特率，以每秒比特数为单位（例如：1000000 表示 1 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="748"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置编码的比特流缓冲区大小，以每秒比特数为单位（例如: 500000 表示 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置编码的比特流缓冲区大小，以每秒比特数为单位（例如：500000 表示 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="769"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最小比特率，以每秒比特数为单位（例如: 500000 表示 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最小比特率，以每秒比特数为单位（例如：500000 表示 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最大比特率，以每秒比特数为单位（例如: 5000000 表示 5 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最大比特率，以每秒比特数为单位（例如：5000000 表示 5 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="811"/>
@@ -705,28 +705,28 @@ This may cause the software to function improperly. Please update to the latest 
         <location filename="taskconfigdialog.cpp" line="752"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
-        <translation>Real-CUGAN 模型 &apos;models-pro&apos; 的噪声等级无效。  
+        <translation>Real-CUGAN 模型 &apos;models-pro&apos; 的噪声等级无效。
 允许的值为 -1、0 和 3</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="759"/>
         <source>Invalid codec value: &apos;</source>
-        <translation>无效的 codec 值: &apos;</translation>
+        <translation>无效的 codec 值：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="766"/>
         <source>Invalid pix_fmt value: &apos;</source>
-        <translation>无效的 pix_fmt 值: &apos;</translation>
+        <translation>无效的 pix_fmt 值：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="774"/>
         <source>Invalid hwaccel value: &apos;</source>
-        <translation>无效的 hwaccel 值: &apos;</translation>
+        <translation>无效的 hwaccel 值：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="783"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
-        <translation>未找到 libplacebo GLSL 着色器文件: &apos;</translation>
+        <translation>未找到 libplacebo GLSL 着色器文件：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="824"/>

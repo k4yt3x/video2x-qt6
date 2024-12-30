@@ -20,17 +20,17 @@
     <message>
         <location filename="mainwindow.ui" line="267"/>
         <source>Frames/s:</source>
-        <translation>フレーム/秒:</translation>
+        <translation>フレーム/秒：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="288"/>
         <source>Time Elapsed:</source>
-        <translation>経過時間:</translation>
+        <translation>経過時間：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="309"/>
         <source>Time Remaining:</source>
-        <translation>残り時間:</translation>
+        <translation>残り時間：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="357"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="mainwindow.ui" line="249"/>
         <source>Currently processing: %v/%m (%p%)</source>
-        <translation>現在の処理: %v/%m (%p%)</translation>
+        <translation>現在の処理：%v/%m (%p%)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="466"/>
@@ -235,7 +235,7 @@
     <message>
         <location filename="mainwindow.cpp" line="217"/>
         <source>Would you like the application to automatically check for updates?</source>
-        <translation>自動的に Video2X の更新を確認するようにしますか？</translation>
+        <translation>アプリケーションが自動的に更新を確認するようにしますか？</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="258"/>
@@ -252,7 +252,7 @@
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>既定の設定に戻しました。
-変更を適用するには Video2X を再起動してください。</translation>
+変更を適用するにはアプリケーションを再起動してください。</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="313"/>
@@ -267,7 +267,7 @@ Restart the application for changes to take effect.</source>
     <message>
         <location filename="mainwindow.cpp" line="323"/>
         <source>Cannot open log file %1 for writing: %2</source>
-        <translation>ログファイル %1 を書き込み用に開けません: %2</translation>
+        <translation>ログファイル %1 を書き込み用に開けません：%2</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="335"/>
@@ -332,7 +332,7 @@ Restart the application for changes to take effect.</source>
     <message>
         <location filename="mainwindow.cpp" line="933"/>
         <source>Failed to generate output file name for file: </source>
-        <translation>ファイルの出力ファイル名の生成に失敗しました: </translation>
+        <translation>ファイルの出力ファイル名の生成に失敗しました：</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="413"/>
@@ -356,14 +356,14 @@ Restart the application for changes to take effect.</source>
         <location filename="mainwindow.cpp" line="192"/>
         <location filename="mainwindow.cpp" line="926"/>
         <source>Status: </source>
-        <translation>ステータス: </translation>
+        <translation>ステータス：</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="52"/>
         <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
 
 This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
-        <translation>Visual C++ 再頒布可能パッケージがインストールされていないか、インストールされているバージョンが最小要件バージョン (v14.42) を満たしていません。
+        <translation>Visual C++ 再頒布可能パッケージがインストールされていないか、インストールされているバージョンが最小要件バージョン（v14.42）を満たしていません。
 
 これによりソフトウェアが正常に機能しない可能性があります。互換性を確保するには、最新のバージョンに更新してください。</translation>
     </message>
@@ -404,7 +404,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="36"/>
         <source>1. Vulkan Device (GPU) Selection</source>
-        <translation>1. Vulkan デバイス (GPU) の選択</translation>
+        <translation>1. Vulkan デバイス（GPU）の選択</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="55"/>
@@ -414,7 +414,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="68"/>
         <source>Filter (Upscaling)</source>
-        <translation>フィルター (アップスケール)</translation>
+        <translation>フィルター（アップスケール）</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="73"/>
@@ -441,7 +441,7 @@ This may cause the software to function improperly. Please update to the latest 
         <location filename="taskconfigdialog.ui" line="139"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Select the frame interpolator to use to process the video.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;- RIFE: Best suited for live-action videos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;動画を処理するために使用するフレーム補間を選択してください。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;: 実写の動画に最適です。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;動画を処理するために使用するフレーム補間を選択してください。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;font-weight:700;&quot;&gt;• RIFE&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;：実写の動画に最適です。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="154"/>
@@ -508,7 +508,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="318"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The GLSL shader used to process the video.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A&lt;/span&gt;: Optimized for 1080p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B&lt;/span&gt;: Optimized for 720p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C&lt;/span&gt;: Optimized for 480p anime&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode A+A&lt;/span&gt;: Higher quality version of mode A&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode B+B&lt;/span&gt;: Higher quality version of mode B&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 Mode C+A&lt;/span&gt;: Higher quality version of mode C&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: Experimental SRGAN shaders; delivers the highest quality but is slower than standard modes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画を処理するために使用する GLSL シェーダーです。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード A&lt;/span&gt;: 1080p アニメに最適化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード B&lt;/span&gt;: 720p アニメに最適化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード C&lt;/span&gt;: 480p アニメに最適化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード A+A&lt;/span&gt;: モード A の高画質版&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード B+B&lt;/span&gt;: モード B の高画質版&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード C+A&lt;/span&gt;: モード C の高画質版&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;: 実験的な SRGAN シェーダーです。標準モードよりも低速ですが、最高画質になります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画を処理するために使用する GLSL シェーダーです。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード A&lt;/span&gt;：1080p アニメに最適化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード B&lt;/span&gt;：720p アニメに最適化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード C&lt;/span&gt;：480p アニメに最適化&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード A+A&lt;/span&gt;：モード A の高画質版&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード B+B&lt;/span&gt;：モード B の高画質版&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4 モード C+A&lt;/span&gt;：モード C の高画質版&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• Anime4K v4.1 GAN&lt;/span&gt;：実験的な SRGAN シェーダーです。標準モードよりも低速ですが、最高画質になります&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="365"/>
@@ -528,7 +528,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="400"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RealESRGAN model to use. Different models support specific scaling ratios.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): preferred for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): for anime videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): for real-life videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する RealESRGAN モデルです。異なるモデルは特定のスケーリングレートをサポートします。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): アニメの動画に最適&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): アニメの動画用&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): 実写の動画用&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する RealESRGAN モデルです。異なるモデルは特定のスケーリングレートをサポートします。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt;（2x、3x、4x）：アニメの動画に最適&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt;（4x）：アニメの動画用&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt;（4x）：実写の動画用&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="430"/>
@@ -548,7 +548,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="502"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;同期ギャップモードを指定してください。&lt;/p&gt;&lt;p&gt;• 0: 同期なし&lt;br/&gt;• 1: 正確な同期&lt;br/&gt;• 2: 大まかな同期&lt;br/&gt;• 3: 非常に大まかな同期&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;同期ギャップモードを指定してください。&lt;/p&gt;&lt;p&gt;• 0：同期なし&lt;br/&gt;• 1：正確な同期&lt;br/&gt;• 2：大まかな同期&lt;br/&gt;• 3：非常に大まかな同期&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="520"/>
@@ -573,7 +573,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="652"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力ファイルの接頭辞を設定してください。これによりコンテナの形式が決まります。一般的なオプションは以下の通りです:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: MP4 コンテナ形式です。ほとんどの動画プレーヤーと互換性があります。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: Matroska コンテナ形式です。ほとんどの動画とオーディオコーデックに互換性があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力ファイルの接頭辞を設定してください。これによりコンテナの形式が決まります。一般的なオプションは以下の通りです:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;：MP4 コンテナ形式です。ほとんどの動画プレーヤーと互換性があります。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;：Matroska コンテナ形式です。ほとんどの動画とオーディオコーデックに互換性があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="679"/>
@@ -583,37 +583,37 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="706"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画のエンコードまたはデコード用のピクセル形式を設定してください (例: yuv420p, rgb24)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画のエンコードまたはデコード用のピクセル形式を設定してください（例：yuv420p, rgb24）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="727"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードの目標平均ビットレートをビット/秒で設定してください (例: 1000000 で 1 Mbps)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードの目標平均ビットレートをビット/秒で設定してください（例：1000000 で 1 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="748"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードのビットストリームバッファサイズをビット/秒で設定してください (例: 500000 で 500 kbps)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードのビットストリームバッファサイズをビット/秒で設定してください（例：500000 で 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="769"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小ビットレートをビット/秒で設定してください (例: 500000 で 500 kbps)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小ビットレートをビット/秒で設定してください（例：500000 で 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大ビットレートをビット/秒で設定してください (例: 5000000 で 5 Mbps)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大ビットレートをビット/秒で設定してください（例：5000000 で 5 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="811"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小量子化の値を設定してください。これは最低圧縮レベルを制御します (値が小さいほど画質が向上します)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小量子化の値を設定してください。これは最低圧縮レベルを制御します（値が小さいほど画質が向上します）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="838"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大の量子化値を設定してください。これは最高圧縮レベルを制御します (値が大きいほど画質が低下します)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大の量子化値を設定してください。これは最高圧縮レベルを制御します（値が大きいほど画質が低下します）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="865"/>
@@ -638,7 +638,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="973"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードまたはデコードに使用するスレッド数を指定してください (0 を指定すると自動的に選択されます)。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードまたはデコードに使用するスレッド数を指定してください（0 を指定すると自動的に選択されます）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="994"/>
@@ -711,22 +711,22 @@ Allowed values are -1, 0, and 3</source>
     <message>
         <location filename="taskconfigdialog.cpp" line="759"/>
         <source>Invalid codec value: &apos;</source>
-        <translation>無効な codec の値: &apos;</translation>
+        <translation>無効な codec の値：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="766"/>
         <source>Invalid pix_fmt value: &apos;</source>
-        <translation>無効な pix_fmt の値: &apos;</translation>
+        <translation>無効な pix_fmt の値：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="774"/>
         <source>Invalid hwaccel value: &apos;</source>
-        <translation>無効な hwaccel の値: &apos;</translation>
+        <translation>無効な hwaccel の値：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="783"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
-        <translation>libplacebo GLSL シェーダーファイルが見つかりません: &apos;</translation>
+        <translation>libplacebo GLSL シェーダーファイルが見つかりません：&apos;</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.cpp" line="824"/>

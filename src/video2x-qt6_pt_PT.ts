@@ -705,7 +705,7 @@ Isso pode causar mau funcionamento do software. Por favor, atualize para a vers�
         <location filename="taskconfigdialog.cpp" line="752"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
-        <translation>Nível de ruído inválido para o modelo Real-CUGAN &apos;models-pro&apos;.  
+        <translation>Nível de ruído inválido para o modelo Real-CUGAN &apos;models-pro&apos;.
 Os valores permitidos são -1, 0 e 3</translation>
     </message>
     <message>
