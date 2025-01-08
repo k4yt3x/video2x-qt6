@@ -500,6 +500,7 @@ QProgressBar::chunk {
     <addaction name="actionLanguageJAJP"/>
     <addaction name="actionLanguagePTPT"/>
     <addaction name="actionLanguageFRFR"/>
+    <addaction name="actionLanguageDEDE"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
@@ -660,6 +661,11 @@ QProgressBar::chunk {
   <action name="actionLanguageFRFR">
    <property name="text">
     <string notr="true">Français (France)</string>
+   </property>
+  </action>
+  <action name="actionLanguageDEDE">
+   <property name="text">
+    <string notr="true">Deutsch (Deutschland)</string>
    </property>
   </action>
  </widget>

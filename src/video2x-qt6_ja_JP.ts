@@ -12,33 +12,33 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="212"/>
-        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.ui" line="207"/>
+        <location filename="mainwindow.cpp" line="364"/>
         <source>Progress</source>
         <translation>進捗</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="267"/>
+        <location filename="mainwindow.ui" line="262"/>
         <source>Frames/s:</source>
         <translation>フレーム/秒：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="288"/>
+        <location filename="mainwindow.ui" line="283"/>
         <source>Time Elapsed:</source>
         <translation>経過時間：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="309"/>
+        <location filename="mainwindow.ui" line="304"/>
         <source>Time Remaining:</source>
         <translation>残り時間：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="357"/>
+        <location filename="mainwindow.ui" line="352"/>
         <source>START</source>
         <translation>開始</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="92"/>
+        <location filename="mainwindow.ui" line="87"/>
         <source>Video Processing Task Queue</source>
         <oldsource>Processing Task Queue</oldsource>
         <translation>動画処理のタスクキュー</translation>
@@ -54,312 +54,312 @@
         <translation>今後表示しない</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="107"/>
+        <location filename="mainwindow.ui" line="102"/>
         <source>Click the &quot;+&quot; button or drag files into the task queue to add new processing tasks.</source>
         <translation>「+」ボタンをクリックするか、タスクキューにファイルをドラッグして新しい処理タスクを追加してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="132"/>
+        <location filename="mainwindow.ui" line="127"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Add files to the task queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;タスクキューにファイルを追加してください。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="135"/>
+        <location filename="mainwindow.ui" line="130"/>
         <source>ADD</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="157"/>
+        <location filename="mainwindow.ui" line="152"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove the selected tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;選択したタスクをキューから削除します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="160"/>
+        <location filename="mainwindow.ui" line="155"/>
         <source>REMOVE</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="182"/>
+        <location filename="mainwindow.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove all tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;キューからすべてのタスクを削除します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="185"/>
+        <location filename="mainwindow.ui" line="180"/>
         <source>CLEAR</source>
         <translation>すべて削除</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="249"/>
+        <location filename="mainwindow.ui" line="244"/>
         <source>Currently processing: %v/%m (%p%)</source>
         <translation>現在の処理：%v/%m (%p%)</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="466"/>
+        <location filename="mainwindow.ui" line="461"/>
         <source>LOGS</source>
         <translation>ログ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="351"/>
+        <location filename="mainwindow.ui" line="346"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Start processing the tasks in the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;キュー内のタスクの処理を開始します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="382"/>
+        <location filename="mainwindow.ui" line="377"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pause task processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;タスク処理を一時停止します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="410"/>
+        <location filename="mainwindow.ui" line="405"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Resume processing tasks.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;タスク処理を再開します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="438"/>
+        <location filename="mainwindow.ui" line="433"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort task processing. Video2X will attempt to save the processed content.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;タスク処理を中止します。Video2X は処理された内容を保存しようとします。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="444"/>
+        <location filename="mainwindow.ui" line="439"/>
         <source>ABORT</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="488"/>
+        <location filename="mainwindow.ui" line="483"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="494"/>
+        <location filename="mainwindow.ui" line="489"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="501"/>
+        <location filename="mainwindow.ui" line="496"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="526"/>
+        <location filename="mainwindow.ui" line="521"/>
         <source>Logs</source>
         <translation>ログ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="551"/>
+        <location filename="mainwindow.ui" line="546"/>
         <source>Log Level</source>
         <translation>ログレベル</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="609"/>
+        <location filename="mainwindow.ui" line="604"/>
         <source>Save As...</source>
         <translation>名前を付けて保存...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="621"/>
+        <location filename="mainwindow.ui" line="616"/>
         <source>Exit</source>
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="624"/>
+        <location filename="mainwindow.ui" line="619"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="632"/>
+        <location filename="mainwindow.ui" line="627"/>
         <source>About</source>
         <translation>バージョン情報</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="657"/>
+        <location filename="mainwindow.ui" line="652"/>
         <source>Report Bugs...</source>
         <translation>バグを報告...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="662"/>
-        <location filename="mainwindow.cpp" line="257"/>
+        <location filename="mainwindow.ui" line="657"/>
+        <location filename="mainwindow.cpp" line="258"/>
         <source>Restore Default Settings</source>
         <translation>設定を既定に戻す</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="364"/>
         <source>File Name</source>
         <translation>ファイル名</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="364"/>
         <source>Processor</source>
         <translation>プロセッサー</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="511"/>
-        <location filename="mainwindow.cpp" line="363"/>
-        <location filename="mainwindow.cpp" line="602"/>
+        <location filename="mainwindow.ui" line="506"/>
+        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="606"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="119"/>
         <source>paused</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="157"/>
+        <location filename="mainwindow.cpp" line="148"/>
         <source>Processing Aborted</source>
         <translation>処理が中止されました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="158"/>
+        <location filename="mainwindow.cpp" line="149"/>
         <source>Video processing was aborted.</source>
         <translation>動画の処理を中止しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="161"/>
-        <location filename="mainwindow.cpp" line="165"/>
+        <location filename="mainwindow.cpp" line="152"/>
+        <location filename="mainwindow.cpp" line="156"/>
         <source>Processing Finished</source>
         <translation>処理が完了しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="162"/>
+        <location filename="mainwindow.cpp" line="153"/>
         <source>Video processing finished with errors.</source>
         <translation>動画の処理がエラーありの状態で完了しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="166"/>
+        <location filename="mainwindow.cpp" line="157"/>
         <source>All videos have been processed successfully.</source>
         <translation>すべての動画が正常に処理されました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="216"/>
+        <location filename="mainwindow.cpp" line="207"/>
         <source>Automatic Updates</source>
         <translation>自動更新</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="217"/>
+        <location filename="mainwindow.cpp" line="208"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>アプリケーションが自動的に更新を確認するようにしますか？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="258"/>
+        <location filename="mainwindow.cpp" line="259"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>すべてのカスタム設定を消去してもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="266"/>
+        <location filename="mainwindow.cpp" line="267"/>
         <source>Default Settings Restored</source>
         <translation>既定の設定に戻しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="267"/>
+        <location filename="mainwindow.cpp" line="268"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>既定の設定に戻しました。
 変更を適用するにはアプリケーションを再起動してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="313"/>
+        <location filename="mainwindow.cpp" line="314"/>
         <source>Save Logs As</source>
         <translation>ログを保存</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="315"/>
+        <location filename="mainwindow.cpp" line="316"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>テキストログファイル (*.log);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="323"/>
+        <location filename="mainwindow.cpp" line="324"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>ログファイル %1 を書き込み用に開けません：%2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="335"/>
+        <location filename="mainwindow.cpp" line="336"/>
         <source>Save Logs</source>
         <translation>ログを保存</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="336"/>
+        <location filename="mainwindow.cpp" line="337"/>
         <source>Logs successfully saved to %1</source>
         <translation>ログは %1 に正常に保存されました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="429"/>
+        <location filename="mainwindow.cpp" line="441"/>
         <source>Not yet processed</source>
         <translation>未処理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="547"/>
+        <location filename="mainwindow.cpp" line="551"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>タスクオプションの解析中に内部エラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="616"/>
+        <location filename="mainwindow.cpp" line="620"/>
         <source>Edit Task</source>
         <translation>タスクを編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="629"/>
+        <location filename="mainwindow.cpp" line="633"/>
         <source>Failed to parse task configs.</source>
         <translation>タスク設定の解析に失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="651"/>
+        <location filename="mainwindow.cpp" line="655"/>
         <source>Select Files</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="653"/>
+        <location filename="mainwindow.cpp" line="657"/>
         <source>All Files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="687"/>
+        <location filename="mainwindow.cpp" line="691"/>
         <source>The task queue is empty!</source>
         <translation>タスクキューが空です！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="753"/>
+        <location filename="mainwindow.cpp" line="757"/>
         <source>Aborted</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="753"/>
+        <location filename="mainwindow.cpp" line="757"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="859"/>
+        <location filename="mainwindow.cpp" line="863"/>
         <source> day</source>
         <translation> 日</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="933"/>
+        <location filename="mainwindow.cpp" line="937"/>
         <source>Failed to generate output file name for file: </source>
-        <translation>ファイルの出力ファイル名の生成に失敗しました：</translation>
+        <translation>ファイルの出力ファイル名の生成に失敗しました： </translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="413"/>
+        <location filename="mainwindow.ui" line="408"/>
         <source>RESUME</source>
         <translation>再開</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="385"/>
+        <location filename="mainwindow.ui" line="380"/>
         <source>PAUSE</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="343"/>
+        <location filename="mainwindow.cpp" line="344"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="71"/>
-        <location filename="mainwindow.cpp" line="128"/>
-        <location filename="mainwindow.cpp" line="150"/>
-        <location filename="mainwindow.cpp" line="192"/>
-        <location filename="mainwindow.cpp" line="926"/>
+        <location filename="mainwindow.cpp" line="62"/>
+        <location filename="mainwindow.cpp" line="119"/>
+        <location filename="mainwindow.cpp" line="141"/>
+        <location filename="mainwindow.cpp" line="183"/>
+        <location filename="mainwindow.cpp" line="930"/>
         <source>Status: </source>
-        <translation>ステータス：</translation>
+        <translation>ステータス： </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="52"/>
+        <location filename="mainwindow.cpp" line="236"/>
         <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
 
 This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
@@ -368,23 +368,23 @@ This may cause the software to function improperly. Please update to the latest 
 これによりソフトウェアが正常に機能しない可能性があります。互換性を確保するには、最新のバージョンに更新してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="71"/>
-        <location filename="mainwindow.cpp" line="192"/>
+        <location filename="mainwindow.cpp" line="62"/>
+        <location filename="mainwindow.cpp" line="183"/>
         <source>idle</source>
         <translation>待機中</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="354"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="926"/>
+        <location filename="mainwindow.cpp" line="930"/>
         <source>Processing file </source>
         <translation>処理中のファイル </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="861"/>
+        <location filename="mainwindow.cpp" line="865"/>
         <source> days</source>
         <translation> 日</translation>
     </message>
@@ -702,39 +702,39 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>Vulkan をサポートする GPU が見つかりませんでした！</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="752"/>
+        <location filename="taskconfigdialog.cpp" line="753"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Real-CUGAN モデル「models-pro」のノイズレベルが無効です。
 許容される値は -1、0、および 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="759"/>
+        <location filename="taskconfigdialog.cpp" line="760"/>
         <source>Invalid codec value: &apos;</source>
         <translation>無効な codec の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="766"/>
+        <location filename="taskconfigdialog.cpp" line="767"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>無効な pix_fmt の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="774"/>
+        <location filename="taskconfigdialog.cpp" line="775"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>無効な hwaccel の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="783"/>
+        <location filename="taskconfigdialog.cpp" line="784"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>libplacebo GLSL シェーダーファイルが見つかりません：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="824"/>
+        <location filename="taskconfigdialog.cpp" line="825"/>
         <source>Select GLSL Shader</source>
         <translation>GLSL シェーダーを選択</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="826"/>
+        <location filename="taskconfigdialog.cpp" line="827"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL ファイル (*.glsl);;すべてのファイル (*.*)</translation>
     </message>

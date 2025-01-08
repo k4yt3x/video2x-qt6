@@ -527,6 +527,11 @@ void MainWindow::on_actionLanguageFRFR_triggered()
     changeLanguage("fr_FR");
 }
 
+void MainWindow::on_actionLanguageDEDE_triggered()
+{
+    changeLanguage("de_DE");
+}
+
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 {
     if (fileNames.isEmpty()) {

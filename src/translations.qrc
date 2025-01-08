@@ -6,5 +6,6 @@
         <file>video2x-qt6_ja_JP.qm</file>
         <file>video2x-qt6_pt_PT.qm</file>
         <file>video2x-qt6_fr_FR.qm</file>
+        <file>video2x-qt6_de_DE.qm</file>
     </qresource>
 </RCC>

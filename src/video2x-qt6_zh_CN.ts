@@ -12,33 +12,33 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="212"/>
-        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.ui" line="207"/>
+        <location filename="mainwindow.cpp" line="364"/>
         <source>Progress</source>
         <translation>进度</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="267"/>
+        <location filename="mainwindow.ui" line="262"/>
         <source>Frames/s:</source>
         <translation>帧/秒：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="288"/>
+        <location filename="mainwindow.ui" line="283"/>
         <source>Time Elapsed:</source>
         <translation>已用时间：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="309"/>
+        <location filename="mainwindow.ui" line="304"/>
         <source>Time Remaining:</source>
         <translation>剩余时间：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="357"/>
+        <location filename="mainwindow.ui" line="352"/>
         <source>START</source>
         <translation>开始</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="92"/>
+        <location filename="mainwindow.ui" line="87"/>
         <source>Video Processing Task Queue</source>
         <oldsource>Processing Task Queue</oldsource>
         <translation>视频处理任务队列</translation>
@@ -54,312 +54,312 @@
         <translation>不再显示</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="107"/>
+        <location filename="mainwindow.ui" line="102"/>
         <source>Click the &quot;+&quot; button or drag files into the task queue to add new processing tasks.</source>
         <translation>单击“+”按钮或将文件拖到任务队列中以添加新的处理任务。</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="132"/>
+        <location filename="mainwindow.ui" line="127"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Add files to the task queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;将文件添加到任务队列。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="135"/>
+        <location filename="mainwindow.ui" line="130"/>
         <source>ADD</source>
         <translation>添加任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="157"/>
+        <location filename="mainwindow.ui" line="152"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove the selected tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;从队列中移除选定的任务。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="160"/>
+        <location filename="mainwindow.ui" line="155"/>
         <source>REMOVE</source>
         <translation>移除任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="182"/>
+        <location filename="mainwindow.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove all tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;从队列中移除所有任务。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="185"/>
+        <location filename="mainwindow.ui" line="180"/>
         <source>CLEAR</source>
         <translation>清除任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="249"/>
+        <location filename="mainwindow.ui" line="244"/>
         <source>Currently processing: %v/%m (%p%)</source>
         <translation>正在处理：%v/%m (%p%)</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="466"/>
+        <location filename="mainwindow.ui" line="461"/>
         <source>LOGS</source>
         <translation>日志</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="351"/>
+        <location filename="mainwindow.ui" line="346"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Start processing the tasks in the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;开始处理队列中的任务。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="382"/>
+        <location filename="mainwindow.ui" line="377"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pause task processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;暂停任务处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="410"/>
+        <location filename="mainwindow.ui" line="405"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Resume processing tasks.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;恢复任务处理。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="438"/>
+        <location filename="mainwindow.ui" line="433"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort task processing. Video2X will attempt to save the processed content.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;中止任务处理。Video2X 将尝试保存已处理的内容。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="444"/>
+        <location filename="mainwindow.ui" line="439"/>
         <source>ABORT</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="488"/>
+        <location filename="mainwindow.ui" line="483"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="494"/>
+        <location filename="mainwindow.ui" line="489"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="501"/>
+        <location filename="mainwindow.ui" line="496"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="526"/>
+        <location filename="mainwindow.ui" line="521"/>
         <source>Logs</source>
         <translation>日志</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="551"/>
+        <location filename="mainwindow.ui" line="546"/>
         <source>Log Level</source>
         <translation>日志等级</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="609"/>
+        <location filename="mainwindow.ui" line="604"/>
         <source>Save As...</source>
         <translation>另存为...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="621"/>
+        <location filename="mainwindow.ui" line="616"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="624"/>
+        <location filename="mainwindow.ui" line="619"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="632"/>
+        <location filename="mainwindow.ui" line="627"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="657"/>
+        <location filename="mainwindow.ui" line="652"/>
         <source>Report Bugs...</source>
         <translation>报告错误...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="662"/>
-        <location filename="mainwindow.cpp" line="257"/>
+        <location filename="mainwindow.ui" line="657"/>
+        <location filename="mainwindow.cpp" line="258"/>
         <source>Restore Default Settings</source>
         <translation>恢复默认设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="364"/>
         <source>File Name</source>
         <translation>文件名</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="363"/>
+        <location filename="mainwindow.cpp" line="364"/>
         <source>Processor</source>
         <translation>处理器</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="511"/>
-        <location filename="mainwindow.cpp" line="363"/>
-        <location filename="mainwindow.cpp" line="602"/>
+        <location filename="mainwindow.ui" line="506"/>
+        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="606"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="128"/>
+        <location filename="mainwindow.cpp" line="119"/>
         <source>paused</source>
         <translation>已暂停</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="157"/>
+        <location filename="mainwindow.cpp" line="148"/>
         <source>Processing Aborted</source>
         <translation>处理已中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="158"/>
+        <location filename="mainwindow.cpp" line="149"/>
         <source>Video processing was aborted.</source>
         <translation>视频处理已中止。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="161"/>
-        <location filename="mainwindow.cpp" line="165"/>
+        <location filename="mainwindow.cpp" line="152"/>
+        <location filename="mainwindow.cpp" line="156"/>
         <source>Processing Finished</source>
         <translation>处理已完成</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="162"/>
+        <location filename="mainwindow.cpp" line="153"/>
         <source>Video processing finished with errors.</source>
         <translation>视频处理完成，但出现了一些错误。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="166"/>
+        <location filename="mainwindow.cpp" line="157"/>
         <source>All videos have been processed successfully.</source>
         <translation>所有视频均已成功处理完成。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="216"/>
+        <location filename="mainwindow.cpp" line="207"/>
         <source>Automatic Updates</source>
         <translation>自动更新</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="217"/>
+        <location filename="mainwindow.cpp" line="208"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>您希望应用程序自动检查可用的更新吗？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="258"/>
+        <location filename="mainwindow.cpp" line="259"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>您确定要清除所有自定义设置吗？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="266"/>
+        <location filename="mainwindow.cpp" line="267"/>
         <source>Default Settings Restored</source>
         <translation>已恢复到默认设置</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="267"/>
+        <location filename="mainwindow.cpp" line="268"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>已恢复到默认设置。
 重新启动应用程序以使更改生效。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="313"/>
+        <location filename="mainwindow.cpp" line="314"/>
         <source>Save Logs As</source>
         <translation>保存日志为</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="315"/>
+        <location filename="mainwindow.cpp" line="316"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>文本日志文件 (*.log);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="323"/>
+        <location filename="mainwindow.cpp" line="324"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>无法打开日志文件 %1 进行写入：%2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="335"/>
+        <location filename="mainwindow.cpp" line="336"/>
         <source>Save Logs</source>
         <translation>保存日志</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="336"/>
+        <location filename="mainwindow.cpp" line="337"/>
         <source>Logs successfully saved to %1</source>
         <translation>已将日志成功保存到 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="429"/>
+        <location filename="mainwindow.cpp" line="441"/>
         <source>Not yet processed</source>
         <translation>尚未处理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="547"/>
+        <location filename="mainwindow.cpp" line="551"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>解析任务选项时发生了内部错误。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="616"/>
+        <location filename="mainwindow.cpp" line="620"/>
         <source>Edit Task</source>
         <translation>编辑任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="629"/>
+        <location filename="mainwindow.cpp" line="633"/>
         <source>Failed to parse task configs.</source>
         <translation>无法解析任务配置。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="651"/>
+        <location filename="mainwindow.cpp" line="655"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="653"/>
+        <location filename="mainwindow.cpp" line="657"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="687"/>
+        <location filename="mainwindow.cpp" line="691"/>
         <source>The task queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="753"/>
+        <location filename="mainwindow.cpp" line="757"/>
         <source>Aborted</source>
         <translation>已中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="753"/>
+        <location filename="mainwindow.cpp" line="757"/>
         <source>Failed</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="859"/>
+        <location filename="mainwindow.cpp" line="863"/>
         <source> day</source>
         <translation> 天</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="933"/>
+        <location filename="mainwindow.cpp" line="937"/>
         <source>Failed to generate output file name for file: </source>
-        <translation>无法为文件生成输出文件名：</translation>
+        <translation>无法为文件生成输出文件名： </translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="413"/>
+        <location filename="mainwindow.ui" line="408"/>
         <source>RESUME</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="385"/>
+        <location filename="mainwindow.ui" line="380"/>
         <source>PAUSE</source>
         <translation>暂停</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="343"/>
+        <location filename="mainwindow.cpp" line="344"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="71"/>
-        <location filename="mainwindow.cpp" line="128"/>
-        <location filename="mainwindow.cpp" line="150"/>
-        <location filename="mainwindow.cpp" line="192"/>
-        <location filename="mainwindow.cpp" line="926"/>
+        <location filename="mainwindow.cpp" line="62"/>
+        <location filename="mainwindow.cpp" line="119"/>
+        <location filename="mainwindow.cpp" line="141"/>
+        <location filename="mainwindow.cpp" line="183"/>
+        <location filename="mainwindow.cpp" line="930"/>
         <source>Status: </source>
         <translation>状态： </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="52"/>
+        <location filename="mainwindow.cpp" line="236"/>
         <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
 
 This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
@@ -368,23 +368,23 @@ This may cause the software to function improperly. Please update to the latest 
 这可能导致软件无法正常运行。请更新到最新版本以确保兼容性。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="71"/>
-        <location filename="mainwindow.cpp" line="192"/>
+        <location filename="mainwindow.cpp" line="62"/>
+        <location filename="mainwindow.cpp" line="183"/>
         <source>idle</source>
         <translation>空闲</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="353"/>
+        <location filename="mainwindow.cpp" line="354"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="926"/>
+        <location filename="mainwindow.cpp" line="930"/>
         <source>Processing file </source>
         <translation>正在处理文件 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="861"/>
+        <location filename="mainwindow.cpp" line="865"/>
         <source> days</source>
         <translation> 天</translation>
     </message>
@@ -702,39 +702,39 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>未找到支持 Vulkan 的 GPU！</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="752"/>
+        <location filename="taskconfigdialog.cpp" line="753"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Real-CUGAN 模型 &apos;models-pro&apos; 的噪声等级无效。
 允许的值为 -1、0 和 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="759"/>
+        <location filename="taskconfigdialog.cpp" line="760"/>
         <source>Invalid codec value: &apos;</source>
         <translation>无效的 codec 值：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="766"/>
+        <location filename="taskconfigdialog.cpp" line="767"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>无效的 pix_fmt 值：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="774"/>
+        <location filename="taskconfigdialog.cpp" line="775"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>无效的 hwaccel 值：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="783"/>
+        <location filename="taskconfigdialog.cpp" line="784"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>未找到 libplacebo GLSL 着色器文件：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="824"/>
+        <location filename="taskconfigdialog.cpp" line="825"/>
         <source>Select GLSL Shader</source>
         <translation>选择 GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="826"/>
+        <location filename="taskconfigdialog.cpp" line="827"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL 文件 (*.glsl);;所有文件 (*.*)</translation>
     </message>

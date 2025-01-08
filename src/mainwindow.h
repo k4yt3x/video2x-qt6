@@ -91,6 +91,7 @@ private slots:
     void on_actionLanguageJAJP_triggered();
     void on_actionLanguagePTPT_triggered();
     void on_actionLanguageFRFR_triggered();
+    void on_actionLanguageDEDE_triggered();
 
     // Add/remove tasks
     void on_addFilesPushButton_clicked();

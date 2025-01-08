@@ -14,6 +14,7 @@ Special thanks to:
 - [@reindex-ot](https://github.com/reindex-ot) for providing the Japanese (Japan) translation.
 - [@ruiramalhoofc](https://github.com/ruiramalhoofc) for providing the Portuguese (Portugal) translation.
 - [@GautDlpr](https://github.com/GautDlpr) for providing the French (France) translation.
+- [@Pete4K](https://github.com/Pete4K) for providing the German (Germany) translation.
 
 ## License
 
