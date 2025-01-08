@@ -19,4 +19,4 @@ Special thanks to:
 ## License
 
 This project is licensed under the [ISC license](LICENSE).\
-Copyright (C) 2024 K4YT3X.
+Copyright (C) 2024-2025 K4YT3X.
