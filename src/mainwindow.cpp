@@ -90,7 +90,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->pausePushButton->setVisible(true);
         ui->abortPushButton->setVisible(true);
 
-        ui->addFilesPushButton->setEnabled(false);
+        //ui->addFilesPushButton->setEnabled(false);
         ui->deleteSelectedPushButton->setEnabled(false);
         ui->clearPushButton->setEnabled(false);
 
@@ -166,7 +166,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->abortPushButton->setVisible(false);
         ui->startPushButton->setVisible(true);
 
-        ui->addFilesPushButton->setEnabled(true);
+        // ui->addFilesPushButton->setEnabled(true);
         ui->deleteSelectedPushButton->setEnabled(true);
         ui->clearPushButton->setEnabled(true);
 
