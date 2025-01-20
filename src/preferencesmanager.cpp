@@ -45,7 +45,7 @@ bool PreferencesManager::loadPreferences()
 #ifdef _WIN32
     QFile file(QString::fromStdWString(m_configFilePath.wstring()));
 #else
-    QFile file(QString::fromStdWString(m_configFilePath.string()));
+    QFile file(QString::fromStdString(m_configFilePath.string()));
 #endif
     if (!file.open(QIODevice::ReadOnly)) {
         video2x::logger()->warn("Failed to open configuration file for reading.");
@@ -149,7 +149,7 @@ bool PreferencesManager::savePreferences()
 #ifdef _WIN32
     QFile file(QString::fromStdWString(m_configFilePath.wstring()));
 #else
-    QFile file(QString::fromStdWString(m_configFilePath.string()));
+    QFile file(QString::fromStdString(m_configFilePath.string()));
 #endif
     if (!file.open(QIODevice::WriteOnly)) {
         video2x::logger()->warn("Failed to open configuration file for writing.");
