@@ -61,6 +61,13 @@ find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network LinguistTools)
 qt_standard_project_setup()
 list(APPEND VIDEO2X_QT6_LIBS Qt6::Core Qt6::Widgets Qt6::Network)
 
+# Power management dependencies
+if(WIN32)
+    list(APPEND VIDEO2X_QT6_LIBS PowrProf.lib)
+else()
+    list(APPEND VIDEO2X_QT6_LIBS Qt6::DBus)
+endif()
+
 # Find the Vulkan SDK
 find_package(Vulkan REQUIRED)
 list(APPEND VIDEO2X_QT6_LIBS Vulkan::Vulkan)
@@ -136,14 +143,17 @@ set(PROJECT_SOURCES
     src/aboutdialog.cpp
     src/aboutdialog.h
     src/aboutdialog.ui
-    src/configmanager.cpp
-    src/configmanager.h
     src/filedroptableview.cpp
     src/filedroptableview.h
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
     src/mainwindow.ui
+    src/preferencesdialog.cpp
+    src/preferencesdialog.h
+    src/preferencesdialog.ui
+    src/preferencesmanager.cpp
+    src/preferencesmanager.h
     src/qttexteditsink.cpp
     src/qttexteditsink.h
     src/taskconfig.h
@@ -154,9 +164,9 @@ set(PROJECT_SOURCES
     src/taskprocessor.h
     src/timer.cpp
     src/timer.h
+    src/translations.qrc
     src/utils.cpp
     src/utils.h
-    src/translations.qrc
     ${TS_FILES}
 )
 

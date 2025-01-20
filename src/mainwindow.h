@@ -10,7 +10,7 @@
 
 #include <libvideo2x/libvideo2x.h>
 
-#include "configmanager.h"
+#include "preferencesmanager.h"
 #include "taskprocessor.h"
 #include "timer.h"
 
@@ -52,8 +52,7 @@ private:
     Ui::MainWindow *ui;
 
     // Video2X Qt6 Configs
-    ConfigManager m_configManager;
-    Video2XConfig m_config;
+    PreferencesManager m_prefManager;
 
     // Main UI QTranslator
     QTranslator m_translator;
@@ -76,7 +75,7 @@ private slots:
 
     // File menu
     void on_actionExit_triggered();
-    void on_actionRestore_Defaults_triggered();
+    void on_actionPreferences_triggered();
     void on_actionReport_Bugs_triggered();
     void on_actionAbout_triggered();
 
@@ -84,14 +83,6 @@ private slots:
     void on_updateCommandLinkButton_clicked();
     void on_neverShowUpdatePushButton_clicked();
     void on_closeUpdatePushButton_clicked();
-
-    // Changing language
-    void on_actionLanguageENUS_triggered();
-    void on_actionLanguageZHCN_triggered();
-    void on_actionLanguageJAJP_triggered();
-    void on_actionLanguagePTPT_triggered();
-    void on_actionLanguageFRFR_triggered();
-    void on_actionLanguageDEDE_triggered();
 
     // Add/remove tasks
     void on_addFilesPushButton_clicked();

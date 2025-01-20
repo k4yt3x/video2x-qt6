@@ -12,6 +12,12 @@
 bool isVCRuntimeRequirementMet();
 #endif
 
+void systemShutdown();
+void systemSleep();
+void systemHibernate();
+
+std::optional<std::filesystem::path> getConfigDir();
+
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName);
 
 std::optional<QString> findAnime4kDisplayNameByFileName(const QString &fileName);

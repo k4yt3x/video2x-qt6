@@ -32,6 +32,7 @@ extern "C" {
 
 #include "aboutdialog.h"
 #include "filedroptableview.h"
+#include "preferencesdialog.h"
 #include "qttexteditsink.h"
 #include "taskconfigdialog.h"
 #include "utils.h"
@@ -55,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
         .reconfigure_logger("video2x", sinks, "[%Y-%m-%d %H:%M:%S] [%^%l%$] %v");
 
     video2x::logger_manager::LoggerManager::instance().hook_ffmpeg_logging();
-    video2x::logger()->info("Starting Video2X Qt6 {}", LIBVIDEO2X_VERSION_STRING);
+    video2x::logger()->info("Initializing Video2X Qt6 {}", LIBVIDEO2X_VERSION_STRING);
 
     // Dynamically set the Window title + library version
     setWindowTitle("Video2X Qt6 " + QString::fromUtf8(LIBVIDEO2X_VERSION_STRING));
@@ -152,6 +153,24 @@ MainWindow::MainWindow(QWidget *parent)
                                  tr("Processing Finished"),
                                  tr("Video processing finished with errors."));
         } else {
+            QTimer::singleShot(0, this, [this]() {
+                // Perform the specified on-finish action
+                switch (m_prefManager.getPreferences().actionWhenDone) {
+                case Video2XPreferences::ActionWhenDone::DoNothing:
+                default:
+                    break;
+                case Video2XPreferences::ActionWhenDone::Shutdown:
+                    systemShutdown();
+                    break;
+                case Video2XPreferences::ActionWhenDone::Sleep:
+                    systemSleep();
+                    break;
+                case Video2XPreferences::ActionWhenDone::Hibernate:
+                    systemHibernate();
+                    break;
+                }
+            });
+
             QMessageBox::information(this,
                                      tr("Processing Finished"),
                                      tr("All videos have been processed successfully."));
@@ -184,36 +203,33 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     // Load the configs
-    m_config = m_configManager.loadConfig();
+    m_prefManager.loadPreferences();
+    Video2XPreferences &pref = m_prefManager.getPreferences();
 
     // Initialize translator
-    if (m_config.translation.has_value()) {
-        changeLanguage(m_config.translation.value());
-    } else {
-        const QString baseName = "video2x-qt6_" + QLocale::system().name() + ".qm";
-        if (QFile::exists(baseName)) {
-            changeLanguage(QLocale::system().name());
-        }
-    }
+    changeLanguage(pref.translation);
 
-    // Check for available upgrades
-    if (m_config.checkUpgrades.has_value()) {
-        if (m_config.checkUpgrades.value()) {
-            checkUpdate();
-        }
-    } else {
+    // Ask the user if the application should prompt for updates
+    if (!pref.checkUpdates.has_value()) {
         QMessageBox::StandardButton reply = QMessageBox::question(
             this,
             tr("Automatic Updates"),
             tr("Would you like the application to automatically check for updates?"),
             QMessageBox::Yes | QMessageBox::No);
 
-        m_config.checkUpgrades = reply == QMessageBox::Yes;
-        m_configManager.saveConfig(m_config);
+        Video2XPreferences pref = m_prefManager.getPreferences();
+        pref.checkUpdates = reply == QMessageBox::Yes;
+        m_prefManager.setPreferences(pref);
+        m_prefManager.savePreferences();
 
         if (reply == QMessageBox::Yes) {
             checkUpdate();
         }
+    }
+
+    // Check for available upgrades
+    if (pref.checkUpdates.value()) {
+        checkUpdate();
     }
 
     // Setup tasks table model
@@ -251,22 +267,23 @@ void MainWindow::on_actionExit_triggered()
     QApplication::quit();
 }
 
-void MainWindow::on_actionRestore_Defaults_triggered()
+void MainWindow::on_actionPreferences_triggered()
 {
-    QMessageBox msgBox;
-    msgBox.setIcon(QMessageBox::Warning);
-    msgBox.setWindowTitle(tr("Restore Default Settings"));
-    msgBox.setText(tr("Are you sure you want to erase all custom settings?"));
-    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    msgBox.setDefaultButton(QMessageBox::No);
-    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+    PreferencesDialog prefDialog(this, m_prefManager);
 
-    if (reply == QMessageBox::Yes) {
-        m_configManager.removeConfig();
-        QMessageBox::information(this,
-                                 tr("Default Settings Restored"),
-                                 tr("The default settings have been restored.\nRestart the "
-                                    "application for changes to take effect."));
+    // Populate the dialog with the current preferences
+    prefDialog.setPreferences(m_prefManager.getPreferences());
+
+    if (prefDialog.exec() == QDialog::Accepted) {
+        Video2XPreferences pref = prefDialog.getPreferences();
+        m_prefManager.setPreferences(pref);
+        m_prefManager.savePreferences();
+
+        // Handle language change
+        std::optional<QString> translation = m_prefManager.getPreferences().translation;
+        if (translation.has_value()) {
+            changeLanguage(translation.value());
+        }
     }
 }
 
@@ -292,8 +309,10 @@ void MainWindow::on_neverShowUpdatePushButton_clicked()
     ui->updateCommandLinkButton->setVisible(false);
     ui->neverShowUpdatePushButton->setVisible(false);
     ui->closeUpdatePushButton->setVisible(false);
-    m_config.checkUpgrades = false;
-    m_configManager.saveConfig(m_config);
+    Video2XPreferences pref = m_prefManager.getPreferences();
+    pref.checkUpdates = false;
+    m_prefManager.setPreferences(pref);
+    m_prefManager.savePreferences();
 }
 
 void MainWindow::on_closeUpdatePushButton_clicked()
@@ -367,6 +386,8 @@ void MainWindow::updateTaskTableHeaders()
 
 void MainWindow::checkUpdate()
 {
+    video2x::logger()->info("Checking for available updates...");
+
     // Create a network manager to handle the HTTP request
     auto *networkManager = new QNetworkAccessManager(this);
 
@@ -418,10 +439,10 @@ void MainWindow::checkUpdate()
                 ui->updateCommandLinkButton->setVisible(true);
                 ui->neverShowUpdatePushButton->setVisible(true);
                 ui->closeUpdatePushButton->setVisible(true);
-                video2x::logger()->debug("Upgrade available: {}.",
-                                         latestReleaseVersion.toStdString());
+                video2x::logger()->info("Upgrade available: {}.",
+                                        latestReleaseVersion.toStdString());
             } else {
-                video2x::logger()->debug("No upgrades available.");
+                video2x::logger()->info("No upgrades available.");
             }
         } else {
             video2x::logger()->error("Failed to parse version strings for comparison.");
@@ -474,16 +495,20 @@ bool MainWindow::changeLanguage(const QString &locale)
     // Remove the currently installed translator
     qApp->removeTranslator(&m_translator);
 
-    // Apply the new translator if the local is not en_US (default language)
-    if (locale != "en_US") {
-        if (m_translator.load(":/i18n/video2x-qt6_" + locale + ".qm")) {
-            qApp->installTranslator(&m_translator);
-        } else {
-            execErrorMessage("Failed to load translation for locale: " + locale);
-            video2x::logger()->error("Failed to load translation for locale: {}.",
-                                     locale.toStdString());
-            return false;
-        }
+    // Get the system locale
+    QString locale_name = locale;
+    if (locale == "system") {
+        locale_name = QLocale::system().name();
+    }
+
+    // Apply the new translator
+    if (m_translator.load(":/i18n/video2x-qt6_" + locale_name + ".qm")) {
+        qApp->installTranslator(&m_translator);
+    } else {
+        execErrorMessage("Failed to load translation for locale: " + locale_name);
+        video2x::logger()->error("Failed to load translation for locale: {}.",
+                                 locale_name.toStdString());
+        return false;
     }
 
     // Set the new UI font
@@ -497,39 +522,11 @@ bool MainWindow::changeLanguage(const QString &locale)
     qApp->setStyle(QApplication::style());
 
     // Save translation settings to config
-    m_config.translation = locale;
-    m_configManager.saveConfig(m_config);
+    Video2XPreferences pref = m_prefManager.getPreferences();
+    pref.translation = locale;
+    m_prefManager.setPreferences(pref);
+    m_prefManager.savePreferences();
     return true;
-}
-
-void MainWindow::on_actionLanguageENUS_triggered()
-{
-    changeLanguage("en_US");
-}
-
-void MainWindow::on_actionLanguageZHCN_triggered()
-{
-    changeLanguage("zh_CN");
-}
-
-void MainWindow::on_actionLanguageJAJP_triggered()
-{
-    changeLanguage("ja_JP");
-}
-
-void MainWindow::on_actionLanguagePTPT_triggered()
-{
-    changeLanguage("pt_PT");
-}
-
-void MainWindow::on_actionLanguageFRFR_triggered()
-{
-    changeLanguage("fr_FR");
-}
-
-void MainWindow::on_actionLanguageDEDE_triggered()
-{
-    changeLanguage("de_DE");
 }
 
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)
@@ -539,19 +536,19 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
     }
 
     // Show the dialog to configure TaskConfig for all files added
-    TaskConfigDialog dialog(this);
+    TaskConfigDialog taskConfigDialog(this);
 
     // Set the output suffix based on the first input file's suffix
     // QFileInfo fileInfo = QFileInfo(fileNames[0]);
     // dialog.setOutputSuffix("." + fileInfo.suffix());
 
     // Show the dialog and wait for it to return
-    if (dialog.exec() != QDialog::Accepted) {
+    if (taskConfigDialog.exec() != QDialog::Accepted) {
         return;
     }
 
     // Get the TaskConfig struct from the dialog
-    std::optional<TaskConfig> taskOpt = dialog.getTaskConfig();
+    std::optional<TaskConfig> taskOpt = taskConfigDialog.getTaskConfig();
     if (!taskOpt.has_value()) {
         execErrorMessage(tr("An internal error occurred while parsing the task options."));
         return;
@@ -650,6 +647,12 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
                 item->setData(QVariant::fromValue(updatedTask), Qt::UserRole + 1);
             }
         });
+
+        // Increase the total number of tasks
+        if (m_procStarted) {
+            ui->overallProgressBar->setMaximum(ui->overallProgressBar->maximum()
+                                               + fileNames.count());
+        }
     }
 }
 
@@ -776,7 +779,7 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
     }
 
     // Update the overall progress bar
-    ui->overallProgressBar->setValue(m_currentVideoIndex + 1);
+    ui->overallProgressBar->setValue(ui->overallProgressBar->value() + 1);
 
     // Check the result of the video processing
     if (retValue && !m_procAborted) {
@@ -798,8 +801,14 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
         worker->deleteLater();
     }
 
-    // Process Fthe next video
-    m_currentVideoIndex++;
+    // Remove the finished task from the table
+    if (m_prefManager.getPreferences().removeFinishedTasks) {
+        m_taskTableModel->removeRow(m_currentVideoIndex);
+    } else {
+        m_currentVideoIndex++;
+    }
+
+    // Process the next video
     processNextVideo();
 }
 

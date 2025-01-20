@@ -6,7 +6,16 @@
 #ifdef _WIN32
 #include <QSettings>
 #include <Windows.h>
+#include <powrprof.h>
+// #pragma comment(lib, "PowrProf.lib")
+#else
+#include <QDBusInterface>
+#include <QDBusReply>
+#endif
 
+#include <libvideo2x/logger_manager.h>
+
+#ifdef _WIN32
 bool isVCRuntimeRequirementMet()
 {
     const QString registryKey
@@ -33,6 +42,127 @@ bool isVCRuntimeRequirementMet()
     return false;
 }
 #endif
+
+// Function to shut down the system
+void systemShutdown()
+{
+#ifdef _WIN32
+    if (!InitiateSystemShutdownExW(nullptr, nullptr, 0, TRUE, FALSE, SHTDN_REASON_MAJOR_OTHER)) {
+        video2x::logger()->error("Failed to shutdown the system. Error code: {}.", GetLastError());
+    } else {
+        video2x::logger()->info("System shutdown initiated successfully.");
+    }
+#else
+    QDBusInterface interface("org.freedesktop.login1",
+                             "/org/freedesktop/login1",
+                             "org.freedesktop.login1.Manager",
+                             QDBusConnection::systemBus());
+
+    if (!interface.isValid()) {
+        video2x::logger()->error("Failed to connect to systemd for shutdown: {}.",
+                                 QDBusConnection::systemBus().lastError().message().toStdString());
+        return;
+    }
+
+    QDBusReply<void> reply = interface.call("PowerOff", true); // true = interactive
+    if (!reply.isValid()) {
+        video2x::logger()->error("Failed to initiate shutdown: {}.",
+                                 reply.error().message().toStdString());
+    } else {
+        video2x::logger()->info("System shutdown initiated successfully.");
+    }
+#endif
+}
+
+// Function to put the system to sleep
+void systemSleep()
+{
+#ifdef _WIN32
+    if (!SetSuspendState(FALSE, FALSE, FALSE)) {
+        video2x::logger()->error("Failed to put the system to sleep. Error code: {}.",
+                                 GetLastError());
+    } else {
+        video2x::logger()->info("System sleep initiated successfully.");
+    }
+#else
+    QDBusInterface interface("org.freedesktop.login1",
+                             "/org/freedesktop/login1",
+                             "org.freedesktop.login1.Manager",
+                             QDBusConnection::systemBus());
+
+    if (!interface.isValid()) {
+        video2x::logger()->error("Failed to connect to systemd for suspend: {}.",
+                                 QDBusConnection::systemBus().lastError().message().toStdString());
+        return;
+    }
+
+    QDBusReply<void> reply = interface.call("Suspend", true); // true = interactive
+    if (!reply.isValid()) {
+        video2x::logger()->error("Failed to initiate sleep: {}.",
+                                 reply.error().message().toStdString());
+    } else {
+        video2x::logger()->info("System sleep initiated successfully.");
+    }
+#endif
+}
+
+// Function to hibernate the system
+void systemHibernate()
+{
+#ifdef _WIN32
+    if (!SetSuspendState(TRUE, FALSE, FALSE)) {
+        video2x::logger()->error("Failed to hibernate the system. Error code: {}.", GetLastError());
+    } else {
+        video2x::logger()->info("System hibernation initiated successfully.");
+    }
+#else
+    QDBusInterface interface("org.freedesktop.login1",
+                             "/org/freedesktop/login1",
+                             "org.freedesktop.login1.Manager",
+                             QDBusConnection::systemBus());
+
+    if (!interface.isValid()) {
+        video2x::logger()->error("Failed to connect to systemd for hibernate: {}.",
+                                 QDBusConnection::systemBus().lastError().message().toStdString());
+        return;
+    }
+
+    QDBusReply<void> reply = interface.call("Hibernate", true); // true = interactive
+    if (!reply.isValid()) {
+        video2x::logger()->error("Failed to initiate hibernate: {}.",
+                                 reply.error().message().toStdString());
+    } else {
+        video2x::logger()->info("System hibernation initiated successfully.");
+    }
+#endif
+}
+
+std::optional<std::filesystem::path> getConfigDir()
+{
+#ifdef _WIN32
+    wchar_t localAppData[1024];
+    size_t size = 0;
+    if (_wgetenv_s(&size, localAppData, 1024, L"LOCALAPPDATA") == 0 && size > 0) {
+        return std::filesystem::path(localAppData) / L"video2x-qt6";
+    } else {
+        video2x::logger()->warn("Failed to retrieve LOCALAPPDATA environment variable.");
+        return std::nullopt;
+    }
+#else
+    const char *xdgConfigHome = std::getenv("XDG_CONFIG_HOME");
+    if (xdgConfigHome) {
+        return std::filesystem::path(xdgConfigHome) / "video2x-qt6";
+    } else {
+        const char *homeDir = std::getenv("HOME");
+        if (homeDir) {
+            return std::filesystem::path(homeDir) / ".config/video2x-qt6";
+        } else {
+            video2x::logger()->warn("Failed to retrieve HOME environment variable.");
+            return std::nullopt;
+        }
+    }
+#endif
+}
 
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName)
 {

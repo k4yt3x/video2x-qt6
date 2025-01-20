@@ -28,6 +28,8 @@ extern "C" {
 #define RIFE_MODE 0
 
 // Real-ESRGAN models
+#define REALESRGAN_MODEL_REALESRGAN_PLUS 0
+#define REALESRGAN_MODEL_REALESRGAN_PLUS_ANIME 1
 #define REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3 2
 
 // Real-CUGAN models
@@ -221,7 +223,8 @@ void TaskConfigDialog::updateScalingFactorAndNoiseLevelRange()
         ui->scalingFactorSpinBox->setMaximum(4);
 
         // Set minimum scaling factor for Real-ESRGAN
-        if (ui->realesrganModelComboBox->currentIndex() == REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3) {
+        if (ui->realesrganModelComboBox->currentIndex() == REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3
+            || ui->realesrganModelComboBox->currentIndex() == REALESRGAN_MODEL_REALESRGAN_PLUS) {
             ui->scalingFactorSpinBox->setMinimum(2);
         } else {
             ui->scalingFactorSpinBox->setMinimum(4);
@@ -744,6 +747,17 @@ void TaskConfigDialog::setOutputSuffix(QString suffix)
 
 void TaskConfigDialog::on_applyPushButton_clicked()
 {
+    // Validate Real-ESRGAN scaling factor
+    if (ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
+        && ui->filterSelectionComboBox->currentIndex() == ESRGAN_MODE
+        && ui->realesrganModelComboBox->currentIndex() == REALESRGAN_MODEL_REALESRGAN_PLUS
+        && ui->scalingFactorSpinBox->value() == 3) {
+        execErrorMessage(
+            tr("Invalid scaling factor for Real-ESRGAN model 'realesrgan-plus'.\nAllowed values "
+               "are 2 and 4"));
+        return;
+    }
+
     // Validate Real-CUGAN noise level for models-pro
     if (ui->processingModeSelectionComboBox->currentIndex() == FILTER_MODE
         && ui->filterSelectionComboBox->currentIndex() == CUGAN_MODE
