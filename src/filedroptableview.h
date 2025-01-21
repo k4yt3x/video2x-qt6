@@ -3,6 +3,7 @@
 
 #include <QDropEvent>
 #include <QMimeData>
+#include <QSvgRenderer>
 #include <QTableView>
 #include <QUrl>
 
@@ -19,6 +20,10 @@ protected:
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
     void dropEvent(QDropEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
+
+private:
+    QSvgRenderer *m_renderer = nullptr;
 };
 
 #endif // FILEDROPTABLEVIEW_H

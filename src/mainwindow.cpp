@@ -149,9 +149,10 @@ MainWindow::MainWindow(QWidget *parent)
                                  tr("Processing Aborted"),
                                  tr("Video processing was aborted."));
         } else if (m_hasErrors) {
-            QMessageBox::warning(this,
-                                 tr("Processing Finished"),
-                                 tr("Video processing finished with errors."));
+            QMessageBox::warning(
+                this,
+                tr("Processing Finished"),
+                tr("Video processing finished with errors. See logs for more information"));
         } else {
             QTimer::singleShot(0, this, [this]() {
                 // Perform the specified on-finish action
@@ -204,7 +205,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Load the configs
     m_prefManager.loadPreferences();
-    Video2XPreferences &pref = m_prefManager.getPreferences();
+    Video2XPreferences pref = m_prefManager.getPreferences();
 
     // Initialize translator
     changeLanguage(pref.translation);
@@ -217,7 +218,7 @@ MainWindow::MainWindow(QWidget *parent)
             tr("Would you like the application to automatically check for updates?"),
             QMessageBox::Yes | QMessageBox::No);
 
-        Video2XPreferences pref = m_prefManager.getPreferences();
+        pref = m_prefManager.getPreferences();
         pref.checkUpdates = reply == QMessageBox::Yes;
         m_prefManager.setPreferences(pref);
         m_prefManager.savePreferences();
@@ -289,7 +290,7 @@ void MainWindow::on_actionPreferences_triggered()
 
 void MainWindow::on_actionReport_Bugs_triggered()
 {
-    QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/issues/new"));
+    QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/issues/new/choose"));
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -656,7 +657,7 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
     }
 }
 
-void MainWindow::on_addFilesPushButton_clicked()
+void MainWindow::addTasks()
 {
     // Open a file dialog to select one or more files
     QStringList fileNames = QFileDialog::getOpenFileNames(this,
@@ -666,7 +667,7 @@ void MainWindow::on_addFilesPushButton_clicked()
     addFilesWithConfig(fileNames);
 }
 
-void MainWindow::on_deleteSelectedPushButton_clicked()
+void MainWindow::deleteTasks()
 {
     QModelIndexList selectedIndexes = ui->tasksTableView->selectionModel()->selectedRows();
     if (selectedIndexes.isEmpty()) {
@@ -681,10 +682,40 @@ void MainWindow::on_deleteSelectedPushButton_clicked()
     }
 }
 
-void MainWindow::on_clearPushButton_clicked()
+void MainWindow::clearTasks()
 {
     // Remove all rows from the model
     m_taskTableModel->removeRows(0, m_taskTableModel->rowCount());
+}
+
+void MainWindow::on_addFilesPushButton_clicked()
+{
+    addTasks();
+}
+
+void MainWindow::on_deleteSelectedPushButton_clicked()
+{
+    deleteTasks();
+}
+
+void MainWindow::on_clearPushButton_clicked()
+{
+    clearTasks();
+}
+
+void MainWindow::on_actionAddTask_triggered()
+{
+    addTasks();
+}
+
+void MainWindow::on_actionRemoveSelectedTask_triggered()
+{
+    deleteTasks();
+}
+
+void MainWindow::on_actionClearAllTasks_triggered()
+{
+    clearTasks();
 }
 
 void MainWindow::on_toggleLogsPushButton_clicked()

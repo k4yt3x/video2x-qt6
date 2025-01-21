@@ -409,7 +409,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="taskconfigdialog.ui" line="55"/>
         <source>2. Processing Mode Selection</source>
-        <translation>处理模式选择</translation>
+        <translation>2. 处理模式选择</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="68"/>

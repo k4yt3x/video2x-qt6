@@ -44,6 +44,9 @@ private:
     bool changeLanguage(const QString &locale);
     void handleFilesDropped(const QStringList &fileNames);
     void addFilesWithConfig(const QStringList &fileNames);
+    void addTasks();
+    void deleteTasks();
+    void clearTasks();
     void setDefaultProgressBarStyle(QProgressBar *progressBar);
     void setProgressBarColor(QProgressBar *progressBar, const QString color);
     QProgressBar *getCurrentProgressBar();
@@ -88,6 +91,9 @@ private slots:
     void on_addFilesPushButton_clicked();
     void on_deleteSelectedPushButton_clicked();
     void on_clearPushButton_clicked();
+    void on_actionAddTask_triggered();
+    void on_actionRemoveSelectedTask_triggered();
+    void on_actionClearAllTasks_triggered();
 
     // Logs
     void on_toggleLogsPushButton_clicked();

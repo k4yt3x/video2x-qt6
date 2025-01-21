@@ -474,15 +474,12 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
     taskConfig.encCfg.delay = ui->delaySpinBox->value();
 
     // Parse codec
-    taskConfig.encCfg.codec = AV_CODEC_ID_NONE;
-    const AVCodec *codec = avcodec_find_encoder_by_name(
-        ui->codecLineEdit->text().toUtf8().constData());
-    if (codec == nullptr) {
+    taskConfig.encCfg.codec = "libx264";
+    if (avcodec_find_encoder_by_name(ui->codecLineEdit->text().toUtf8().constData()) == nullptr) {
         video2x::logger()->error("Invalid codec specified: '{}'.", ui->codecLineEdit->text().toStdString());
         return std::nullopt;
     }
-    taskConfig.encCfg.codec = codec->id;
-    taskConfig.codecName = ui->codecLineEdit->text();
+    taskConfig.encCfg.codec = ui->codecLineEdit->text().toStdString();
 
     // Parse pix_fmt
     taskConfig.encCfg.pix_fmt = AV_PIX_FMT_NONE;
@@ -515,13 +512,8 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
             continue;
         }
 
-#ifdef _WIN32
-        std::wstring key = optionItem->text().toStdWString();
-        std::wstring value = valueItem->text().toStdWString();
-#else
         std::string key = optionItem->text().toStdString();
         std::string value = valueItem->text().toStdString();
-#endif
 
         if (!key.empty() && !value.empty()) {
             taskConfig.encCfg.extra_opts.emplace_back(key, value);
@@ -695,7 +687,7 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     ui->delaySpinBox->setValue(taskConfig.encCfg.delay);
 
     // Codec
-    ui->codecLineEdit->setText(taskConfig.codecName);
+    ui->codecLineEdit->setText(QString::fromStdString(taskConfig.encCfg.codec));
 
     // Pix_fmt
     if (taskConfig.encCfg.pix_fmt == AV_PIX_FMT_NONE) {
@@ -726,14 +718,8 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
 
     // Populate from extra_opts
     for (const auto &kv : taskConfig.encCfg.extra_opts) {
-#ifdef _WIN32
-        QString qKey = QString::fromWCharArray(kv.first.c_str());
-        QString qValue = QString::fromWCharArray(kv.second.c_str());
-#else
         QString qKey = QString::fromStdString(kv.first);
         QString qValue = QString::fromStdString(kv.second);
-#endif
-
         QStandardItem *keyItem = new QStandardItem(qKey);
         QStandardItem *valueItem = new QStandardItem(qValue);
         m_customEncoderOptionsTableModel->appendRow({keyItem, valueItem});

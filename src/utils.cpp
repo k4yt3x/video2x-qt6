@@ -166,14 +166,15 @@ std::optional<std::filesystem::path> getConfigDir()
 
 std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayName)
 {
-    static const QMap<QString, QString> anime4kDisplayToFileNameMap
-        = {{"Anime4K v4 Mode A", "anime4k-v4-a"},
-           {"Anime4K v4 Mode B", "anime4k-v4-b"},
-           {"Anime4K v4 Mode C", "anime4k-v4-c"},
-           {"Anime4K v4 Mode A+A", "anime4k-v4-a+a"},
-           {"Anime4K v4 Mode B+B", "anime4k-v4-b+b"},
-           {"Anime4K v4 Mode C+A", "anime4k-v4-c+a"},
-           {"Anime4K v4.1 GAN", "anime4k-v4.1-gan"}};
+    static const QMap<QString, QString> anime4kDisplayToFileNameMap = {
+        {"Anime4K v4 Mode A", "anime4k-v4-a"},
+        {"Anime4K v4 Mode B", "anime4k-v4-b"},
+        {"Anime4K v4 Mode C", "anime4k-v4-c"},
+        {"Anime4K v4 Mode A+A", "anime4k-v4-a+a"},
+        {"Anime4K v4 Mode B+B", "anime4k-v4-b+b"},
+        {"Anime4K v4 Mode C+A", "anime4k-v4-c+a"},
+        {"Anime4K v4.1 GAN", "anime4k-v4.1-gan"},
+    };
 
     if (anime4kDisplayToFileNameMap.contains(displayName)) {
         return anime4kDisplayToFileNameMap.value(displayName);
@@ -183,14 +184,15 @@ std::optional<QString> findAnime4kFileNameByDisplayName(const QString &displayNa
 
 std::optional<QString> findAnime4kDisplayNameByFileName(const QString &fileName)
 {
-    static const QMap<QString, QString> anime4kFileNameToDisplayNameMap
-        = {{"anime4k-v4-a", "Anime4K v4 Mode A"},
-           {"anime4k-v4-b", "Anime4K v4 Mode B"},
-           {"anime4k-v4-c", "Anime4K v4 Mode C"},
-           {"anime4k-v4-a+a", "Anime4K v4 Mode A+A"},
-           {"anime4k-v4-b+b", "Anime4K v4 Mode B+B"},
-           {"anime4k-v4-c+a", "Anime4K v4 Mode C+A"},
-           {"anime4k-v4.1-gan", "Anime4K v4.1 GAN"}};
+    static const QMap<QString, QString> anime4kFileNameToDisplayNameMap = {
+        {"anime4k-v4-a", "Anime4K v4 Mode A"},
+        {"anime4k-v4-b", "Anime4K v4 Mode B"},
+        {"anime4k-v4-c", "Anime4K v4 Mode C"},
+        {"anime4k-v4-a+a", "Anime4K v4 Mode A+A"},
+        {"anime4k-v4-b+b", "Anime4K v4 Mode B+B"},
+        {"anime4k-v4-c+a", "Anime4K v4 Mode C+A"},
+        {"anime4k-v4.1-gan", "Anime4K v4.1 GAN"},
+    };
 
     if (anime4kFileNameToDisplayNameMap.contains(fileName)) {
         return anime4kFileNameToDisplayNameMap.value(fileName);
@@ -200,17 +202,22 @@ std::optional<QString> findAnime4kDisplayNameByFileName(const QString &fileName)
 
 std::optional<QString> findRifeModelNameByDisplayName(const QString &displayName)
 {
-    static const QMap<QString, QString> rifeDisplayToFileNameMap = {{"RIFE", "rife"},
-                                                                    {"RIFE HD", "rife-HD"},
-                                                                    {"RIFE UHD", "rife-UHD"},
-                                                                    {"RIFE Anime", "rife-anime"},
-                                                                    {"RIFE v2", "rife-v2"},
-                                                                    {"RIFE v2.3", "rife-v2.3"},
-                                                                    {"RIFE v2.4", "rife-v2.4"},
-                                                                    {"RIFE v3.0", "rife-v3.0"},
-                                                                    {"RIFE v3.1", "rife-v3.1"},
-                                                                    {"RIFE v4", "rife-v4"},
-                                                                    {"RIFE v4.6", "rife-v4.6"}};
+    static const QMap<QString, QString> rifeDisplayToFileNameMap = {
+        {"RIFE", "rife"},
+        {"RIFE HD", "rife-HD"},
+        {"RIFE UHD", "rife-UHD"},
+        {"RIFE Anime", "rife-anime"},
+        {"RIFE v2", "rife-v2"},
+        {"RIFE v2.3", "rife-v2.3"},
+        {"RIFE v2.4", "rife-v2.4"},
+        {"RIFE v3.0", "rife-v3.0"},
+        {"RIFE v3.1", "rife-v3.1"},
+        {"RIFE v4", "rife-v4"},
+        {"RIFE v4.6", "rife-v4.6"},
+        {"RIFE v4.25", "rife-v4.25"},
+        {"RIFE v4.25 Lite", "rife-v4.25-lite"},
+        {"RIFE v4.26", "rife-v4.26"},
+    };
 
     if (rifeDisplayToFileNameMap.contains(displayName)) {
         return rifeDisplayToFileNameMap.value(displayName);
@@ -220,17 +227,22 @@ std::optional<QString> findRifeModelNameByDisplayName(const QString &displayName
 
 std::optional<QString> findRifeDisplayNameByModelName(const QString &modelName)
 {
-    static const QMap<QString, QString> rifeFileNameToDisplayNameMap = {{"rife", "RIFE"},
-                                                                        {"rife-HD", "RIFE HD"},
-                                                                        {"rife-UHD", "RIFE UHD"},
-                                                                        {"rife-anime", "RIFE Anime"},
-                                                                        {"rife-v2", "RIFE v2"},
-                                                                        {"rife-v2.3", "RIFE v2.3"},
-                                                                        {"rife-v2.4", "RIFE v2.4"},
-                                                                        {"rife-v3.0", "RIFE v3.0"},
-                                                                        {"rife-v3.1", "RIFE v3.1"},
-                                                                        {"rife-v4", "RIFE v4"},
-                                                                        {"rife-v4.6", "RIFE v4.6"}};
+    static const QMap<QString, QString> rifeFileNameToDisplayNameMap = {
+        {"rife", "RIFE"},
+        {"rife-HD", "RIFE HD"},
+        {"rife-UHD", "RIFE UHD"},
+        {"rife-anime", "RIFE Anime"},
+        {"rife-v2", "RIFE v2"},
+        {"rife-v2.3", "RIFE v2.3"},
+        {"rife-v2.4", "RIFE v2.4"},
+        {"rife-v3.0", "RIFE v3.0"},
+        {"rife-v3.1", "RIFE v3.1"},
+        {"rife-v4", "RIFE v4"},
+        {"rife-v4.6", "RIFE v4.6"},
+        {"rife-v4.25", "RIFE v4.25"},
+        {"rife-v4.25-lite", "RIFE v4.25 Lite"},
+        {"rife-v4.26", "RIFE v4.26"},
+    };
 
     if (rifeFileNameToDisplayNameMap.contains(modelName)) {
         return rifeFileNameToDisplayNameMap.value(modelName);

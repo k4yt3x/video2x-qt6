@@ -20,7 +20,6 @@ struct TaskConfig
 
     // Additional data for restoring the TaskConfigDialog
     QString outputSuffix;
-    QString codecName;
 };
 
 #endif // TASKCONFIG_H

@@ -57,9 +57,9 @@ set(VIDEO2X_QT6_INCLUDE_DIRS)
 set(VIDEO2X_QT6_LIBS)
 
 # Find the required Qt6 components
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Svg Network LinguistTools)
 qt_standard_project_setup()
-list(APPEND VIDEO2X_QT6_LIBS Qt6::Core Qt6::Widgets Qt6::Network)
+list(APPEND VIDEO2X_QT6_LIBS Qt6::Core Qt6::Widgets Qt6::Svg Qt6::Network)
 
 # Power management dependencies
 if(WIN32)
@@ -165,6 +165,7 @@ set(PROJECT_SOURCES
     src/timer.cpp
     src/timer.h
     src/translations.qrc
+    src/images.qrc
     src/utils.cpp
     src/utils.h
     ${TS_FILES}
@@ -180,6 +181,9 @@ qt_add_executable(video2x-qt6
     ${PROJECT_SOURCES}
     ${APP_RESOURCE_FILE}
 )
+
+qt_add_resources(RESOURCES src/images.qrc)
+target_sources(video2x-qt6 PRIVATE ${RESOURCES})
 
 qt_add_translations(video2x-qt6
     TS_FILES ${TS_FILES}
