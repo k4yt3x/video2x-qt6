@@ -526,7 +526,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="164"/>
         <source>Check for updates on start</source>
-        <translation type="unfinished"></translation>
+        <translation>在程序启动时检查更新</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="206"/>

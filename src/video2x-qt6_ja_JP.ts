@@ -14,7 +14,7 @@
     <message>
         <location filename="filedroptableview.cpp" line="96"/>
         <source>Drop files here to add new processing tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ファイルをここにドラッグして処理タスクを追加してください</translation>
     </message>
 </context>
 <context>
@@ -98,7 +98,7 @@
     <message>
         <location filename="mainwindow.ui" line="121"/>
         <source>Stats</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">統計</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="155"/>
@@ -108,7 +108,7 @@
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">開始</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="198"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">一時停止</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="238"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="mainwindow.ui" line="241"/>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">再開</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="278"/>
@@ -138,32 +138,32 @@
     <message>
         <location filename="mainwindow.ui" line="284"/>
         <source>Abort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">中止</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="605"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ツールバー</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="631"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">終了</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="642"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">バージョン情報</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="647"/>
         <source>&amp;Report Bugs...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">バグを報告...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="652"/>
         <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">設定</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="655"/>
@@ -173,12 +173,12 @@
     <message>
         <location filename="mainwindow.ui" line="663"/>
         <source>&amp;Add tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">タスクを追加</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="666"/>
         <source>Add tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">タスクを追加</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="669"/>
@@ -188,12 +188,12 @@
     <message>
         <location filename="mainwindow.ui" line="677"/>
         <source>&amp;Remove selected tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">選択したタスクを削除</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="680"/>
         <source>Remove selected tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">選択したタスクを削除</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="683"/>
@@ -203,7 +203,7 @@
     <message>
         <location filename="mainwindow.ui" line="691"/>
         <source>&amp;Clear all tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">すべてのタスクをクリア</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="694"/>
@@ -237,12 +237,12 @@
     <message>
         <location filename="mainwindow.ui" line="480"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ファイル</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="496"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">編集</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="535"/>
@@ -372,7 +372,7 @@ Restart the application for changes to take effect.</source>
     <message>
         <location filename="mainwindow.cpp" line="374"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">削除</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="453"/>
@@ -470,7 +470,7 @@ This may cause the software to function improperly. Please update to the latest 
         <location filename="mainwindow.cpp" line="147"/>
         <source>Video processing finished with errors. See logs for more information.</source>
         <oldsource>Video processing finished with errors. See logs for more information</oldsource>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">動画の処理がエラーありの状態で完了しました。詳細はログをご確認ください。</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="363"/>
@@ -493,25 +493,25 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="14"/>
         <source>Video2X Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Video2X 設定</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="55"/>
         <location filename="preferencesdialog.ui" line="107"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">一般</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="63"/>
         <location filename="preferencesdialog.ui" line="197"/>
         <source>Processing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">処理</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="71"/>
         <location filename="preferencesdialog.ui" line="279"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">詳細設定</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="116"/>
@@ -521,57 +521,57 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="124"/>
         <source>&lt;System language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;システム言語&gt;</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="164"/>
         <source>Check for updates on start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">起動時にアップデートを確認する</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="206"/>
         <source>When Done</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">完了時</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="214"/>
         <source>Do nothing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">何もしない</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="219"/>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">シャットダウン</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="224"/>
         <source>Sleep</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">スリープ</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="229"/>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ハイバネート</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="239"/>
         <source>Automatically show stats when processing begins</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">処理開始時に統計を自動的に表示する</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="249"/>
         <source>Remove finished tasks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">完了したタスクを削除</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="286"/>
         <source>Open Configuration File Directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">設定ファイルディレクトリを開く</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="293"/>
         <source>Reset All Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">すべての設定をリセット</translation>
     </message>
     <message>
         <location filename="preferencesdialog.cpp" line="156"/>
