@@ -77,6 +77,9 @@ Video2XPreferences PreferencesDialog::getPreferences()
         break;
     }
 
+    // Parse auto show stats
+    pref.autoShowStats = ui->autoShowStatsCheckBox->isChecked();
+
     // Parse remove finished tasks
     pref.removeFinishedTasks = ui->removeFinishedTasksCheckBox->isChecked();
 
@@ -122,6 +125,9 @@ void PreferencesDialog::setPreferences(Video2XPreferences pref)
         ui->whenDoneComboBox->setCurrentIndex(3);
         break;
     }
+
+    // Set auto show stats
+    ui->autoShowStatsCheckBox->setChecked(pref.autoShowStats);
 
     // Set remove finished tasks
     ui->removeFinishedTasksCheckBox->setChecked(pref.removeFinishedTasks);

@@ -10,6 +10,7 @@
 #define TRANSLATION_KEY "translation"
 #define ACTION_WHEN_DONE_KEY "actionWhenDone"
 #define REMOVE_FINISHED_TASKS_KEY "removeFinishedTasks"
+#define AUTO_SHOW_STATS_KEY "autoShowStats"
 
 struct Video2XPreferences
 {
@@ -23,6 +24,9 @@ struct Video2XPreferences
 
     // The action to perform after all tasks are processed
     ActionWhenDone actionWhenDone = ActionWhenDone::DoNothing;
+
+    // Whether to automatically show the stats when processing starts
+    bool autoShowStats = true;
 
     // Whether finished tasks should be removed from the task queue
     bool removeFinishedTasks = false;

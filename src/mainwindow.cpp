@@ -41,6 +41,7 @@ extern "C" {
 #define PROCESSOR_COLUMN 1
 #define PROGRESS_BAR_COLUMN 2
 #define EDIT_BUTTON_COLUMN 3
+#define DELETE_BUTTON_COLUMN 4
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -67,6 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->neverShowUpdatePushButton->setVisible(false);
     ui->closeUpdatePushButton->setVisible(false);
 
+    ui->statsFrame->setVisible(false);
     ui->logsDockWidget->setVisible(false);
 
     ui->pausePushButton->setVisible(false);
@@ -91,9 +93,9 @@ MainWindow::MainWindow(QWidget *parent)
         ui->pausePushButton->setVisible(true);
         ui->abortPushButton->setVisible(true);
 
-        //ui->addFilesPushButton->setEnabled(false);
-        ui->deleteSelectedPushButton->setEnabled(false);
-        ui->clearPushButton->setEnabled(false);
+        if (m_prefManager.getPreferences().autoShowStats) {
+            ui->statsFrame->setVisible(true);
+        }
 
         // Disable all edit buttons
         int rowCount = m_taskTableModel->rowCount();
@@ -186,10 +188,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->abortPushButton->setVisible(false);
         ui->startPushButton->setVisible(true);
 
-        // ui->addFilesPushButton->setEnabled(true);
-        ui->deleteSelectedPushButton->setEnabled(true);
-        ui->clearPushButton->setEnabled(true);
-
         // Enable all edit buttons
         int rowCount = m_taskTableModel->rowCount();
         for (int i = 0; i < rowCount; ++i) {
@@ -240,11 +238,22 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Set table column width after initialization completes
     QTimer::singleShot(0, this, [this]() {
-        int totalWidth = ui->tasksTableView->viewport()->width();
-        double columnWidthPercentages[] = {0.25, 0.2, 0.4, 0.1};
-        for (int i = 0; i < m_taskTableModel->columnCount(); ++i) {
-            ui->tasksTableView->setColumnWidth(i, totalWidth * columnWidthPercentages[i]);
-        }
+        auto *header = ui->tasksTableView->horizontalHeader();
+
+        header->setCascadingSectionResizes(true);
+        header->setSectionsClickable(true);
+
+        // Stretch the first three columns to fill all remaining horizontal space
+        header->setSectionResizeMode(FILE_NAME_COLUMN, QHeaderView::Stretch);
+        header->setSectionResizeMode(PROCESSOR_COLUMN, QHeaderView::Stretch);
+        header->setSectionResizeMode(PROGRESS_BAR_COLUMN, QHeaderView::Stretch);
+
+        // Fix the button columns to 60 px
+        header->setSectionResizeMode(EDIT_BUTTON_COLUMN, QHeaderView::Fixed);
+        ui->tasksTableView->setColumnWidth(EDIT_BUTTON_COLUMN, 60);
+
+        header->setSectionResizeMode(DELETE_BUTTON_COLUMN, QHeaderView::Fixed);
+        ui->tasksTableView->setColumnWidth(DELETE_BUTTON_COLUMN, 60);
     });
 
 // Check if the required VC runtime is installed
@@ -288,7 +297,7 @@ void MainWindow::on_actionPreferences_triggered()
     }
 }
 
-void MainWindow::on_actionReport_Bugs_triggered()
+void MainWindow::on_actionReportBugs_triggered()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/k4yt3x/video2x/issues/new/choose"));
 }
@@ -381,7 +390,8 @@ void MainWindow::updateTaskTableHeaders()
 {
     if (m_taskTableModel != nullptr) {
         m_taskTableModel->setHorizontalHeaderLabels(
-            QStringList() << tr("File Name") << tr("Processor") << tr("Progress") << tr("Edit"));
+            QStringList() << tr("File Name") << tr("Processor") << tr("Progress") << tr("Edit")
+                          << tr("Delete"));
     }
 }
 
@@ -596,6 +606,10 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
         // Store the TaskConfigs object in the first column's item using a custom role
         fileNameItem->setData(QVariant::fromValue(taskConfig), Qt::UserRole + 1);
 
+        // Get the current row's persistent index
+        QPersistentModelIndex persistentIndex(
+            m_taskTableModel->index(m_taskTableModel->rowCount() - 1, 0));
+
         // Add progress bar
         QModelIndex progressIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
                                                             PROGRESS_BAR_COLUMN);
@@ -603,16 +617,35 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
         setDefaultProgressBarStyle(progressBar);
         ui->tasksTableView->setIndexWidget(progressIndex, progressBar);
 
-        // Add an Edit button
+        // Create an edit button
         QModelIndex editIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
                                                         EDIT_BUTTON_COLUMN);
-        QPushButton *editButton = new QPushButton(tr("Edit"), ui->tasksTableView);
+        QPushButton *editButton = new QPushButton(ui->tasksTableView);
+        editButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::MailMessageNew));
+        editButton->setIconSize(QSize(14, 14));
         editButton->setFocusPolicy(Qt::NoFocus);
+
+        // Add the edit button to the table
         ui->tasksTableView->setIndexWidget(editIndex, editButton);
 
+        // Create a delete button
+        QModelIndex deleteIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
+                                                          DELETE_BUTTON_COLUMN);
+        QPushButton *deleteButton = new QPushButton(ui->tasksTableView);
+        deleteButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::EditDelete));
+        deleteButton->setIconSize(QSize(14, 14));
+        deleteButton->setFocusPolicy(Qt::NoFocus);
+
+        // Add the delete button to the table
+        ui->tasksTableView->setIndexWidget(deleteIndex, deleteButton);
+
         // Connect the edit button with an edit function
-        connect(editButton, &QPushButton::clicked, this, [this, editIndex]() {
-            QStandardItem *item = m_taskTableModel->item(editIndex.row(), 0);
+        connect(editButton, &QPushButton::clicked, this, [this, persistentIndex]() {
+            if (!persistentIndex.isValid()) {
+                return;
+            }
+
+            QStandardItem *item = m_taskTableModel->item(persistentIndex.row(), 0);
             if (item == nullptr) {
                 return;
             }
@@ -641,12 +674,21 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
                 updatedTask.outFname = originalTaskConfig.outFname;
 
                 // Update the processor column
-                m_taskTableModel->item(editIndex.row(), PROCESSOR_COLUMN)
+                m_taskTableModel->item(persistentIndex.row(), PROCESSOR_COLUMN)
                     ->setText(convertProcessorTypeToQString(updatedTask.procCfg.processor_type));
 
                 // Store updated task
                 item->setData(QVariant::fromValue(updatedTask), Qt::UserRole + 1);
             }
+        });
+
+        // Connect the delete button with a deletion function
+        connect(deleteButton, &QPushButton::clicked, this, [this, persistentIndex]() {
+            if (!persistentIndex.isValid()) {
+                return;
+            }
+            qDebug() << persistentIndex.row();
+            m_taskTableModel->removeRow(persistentIndex.row());
         });
 
         // Increase the total number of tasks
@@ -688,27 +730,12 @@ void MainWindow::clearTasks()
     m_taskTableModel->removeRows(0, m_taskTableModel->rowCount());
 }
 
-void MainWindow::on_addFilesPushButton_clicked()
+void MainWindow::on_actionAddTasks_triggered()
 {
     addTasks();
 }
 
-void MainWindow::on_deleteSelectedPushButton_clicked()
-{
-    deleteTasks();
-}
-
-void MainWindow::on_clearPushButton_clicked()
-{
-    clearTasks();
-}
-
-void MainWindow::on_actionAddTask_triggered()
-{
-    addTasks();
-}
-
-void MainWindow::on_actionRemoveSelectedTask_triggered()
+void MainWindow::on_actionRemoveSelectedTasks_triggered()
 {
     deleteTasks();
 }
@@ -716,6 +743,11 @@ void MainWindow::on_actionRemoveSelectedTask_triggered()
 void MainWindow::on_actionClearAllTasks_triggered()
 {
     clearTasks();
+}
+
+void MainWindow::on_toggleStatsPushButton_clicked()
+{
+    ui->statsFrame->setVisible(!ui->statsFrame->isVisible());
 }
 
 void MainWindow::on_toggleLogsPushButton_clicked()

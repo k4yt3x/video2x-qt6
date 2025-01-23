@@ -5,6 +5,7 @@
 
 #include <QMainWindow>
 #include <QProgressBar>
+#include <QPushButton>
 #include <QStandardItemModel>
 #include <QTranslator>
 
@@ -60,7 +61,6 @@ private:
     // Main UI QTranslator
     QTranslator m_translator;
 
-    // TODO: Remove
     QStandardItemModel *m_taskTableModel = nullptr;
 
     // Video processing runtime states
@@ -79,7 +79,7 @@ private slots:
     // File menu
     void on_actionExit_triggered();
     void on_actionPreferences_triggered();
-    void on_actionReport_Bugs_triggered();
+    void on_actionReportBugs_triggered();
     void on_actionAbout_triggered();
 
     // Check updates
@@ -88,22 +88,22 @@ private slots:
     void on_closeUpdatePushButton_clicked();
 
     // Add/remove tasks
-    void on_addFilesPushButton_clicked();
-    void on_deleteSelectedPushButton_clicked();
-    void on_clearPushButton_clicked();
-    void on_actionAddTask_triggered();
-    void on_actionRemoveSelectedTask_triggered();
+    void on_actionAddTasks_triggered();
+    void on_actionRemoveSelectedTasks_triggered();
     void on_actionClearAllTasks_triggered();
-
-    // Logs
-    void on_toggleLogsPushButton_clicked();
-    void on_logLevelComboBox_currentIndexChanged(int index);
-    void on_saveLogsAsPushButton_clicked();
 
     // Processing control buttons
     void on_startPushButton_clicked();
     void on_pausePushButton_clicked();
     void on_resumePushButton_clicked();
     void on_abortPushButton_clicked();
+
+    // Stats
+    void on_toggleStatsPushButton_clicked();
+
+    // Logs
+    void on_toggleLogsPushButton_clicked();
+    void on_logLevelComboBox_currentIndexChanged(int index);
+    void on_saveLogsAsPushButton_clicked();
 };
 #endif // MAINWINDOW_H

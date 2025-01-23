@@ -87,6 +87,11 @@ bool PreferencesManager::loadPreferences()
         }
     }
 
+    // Parse auto show stats
+    if (jsonObject.contains(AUTO_SHOW_STATS_KEY) && jsonObject[AUTO_SHOW_STATS_KEY].isBool()) {
+        m_preferences.autoShowStats = jsonObject[AUTO_SHOW_STATS_KEY].toBool();
+    }
+
     // Parse remove finished tasks
     if (jsonObject.contains(REMOVE_FINISHED_TASKS_KEY) && jsonObject[REMOVE_FINISHED_TASKS_KEY].isBool()) {
         m_preferences.removeFinishedTasks = jsonObject[REMOVE_FINISHED_TASKS_KEY].toBool();
@@ -140,6 +145,9 @@ bool PreferencesManager::savePreferences()
         jsonObject[ACTION_WHEN_DONE_KEY] = "hibernate";
         break;
     }
+
+    // Save auto show stats
+    jsonObject[AUTO_SHOW_STATS_KEY] = m_preferences.autoShowStats;
 
     // Save remove finished tasks
     jsonObject[REMOVE_FINISHED_TASKS_KEY] = m_preferences.removeFinishedTasks;
