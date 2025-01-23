@@ -14,7 +14,7 @@
     <message>
         <location filename="filedroptableview.cpp" line="96"/>
         <source>Drop files here to add new processing tasks</source>
-        <translation type="unfinished">Dateien hierher ziehen, um neue Aufgaben hinzuzufügen</translation>
+        <translation>Dateien hierher ziehen, um neue Verarbeitungsaufgaben hinzuzufügen</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="mainwindow.ui" line="51"/>
         <source>Never Show Again</source>
-        <translation>Niemals mehr anzeigen</translation>
+        <translation>Bitte nicht mehr anzeigen</translation>
     </message>
     <message>
         <source>Video Processing Task Queue</source>
@@ -79,27 +79,27 @@
     <message>
         <location filename="mainwindow.ui" line="121"/>
         <source>Stats</source>
-        <translation type="unfinished">Statistiken</translation>
+        <translation>Statistiken</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Start</source>
-        <translation type="unfinished">Starten</translation>
+        <translation>Starten</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>Pause</source>
-        <translation type="unfinished">Pause</translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="241"/>
         <source>Resume</source>
-        <translation type="unfinished">Fortsetzen</translation>
+        <translation>Fortsetzen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="284"/>
         <source>Abort</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="378"/>
@@ -114,27 +114,27 @@
     <message>
         <location filename="mainwindow.ui" line="605"/>
         <source>toolBar</source>
-        <translation type="unfinished">WerkzeugLeiste</translation>
+        <translation>WerkzeugLeiste</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="631"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished">&amp;Beenden</translation>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="642"/>
         <source>&amp;About</source>
-        <translation type="unfinished">Ü&amp;ber</translation>
+        <translation>&amp;Über</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="647"/>
         <source>&amp;Report Bugs...</source>
-        <translation type="unfinished">&amp;Bugs melden...</translation>
+        <translation>&amp;Bugs melden...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="652"/>
         <source>&amp;Preferences</source>
-        <translation type="unfinished">&amp;Einstellungen</translation>
+        <translation>&amp;Einstellungen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="655"/>
@@ -144,12 +144,12 @@
     <message>
         <location filename="mainwindow.ui" line="663"/>
         <source>&amp;Add tasks</source>
-        <translation type="unfinished">Aufgaben &amp;hinzufügen</translation>
+        <translation>Aufgaben &amp;hinzufügen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="666"/>
         <source>Add tasks</source>
-        <translation type="unfinished">Aufgaben hinzufügen</translation>
+        <translation>Aufgaben hinzufügen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="669"/>
@@ -159,27 +159,27 @@
     <message>
         <location filename="mainwindow.ui" line="677"/>
         <source>&amp;Remove selected tasks</source>
-        <translation type="unfinished">Ausgewählte Aufgaben &amp;entfernen</translation>
+        <translation>Ausgewählte Aufgaben &amp;entfernen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="680"/>
         <source>Remove selected tasks</source>
-        <translation type="unfinished">Ausgewählte Aufgaben entfernen</translation>
+        <translation>Ausgewählte Aufgaben entfernen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="683"/>
         <source>Del</source>
-        <translation></translation>
+        <translation>Entf</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="691"/>
         <source>&amp;Clear all tasks</source>
-        <translation type="unfinished">Alle Aufgaben &amp;löschen</translation>
+        <translation>Alle Aufgaben &amp;löschen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="694"/>
         <source>Shift+Del</source>
-        <translation></translation>
+        <translation>Shift+Entf</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="155"/>
@@ -249,12 +249,12 @@
     <message>
         <location filename="mainwindow.ui" line="480"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Datei</translation>
+        <translation>&amp;Datei</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="496"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Bearbeiten</translation>
+        <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="535"/>
@@ -369,7 +369,7 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
         <location filename="mainwindow.cpp" line="147"/>
         <source>Video processing finished with errors. See logs for more information.</source>
         <oldsource>Video processing finished with errors. See logs for more information</oldsource>
-        <translation type="unfinished">Die Videoverarbeitung wurde mit Fehlern beendet. Weitere Informationen finden Sie in den Protokollen.</translation>
+        <translation>Die Videoverarbeitung wurde mit Fehlern beendet. Weitere Informationen finden Sie in den Protokollen.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="323"/>
@@ -419,7 +419,7 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
     <message>
         <location filename="mainwindow.cpp" line="374"/>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="453"/>
@@ -492,25 +492,25 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
     <message>
         <location filename="preferencesdialog.ui" line="14"/>
         <source>Video2X Preferences</source>
-        <translation type="unfinished">Video2X-Einstellungen</translation>
+        <translation>Video2X-Einstellungen</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="55"/>
         <location filename="preferencesdialog.ui" line="107"/>
         <source>General</source>
-        <translation type="unfinished">Allgemein</translation>
+        <translation>Allgemein</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="63"/>
         <location filename="preferencesdialog.ui" line="197"/>
         <source>Processing</source>
-        <translation type="unfinished">Verarbeitung</translation>
+        <translation>Verarbeitung</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="71"/>
         <location filename="preferencesdialog.ui" line="279"/>
         <source>Advanced</source>
-        <translation type="unfinished">Erweitert</translation>
+        <translation>Erweitert</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="116"/>
@@ -520,57 +520,57 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
     <message>
         <location filename="preferencesdialog.ui" line="124"/>
         <source>&lt;System language&gt;</source>
-        <translation type="unfinished">&lt;Systemsprache&gt;</translation>
+        <translation>&lt;Systemsprache&gt;</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="164"/>
         <source>Check for updates on start</source>
-        <translation type="unfinished">Beim Start nach Updates suchen</translation>
+        <translation>Beim Start nach Updates suchen</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="206"/>
         <source>When Done</source>
-        <translation type="unfinished">Nach Abschluss</translation>
+        <translation>Nach Abschluss</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="214"/>
         <source>Do nothing</source>
-        <translation type="unfinished">Nichts tun</translation>
+        <translation>Nichts tun</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="219"/>
         <source>Shutdown</source>
-        <translation type="unfinished">Herunterfahren</translation>
+        <translation>Herunterfahren</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="224"/>
         <source>Sleep</source>
-        <translation type="unfinished">Energiesparmodus</translation>
+        <translation>Energiesparmodus</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="229"/>
         <source>Hibernate</source>
-        <translation type="unfinished">Ruhezustand</translation>
+        <translation>Ruhezustand</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="239"/>
         <source>Automatically show stats when processing begins</source>
-        <translation type="unfinished">Statistiken automatisch anzeigen, wenn die Verarbeitung beginnt</translation>
+        <translation>Statistiken automatisch anzeigen, wenn die Verarbeitung beginnt</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="249"/>
         <source>Remove finished tasks</source>
-        <translation type="unfinished">Abgeschlossene Aufgaben entfernen</translation>
+        <translation>Abgeschlossene Aufgaben entfernen</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="286"/>
         <source>Open Configuration File Directory</source>
-        <translation type="unfinished">Öffne Konfigurationsdatei-Verzeichnis</translation>
+        <translation>Öffne Konfigurationsdatei-Verzeichnis</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="293"/>
         <source>Reset All Preferences</source>
-        <translation type="unfinished">Alle Einstellungen Zurücksetzen</translation>
+        <translation>Alle Einstellungen zurücksetzen</translation>
     </message>
     <message>
         <location filename="preferencesdialog.cpp" line="156"/>
