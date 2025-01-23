@@ -51,6 +51,8 @@ private:
     void setDefaultProgressBarStyle(QProgressBar *progressBar);
     void setProgressBarColor(QProgressBar *progressBar, const QString color);
     QProgressBar *getCurrentProgressBar();
+    QPushButton *getCurrentEditButton();
+    QPushButton *getCurrentDeleteButton();
     void processNextVideo();
 
     Ui::MainWindow *ui;

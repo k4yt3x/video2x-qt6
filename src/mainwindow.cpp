@@ -96,16 +96,6 @@ MainWindow::MainWindow(QWidget *parent)
         if (m_prefManager.getPreferences().autoShowStats) {
             ui->statsFrame->setVisible(true);
         }
-
-        // Disable all edit buttons
-        int rowCount = m_taskTableModel->rowCount();
-        for (int i = 0; i < rowCount; ++i) {
-            QModelIndex editIndex = m_taskTableModel->index(i, EDIT_BUTTON_COLUMN);
-            QWidget *widget = ui->tasksTableView->indexWidget(editIndex);
-            if (QPushButton *editButton = qobject_cast<QPushButton *>(widget)) {
-                editButton->setEnabled(false);
-            }
-        }
     });
 
     // Processing paused signal handler
@@ -187,16 +177,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->resumePushButton->setVisible(false);
         ui->abortPushButton->setVisible(false);
         ui->startPushButton->setVisible(true);
-
-        // Enable all edit buttons
-        int rowCount = m_taskTableModel->rowCount();
-        for (int i = 0; i < rowCount; ++i) {
-            QModelIndex editIndex = m_taskTableModel->index(i, EDIT_BUTTON_COLUMN);
-            QWidget *widget = ui->tasksTableView->indexWidget(editIndex);
-            if (QPushButton *editButton = qobject_cast<QPushButton *>(widget)) {
-                editButton->setEnabled(true);
-            }
-        }
 
         ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
     });
@@ -501,6 +481,29 @@ QProgressBar *MainWindow::getCurrentProgressBar()
     return nullptr;
 }
 
+QPushButton *MainWindow::getCurrentEditButton()
+{
+    // Set the current job's progress bar to 100%
+    QModelIndex editButtonIndex = m_taskTableModel->index(m_currentVideoIndex, EDIT_BUTTON_COLUMN);
+    QWidget *widget = ui->tasksTableView->indexWidget(editButtonIndex);
+    if (widget != nullptr) {
+        return qobject_cast<QPushButton *>(widget);
+    }
+    return nullptr;
+}
+
+QPushButton *MainWindow::getCurrentDeleteButton()
+{
+    // Set the current job's progress bar to 100%
+    QModelIndex deleteButtonIndex = m_taskTableModel->index(m_currentVideoIndex,
+                                                            DELETE_BUTTON_COLUMN);
+    QWidget *widget = ui->tasksTableView->indexWidget(deleteButtonIndex);
+    if (widget != nullptr) {
+        return qobject_cast<QPushButton *>(widget);
+    }
+    return nullptr;
+}
+
 bool MainWindow::changeLanguage(const QString &locale)
 {
     // Remove the currently installed translator
@@ -689,6 +692,10 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
             }
             qDebug() << persistentIndex.row();
             m_taskTableModel->removeRow(persistentIndex.row());
+
+            if (persistentIndex.row() < m_currentVideoIndex) {
+                m_currentVideoIndex -= 1;
+            }
         });
 
         // Increase the total number of tasks
@@ -720,14 +727,31 @@ void MainWindow::deleteTasks()
     std::sort(selectedIndexes.rbegin(), selectedIndexes.rend());
 
     for (const QModelIndex &index : selectedIndexes) {
+        // Skip if the selected video is being processed
+        if (m_procStarted && index.row() == m_currentVideoIndex) {
+            continue;
+        }
         m_taskTableModel->removeRow(index.row());
+
+        if (index.row() < m_currentVideoIndex) {
+            m_currentVideoIndex -= 1;
+        }
     }
 }
 
 void MainWindow::clearTasks()
 {
-    // Remove all rows from the model
-    m_taskTableModel->removeRows(0, m_taskTableModel->rowCount());
+    for (int row = m_taskTableModel->rowCount() - 1; row >= 0; --row) {
+        if (m_procStarted && row == m_currentVideoIndex) {
+            continue;
+        }
+
+        m_taskTableModel->removeRow(row);
+
+        if (row < m_currentVideoIndex) {
+            m_currentVideoIndex -= 1;
+        }
+    }
 }
 
 void MainWindow::on_actionAddTasks_triggered()
@@ -840,6 +864,9 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
             progressBar->setFormat("%v/%m (%p%)");
         }
     }
+
+    getCurrentEditButton()->setEnabled(true);
+    getCurrentDeleteButton()->setEnabled(true);
 
     // Update the overall progress bar
     ui->overallProgressBar->setValue(ui->overallProgressBar->value() + 1);
@@ -978,12 +1005,15 @@ void MainWindow::processNextVideo()
         progressBar->setFormat("%v/%m (%p%)");
     }
 
+    getCurrentEditButton()->setEnabled(false);
+    getCurrentDeleteButton()->setEnabled(false);
+
     // Start timer
     m_timer.start();
 
     // Retrieve the TaskConfigs from the model
     QStandardItem *item = m_taskTableModel->item(m_currentVideoIndex, 0);
-    if (!item) {
+    if (item == nullptr) {
         // No valid item means no task or an error—just consider processing complete
         emit processingStopped();
         return;
