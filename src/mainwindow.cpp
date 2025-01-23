@@ -690,10 +690,11 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
             if (!persistentIndex.isValid()) {
                 return;
             }
-            qDebug() << persistentIndex.row();
-            m_taskTableModel->removeRow(persistentIndex.row());
 
-            if (persistentIndex.row() < m_currentVideoIndex) {
+            int rowIndex = persistentIndex.row();
+            m_taskTableModel->removeRow(rowIndex);
+
+            if (rowIndex < m_currentVideoIndex) {
                 m_currentVideoIndex -= 1;
             }
         });
@@ -728,12 +729,14 @@ void MainWindow::deleteTasks()
 
     for (const QModelIndex &index : selectedIndexes) {
         // Skip if the selected video is being processed
-        if (m_procStarted && index.row() == m_currentVideoIndex) {
+        int rowIndex = index.row();
+        if (m_procStarted && rowIndex == m_currentVideoIndex) {
             continue;
         }
-        m_taskTableModel->removeRow(index.row());
 
-        if (index.row() < m_currentVideoIndex) {
+        m_taskTableModel->removeRow(rowIndex);
+
+        if (rowIndex < m_currentVideoIndex) {
             m_currentVideoIndex -= 1;
         }
     }
