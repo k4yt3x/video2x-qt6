@@ -144,7 +144,7 @@ MainWindow::MainWindow(QWidget *parent)
             QMessageBox::warning(
                 this,
                 tr("Processing Finished"),
-                tr("Video processing finished with errors. See logs for more information"));
+                tr("Video processing finished with errors. See logs for more information."));
         } else {
             QTimer::singleShot(0, this, [this]() {
                 // Perform the specified on-finish action

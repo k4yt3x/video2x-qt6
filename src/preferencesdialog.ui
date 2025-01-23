@@ -161,7 +161,7 @@
          <item>
           <widget class="QCheckBox" name="checkForUpdatesCheckBox">
            <property name="text">
-            <string notr="true">Check for updates on start</string>
+            <string>Check for updates on start</string>
            </property>
            <property name="checked">
             <bool>true</bool>

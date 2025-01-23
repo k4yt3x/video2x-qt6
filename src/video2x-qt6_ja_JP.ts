@@ -10,38 +10,43 @@
     </message>
 </context>
 <context>
+    <name>FileDropTableView</name>
+    <message>
+        <location filename="filedroptableview.cpp" line="96"/>
+        <source>Drop files here to add new processing tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="207"/>
-        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>Progress</source>
         <translation>進捗</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="262"/>
+        <location filename="mainwindow.ui" line="357"/>
         <source>Frames/s:</source>
         <translation>フレーム/秒：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="283"/>
+        <location filename="mainwindow.ui" line="378"/>
         <source>Time Elapsed:</source>
         <translation>経過時間：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="304"/>
+        <location filename="mainwindow.ui" line="399"/>
         <source>Time Remaining:</source>
         <translation>残り時間：</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="352"/>
         <source>START</source>
-        <translation>開始</translation>
+        <translation type="vanished">開始</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="87"/>
         <source>Video Processing Task Queue</source>
         <oldsource>Processing Task Queue</oldsource>
-        <translation>動画処理のタスクキュー</translation>
+        <translation type="vanished">動画処理のタスクキュー</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="29"/>
@@ -54,312 +59,400 @@
         <translation>今後表示しない</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="102"/>
         <source>Click the &quot;+&quot; button or drag files into the task queue to add new processing tasks.</source>
-        <translation>「+」ボタンをクリックするか、タスクキューにファイルをドラッグして新しい処理タスクを追加してください。</translation>
+        <translation type="vanished">「+」ボタンをクリックするか、タスクキューにファイルをドラッグして新しい処理タスクを追加してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="127"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Add files to the task queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;タスクキューにファイルを追加してください。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;タスクキューにファイルを追加してください。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="130"/>
         <source>ADD</source>
-        <translation>追加</translation>
+        <translation type="vanished">追加</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="152"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove the selected tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;選択したタスクをキューから削除します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;選択したタスクをキューから削除します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="155"/>
         <source>REMOVE</source>
-        <translation>削除</translation>
+        <translation type="vanished">削除</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove all tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;キューからすべてのタスクを削除します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;キューからすべてのタスクを削除します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="180"/>
         <source>CLEAR</source>
-        <translation>すべて削除</translation>
+        <translation type="vanished">すべて削除</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="244"/>
+        <location filename="mainwindow.ui" line="458"/>
         <source>Currently processing: %v/%m (%p%)</source>
         <translation>現在の処理：%v/%m (%p%)</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="461"/>
         <source>LOGS</source>
-        <translation>ログ</translation>
+        <translation type="vanished">ログ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="346"/>
+        <location filename="mainwindow.ui" line="121"/>
+        <source>Stats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="155"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Start processing the tasks in the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;キュー内のタスクの処理を開始します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="377"/>
+        <location filename="mainwindow.ui" line="161"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pause task processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;タスク処理を一時停止します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="405"/>
+        <location filename="mainwindow.ui" line="201"/>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="238"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Resume processing tasks.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;タスク処理を再開します。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="433"/>
+        <location filename="mainwindow.ui" line="241"/>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="278"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort task processing. Video2X will attempt to save the processed content.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;タスク処理を中止します。Video2X は処理された内容を保存しようとします。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="439"/>
-        <source>ABORT</source>
-        <translation>中止</translation>
+        <location filename="mainwindow.ui" line="284"/>
+        <source>Abort</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="483"/>
+        <location filename="mainwindow.ui" line="605"/>
+        <source>toolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="631"/>
+        <source>E&amp;xit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="642"/>
+        <source>&amp;About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="647"/>
+        <source>&amp;Report Bugs...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="652"/>
+        <source>&amp;Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="655"/>
+        <source>Ctrl+,</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="663"/>
+        <source>&amp;Add tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="666"/>
+        <source>Add tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="669"/>
+        <source>Ctrl+O</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="677"/>
+        <source>&amp;Remove selected tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="680"/>
+        <source>Remove selected tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="683"/>
+        <source>Del</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="691"/>
+        <source>&amp;Clear all tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="694"/>
+        <source>Shift+Del</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>ABORT</source>
+        <translation type="vanished">中止</translation>
+    </message>
+    <message>
         <source>File</source>
-        <translation>ファイル</translation>
+        <translation type="vanished">ファイル</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="489"/>
-        <source>Help</source>
+        <source>&amp;Help</source>
+        <oldsource>Help</oldsource>
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="496"/>
         <source>Language</source>
-        <translation>言語</translation>
+        <translation type="vanished">言語</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="521"/>
+        <location filename="mainwindow.ui" line="324"/>
+        <location filename="mainwindow.ui" line="510"/>
         <source>Logs</source>
         <translation>ログ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="546"/>
+        <location filename="mainwindow.ui" line="480"/>
+        <source>&amp;File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="496"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="535"/>
         <source>Log Level</source>
         <translation>ログレベル</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="604"/>
+        <location filename="mainwindow.ui" line="596"/>
         <source>Save As...</source>
         <translation>名前を付けて保存...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="616"/>
         <source>Exit</source>
-        <translation>終了</translation>
+        <translation type="vanished">終了</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="619"/>
+        <location filename="mainwindow.ui" line="634"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="627"/>
         <source>About</source>
-        <translation>バージョン情報</translation>
+        <translation type="vanished">バージョン情報</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="652"/>
         <source>Report Bugs...</source>
-        <translation>バグを報告...</translation>
+        <translation type="vanished">バグを報告...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="657"/>
-        <location filename="mainwindow.cpp" line="258"/>
         <source>Restore Default Settings</source>
-        <translation>設定を既定に戻す</translation>
+        <translation type="vanished">設定を既定に戻す</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>File Name</source>
         <translation>ファイル名</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>Processor</source>
         <translation>プロセッサー</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="506"/>
-        <location filename="mainwindow.cpp" line="364"/>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="119"/>
+        <location filename="mainwindow.cpp" line="112"/>
         <source>paused</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="148"/>
+        <location filename="mainwindow.cpp" line="141"/>
         <source>Processing Aborted</source>
         <translation>処理が中止されました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="149"/>
+        <location filename="mainwindow.cpp" line="142"/>
         <source>Video processing was aborted.</source>
         <translation>動画の処理を中止しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="152"/>
-        <location filename="mainwindow.cpp" line="156"/>
+        <location filename="mainwindow.cpp" line="146"/>
+        <location filename="mainwindow.cpp" line="168"/>
         <source>Processing Finished</source>
         <translation>処理が完了しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="153"/>
         <source>Video processing finished with errors.</source>
-        <translation>動画の処理がエラーありの状態で完了しました。</translation>
+        <translation type="vanished">動画の処理がエラーありの状態で完了しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="157"/>
+        <location filename="mainwindow.cpp" line="169"/>
         <source>All videos have been processed successfully.</source>
         <translation>すべての動画が正常に処理されました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="207"/>
+        <location filename="mainwindow.cpp" line="195"/>
         <source>Automatic Updates</source>
         <translation>自動更新</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="208"/>
+        <location filename="mainwindow.cpp" line="196"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>アプリケーションが自動的に更新を確認するようにしますか？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="259"/>
         <source>Are you sure you want to erase all custom settings?</source>
-        <translation>すべてのカスタム設定を消去してもよろしいですか？</translation>
+        <translation type="vanished">すべてのカスタム設定を消去してもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="267"/>
         <source>Default Settings Restored</source>
-        <translation>既定の設定に戻しました</translation>
+        <translation type="vanished">既定の設定に戻しました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="268"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
-        <translation>既定の設定に戻しました。
+        <translation type="vanished">既定の設定に戻しました。
 変更を適用するにはアプリケーションを再起動してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="314"/>
+        <location filename="mainwindow.cpp" line="323"/>
         <source>Save Logs As</source>
         <translation>ログを保存</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="316"/>
+        <location filename="mainwindow.cpp" line="325"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>テキストログファイル (*.log);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="324"/>
+        <location filename="mainwindow.cpp" line="333"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>ログファイル %1 を書き込み用に開けません：%2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="336"/>
+        <location filename="mainwindow.cpp" line="345"/>
         <source>Save Logs</source>
         <translation>ログを保存</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="337"/>
+        <location filename="mainwindow.cpp" line="346"/>
         <source>Logs successfully saved to %1</source>
         <translation>ログは %1 に正常に保存されました</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="441"/>
+        <location filename="mainwindow.cpp" line="374"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="453"/>
         <source>Not yet processed</source>
         <translation>未処理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="551"/>
+        <location filename="mainwindow.cpp" line="567"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>タスクオプションの解析中に内部エラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="620"/>
+        <location filename="mainwindow.cpp" line="659"/>
         <source>Edit Task</source>
         <translation>タスクを編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="633"/>
+        <location filename="mainwindow.cpp" line="672"/>
         <source>Failed to parse task configs.</source>
         <translation>タスク設定の解析に失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="655"/>
+        <location filename="mainwindow.cpp" line="713"/>
         <source>Select Files</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="657"/>
+        <location filename="mainwindow.cpp" line="715"/>
         <source>All Files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="691"/>
+        <location filename="mainwindow.cpp" line="786"/>
         <source>The task queue is empty!</source>
         <translation>タスクキューが空です！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="757"/>
+        <location filename="mainwindow.cpp" line="852"/>
         <source>Aborted</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="757"/>
+        <location filename="mainwindow.cpp" line="852"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="863"/>
+        <location filename="mainwindow.cpp" line="967"/>
         <source> day</source>
         <translation> 日</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="937"/>
+        <location filename="mainwindow.cpp" line="1044"/>
         <source>Failed to generate output file name for file: </source>
         <translation>ファイルの出力ファイル名の生成に失敗しました： </translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="408"/>
         <source>RESUME</source>
-        <translation>再開</translation>
+        <translation type="vanished">再開</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="380"/>
         <source>PAUSE</source>
-        <translation>一時停止</translation>
+        <translation type="vanished">一時停止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="344"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="62"/>
-        <location filename="mainwindow.cpp" line="119"/>
-        <location filename="mainwindow.cpp" line="141"/>
-        <location filename="mainwindow.cpp" line="183"/>
-        <location filename="mainwindow.cpp" line="930"/>
+        <location filename="mainwindow.cpp" line="64"/>
+        <location filename="mainwindow.cpp" line="112"/>
+        <location filename="mainwindow.cpp" line="134"/>
+        <location filename="mainwindow.cpp" line="181"/>
+        <location filename="mainwindow.cpp" line="1037"/>
         <source>Status: </source>
         <translation>ステータス： </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="236"/>
+        <location filename="mainwindow.cpp" line="242"/>
         <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
 
 This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
@@ -368,25 +461,139 @@ This may cause the software to function improperly. Please update to the latest 
 これによりソフトウェアが正常に機能しない可能性があります。互換性を確保するには、最新のバージョンに更新してください。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="62"/>
-        <location filename="mainwindow.cpp" line="183"/>
+        <location filename="mainwindow.cpp" line="64"/>
+        <location filename="mainwindow.cpp" line="181"/>
         <source>idle</source>
         <translation>待機中</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="354"/>
+        <location filename="mainwindow.cpp" line="147"/>
+        <source>Video processing finished with errors. See logs for more information.</source>
+        <oldsource>Video processing finished with errors. See logs for more information</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="930"/>
+        <location filename="mainwindow.cpp" line="1037"/>
         <source>Processing file </source>
         <translation>処理中のファイル </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="865"/>
+        <location filename="mainwindow.cpp" line="969"/>
         <source> days</source>
         <translation> 日</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencesDialog</name>
+    <message>
+        <location filename="preferencesdialog.ui" line="14"/>
+        <source>Video2X Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="55"/>
+        <location filename="preferencesdialog.ui" line="107"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="63"/>
+        <location filename="preferencesdialog.ui" line="197"/>
+        <source>Processing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="71"/>
+        <location filename="preferencesdialog.ui" line="279"/>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="116"/>
+        <source>Language</source>
+        <translation>言語</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="124"/>
+        <source>&lt;System language&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="164"/>
+        <source>Check for updates on start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="206"/>
+        <source>When Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="214"/>
+        <source>Do nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="219"/>
+        <source>Shutdown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="224"/>
+        <source>Sleep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="229"/>
+        <source>Hibernate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="239"/>
+        <source>Automatically show stats when processing begins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="249"/>
+        <source>Remove finished tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="286"/>
+        <source>Open Configuration File Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="293"/>
+        <source>Reset All Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="156"/>
+        <source>Restore Default Settings</source>
+        <translation>設定を既定に戻す</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="157"/>
+        <source>Are you sure you want to erase all custom settings?</source>
+        <translation>すべてのカスタム設定を消去してもよろしいですか？</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="166"/>
+        <source>Default Settings Restored</source>
+        <translation>既定の設定に戻しました</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="167"/>
+        <source>The default settings have been restored.
+Restart the application for changes to take effect.</source>
+        <translation>既定の設定に戻しました。
+変更を適用するにはアプリケーションを再起動してください。</translation>
     </message>
 </context>
 <context>
@@ -561,180 +768,180 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する RIFE モデルです。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="606"/>
+        <location filename="taskconfigdialog.ui" line="621"/>
         <source>Encoder Options</source>
         <translation>エンコーダーのオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="616"/>
+        <location filename="taskconfigdialog.ui" line="631"/>
         <source>Standard Options</source>
         <translation>標準のオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="652"/>
+        <location filename="taskconfigdialog.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力ファイルの接頭辞を設定してください。これによりコンテナの形式が決まります。一般的なオプションは以下の通りです:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;：MP4 コンテナ形式です。ほとんどの動画プレーヤーと互換性があります。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;：Matroska コンテナ形式です。ほとんどの動画とオーディオコーデックに互換性があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="679"/>
+        <location filename="taskconfigdialog.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;メディアストリームをエンコードまたはデコードするためのコーデックを指定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="706"/>
+        <location filename="taskconfigdialog.ui" line="721"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画のエンコードまたはデコード用のピクセル形式を設定してください（例：yuv420p, rgb24）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="727"/>
+        <location filename="taskconfigdialog.ui" line="742"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードの目標平均ビットレートをビット/秒で設定してください（例：1000000 で 1 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="748"/>
+        <location filename="taskconfigdialog.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードのビットストリームバッファサイズをビット/秒で設定してください（例：500000 で 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="769"/>
+        <location filename="taskconfigdialog.ui" line="784"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小ビットレートをビット/秒で設定してください（例：500000 で 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="790"/>
+        <location filename="taskconfigdialog.ui" line="805"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大ビットレートをビット/秒で設定してください（例：5000000 で 5 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="811"/>
+        <location filename="taskconfigdialog.ui" line="826"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小量子化の値を設定してください。これは最低圧縮レベルを制御します（値が小さいほど画質が向上します）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="838"/>
+        <location filename="taskconfigdialog.ui" line="853"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大の量子化値を設定してください。これは最高圧縮レベルを制御します（値が大きいほど画質が低下します）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="865"/>
+        <location filename="taskconfigdialog.ui" line="880"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ピクチャーグループ内の画像数を設定してください。これはキーフレーム間のフレーム数を指定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="892"/>
+        <location filename="taskconfigdialog.ui" line="907"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;非 B フレーム間に挿入される最大 B フレーム数を設定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="919"/>
+        <location filename="taskconfigdialog.ui" line="934"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小 GOP サイズを設定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="946"/>
+        <location filename="taskconfigdialog.ui" line="961"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;予測に使用される参照フレームの最大数を設定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="973"/>
+        <location filename="taskconfigdialog.ui" line="988"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードまたはデコードに使用するスレッド数を指定してください（0 を指定すると自動的に選択されます）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="994"/>
+        <location filename="taskconfigdialog.ui" line="1009"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;コーデックの遅延をフレーム単位で指定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1024"/>
+        <location filename="taskconfigdialog.ui" line="1039"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ハードウェアアクセラレーションを有効化します。主にデコード用です。このオプションはまだ完全には機能しておらず、パフォーマンスへの影響はほとんどありません。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1036"/>
+        <location filename="taskconfigdialog.ui" line="1051"/>
         <source>Copy audio and subtitle streams</source>
         <translation>オーディオストリームと字幕をコピー</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1051"/>
+        <location filename="taskconfigdialog.ui" line="1066"/>
         <source>Custom Options</source>
         <translation>カスタムオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1072"/>
+        <location filename="taskconfigdialog.ui" line="1087"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1079"/>
+        <location filename="taskconfigdialog.ui" line="1094"/>
         <source>Remove Selected</source>
         <translation>選択項目を削除</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1098"/>
+        <location filename="taskconfigdialog.ui" line="1113"/>
         <source>Apply</source>
         <translation>適用</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1105"/>
+        <location filename="taskconfigdialog.ui" line="1120"/>
         <source>Cancel</source>
         <oldsource>Canacel</oldsource>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="47"/>
+        <location filename="taskconfigdialog.cpp" line="49"/>
         <source>Option</source>
         <translation>オプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="47"/>
+        <location filename="taskconfigdialog.cpp" line="49"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="211"/>
+        <location filename="taskconfigdialog.cpp" line="213"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="274"/>
+        <location filename="taskconfigdialog.cpp" line="276"/>
         <source>No GPUs with Vulkan support found!</source>
         <translation>Vulkan をサポートする GPU が見つかりませんでした！</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="753"/>
+        <location filename="taskconfigdialog.cpp" line="741"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Real-CUGAN モデル「models-pro」のノイズレベルが無効です。
 許容される値は -1、0、および 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="760"/>
+        <location filename="taskconfigdialog.cpp" line="748"/>
         <source>Invalid codec value: &apos;</source>
         <translation>無効な codec の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="767"/>
+        <location filename="taskconfigdialog.cpp" line="755"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>無効な pix_fmt の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="775"/>
+        <location filename="taskconfigdialog.cpp" line="763"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>無効な hwaccel の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="784"/>
+        <location filename="taskconfigdialog.cpp" line="772"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>libplacebo GLSL シェーダーファイルが見つかりません：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="825"/>
+        <location filename="taskconfigdialog.cpp" line="813"/>
         <source>Select GLSL Shader</source>
         <translation>GLSL シェーダーを選択</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="827"/>
+        <location filename="taskconfigdialog.cpp" line="815"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL ファイル (*.glsl);;すべてのファイル (*.*)</translation>
     </message>

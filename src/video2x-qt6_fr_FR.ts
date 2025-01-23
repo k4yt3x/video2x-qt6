@@ -10,38 +10,43 @@
     </message>
 </context>
 <context>
+    <name>FileDropTableView</name>
+    <message>
+        <location filename="filedroptableview.cpp" line="96"/>
+        <source>Drop files here to add new processing tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="207"/>
-        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>Progress</source>
         <translation>Progression</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="262"/>
+        <location filename="mainwindow.ui" line="357"/>
         <source>Frames/s:</source>
         <translation>Trames/s:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="283"/>
+        <location filename="mainwindow.ui" line="378"/>
         <source>Time Elapsed:</source>
         <translation>Temps écoulé:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="304"/>
+        <location filename="mainwindow.ui" line="399"/>
         <source>Time Remaining:</source>
         <translation>Temps restant:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="352"/>
         <source>START</source>
-        <translation>DÉMARRER</translation>
+        <translation type="vanished">DÉMARRER</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="87"/>
         <source>Video Processing Task Queue</source>
         <oldsource>Processing Task Queue</oldsource>
-        <translation>File d&apos;attente de traitement vidéo</translation>
+        <translation type="vanished">File d&apos;attente de traitement vidéo</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="29"/>
@@ -54,312 +59,400 @@
         <translation>Ne plus afficher</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="102"/>
         <source>Click the &quot;+&quot; button or drag files into the task queue to add new processing tasks.</source>
-        <translation>Cliquez sur le bouton &quot;+&quot; ou déposez un fichier dans la liste d&apos;attente pour ajouter de nouvelles tâches de traitement.</translation>
+        <translation type="vanished">Cliquez sur le bouton &quot;+&quot; ou déposez un fichier dans la liste d&apos;attente pour ajouter de nouvelles tâches de traitement.</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="127"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Add files to the task queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Ajouter des fichiers à la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Ajouter des fichiers à la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="130"/>
         <source>ADD</source>
-        <translation>AJOUTER</translation>
+        <translation type="vanished">AJOUTER</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="152"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove the selected tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Supprimer les tâches sélectionnées de la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Supprimer les tâches sélectionnées de la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="155"/>
         <source>REMOVE</source>
-        <translation>SUPPRIMER</translation>
+        <translation type="vanished">SUPPRIMER</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="177"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove all tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Supprimer toutes les tâches de la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Supprimer toutes les tâches de la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="180"/>
         <source>CLEAR</source>
-        <translation>VIDER</translation>
+        <translation type="vanished">VIDER</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="244"/>
+        <location filename="mainwindow.ui" line="458"/>
         <source>Currently processing: %v/%m (%p%)</source>
         <translation>En cours de traitement: %v/%m (%p%)</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="461"/>
         <source>LOGS</source>
-        <translation>JOURNAL</translation>
+        <translation type="vanished">JOURNAL</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="346"/>
+        <location filename="mainwindow.ui" line="121"/>
+        <source>Stats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="155"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Start processing the tasks in the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Démarrer le traitement des tâches dans la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="377"/>
+        <location filename="mainwindow.ui" line="161"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pause task processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Suspendre le traitement des tâches.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="405"/>
+        <location filename="mainwindow.ui" line="201"/>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="238"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Resume processing tasks.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Reprendre le traitement des tâches.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="433"/>
+        <location filename="mainwindow.ui" line="241"/>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="278"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort task processing. Video2X will attempt to save the processed content.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Annuler le traitement des tâches. Video2X tentera de sauvegarder le contenu traité.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="439"/>
-        <source>ABORT</source>
-        <translation>ANNULER</translation>
+        <location filename="mainwindow.ui" line="284"/>
+        <source>Abort</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="483"/>
+        <location filename="mainwindow.ui" line="605"/>
+        <source>toolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="631"/>
+        <source>E&amp;xit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="642"/>
+        <source>&amp;About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="647"/>
+        <source>&amp;Report Bugs...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="652"/>
+        <source>&amp;Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="655"/>
+        <source>Ctrl+,</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="663"/>
+        <source>&amp;Add tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="666"/>
+        <source>Add tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="669"/>
+        <source>Ctrl+O</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="677"/>
+        <source>&amp;Remove selected tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="680"/>
+        <source>Remove selected tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="683"/>
+        <source>Del</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="691"/>
+        <source>&amp;Clear all tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="694"/>
+        <source>Shift+Del</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>ABORT</source>
+        <translation type="vanished">ANNULER</translation>
+    </message>
+    <message>
         <source>File</source>
-        <translation>Fichier</translation>
+        <translation type="vanished">Fichier</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="489"/>
-        <source>Help</source>
-        <translation>Aide</translation>
+        <source>&amp;Help</source>
+        <oldsource>Help</oldsource>
+        <translation>&amp;Aide</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="496"/>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation type="vanished">Langue</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="521"/>
+        <location filename="mainwindow.ui" line="324"/>
+        <location filename="mainwindow.ui" line="510"/>
         <source>Logs</source>
         <translation>Journaux</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="546"/>
+        <location filename="mainwindow.ui" line="480"/>
+        <source>&amp;File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="496"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="535"/>
         <source>Log Level</source>
         <translation>Niveau de Journal</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="604"/>
+        <location filename="mainwindow.ui" line="596"/>
         <source>Save As...</source>
         <translation>Enregistrer sous...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="616"/>
         <source>Exit</source>
-        <translation>Fermer</translation>
+        <translation type="vanished">Fermer</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="619"/>
+        <location filename="mainwindow.ui" line="634"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="627"/>
         <source>About</source>
-        <translation>À propos</translation>
+        <translation type="vanished">À propos</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="652"/>
         <source>Report Bugs...</source>
-        <translation>Signaler des erreurs...</translation>
+        <translation type="vanished">Signaler des erreurs...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="657"/>
-        <location filename="mainwindow.cpp" line="258"/>
         <source>Restore Default Settings</source>
-        <translation>Restaurer les paramètres par défaut</translation>
+        <translation type="vanished">Restaurer les paramètres par défaut</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>File Name</source>
         <translation>Nom du fichier</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="364"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>Processor</source>
         <translation>Processeur</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="506"/>
-        <location filename="mainwindow.cpp" line="364"/>
-        <location filename="mainwindow.cpp" line="606"/>
+        <location filename="mainwindow.cpp" line="373"/>
         <source>Edit</source>
         <translation>Éditer</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="119"/>
+        <location filename="mainwindow.cpp" line="112"/>
         <source>paused</source>
         <translation>suspendu</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="148"/>
+        <location filename="mainwindow.cpp" line="141"/>
         <source>Processing Aborted</source>
         <translation>Traitement annulé</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="149"/>
+        <location filename="mainwindow.cpp" line="142"/>
         <source>Video processing was aborted.</source>
         <translation>Le traitement des vidéos a été annulé.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="152"/>
-        <location filename="mainwindow.cpp" line="156"/>
+        <location filename="mainwindow.cpp" line="146"/>
+        <location filename="mainwindow.cpp" line="168"/>
         <source>Processing Finished</source>
         <translation>Le traitement est terminé</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="153"/>
         <source>Video processing finished with errors.</source>
-        <translation>Le traitement vidéo s&apos;est terminé avec des erreurs.</translation>
+        <translation type="vanished">Le traitement vidéo s&apos;est terminé avec des erreurs.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="157"/>
+        <location filename="mainwindow.cpp" line="169"/>
         <source>All videos have been processed successfully.</source>
         <translation>Toutes les vidéos ont été traitées avec succès.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="207"/>
+        <location filename="mainwindow.cpp" line="195"/>
         <source>Automatic Updates</source>
         <translation>Mises à jours automatiques</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="208"/>
+        <location filename="mainwindow.cpp" line="196"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>Souhaitez-vous que l&apos;application recherche automatiquement les mises à jour?</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="259"/>
         <source>Are you sure you want to erase all custom settings?</source>
-        <translation>Êtes-vous sûr de vouloir effacer tous les paramètres personnalisés?</translation>
+        <translation type="vanished">Êtes-vous sûr de vouloir effacer tous les paramètres personnalisés?</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="267"/>
         <source>Default Settings Restored</source>
-        <translation>Les paramètres par défaut réstaurés</translation>
+        <translation type="vanished">Les paramètres par défaut réstaurés</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="268"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
-        <translation>Les paramètres par défaut ont été réstaurés.
+        <translation type="vanished">Les paramètres par défaut ont été réstaurés.
 Relancez l&apos;application pour que les modifications prennent effet.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="314"/>
+        <location filename="mainwindow.cpp" line="323"/>
         <source>Save Logs As</source>
         <translation>Enregistrer les Journaux Sous</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="316"/>
+        <location filename="mainwindow.cpp" line="325"/>
         <source>Text Log Files (*.log);;All Files (*)</source>
         <translation>Fichiers Journal Texte (*.log);;Tous les Fichiers (*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="324"/>
+        <location filename="mainwindow.cpp" line="333"/>
         <source>Cannot open log file %1 for writing: %2</source>
         <translation>Impossible d&apos;ouvrir le fichier journal %1 pour écriture : %2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="336"/>
+        <location filename="mainwindow.cpp" line="345"/>
         <source>Save Logs</source>
         <translation>Enregistrer les Journaux</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="337"/>
+        <location filename="mainwindow.cpp" line="346"/>
         <source>Logs successfully saved to %1</source>
         <translation>Journaux enregistrés avec succès dans %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="441"/>
+        <location filename="mainwindow.cpp" line="374"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="453"/>
         <source>Not yet processed</source>
         <translation>Pas encore traité</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="551"/>
+        <location filename="mainwindow.cpp" line="567"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>Une erreur interne s&apos;est produite lors de la lecture des options de la tâche.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="620"/>
+        <location filename="mainwindow.cpp" line="659"/>
         <source>Edit Task</source>
         <translation>Éditer la tâche</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="633"/>
+        <location filename="mainwindow.cpp" line="672"/>
         <source>Failed to parse task configs.</source>
         <translation>Échec de lecture des configurations des tâches.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="655"/>
+        <location filename="mainwindow.cpp" line="713"/>
         <source>Select Files</source>
         <translation>Sélectionner des fichiers</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="657"/>
+        <location filename="mainwindow.cpp" line="715"/>
         <source>All Files (*.*)</source>
         <translation>Tous les fichiers (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="691"/>
+        <location filename="mainwindow.cpp" line="786"/>
         <source>The task queue is empty!</source>
         <translation>La file d&apos;attente des tâches est vide!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="757"/>
+        <location filename="mainwindow.cpp" line="852"/>
         <source>Aborted</source>
         <translation>Annulé</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="757"/>
+        <location filename="mainwindow.cpp" line="852"/>
         <source>Failed</source>
         <translation>Échoué</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="863"/>
+        <location filename="mainwindow.cpp" line="967"/>
         <source> day</source>
         <translation> jour</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="937"/>
+        <location filename="mainwindow.cpp" line="1044"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Échec de la génération du nom du fichier de sortie pour le fichier: </translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="408"/>
         <source>RESUME</source>
-        <translation>REPRENDRE</translation>
+        <translation type="vanished">REPRENDRE</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="380"/>
         <source>PAUSE</source>
-        <translation>PAUSE</translation>
+        <translation type="vanished">PAUSE</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="344"/>
+        <location filename="mainwindow.cpp" line="353"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="62"/>
-        <location filename="mainwindow.cpp" line="119"/>
-        <location filename="mainwindow.cpp" line="141"/>
-        <location filename="mainwindow.cpp" line="183"/>
-        <location filename="mainwindow.cpp" line="930"/>
+        <location filename="mainwindow.cpp" line="64"/>
+        <location filename="mainwindow.cpp" line="112"/>
+        <location filename="mainwindow.cpp" line="134"/>
+        <location filename="mainwindow.cpp" line="181"/>
+        <location filename="mainwindow.cpp" line="1037"/>
         <source>Status: </source>
         <translation>Statut: </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="236"/>
+        <location filename="mainwindow.cpp" line="242"/>
         <source>The Visual C++ Redistributable is either not installed or the installed version does not meet the minimum required version (v14.42).
 
 This may cause the software to function improperly. Please update to the latest version to ensure compatibility.</source>
@@ -368,25 +461,139 @@ This may cause the software to function improperly. Please update to the latest 
 Cela peut entraîner un dysfonctionnement du logiciel. Veuillez mettre à jour vers la dernière version pour garantir la compatibilité.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="62"/>
-        <location filename="mainwindow.cpp" line="183"/>
+        <location filename="mainwindow.cpp" line="64"/>
+        <location filename="mainwindow.cpp" line="181"/>
         <source>idle</source>
         <translation>inactif</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="354"/>
+        <location filename="mainwindow.cpp" line="147"/>
+        <source>Video processing finished with errors. See logs for more information.</source>
+        <oldsource>Video processing finished with errors. See logs for more information</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="363"/>
         <source>Warning</source>
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="930"/>
+        <location filename="mainwindow.cpp" line="1037"/>
         <source>Processing file </source>
         <translation>Traitement du fichier </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="865"/>
+        <location filename="mainwindow.cpp" line="969"/>
         <source> days</source>
         <translation> jours</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencesDialog</name>
+    <message>
+        <location filename="preferencesdialog.ui" line="14"/>
+        <source>Video2X Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="55"/>
+        <location filename="preferencesdialog.ui" line="107"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="63"/>
+        <location filename="preferencesdialog.ui" line="197"/>
+        <source>Processing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="71"/>
+        <location filename="preferencesdialog.ui" line="279"/>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="116"/>
+        <source>Language</source>
+        <translation>Langue</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="124"/>
+        <source>&lt;System language&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="164"/>
+        <source>Check for updates on start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="206"/>
+        <source>When Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="214"/>
+        <source>Do nothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="219"/>
+        <source>Shutdown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="224"/>
+        <source>Sleep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="229"/>
+        <source>Hibernate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="239"/>
+        <source>Automatically show stats when processing begins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="249"/>
+        <source>Remove finished tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="286"/>
+        <source>Open Configuration File Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.ui" line="293"/>
+        <source>Reset All Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="156"/>
+        <source>Restore Default Settings</source>
+        <translation>Restaurer les paramètres par défaut</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="157"/>
+        <source>Are you sure you want to erase all custom settings?</source>
+        <translation>Êtes-vous sûr de vouloir effacer tous les paramètres personnalisés?</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="166"/>
+        <source>Default Settings Restored</source>
+        <translation>Les paramètres par défaut réstaurés</translation>
+    </message>
+    <message>
+        <location filename="preferencesdialog.cpp" line="167"/>
+        <source>The default settings have been restored.
+Restart the application for changes to take effect.</source>
+        <translation>Les paramètres par défaut ont été réstaurés.
+Relancez l&apos;application pour que les modifications prennent effet.</translation>
     </message>
 </context>
 <context>
@@ -561,180 +768,180 @@ Cela peut entraîner un dysfonctionnement du logiciel. Veuillez mettre à jour v
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Le modèle RIFE à utiliser.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="606"/>
+        <location filename="taskconfigdialog.ui" line="621"/>
         <source>Encoder Options</source>
         <translation>Options de l&apos;encodeur</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="616"/>
+        <location filename="taskconfigdialog.ui" line="631"/>
         <source>Standard Options</source>
         <translation>Options standard</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="652"/>
+        <location filename="taskconfigdialog.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définir l&apos;extension du fichier de sortie. C&apos;est utilisé pour déterminer le format du conteneur. Les options courantes sont:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: Le format de conteneur MP4. Compatible avec la plupart des lecteurs vidéo.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: Le format de conteneur Matroska. Compatible avec la plupart des codecs vidéo/audio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="679"/>
+        <location filename="taskconfigdialog.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spécifiez le codec pour l&apos;encodage ou le décodage des flux multimédias.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="706"/>
+        <location filename="taskconfigdialog.ui" line="721"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le format des pixels pour l&apos;encodage ou le décodage vidéo (ex.: yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="727"/>
+        <location filename="taskconfigdialog.ui" line="742"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le débit moyen cible pour l&apos;encodage en bits par seconde (ex.: 1000000 pour 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="748"/>
+        <location filename="taskconfigdialog.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit la taille de la mémoire tampon du flux binaire pour l&apos;encodage en bits par seconde (ex.: 500000 pour 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="769"/>
+        <location filename="taskconfigdialog.ui" line="784"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le débit minimum en bits par seconde (ex.: 500000 pour 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="790"/>
+        <location filename="taskconfigdialog.ui" line="805"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le débit maximum en bits par seconde (ex.: 5000000 pour 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="811"/>
+        <location filename="taskconfigdialog.ui" line="826"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le quantificateur minimum, contrôlant le niveau de compression le plus bas (des valeurs plus petites produisent une meilleure qualité).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="838"/>
+        <location filename="taskconfigdialog.ui" line="853"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le quantificateur maximum, contrôlant le niveau de compression le plus élevé (des valeurs plus élevées produisent une qualité moindre).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="865"/>
+        <location filename="taskconfigdialog.ui" line="880"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le nombre d&apos;images dans un groupe d&apos;images, en spécifiant le nombre de trames entre les trames clés.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="892"/>
+        <location filename="taskconfigdialog.ui" line="907"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le nombre maximum de trames B entre les trames non B.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="919"/>
+        <location filename="taskconfigdialog.ui" line="934"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit la taille minimale du GOP.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="946"/>
+        <location filename="taskconfigdialog.ui" line="961"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définit le nombre maximum de trames de référence utilisées pour la prédiction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="973"/>
+        <location filename="taskconfigdialog.ui" line="988"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spécifie le nombre de threads pour l&apos;encodage ou le décodage (0 sélectionne automatiquement).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="994"/>
+        <location filename="taskconfigdialog.ui" line="1009"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spécifie le délai du codec en trames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1024"/>
+        <location filename="taskconfigdialog.ui" line="1039"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Active l&apos;accélération matérielle, principalement pour le décodage. Cette option n&apos;est pas encore totalement fonctionnelle et devrait avoir un impact négligeable sur les performances.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1036"/>
+        <location filename="taskconfigdialog.ui" line="1051"/>
         <source>Copy audio and subtitle streams</source>
         <translation>Copier les flux audio et sous-titres</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1051"/>
+        <location filename="taskconfigdialog.ui" line="1066"/>
         <source>Custom Options</source>
         <translation>Options perrsonnalisées</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1072"/>
+        <location filename="taskconfigdialog.ui" line="1087"/>
         <source>Add</source>
         <translation>Ajouter</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1079"/>
+        <location filename="taskconfigdialog.ui" line="1094"/>
         <source>Remove Selected</source>
         <translation>Supprimer la sélection</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1098"/>
+        <location filename="taskconfigdialog.ui" line="1113"/>
         <source>Apply</source>
         <translation>Appliquer</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1105"/>
+        <location filename="taskconfigdialog.ui" line="1120"/>
         <source>Cancel</source>
         <oldsource>Canacel</oldsource>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="47"/>
+        <location filename="taskconfigdialog.cpp" line="49"/>
         <source>Option</source>
         <translation>Option</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="47"/>
+        <location filename="taskconfigdialog.cpp" line="49"/>
         <source>Value</source>
         <translation>Valeur</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="211"/>
+        <location filename="taskconfigdialog.cpp" line="213"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="274"/>
+        <location filename="taskconfigdialog.cpp" line="276"/>
         <source>No GPUs with Vulkan support found!</source>
         <translation>Aucun GPU supportant Vulkan n&apos;a été trouvé !</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="753"/>
+        <location filename="taskconfigdialog.cpp" line="741"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Niveau de bruit invalide pour le modèle Real-CUGAN &apos;models-pro&apos;.
 Les valeurs autorisées sont -1, 0 et 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="760"/>
+        <location filename="taskconfigdialog.cpp" line="748"/>
         <source>Invalid codec value: &apos;</source>
         <translation>Valeur de codec invalide: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="767"/>
+        <location filename="taskconfigdialog.cpp" line="755"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>Valeur de pix_fmt invalide: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="775"/>
+        <location filename="taskconfigdialog.cpp" line="763"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>Valeur de hwaccel invalide: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="784"/>
+        <location filename="taskconfigdialog.cpp" line="772"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>Fichier de shader GLSL libplacebo introuvable: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="825"/>
+        <location filename="taskconfigdialog.cpp" line="813"/>
         <source>Select GLSL Shader</source>
         <translation>Sélectionner un Shader GLSL</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="827"/>
+        <location filename="taskconfigdialog.cpp" line="815"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>Fichier GLSL (*.glsl);;Tous les fichiers (*.*)</translation>
     </message>
