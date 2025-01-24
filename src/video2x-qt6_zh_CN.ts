@@ -765,7 +765,7 @@ Restart the application for changes to take effect.</source>
     <message>
         <location filename="taskconfigdialog.ui" line="1051"/>
         <source>Copy audio and subtitle streams</source>
-        <translation>复制音频和字母流</translation>
+        <translation>复制音频和字幕流</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="1066"/>
