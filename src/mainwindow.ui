@@ -479,9 +479,6 @@ QProgressBar::chunk {
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="actionAddTasks"/>
-    <addaction name="actionRemoveSelectedTasks"/>
-    <addaction name="actionClearAllTasks"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -495,6 +492,10 @@ QProgressBar::chunk {
     <property name="title">
      <string>&amp;Edit</string>
     </property>
+    <addaction name="actionAddTasks"/>
+    <addaction name="actionRemoveSelectedTasks"/>
+    <addaction name="actionClearAllTasks"/>
+    <addaction name="separator"/>
     <addaction name="actionPreferences"/>
    </widget>
    <addaction name="menuFile"/>

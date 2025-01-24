@@ -30,38 +30,6 @@
         <translation>Bitte nicht mehr anzeigen</translation>
     </message>
     <message>
-        <source>Video Processing Task Queue</source>
-        <translation type="vanished">Warteschlange für Videoverarbeitungsaufgaben</translation>
-    </message>
-    <message>
-        <source>Click the &quot;+&quot; button or drag files into the task queue to add new processing tasks.</source>
-        <translation type="vanished">Klicken Sie auf die Schaltfläche „+“ oder ziehen Sie Dateien in die Aufgabenwarteschlange, um neue Verarbeitungsaufgaben hinzuzufügen.</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Add files to the task queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Füge Dateien zur Aufgaben-Warteschlange hinzu.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>ADD</source>
-        <translation type="vanished">HINZUFÜGEN</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove the selected tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Entferne die ausgewählten Aufgaben aus der Warteschlange.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>REMOVE</source>
-        <translation type="vanished">ENTFERNEN</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove all tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Entferne alle Aufgaben aus der Warteschlange.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>CLEAR</source>
-        <translation type="vanished">LÖSCHEN</translation>
-    </message>
-    <message>
         <location filename="mainwindow.cpp" line="373"/>
         <source>Progress</source>
         <translation>Fortschritt</translation>
@@ -112,72 +80,72 @@
         <translation>Verbleibende Zeit:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="605"/>
+        <location filename="mainwindow.ui" line="606"/>
         <source>toolBar</source>
         <translation>WerkzeugLeiste</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="631"/>
+        <location filename="mainwindow.ui" line="632"/>
         <source>E&amp;xit</source>
         <translation>&amp;Beenden</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="642"/>
+        <location filename="mainwindow.ui" line="643"/>
         <source>&amp;About</source>
         <translation>&amp;Über</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="647"/>
+        <location filename="mainwindow.ui" line="648"/>
         <source>&amp;Report Bugs...</source>
         <translation>&amp;Bugs melden...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="652"/>
+        <location filename="mainwindow.ui" line="653"/>
         <source>&amp;Preferences</source>
         <translation>&amp;Einstellungen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="655"/>
+        <location filename="mainwindow.ui" line="656"/>
         <source>Ctrl+,</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="663"/>
+        <location filename="mainwindow.ui" line="664"/>
         <source>&amp;Add tasks</source>
         <translation>Aufgaben &amp;hinzufügen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="666"/>
+        <location filename="mainwindow.ui" line="667"/>
         <source>Add tasks</source>
         <translation>Aufgaben hinzufügen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="669"/>
+        <location filename="mainwindow.ui" line="670"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="677"/>
+        <location filename="mainwindow.ui" line="678"/>
         <source>&amp;Remove selected tasks</source>
         <translation>Ausgewählte Aufgaben &amp;entfernen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="680"/>
+        <location filename="mainwindow.ui" line="681"/>
         <source>Remove selected tasks</source>
         <translation>Ausgewählte Aufgaben entfernen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="683"/>
+        <location filename="mainwindow.ui" line="684"/>
         <source>Del</source>
         <translation>Entf</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="691"/>
+        <location filename="mainwindow.ui" line="692"/>
         <source>&amp;Clear all tasks</source>
         <translation>Alle Aufgaben &amp;löschen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="694"/>
+        <location filename="mainwindow.ui" line="695"/>
         <source>Shift+Del</source>
         <translation>Shift+Entf</translation>
     </message>
@@ -187,17 +155,9 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Starten der Verarbeitung der Aufgaben in der Warteschlange.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>START</source>
-        <translation type="vanished">START</translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Pause task processing.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Aufgabenbearbeitung pausieren.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>PAUSE</source>
-        <translation type="vanished">PAUSE</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="238"/>
@@ -205,35 +165,15 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Aufgabenbearbeitung fortsetzen.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>RESUME</source>
-        <translation type="vanished">FORTSETZEN</translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="278"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abort task processing. Video2X will attempt to save the processed content.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:400;&quot;&gt;Abbruch der Aufgabenbearbeitung. Video2X versucht, den verarbeiteten Inhalt zu speichern.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>ABORT</source>
-        <translation type="vanished">ABBRUCH</translation>
-    </message>
-    <message>
-        <source>LOGS</source>
-        <translation type="vanished">PROTOKOLLE</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation type="vanished">Datei</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="489"/>
+        <location filename="mainwindow.ui" line="486"/>
         <source>&amp;Help</source>
         <oldsource>Help</oldsource>
         <translation>&amp;Hilfe</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Sprache</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="373"/>
@@ -242,7 +182,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="324"/>
-        <location filename="mainwindow.ui" line="510"/>
+        <location filename="mainwindow.ui" line="511"/>
         <source>Logs</source>
         <translation>Protokolle</translation>
     </message>
@@ -252,47 +192,31 @@
         <translation>&amp;Datei</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="496"/>
+        <location filename="mainwindow.ui" line="493"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="535"/>
+        <location filename="mainwindow.ui" line="536"/>
         <source>Log Level</source>
         <translation>Protokoll-Level</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="596"/>
+        <location filename="mainwindow.ui" line="597"/>
         <source>Save As...</source>
         <translation>Speichern als...</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation type="vanished">Beenden</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="634"/>
+        <location filename="mainwindow.ui" line="635"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Über</translation>
-    </message>
-    <message>
-        <source>Report Bugs...</source>
-        <translation type="vanished">Bugs melden...</translation>
-    </message>
-    <message>
-        <source>Restore Default Settings</source>
-        <translation type="vanished">Standardeinstellungen wiederherstellen</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="64"/>
         <location filename="mainwindow.cpp" line="112"/>
         <location filename="mainwindow.cpp" line="134"/>
         <location filename="mainwindow.cpp" line="181"/>
-        <location filename="mainwindow.cpp" line="1037"/>
+        <location filename="mainwindow.cpp" line="1040"/>
         <source>Status: </source>
         <translation>Status: </translation>
     </message>
@@ -324,10 +248,6 @@
         <translation>Verarbeitung abgeschlossen</translation>
     </message>
     <message>
-        <source>Video processing finished with errors.</source>
-        <translation type="vanished">Die Videoverarbeitung wurde mit Fehlern beendet.</translation>
-    </message>
-    <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>All videos have been processed successfully.</source>
         <translation>Alle Videos wurden erfolgreich verarbeitet.</translation>
@@ -350,20 +270,6 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>Visual C++ Redistributable ist entweder nicht installiert oder die installierte Version entspricht nicht der erforderlichen Mindestversion (v14.42).
 
 Dies kann dazu führen, dass die Software nicht ordnungsgemäß funktioniert. Bitte aktualisieren Sie auf die neueste Version, um die Kompatibilität sicherzustellen.</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to erase all custom settings?</source>
-        <translation type="vanished">Sind Sie sicher, dass Sie alle benutzerdefinierten Einstellungen löschen wollen?</translation>
-    </message>
-    <message>
-        <source>Default Settings Restored</source>
-        <translation type="vanished">Standardeinstellungen wiederhergestellt</translation>
-    </message>
-    <message>
-        <source>The default settings have been restored.
-Restart the application for changes to take effect.</source>
-        <translation type="vanished">Die Standardeinstellungen wurden wiederhergestellt.
-Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="147"/>
@@ -442,47 +348,47 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
         <translation>Das Parsen von Aufgabenkonfigurationen ist fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="713"/>
+        <location filename="mainwindow.cpp" line="714"/>
         <source>Select Files</source>
         <translation>Dateien auswählen</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="715"/>
+        <location filename="mainwindow.cpp" line="716"/>
         <source>All Files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="786"/>
+        <location filename="mainwindow.cpp" line="789"/>
         <source>The task queue is empty!</source>
         <translation>Die Aufgabenwarteschlange ist leer!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="852"/>
+        <location filename="mainwindow.cpp" line="855"/>
         <source>Aborted</source>
         <translation>Abgebrochen</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="852"/>
+        <location filename="mainwindow.cpp" line="855"/>
         <source>Failed</source>
         <translation>Fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="967"/>
+        <location filename="mainwindow.cpp" line="970"/>
         <source> day</source>
         <translation> Tag</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="969"/>
+        <location filename="mainwindow.cpp" line="972"/>
         <source> days</source>
         <translation> Tage</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1037"/>
+        <location filename="mainwindow.cpp" line="1040"/>
         <source>Processing file </source>
         <translation>Verarbeitung der Datei </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1044"/>
+        <location filename="mainwindow.cpp" line="1047"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Der Ausgabedateiname für die Datei konnte nicht generiert werden: </translation>
     </message>

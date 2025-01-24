@@ -14,7 +14,7 @@
     <message>
         <location filename="filedroptableview.cpp" line="96"/>
         <source>Drop files here to add new processing tasks</source>
-        <translation type="unfinished">Glissez vos fichiers ici pour ajouter des tâches de traitement</translation>
+        <translation>Glissez vos fichiers ici pour ajouter des tâches de traitement</translation>
     </message>
 </context>
 <context>
@@ -40,15 +40,6 @@
         <translation>Temps restant:</translation>
     </message>
     <message>
-        <source>START</source>
-        <translation type="vanished">DÉMARRER</translation>
-    </message>
-    <message>
-        <source>Video Processing Task Queue</source>
-        <oldsource>Processing Task Queue</oldsource>
-        <translation type="vanished">File d&apos;attente de traitement vidéo</translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Update available! Click to open the download page.</source>
         <translation>Mise à jour disponible! Cliquez ici pour ouvrir la page de téléchargement.</translation>
@@ -59,46 +50,14 @@
         <translation>Ne plus afficher</translation>
     </message>
     <message>
-        <source>Click the &quot;+&quot; button or drag files into the task queue to add new processing tasks.</source>
-        <translation type="vanished">Cliquez sur le bouton &quot;+&quot; ou déposez un fichier dans la liste d&apos;attente pour ajouter de nouvelles tâches de traitement.</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Add files to the task queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Ajouter des fichiers à la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>ADD</source>
-        <translation type="vanished">AJOUTER</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove the selected tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Supprimer les tâches sélectionnées de la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>REMOVE</source>
-        <translation type="vanished">SUPPRIMER</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Remove all tasks from the queue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Supprimer toutes les tâches de la file d&apos;attente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>CLEAR</source>
-        <translation type="vanished">VIDER</translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="458"/>
         <source>Currently processing: %v/%m (%p%)</source>
         <translation>En cours de traitement: %v/%m (%p%)</translation>
     </message>
     <message>
-        <source>LOGS</source>
-        <translation type="vanished">JOURNAL</translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="121"/>
         <source>Stats</source>
-        <translation type="unfinished">Statistiques</translation>
+        <translation>Statistiques</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="155"/>
@@ -108,7 +67,7 @@
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Start</source>
-        <translation type="unfinished">Démarrer</translation>
+        <translation>Démarrer</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="198"/>
@@ -118,7 +77,7 @@
     <message>
         <location filename="mainwindow.ui" line="201"/>
         <source>Pause</source>
-        <translation type="unfinished">Pause</translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="238"/>
@@ -128,7 +87,7 @@
     <message>
         <location filename="mainwindow.ui" line="241"/>
         <source>Resume</source>
-        <translation type="unfinished">Reprendre</translation>
+        <translation>Reprendre</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="278"/>
@@ -138,142 +97,114 @@
     <message>
         <location filename="mainwindow.ui" line="284"/>
         <source>Abort</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="605"/>
+        <location filename="mainwindow.ui" line="606"/>
         <source>toolBar</source>
-        <translation type="unfinished">BarreD&apos;outils</translation>
+        <translation>BarreD&apos;outils</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="631"/>
+        <location filename="mainwindow.ui" line="632"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished">&amp;Fermer</translation>
+        <translation>&amp;Fermer</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="642"/>
+        <location filename="mainwindow.ui" line="643"/>
         <source>&amp;About</source>
-        <translation type="unfinished">À &amp;propos</translation>
+        <translation>À &amp;propos</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="647"/>
+        <location filename="mainwindow.ui" line="648"/>
         <source>&amp;Report Bugs...</source>
-        <translation type="unfinished">&amp;Signaler des erreurs...</translation>
+        <translation>&amp;Signaler des erreurs...</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="652"/>
+        <location filename="mainwindow.ui" line="653"/>
         <source>&amp;Preferences</source>
-        <translation type="unfinished">&amp;Préférences</translation>
+        <translation>&amp;Préférences</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="655"/>
+        <location filename="mainwindow.ui" line="656"/>
         <source>Ctrl+,</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="663"/>
+        <location filename="mainwindow.ui" line="664"/>
         <source>&amp;Add tasks</source>
-        <translation type="unfinished">&amp;Ajouter des tâches</translation>
+        <translation>&amp;Ajouter des tâches</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="666"/>
+        <location filename="mainwindow.ui" line="667"/>
         <source>Add tasks</source>
-        <translation type="unfinished">Ajouter des tâches</translation>
+        <translation>Ajouter des tâches</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="669"/>
+        <location filename="mainwindow.ui" line="670"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="677"/>
+        <location filename="mainwindow.ui" line="678"/>
         <source>&amp;Remove selected tasks</source>
-        <translation type="unfinished">&amp;Supprimer les tâches sélectionnées</translation>
+        <translation>&amp;Supprimer les tâches sélectionnées</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="680"/>
+        <location filename="mainwindow.ui" line="681"/>
         <source>Remove selected tasks</source>
-        <translation type="unfinished">Supprimer les tâches sélectionnées</translation>
+        <translation>Supprimer les tâches sélectionnées</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="683"/>
+        <location filename="mainwindow.ui" line="684"/>
         <source>Del</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="691"/>
+        <location filename="mainwindow.ui" line="692"/>
         <source>&amp;Clear all tasks</source>
-        <translation type="unfinished">&amp;Effacer toutes les tâches</translation>
+        <translation>&amp;Effacer toutes les tâches</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="694"/>
+        <location filename="mainwindow.ui" line="695"/>
         <source>Shift+Del</source>
         <translation></translation>
     </message>
     <message>
-        <source>ABORT</source>
-        <translation type="vanished">ANNULER</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation type="vanished">Fichier</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="489"/>
+        <location filename="mainwindow.ui" line="486"/>
         <source>&amp;Help</source>
         <oldsource>Help</oldsource>
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="vanished">Langue</translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="324"/>
-        <location filename="mainwindow.ui" line="510"/>
+        <location filename="mainwindow.ui" line="511"/>
         <source>Logs</source>
         <translation>Journaux</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="480"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Fichier</translation>
+        <translation>&amp;Fichier</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="496"/>
+        <location filename="mainwindow.ui" line="493"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">É&amp;diter</translation>
+        <translation>É&amp;diter</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="535"/>
+        <location filename="mainwindow.ui" line="536"/>
         <source>Log Level</source>
         <translation>Niveau de Journal</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="596"/>
+        <location filename="mainwindow.ui" line="597"/>
         <source>Save As...</source>
         <translation>Enregistrer sous...</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation type="vanished">Fermer</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="634"/>
+        <location filename="mainwindow.ui" line="635"/>
         <source>Ctrl+Q</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">À propos</translation>
-    </message>
-    <message>
-        <source>Report Bugs...</source>
-        <translation type="vanished">Signaler des erreurs...</translation>
-    </message>
-    <message>
-        <source>Restore Default Settings</source>
-        <translation type="vanished">Restaurer les paramètres par défaut</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="373"/>
@@ -312,10 +243,6 @@
         <translation>Le traitement est terminé</translation>
     </message>
     <message>
-        <source>Video processing finished with errors.</source>
-        <translation type="vanished">Le traitement vidéo s&apos;est terminé avec des erreurs.</translation>
-    </message>
-    <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>All videos have been processed successfully.</source>
         <translation>Toutes les vidéos ont été traitées avec succès.</translation>
@@ -329,20 +256,6 @@
         <location filename="mainwindow.cpp" line="196"/>
         <source>Would you like the application to automatically check for updates?</source>
         <translation>Souhaitez-vous que l&apos;application recherche automatiquement les mises à jour?</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to erase all custom settings?</source>
-        <translation type="vanished">Êtes-vous sûr de vouloir effacer tous les paramètres personnalisés?</translation>
-    </message>
-    <message>
-        <source>Default Settings Restored</source>
-        <translation type="vanished">Les paramètres par défaut réstaurés</translation>
-    </message>
-    <message>
-        <source>The default settings have been restored.
-Restart the application for changes to take effect.</source>
-        <translation type="vanished">Les paramètres par défaut ont été réstaurés.
-Relancez l&apos;application pour que les modifications prennent effet.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="323"/>
@@ -372,7 +285,7 @@ Relancez l&apos;application pour que les modifications prennent effet.</translat
     <message>
         <location filename="mainwindow.cpp" line="374"/>
         <source>Delete</source>
-        <translation type="unfinished">Supprimer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="453"/>
@@ -395,47 +308,39 @@ Relancez l&apos;application pour que les modifications prennent effet.</translat
         <translation>Échec de lecture des configurations des tâches.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="713"/>
+        <location filename="mainwindow.cpp" line="714"/>
         <source>Select Files</source>
         <translation>Sélectionner des fichiers</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="715"/>
+        <location filename="mainwindow.cpp" line="716"/>
         <source>All Files (*.*)</source>
         <translation>Tous les fichiers (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="786"/>
+        <location filename="mainwindow.cpp" line="789"/>
         <source>The task queue is empty!</source>
         <translation>La file d&apos;attente des tâches est vide!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="852"/>
+        <location filename="mainwindow.cpp" line="855"/>
         <source>Aborted</source>
         <translation>Annulé</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="852"/>
+        <location filename="mainwindow.cpp" line="855"/>
         <source>Failed</source>
         <translation>Échoué</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="967"/>
+        <location filename="mainwindow.cpp" line="970"/>
         <source> day</source>
         <translation> jour</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1044"/>
+        <location filename="mainwindow.cpp" line="1047"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Échec de la génération du nom du fichier de sortie pour le fichier: </translation>
-    </message>
-    <message>
-        <source>RESUME</source>
-        <translation type="vanished">REPRENDRE</translation>
-    </message>
-    <message>
-        <source>PAUSE</source>
-        <translation type="vanished">PAUSE</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="353"/>
@@ -447,7 +352,7 @@ Relancez l&apos;application pour que les modifications prennent effet.</translat
         <location filename="mainwindow.cpp" line="112"/>
         <location filename="mainwindow.cpp" line="134"/>
         <location filename="mainwindow.cpp" line="181"/>
-        <location filename="mainwindow.cpp" line="1037"/>
+        <location filename="mainwindow.cpp" line="1040"/>
         <source>Status: </source>
         <translation>Statut: </translation>
     </message>
@@ -470,7 +375,7 @@ Cela peut entraîner un dysfonctionnement du logiciel. Veuillez mettre à jour v
         <location filename="mainwindow.cpp" line="147"/>
         <source>Video processing finished with errors. See logs for more information.</source>
         <oldsource>Video processing finished with errors. See logs for more information</oldsource>
-        <translation type="unfinished">Le traitement vidéo s&apos;est terminé avec des erreurs. Consultez les journaux pour plus d&apos;informations.</translation>
+        <translation>Le traitement vidéo s&apos;est terminé avec des erreurs. Consultez les journaux pour plus d&apos;informations.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="363"/>
@@ -478,12 +383,12 @@ Cela peut entraîner un dysfonctionnement du logiciel. Veuillez mettre à jour v
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1037"/>
+        <location filename="mainwindow.cpp" line="1040"/>
         <source>Processing file </source>
         <translation>Traitement du fichier </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="969"/>
+        <location filename="mainwindow.cpp" line="972"/>
         <source> days</source>
         <translation> jours</translation>
     </message>
@@ -493,25 +398,25 @@ Cela peut entraîner un dysfonctionnement du logiciel. Veuillez mettre à jour v
     <message>
         <location filename="preferencesdialog.ui" line="14"/>
         <source>Video2X Preferences</source>
-        <translation type="unfinished">Préférences Video2X</translation>
+        <translation>Préférences Video2X</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="55"/>
         <location filename="preferencesdialog.ui" line="107"/>
         <source>General</source>
-        <translation type="unfinished">Général</translation>
+        <translation>Général</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="63"/>
         <location filename="preferencesdialog.ui" line="197"/>
         <source>Processing</source>
-        <translation type="unfinished">Traitement</translation>
+        <translation>Traitement</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="71"/>
         <location filename="preferencesdialog.ui" line="279"/>
         <source>Advanced</source>
-        <translation type="unfinished">Avancé</translation>
+        <translation>Avancé</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="116"/>
@@ -521,57 +426,57 @@ Cela peut entraîner un dysfonctionnement du logiciel. Veuillez mettre à jour v
     <message>
         <location filename="preferencesdialog.ui" line="124"/>
         <source>&lt;System language&gt;</source>
-        <translation type="unfinished">&lt;Langue du système&gt;</translation>
+        <translation>&lt;Langue du système&gt;</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="164"/>
         <source>Check for updates on start</source>
-        <translation type="unfinished">Vérifier les mises à jour au démarrage</translation>
+        <translation>Vérifier les mises à jour au démarrage</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="206"/>
         <source>When Done</source>
-        <translation type="unfinished">Une fois terminé</translation>
+        <translation>Une fois terminé</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="214"/>
         <source>Do nothing</source>
-        <translation type="unfinished">Ne rien faire</translation>
+        <translation>Ne rien faire</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="219"/>
         <source>Shutdown</source>
-        <translation type="unfinished">Arrêter</translation>
+        <translation>Arrêter</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="224"/>
         <source>Sleep</source>
-        <translation type="unfinished">Veille</translation>
+        <translation>Veille</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="229"/>
         <source>Hibernate</source>
-        <translation type="unfinished">Hibernation</translation>
+        <translation>Hibernation</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="239"/>
         <source>Automatically show stats when processing begins</source>
-        <translation type="unfinished">Afficher automatiquement les statistiques au début du traitement</translation>
+        <translation>Afficher automatiquement les statistiques au début du traitement</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="249"/>
         <source>Remove finished tasks</source>
-        <translation type="unfinished">Supprimer les tâches terminées</translation>
+        <translation>Supprimer les tâches terminées</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="286"/>
         <source>Open Configuration File Directory</source>
-        <translation type="unfinished">Ouvrir le Répertoire des Fichiers de Configuration</translation>
+        <translation>Ouvrir le Répertoire des Fichiers de Configuration</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="293"/>
         <source>Reset All Preferences</source>
-        <translation type="unfinished">Réinitialiser Toutes les Préférences</translation>
+        <translation>Réinitialiser Toutes les Préférences</translation>
     </message>
     <message>
         <location filename="preferencesdialog.cpp" line="156"/>
