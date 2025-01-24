@@ -554,7 +554,13 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 
     // Set the output suffix based on the first input file's suffix
     // QFileInfo fileInfo = QFileInfo(fileNames[0]);
-    // dialog.setOutputSuffix("." + fileInfo.suffix());
+    // taskConfigDialog.setOutputSuffix("." + fileInfo.suffix());
+
+    // Set the suffix and codec to PNG if the file is an image
+    if (isImageFile(fileNames[0])) {
+        taskConfigDialog.setOutputSuffix(".png");
+        taskConfigDialog.setOutputCodec("png");
+    }
 
     // Show the dialog and wait for it to return
     if (taskConfigDialog.exec() != QDialog::Accepted) {

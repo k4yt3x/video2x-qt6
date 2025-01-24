@@ -730,6 +730,11 @@ void TaskConfigDialog::setOutputSuffix(QString suffix)
     ui->suffixLineEdit->setText(suffix);
 }
 
+void TaskConfigDialog::setOutputCodec(QString codec)
+{
+    ui->codecLineEdit->setText(codec);
+}
+
 void TaskConfigDialog::on_applyPushButton_clicked()
 {
     // Validate Real-CUGAN noise level for models-pro

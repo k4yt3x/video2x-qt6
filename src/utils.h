@@ -36,4 +36,6 @@ QString convertProcessorTypeToQString(video2x::processors::ProcessorType procTyp
 
 QString convertProcessorTypeToLowerCaseQString(video2x::processors::ProcessorType procType);
 
+bool isImageFile(const QString &filePath);
+
 #endif // UTILS_H

@@ -22,6 +22,7 @@ public:
     std::optional<TaskConfig> getTaskConfig();
     void setTaskConfig(const TaskConfig &taskConfig);
     void setOutputSuffix(QString suffix);
+    void setOutputCodec(QString codec);
 
 private slots:
     void on_applyPushButton_clicked();

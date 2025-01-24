@@ -2,6 +2,7 @@
 
 #include <QFileInfo>
 #include <QMap>
+#include <QMimeDatabase>
 
 #ifdef _WIN32
 #include <QSettings>
@@ -315,4 +316,11 @@ QString convertProcessorTypeToLowerCaseQString(video2x::processors::ProcessorTyp
     default:
         return "unknown";
     }
+}
+
+bool isImageFile(const QString &filePath)
+{
+    QMimeDatabase mimeDatabase;
+    QMimeType mimeType = mimeDatabase.mimeTypeForFile(filePath, QMimeDatabase::MatchContent);
+    return mimeType.name().startsWith("image/");
 }
