@@ -901,7 +901,7 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
     }
 
     // Remove the finished task from the table
-    if (m_prefManager.getPreferences().removeFinishedTasks) {
+    if (m_prefManager.getPreferences().removeFinishedTasks && !retValue && !m_procAborted) {
         m_taskTableModel->removeRow(m_currentVideoIndex);
     } else {
         m_currentVideoIndex++;
