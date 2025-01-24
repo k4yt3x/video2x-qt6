@@ -44,11 +44,34 @@ bool isVCRuntimeRequirementMet()
 }
 #endif
 
+bool enableShutdownPrivilege()
+{
+    HANDLE hToken;
+    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken)) {
+        return false;
+    }
+
+    TOKEN_PRIVILEGES tkp;
+    if (!LookupPrivilegeValue(nullptr, SE_SHUTDOWN_NAME, &tkp.Privileges[0].Luid)) {
+        CloseHandle(hToken);
+        return false;
+    }
+
+    tkp.PrivilegeCount = 1;
+    tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+    AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, nullptr, nullptr);
+    CloseHandle(hToken);
+
+    return GetLastError() == ERROR_SUCCESS;
+}
+
 // Function to shut down the system
 void systemShutdown()
 {
 #ifdef _WIN32
-    if (!InitiateSystemShutdownExW(nullptr, nullptr, 0, TRUE, FALSE, SHTDN_REASON_MAJOR_OTHER)) {
+    if (!enableShutdownPrivilege()
+        || !InitiateSystemShutdownExW(nullptr, nullptr, 0, TRUE, FALSE, SHTDN_REASON_MAJOR_OTHER)) {
         video2x::logger()->error("Failed to shutdown the system. Error code: {}.", GetLastError());
     } else {
         video2x::logger()->info("System shutdown initiated successfully.");
