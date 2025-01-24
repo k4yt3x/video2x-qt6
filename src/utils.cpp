@@ -262,9 +262,10 @@ std::optional<QString> generateNewFileName(QString fileName,
     int counter = 1;
 
     while (QFileInfo::exists(outputFilePath) && counter > 0) {
-        qWarning() << "Warning: file `" << outputFilePath << "` already exists, finding a new name";
+        video2x::logger()->warn("File '{}' already exists, finding a new name",
+                                outputFilePath.toStdString());
         outputFilePath = baseFilePath + "." + QString::number(counter++) + extension;
-        qWarning() << "Warning: writing output file to `" << outputFilePath << "`";
+        video2x::logger()->warn("Writing output file to '{}'", outputFilePath.toStdString());
     }
 
     if (!QFileInfo::exists(outputFilePath)) {
