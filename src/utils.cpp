@@ -42,7 +42,6 @@ bool isVCRuntimeRequirementMet()
 
     return false;
 }
-#endif
 
 bool enableShutdownPrivilege()
 {
@@ -65,6 +64,7 @@ bool enableShutdownPrivilege()
 
     return GetLastError() == ERROR_SUCCESS;
 }
+#endif
 
 // Function to shut down the system
 void systemShutdown()
