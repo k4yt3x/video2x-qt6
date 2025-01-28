@@ -14,7 +14,7 @@
     <message>
         <location filename="filedroptableview.cpp" line="96"/>
         <source>Drop files here to add new processing tasks</source>
-        <translation>ファイルをここにドラッグして処理タスクを追加してください</translation>
+        <translation>ファイルをここにドラッグして処理を行うタスクを追加してください</translation>
     </message>
 </context>
 <context>
@@ -57,7 +57,7 @@
     <message>
         <location filename="mainwindow.ui" line="121"/>
         <source>Stats</source>
-        <translation>統計</translation>
+        <translation>状態</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="155"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="mainwindow.ui" line="681"/>
         <source>Remove selected tasks</source>
-        <translation>選択したタスクを削除</translation>
+        <translation>選択したタスクを消去</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="684"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="mainwindow.ui" line="692"/>
         <source>&amp;Clear all tasks</source>
-        <translation>すべてのタスクをクリア</translation>
+        <translation>すべてのタスクを消去</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="695"/>
@@ -214,7 +214,7 @@
     <message>
         <location filename="mainwindow.cpp" line="373"/>
         <source>Processor</source>
-        <translation>プロセッサー</translation>
+        <translation>処理</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="373"/>
@@ -398,7 +398,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="14"/>
         <source>Video2X Preferences</source>
-        <translation>Video2X 設定</translation>
+        <translation>Video2X の設定</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="55"/>
@@ -416,7 +416,7 @@ This may cause the software to function improperly. Please update to the latest 
         <location filename="preferencesdialog.ui" line="71"/>
         <location filename="preferencesdialog.ui" line="279"/>
         <source>Advanced</source>
-        <translation>詳細設定</translation>
+        <translation>高度な設定</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="116"/>
@@ -456,12 +456,12 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="229"/>
         <source>Hibernate</source>
-        <translation>ハイバネート</translation>
+        <translation>休止状態</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="239"/>
         <source>Automatically show stats when processing begins</source>
-        <translation>処理開始時に統計を自動的に表示する</translation>
+        <translation>処理の開始時に状態を自動的に表示する</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="249"/>
@@ -471,7 +471,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="286"/>
         <source>Open Configuration File Directory</source>
-        <translation>設定ファイルディレクトリを開く</translation>
+        <translation>設定ファイルのディレクトリを開く</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="293"/>
