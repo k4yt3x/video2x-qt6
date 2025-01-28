@@ -354,7 +354,7 @@
         <location filename="mainwindow.cpp" line="181"/>
         <location filename="mainwindow.cpp" line="1040"/>
         <source>Status: </source>
-        <translation>ステータス： </translation>
+        <translation>状態： </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="242"/>
