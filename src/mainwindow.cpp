@@ -704,12 +704,11 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
                 m_currentVideoIndex -= 1;
             }
         });
+    }
 
-        // Increase the total number of tasks
-        if (m_procStarted) {
-            ui->overallProgressBar->setMaximum(ui->overallProgressBar->maximum()
-                                               + fileNames.count());
-        }
+    // Increase the total number of tasks
+    if (m_procStarted) {
+        ui->overallProgressBar->setMaximum(ui->overallProgressBar->maximum() + fileNames.count());
     }
 }
 
