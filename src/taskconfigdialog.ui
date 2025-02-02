@@ -417,6 +417,11 @@
                 <string notr="true">realesr-animevideov3</string>
                </property>
               </item>
+              <item>
+               <property name="text">
+                <string notr="true">realesr-generalv3</string>
+               </property>
+              </item>
              </widget>
             </item>
            </layout>

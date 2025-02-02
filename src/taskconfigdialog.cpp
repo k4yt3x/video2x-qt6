@@ -31,6 +31,7 @@ extern "C" {
 #define REALESRGAN_MODEL_REALESRGAN_PLUS 0
 #define REALESRGAN_MODEL_REALESRGAN_PLUS_ANIME 1
 #define REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3 2
+#define REALESRGAN_MODEL_REALESR_GENERALV3 3
 
 // Real-CUGAN models
 #define REALCUGAN_MODEL_NOSE 0
@@ -115,8 +116,14 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
                 ui->scalingFactorSpinBox->setVisible(index == ESRGAN_MODE || index == CUGAN_MODE);
 
                 // Noise level
-                ui->noiseLevelLabel->setVisible(index == CUGAN_MODE);
-                ui->noiseLevelSpinBox->setVisible(index == CUGAN_MODE);
+                ui->noiseLevelLabel->setVisible(index == CUGAN_MODE
+                                                || (index == ESRGAN_MODE
+                                                    && ui->realesrganModelComboBox->currentIndex()
+                                                           == REALESRGAN_MODEL_REALESR_GENERALV3));
+                ui->noiseLevelSpinBox->setVisible(index == CUGAN_MODE
+                                                  || (index == ESRGAN_MODE
+                                                      && ui->realesrganModelComboBox->currentIndex()
+                                                             == REALESRGAN_MODEL_REALESR_GENERALV3));
             });
 
     connect(ui->filterSelectionComboBox,
@@ -174,6 +181,19 @@ TaskConfigDialog::TaskConfigDialog(QWidget *parent)
             QOverload<int>::of(&QComboBox::currentIndexChanged),
             this,
             &TaskConfigDialog::updateScalingFactorAndNoiseLevelRange);
+    connect(ui->realesrganModelComboBox,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            [this](int index) {
+                ui->noiseLevelLabel->setVisible(
+                    ui->filterSelectionComboBox->currentIndex() == CUGAN_MODE
+                    || (ui->filterSelectionComboBox->currentIndex() == ESRGAN_MODE
+                        && index == REALESRGAN_MODEL_REALESR_GENERALV3));
+                ui->noiseLevelSpinBox->setVisible(
+                    ui->filterSelectionComboBox->currentIndex() == CUGAN_MODE
+                    || (ui->filterSelectionComboBox->currentIndex() == ESRGAN_MODE
+                        && index == REALESRGAN_MODEL_REALESR_GENERALV3));
+            });
 
     // Real-CUGAN options
     connect(ui->realcuganModelComboBox,
@@ -227,6 +247,11 @@ void TaskConfigDialog::updateScalingFactorAndNoiseLevelRange()
             ui->scalingFactorSpinBox->setMinimum(2);
         } else {
             ui->scalingFactorSpinBox->setMinimum(4);
+        }
+
+        if (ui->realesrganModelComboBox->currentIndex() == REALESRGAN_MODEL_REALESR_ANIMEVIDEOV3) {
+            ui->noiseLevelSpinBox->setMinimum(0);
+            ui->noiseLevelSpinBox->setMaximum(1);
         }
     } else if (ui->filterSelectionComboBox->currentIndex() == CUGAN_MODE) {
         // For Real-CUGAN, the minimum scaling factor is 2
