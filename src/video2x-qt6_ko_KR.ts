@@ -98,7 +98,7 @@
     <message>
         <location filename="mainwindow.ui" line="458"/>
         <source>Currently processing: %v/%m (%p%)</source>
-        <translation>현재 프로세싱중: %v/%m (%p%)</translation>
+        <translation>현재 처리중: %v/%m (%p%)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="480"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="mainwindow.cpp" line="141"/>
         <source>Processing Aborted</source>
-        <translation>프로세싱 중지됨</translation>
+        <translation>처리 중지됨</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="142"/>
@@ -236,7 +236,7 @@
         <location filename="mainwindow.cpp" line="146"/>
         <location filename="mainwindow.cpp" line="168"/>
         <source>Processing Finished</source>
-        <translation>프로세싱 완료</translation>
+        <translation>처리 완료</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="147"/>
@@ -330,7 +330,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="mainwindow.cpp" line="453"/>
         <source>Not yet processed</source>
-        <translation>아직 프로세스되지 않음</translation>
+        <translation>아직 처리되지 않음</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="573"/>
@@ -386,7 +386,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="mainwindow.cpp" line="1045"/>
         <source>Processing file </source>
-        <translation>프로세싱 파일 </translation>
+        <translation>처리중인 파일 </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="1052"/>
@@ -462,7 +462,7 @@ This may cause the software to function improperly. Please update to the latest 
     <message>
         <location filename="preferencesdialog.ui" line="239"/>
         <source>Automatically show stats when processing begins</source>
-        <translation>프로세싱을 시작할 때 자동으로 통계 보이기</translation>
+        <translation>동영상 처리를 시작할 때 자동으로 통계 보이기</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="249"/>
@@ -523,7 +523,7 @@ Restart the application for changes to take effect.</source>
     <message>
         <location filename="taskconfigdialog.ui" line="55"/>
         <source>2. Processing Mode Selection</source>
-        <translation>프로세싱 모드 선택</translation>
+        <translation>동영상 처리 모드 선택</translation>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="68"/>
