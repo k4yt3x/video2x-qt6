@@ -136,7 +136,8 @@ set(TS_FILES src/video2x-qt6_en_US.ts
              src/video2x-qt6_ja_JP.ts
              src/video2x-qt6_pt_PT.ts
              src/video2x-qt6_fr_FR.ts
-             src/video2x-qt6_de_DE.ts)
+             src/video2x-qt6_de_DE.ts
+             src/video2x-qt6_ko_KR.ts)
 
 # Define the project source files
 set(PROJECT_SOURCES
