@@ -154,6 +154,11 @@
                <string notr="true">Deutsch (Deutschland)</string>
               </property>
              </item>
+             <item>
+              <property name="text">
+               <string notr="true">한국어（대한민국）</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>
