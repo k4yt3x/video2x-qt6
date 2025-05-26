@@ -49,9 +49,11 @@ Video2XPreferences PreferencesDialog::getPreferences()
         break;
     case 6:
         pref.translation = "de_DE";
-        break;
-    case 7:
+        break;    case 7:
         pref.translation = "ko_KR";
+        break;
+    case 8:
+        pref.translation = "tr_TR";
         break;
     default:
         pref.translation = "system";
@@ -105,9 +107,10 @@ void PreferencesDialog::setPreferences(Video2XPreferences pref)
     } else if (pref.translation == "fr_FR") {
         ui->languageComboBox->setCurrentIndex(5);
     } else if (pref.translation == "de_DE") {
-        ui->languageComboBox->setCurrentIndex(6);
-    } else if (pref.translation == "ko_KR") {
+        ui->languageComboBox->setCurrentIndex(6);    } else if (pref.translation == "ko_KR") {
         ui->languageComboBox->setCurrentIndex(7);
+    } else if (pref.translation == "tr_TR") {
+        ui->languageComboBox->setCurrentIndex(8);
     }
 
     // Set check updates
