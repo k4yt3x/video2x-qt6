@@ -216,7 +216,7 @@
         <location filename="mainwindow.cpp" line="112"/>
         <location filename="mainwindow.cpp" line="134"/>
         <location filename="mainwindow.cpp" line="181"/>
-        <location filename="mainwindow.cpp" line="1040"/>
+        <location filename="mainwindow.cpp" line="1045"/>
         <source>Status: </source>
         <translation>Status: </translation>
     </message>
@@ -333,62 +333,62 @@ Dies kann dazu führen, dass die Software nicht ordnungsgemäß funktioniert. Bi
         <translation>Noch nicht verarbeitet</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="567"/>
+        <location filename="mainwindow.cpp" line="573"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>Beim Parsen der Aufgabenoptionen ist ein interner Fehler aufgetreten.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="659"/>
+        <location filename="mainwindow.cpp" line="665"/>
         <source>Edit Task</source>
         <translation>Aufgabe bearbeiten</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="672"/>
+        <location filename="mainwindow.cpp" line="678"/>
         <source>Failed to parse task configs.</source>
         <translation>Das Parsen von Aufgabenkonfigurationen ist fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="714"/>
+        <location filename="mainwindow.cpp" line="719"/>
         <source>Select Files</source>
         <translation>Dateien auswählen</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="716"/>
+        <location filename="mainwindow.cpp" line="721"/>
         <source>All Files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="789"/>
+        <location filename="mainwindow.cpp" line="794"/>
         <source>The task queue is empty!</source>
         <translation>Die Aufgabenwarteschlange ist leer!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="855"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>Aborted</source>
         <translation>Abgebrochen</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="855"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>Failed</source>
         <translation>Fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="970"/>
+        <location filename="mainwindow.cpp" line="975"/>
         <source> day</source>
         <translation> Tag</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="972"/>
+        <location filename="mainwindow.cpp" line="977"/>
         <source> days</source>
         <translation> Tage</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1040"/>
+        <location filename="mainwindow.cpp" line="1045"/>
         <source>Processing file </source>
         <translation>Verarbeitung der Datei </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1047"/>
+        <location filename="mainwindow.cpp" line="1052"/>
         <source>Failed to generate output file name for file: </source>
         <translation>Der Ausgabedateiname für die Datei konnte nicht generiert werden: </translation>
     </message>
@@ -408,13 +408,13 @@ Dies kann dazu führen, dass die Software nicht ordnungsgemäß funktioniert. Bi
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="63"/>
-        <location filename="preferencesdialog.ui" line="197"/>
+        <location filename="preferencesdialog.ui" line="202"/>
         <source>Processing</source>
         <translation>Verarbeitung</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="71"/>
-        <location filename="preferencesdialog.ui" line="279"/>
+        <location filename="preferencesdialog.ui" line="284"/>
         <source>Advanced</source>
         <translation>Erweitert</translation>
     </message>
@@ -429,72 +429,72 @@ Dies kann dazu führen, dass die Software nicht ordnungsgemäß funktioniert. Bi
         <translation>&lt;Systemsprache&gt;</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="164"/>
+        <location filename="preferencesdialog.ui" line="169"/>
         <source>Check for updates on start</source>
         <translation>Beim Start nach Updates suchen</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="206"/>
+        <location filename="preferencesdialog.ui" line="211"/>
         <source>When Done</source>
         <translation>Nach Abschluss</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="214"/>
+        <location filename="preferencesdialog.ui" line="219"/>
         <source>Do nothing</source>
         <translation>Nichts tun</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="219"/>
+        <location filename="preferencesdialog.ui" line="224"/>
         <source>Shutdown</source>
         <translation>Herunterfahren</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="224"/>
+        <location filename="preferencesdialog.ui" line="229"/>
         <source>Sleep</source>
         <translation>Energiesparmodus</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="229"/>
+        <location filename="preferencesdialog.ui" line="234"/>
         <source>Hibernate</source>
         <translation>Ruhezustand</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="239"/>
+        <location filename="preferencesdialog.ui" line="244"/>
         <source>Automatically show stats when processing begins</source>
         <translation>Statistiken automatisch anzeigen, wenn die Verarbeitung beginnt</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="249"/>
+        <location filename="preferencesdialog.ui" line="254"/>
         <source>Remove finished tasks</source>
         <translation>Abgeschlossene Aufgaben entfernen</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="286"/>
+        <location filename="preferencesdialog.ui" line="291"/>
         <source>Open Configuration File Directory</source>
         <translation>Öffne Konfigurationsdatei-Verzeichnis</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="293"/>
+        <location filename="preferencesdialog.ui" line="298"/>
         <source>Reset All Preferences</source>
         <translation>Alle Einstellungen zurücksetzen</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="156"/>
+        <location filename="preferencesdialog.cpp" line="161"/>
         <source>Restore Default Settings</source>
         <translation>Standardeinstellungen wiederherstellen</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="157"/>
+        <location filename="preferencesdialog.cpp" line="162"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>Sind Sie sicher, dass Sie alle benutzerdefinierten Einstellungen löschen wollen?</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="166"/>
+        <location filename="preferencesdialog.cpp" line="171"/>
         <source>Default Settings Restored</source>
         <translation>Standardeinstellungen wiederhergestellt</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="167"/>
+        <location filename="preferencesdialog.cpp" line="172"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>Die Standardeinstellungen wurden wiederhergestellt.
@@ -630,8 +630,8 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="393"/>
-        <location filename="taskconfigdialog.ui" line="438"/>
-        <location filename="taskconfigdialog.ui" line="528"/>
+        <location filename="taskconfigdialog.ui" line="443"/>
+        <location filename="taskconfigdialog.ui" line="533"/>
         <source>Model</source>
         <translation>Modell</translation>
     </message>
@@ -641,209 +641,209 @@ Starten Sie die Anwendung neu, damit die Änderungen wirksam werden.</translatio
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Das zu verwendende RealESRGAN-Modell. Verschiedene Modelle unterstützen bestimmte Skalierungsverhältnisse.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt; (2x, 3x, 4x): bevorzugt für Anime-Videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt; (4x): für Anime-Videos&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt; (4x): für Real-Life-Videos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="430"/>
+        <location filename="taskconfigdialog.ui" line="435"/>
         <source>5. Real-CUGAN Options</source>
         <translation>5. Real-CUGAN-Optionen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="474"/>
+        <location filename="taskconfigdialog.ui" line="479"/>
         <source>Threads</source>
         <translation>Themen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="495"/>
+        <location filename="taskconfigdialog.ui" line="500"/>
         <source>Sync Gap</source>
         <translation>Synchronisationslücke</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="502"/>
+        <location filename="taskconfigdialog.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Geben Sie den Synchronisationslückenmodus an.&lt;/p&gt;&lt;p&gt;• 0: Keine Synchronisierung&lt;br/&gt;• 1: Genaue Synchronisation&lt;br/&gt;• 2: Ungenaue Synchronisierung&lt;br/&gt;• 3: Sehr ungenaue Synchronisierung&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="520"/>
+        <location filename="taskconfigdialog.ui" line="525"/>
         <source>5. RIFE Options</source>
         <translation>5. RIFE-Optionen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="535"/>
+        <location filename="taskconfigdialog.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RIFE model to use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Das zu verwendende RIFE-Modell.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="621"/>
+        <location filename="taskconfigdialog.ui" line="626"/>
         <source>Encoder Options</source>
         <translation>Encoder-Optionen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="631"/>
+        <location filename="taskconfigdialog.ui" line="636"/>
         <source>Standard Options</source>
         <translation>Standard-Optionen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="667"/>
+        <location filename="taskconfigdialog.ui" line="672"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie den Suffix der Ausgabedatei fest. Damit wird das Containerformat bestimmt. Übliche Optionen sind:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: Das MP4-Containerformat. Kompatibel mit den meisten Video-Playern.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: Das Matroska-Containerformat. Kompatibel mit den meisten Video-/Audio-Codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="694"/>
+        <location filename="taskconfigdialog.ui" line="699"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Geben Sie den Codec für die Kodierung oder Dekodierung von Medien-Streams an.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="721"/>
+        <location filename="taskconfigdialog.ui" line="726"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie das Pixelformat für die Videokodierung oder -dekodierung fest (z. B. yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="742"/>
+        <location filename="taskconfigdialog.ui" line="747"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die durchschnittliche Ziel-Bitrate für die Codierung in Bits pro Sekunde fest (z. B. 1000000 für 1 Mbit/s).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="763"/>
+        <location filename="taskconfigdialog.ui" line="768"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die Größe des Bitstream-Puffers für die Kodierung in Bits pro Sekunde fest (z. B. 500000 für 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="784"/>
+        <location filename="taskconfigdialog.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die Mindestbitrate in Bits pro Sekunde fest (z. B. 500000 für 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="805"/>
+        <location filename="taskconfigdialog.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Setzen Sie die maximale Bitrate in Bits pro Sekunde fest (z.B. 5000000 für 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="826"/>
+        <location filename="taskconfigdialog.ui" line="831"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie den minimalen Quantifizierungswert fest, der den Komprimierungsgrad anzeigt (kleinere Werte erzeugen eine höhere Qualität).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="853"/>
+        <location filename="taskconfigdialog.ui" line="858"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie den maximalen Quantifizierungswert fest, der den Komprimierungsgrad anzeigt (größere Werte führen zu geringerer Qualität).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="880"/>
+        <location filename="taskconfigdialog.ui" line="885"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die Anzahl der Bilder in einer Gruppe von Bildern fest, indem Sie die Anzahl der Bilder zwischen den Keyframes angeben.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="907"/>
+        <location filename="taskconfigdialog.ui" line="912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die maximale Anzahl von B-Frames zwischen Nicht-B-Frames fest.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="934"/>
+        <location filename="taskconfigdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die minimale GOP-Größe fest.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="961"/>
+        <location filename="taskconfigdialog.ui" line="966"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Legen Sie die maximale Anzahl der für die Vorhersage verwendeten Referenz-Frames fest.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="988"/>
+        <location filename="taskconfigdialog.ui" line="993"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Geben Sie die Anzahl der Threads für die Kodierung oder Dekodierung an (0 wird automatisch ausgewählt).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1009"/>
+        <location filename="taskconfigdialog.ui" line="1014"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Geben Sie die Codec-Verzögerung in Frames an.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1039"/>
+        <location filename="taskconfigdialog.ui" line="1044"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aktivieren Sie die Hardware-Beschleunigung, hauptsächlich für die Dekodierung. Diese Option ist noch nicht voll funktionsfähig und sollte sich nur unwesentlich auf die Leistung auswirken.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1051"/>
+        <location filename="taskconfigdialog.ui" line="1056"/>
         <source>Copy audio and subtitle streams</source>
         <translation>Kopieren von Audio- und Untertitel-Streams</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1066"/>
+        <location filename="taskconfigdialog.ui" line="1071"/>
         <source>Custom Options</source>
         <translation>Benutzerdefinierte Optionen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1087"/>
+        <location filename="taskconfigdialog.ui" line="1092"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1094"/>
+        <location filename="taskconfigdialog.ui" line="1099"/>
         <source>Remove Selected</source>
         <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1113"/>
+        <location filename="taskconfigdialog.ui" line="1118"/>
         <source>Apply</source>
         <translation>Anwenden</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1120"/>
+        <location filename="taskconfigdialog.ui" line="1125"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="49"/>
+        <location filename="taskconfigdialog.cpp" line="50"/>
         <source>Option</source>
         <translation>Option</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="49"/>
+        <location filename="taskconfigdialog.cpp" line="50"/>
         <source>Value</source>
         <translation>Wert</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="213"/>
+        <location filename="taskconfigdialog.cpp" line="233"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="276"/>
+        <location filename="taskconfigdialog.cpp" line="301"/>
         <source>No GPUs with Vulkan support found!</source>
         <translation>Keine GPUs mit Vulkan-Unterstützung gefunden!</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="741"/>
+        <location filename="taskconfigdialog.cpp" line="771"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Ungültiger Rauschpegel für das Real-CUGAN-Modell &apos;models-pro&apos;.
 Erlaubte Werte sind -1, 0, und 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="748"/>
+        <location filename="taskconfigdialog.cpp" line="778"/>
         <source>Invalid codec value: &apos;</source>
         <translation>Ungültiger Codec-Wert: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="755"/>
+        <location filename="taskconfigdialog.cpp" line="785"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>Ungültiger pix_fmt-Wert: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="763"/>
+        <location filename="taskconfigdialog.cpp" line="793"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>Ungültiger Wert für die Hardware-Beschleunigung: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="772"/>
+        <location filename="taskconfigdialog.cpp" line="802"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>libplacebo GLSL-Shader-Datei wurde nicht gefunden: &apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="813"/>
+        <location filename="taskconfigdialog.cpp" line="843"/>
         <source>Select GLSL Shader</source>
         <translation>GLSL-Shader auswählen</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="815"/>
+        <location filename="taskconfigdialog.cpp" line="845"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL-Dateien (*.glsl);;Alle Dateien (*.*)</translation>
     </message>

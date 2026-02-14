@@ -53,6 +53,9 @@ Video2XPreferences PreferencesDialog::getPreferences()
     case 7:
         pref.translation = "ko_KR";
         break;
+    case 8:
+        pref.translation = "uk_UA";
+        break;
     default:
         pref.translation = "system";
         break;
@@ -108,6 +111,8 @@ void PreferencesDialog::setPreferences(Video2XPreferences pref)
         ui->languageComboBox->setCurrentIndex(6);
     } else if (pref.translation == "ko_KR") {
         ui->languageComboBox->setCurrentIndex(7);
+    } else if (pref.translation == "uk_UA") {
+        ui->languageComboBox->setCurrentIndex(8);
     }
 
     // Set check updates

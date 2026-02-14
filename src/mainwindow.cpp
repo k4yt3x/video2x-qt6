@@ -230,10 +230,10 @@ MainWindow::MainWindow(QWidget *parent)
 
         // Fix the button columns to 60 px
         header->setSectionResizeMode(EDIT_BUTTON_COLUMN, QHeaderView::Fixed);
-        ui->tasksTableView->setColumnWidth(EDIT_BUTTON_COLUMN, 60);
+        ui->tasksTableView->setColumnWidth(EDIT_BUTTON_COLUMN, 90);
 
         header->setSectionResizeMode(DELETE_BUTTON_COLUMN, QHeaderView::Fixed);
-        ui->tasksTableView->setColumnWidth(DELETE_BUTTON_COLUMN, 60);
+        ui->tasksTableView->setColumnWidth(DELETE_BUTTON_COLUMN, 70);
     });
 
 // Check if the required VC runtime is installed

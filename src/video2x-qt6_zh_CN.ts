@@ -293,52 +293,52 @@
         <translation>尚未处理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="567"/>
+        <location filename="mainwindow.cpp" line="573"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>解析任务选项时发生了内部错误。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="659"/>
+        <location filename="mainwindow.cpp" line="665"/>
         <source>Edit Task</source>
         <translation>编辑任务</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="672"/>
+        <location filename="mainwindow.cpp" line="678"/>
         <source>Failed to parse task configs.</source>
         <translation>无法解析任务配置。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="714"/>
+        <location filename="mainwindow.cpp" line="719"/>
         <source>Select Files</source>
         <translation>选择文件</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="716"/>
+        <location filename="mainwindow.cpp" line="721"/>
         <source>All Files (*.*)</source>
         <translation>所有文件 (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="789"/>
+        <location filename="mainwindow.cpp" line="794"/>
         <source>The task queue is empty!</source>
         <translation>任务队列是空的！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="855"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>Aborted</source>
         <translation>已中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="855"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>Failed</source>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="970"/>
+        <location filename="mainwindow.cpp" line="975"/>
         <source> day</source>
         <translation> 天</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1047"/>
+        <location filename="mainwindow.cpp" line="1052"/>
         <source>Failed to generate output file name for file: </source>
         <translation>无法为文件生成输出文件名： </translation>
     </message>
@@ -352,7 +352,7 @@
         <location filename="mainwindow.cpp" line="112"/>
         <location filename="mainwindow.cpp" line="134"/>
         <location filename="mainwindow.cpp" line="181"/>
-        <location filename="mainwindow.cpp" line="1040"/>
+        <location filename="mainwindow.cpp" line="1045"/>
         <source>Status: </source>
         <translation>状态： </translation>
     </message>
@@ -383,12 +383,12 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1040"/>
+        <location filename="mainwindow.cpp" line="1045"/>
         <source>Processing file </source>
         <translation>正在处理文件 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="972"/>
+        <location filename="mainwindow.cpp" line="977"/>
         <source> days</source>
         <translation> 天</translation>
     </message>
@@ -408,13 +408,13 @@ This may cause the software to function improperly. Please update to the latest 
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="63"/>
-        <location filename="preferencesdialog.ui" line="197"/>
+        <location filename="preferencesdialog.ui" line="202"/>
         <source>Processing</source>
         <translation>处理</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="71"/>
-        <location filename="preferencesdialog.ui" line="279"/>
+        <location filename="preferencesdialog.ui" line="284"/>
         <source>Advanced</source>
         <translation>高级</translation>
     </message>
@@ -429,72 +429,72 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>&lt;系统语言&gt;</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="164"/>
+        <location filename="preferencesdialog.ui" line="169"/>
         <source>Check for updates on start</source>
         <translation>在程序启动时检查更新</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="206"/>
+        <location filename="preferencesdialog.ui" line="211"/>
         <source>When Done</source>
         <translation>当完成时</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="214"/>
+        <location filename="preferencesdialog.ui" line="219"/>
         <source>Do nothing</source>
         <translation>什么都不做</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="219"/>
+        <location filename="preferencesdialog.ui" line="224"/>
         <source>Shutdown</source>
         <translation>关机</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="224"/>
+        <location filename="preferencesdialog.ui" line="229"/>
         <source>Sleep</source>
         <translation>睡眠</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="229"/>
+        <location filename="preferencesdialog.ui" line="234"/>
         <source>Hibernate</source>
         <translation>休眠</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="239"/>
+        <location filename="preferencesdialog.ui" line="244"/>
         <source>Automatically show stats when processing begins</source>
         <translation>当处理开始时自动显示统计数据</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="249"/>
+        <location filename="preferencesdialog.ui" line="254"/>
         <source>Remove finished tasks</source>
         <translation>移除已完成的任务</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="286"/>
+        <location filename="preferencesdialog.ui" line="291"/>
         <source>Open Configuration File Directory</source>
         <translation>打开配置文件所在目录</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="293"/>
+        <location filename="preferencesdialog.ui" line="298"/>
         <source>Reset All Preferences</source>
         <translation>重置所有设置</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="156"/>
+        <location filename="preferencesdialog.cpp" line="161"/>
         <source>Restore Default Settings</source>
         <translation>恢复默认设置</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="157"/>
+        <location filename="preferencesdialog.cpp" line="162"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>您确定要清除所有自定义设置吗？</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="166"/>
+        <location filename="preferencesdialog.cpp" line="171"/>
         <source>Default Settings Restored</source>
         <translation>已恢复到默认设置</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="167"/>
+        <location filename="preferencesdialog.cpp" line="172"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>已恢复到默认设置。
@@ -602,8 +602,8 @@ Restart the application for changes to take effect.</source>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="393"/>
-        <location filename="taskconfigdialog.ui" line="438"/>
-        <location filename="taskconfigdialog.ui" line="528"/>
+        <location filename="taskconfigdialog.ui" line="443"/>
+        <location filename="taskconfigdialog.ui" line="533"/>
         <source>Model</source>
         <translation>模型</translation>
     </message>
@@ -643,210 +643,210 @@ Restart the application for changes to take effect.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;要使用的 RealESRGAN 模型。不同的模型支持特定的缩放比例。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt;（2x、3x、4x）：适用于动漫视频&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt;（4x）：用于动漫视频&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt;（4x）：用于真实生活视频&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="430"/>
+        <location filename="taskconfigdialog.ui" line="435"/>
         <source>5. Real-CUGAN Options</source>
         <translation>5. Real-CUGAN 选项</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="474"/>
+        <location filename="taskconfigdialog.ui" line="479"/>
         <source>Threads</source>
         <translation>线程数量</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="495"/>
+        <location filename="taskconfigdialog.ui" line="500"/>
         <source>Sync Gap</source>
         <translation>同步间隙</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="502"/>
+        <location filename="taskconfigdialog.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定同步间隙模式。&lt;/p&gt;&lt;p&gt;• 0：无同步&lt;br/&gt;• 1：精确同步&lt;br/&gt;• 2：粗略同步&lt;br/&gt;• 3：非常粗略同步&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="520"/>
+        <location filename="taskconfigdialog.ui" line="525"/>
         <source>5. RIFE Options</source>
         <translation>5. RIFE 选项</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="535"/>
+        <location filename="taskconfigdialog.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RIFE model to use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择要使用的 RIFE 模型。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="621"/>
+        <location filename="taskconfigdialog.ui" line="626"/>
         <source>Encoder Options</source>
         <translation>编码器选项</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="631"/>
+        <location filename="taskconfigdialog.ui" line="636"/>
         <source>Standard Options</source>
         <translation>标准选项</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="667"/>
+        <location filename="taskconfigdialog.ui" line="672"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置输出文件的后缀。这将用于确定容器格式。常见选项包括:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;：MP4 容器格式。与大多数视频播放器兼容。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;：Matroska 容器格式。与大多数视频/音频编解码器兼容。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="694"/>
+        <location filename="taskconfigdialog.ui" line="699"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定用于编码或解码视频媒体流的编解码器。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="721"/>
+        <location filename="taskconfigdialog.ui" line="726"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置用于视频编码或解码的像素格式（例如：yuv420p, rgb24）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="742"/>
+        <location filename="taskconfigdialog.ui" line="747"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置编码的目标平均比特率，以每秒比特数为单位（例如：1000000 表示 1 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="763"/>
+        <location filename="taskconfigdialog.ui" line="768"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置编码的比特流缓冲区大小，以每秒比特数为单位（例如：500000 表示 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="784"/>
+        <location filename="taskconfigdialog.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最小比特率，以每秒比特数为单位（例如：500000 表示 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="805"/>
+        <location filename="taskconfigdialog.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最大比特率，以每秒比特数为单位（例如：5000000 表示 5 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="826"/>
+        <location filename="taskconfigdialog.ui" line="831"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最小量化器，以控制最低压缩级别（值越小，质量越高）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="853"/>
+        <location filename="taskconfigdialog.ui" line="858"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最大量化器，以控制最高压缩级别（值越大，质量越低）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="880"/>
+        <location filename="taskconfigdialog.ui" line="885"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置图片组中的图片数量，指定关键帧之间的帧数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="907"/>
+        <location filename="taskconfigdialog.ui" line="912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置非 B 帧之间的最大 B 帧数量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="934"/>
+        <location filename="taskconfigdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置最小 GOP 大小。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="961"/>
+        <location filename="taskconfigdialog.ui" line="966"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置用于预测的最大参考帧数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="988"/>
+        <location filename="taskconfigdialog.ui" line="993"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定用于编码或解码的线程数（0 表示自动选择）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1009"/>
+        <location filename="taskconfigdialog.ui" line="1014"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;指定编解码器延迟的帧数。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1039"/>
+        <location filename="taskconfigdialog.ui" line="1044"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用硬件加速，主要用于解码。此功能尚未完善，对性能影响可以忽略不计。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1051"/>
+        <location filename="taskconfigdialog.ui" line="1056"/>
         <source>Copy audio and subtitle streams</source>
         <translation>复制音频和字幕流</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1066"/>
+        <location filename="taskconfigdialog.ui" line="1071"/>
         <source>Custom Options</source>
         <translation>自定义选项</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1087"/>
+        <location filename="taskconfigdialog.ui" line="1092"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1094"/>
+        <location filename="taskconfigdialog.ui" line="1099"/>
         <source>Remove Selected</source>
         <translation>移除所选</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1113"/>
+        <location filename="taskconfigdialog.ui" line="1118"/>
         <source>Apply</source>
         <translation>应用</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1120"/>
+        <location filename="taskconfigdialog.ui" line="1125"/>
         <source>Cancel</source>
         <oldsource>Canacel</oldsource>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="49"/>
+        <location filename="taskconfigdialog.cpp" line="50"/>
         <source>Option</source>
         <translation>选项</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="49"/>
+        <location filename="taskconfigdialog.cpp" line="50"/>
         <source>Value</source>
         <translation>值</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="213"/>
+        <location filename="taskconfigdialog.cpp" line="233"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="276"/>
+        <location filename="taskconfigdialog.cpp" line="301"/>
         <source>No GPUs with Vulkan support found!</source>
         <translation>未找到支持 Vulkan 的 GPU！</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="741"/>
+        <location filename="taskconfigdialog.cpp" line="771"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Real-CUGAN 模型 &apos;models-pro&apos; 的噪声等级无效。
 允许的值为 -1、0 和 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="748"/>
+        <location filename="taskconfigdialog.cpp" line="778"/>
         <source>Invalid codec value: &apos;</source>
         <translation>无效的 codec 值：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="755"/>
+        <location filename="taskconfigdialog.cpp" line="785"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>无效的 pix_fmt 值：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="763"/>
+        <location filename="taskconfigdialog.cpp" line="793"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>无效的 hwaccel 值：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="772"/>
+        <location filename="taskconfigdialog.cpp" line="802"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>未找到 libplacebo GLSL 着色器文件：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="813"/>
+        <location filename="taskconfigdialog.cpp" line="843"/>
         <source>Select GLSL Shader</source>
         <translation>选择 GLSL 着色器</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="815"/>
+        <location filename="taskconfigdialog.cpp" line="845"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL 文件 (*.glsl);;所有文件 (*.*)</translation>
     </message>

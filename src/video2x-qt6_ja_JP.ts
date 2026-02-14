@@ -293,52 +293,52 @@
         <translation>未処理</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="567"/>
+        <location filename="mainwindow.cpp" line="573"/>
         <source>An internal error occurred while parsing the task options.</source>
         <translation>タスクオプションの解析中に内部エラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="659"/>
+        <location filename="mainwindow.cpp" line="665"/>
         <source>Edit Task</source>
         <translation>タスクを編集</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="672"/>
+        <location filename="mainwindow.cpp" line="678"/>
         <source>Failed to parse task configs.</source>
         <translation>タスク設定の解析に失敗しました。</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="714"/>
+        <location filename="mainwindow.cpp" line="719"/>
         <source>Select Files</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="716"/>
+        <location filename="mainwindow.cpp" line="721"/>
         <source>All Files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="789"/>
+        <location filename="mainwindow.cpp" line="794"/>
         <source>The task queue is empty!</source>
         <translation>タスクキューが空です！</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="855"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>Aborted</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="855"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="970"/>
+        <location filename="mainwindow.cpp" line="975"/>
         <source> day</source>
         <translation> 日</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1047"/>
+        <location filename="mainwindow.cpp" line="1052"/>
         <source>Failed to generate output file name for file: </source>
         <translation>ファイルの出力ファイル名の生成に失敗しました： </translation>
     </message>
@@ -352,7 +352,7 @@
         <location filename="mainwindow.cpp" line="112"/>
         <location filename="mainwindow.cpp" line="134"/>
         <location filename="mainwindow.cpp" line="181"/>
-        <location filename="mainwindow.cpp" line="1040"/>
+        <location filename="mainwindow.cpp" line="1045"/>
         <source>Status: </source>
         <translation>状態： </translation>
     </message>
@@ -383,12 +383,12 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1040"/>
+        <location filename="mainwindow.cpp" line="1045"/>
         <source>Processing file </source>
         <translation>処理中のファイル </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="972"/>
+        <location filename="mainwindow.cpp" line="977"/>
         <source> days</source>
         <translation> 日</translation>
     </message>
@@ -408,13 +408,13 @@ This may cause the software to function improperly. Please update to the latest 
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="63"/>
-        <location filename="preferencesdialog.ui" line="197"/>
+        <location filename="preferencesdialog.ui" line="202"/>
         <source>Processing</source>
         <translation>処理</translation>
     </message>
     <message>
         <location filename="preferencesdialog.ui" line="71"/>
-        <location filename="preferencesdialog.ui" line="279"/>
+        <location filename="preferencesdialog.ui" line="284"/>
         <source>Advanced</source>
         <translation>高度な設定</translation>
     </message>
@@ -429,72 +429,72 @@ This may cause the software to function improperly. Please update to the latest 
         <translation>&lt;システム言語&gt;</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="164"/>
+        <location filename="preferencesdialog.ui" line="169"/>
         <source>Check for updates on start</source>
         <translation>起動時にアップデートを確認する</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="206"/>
+        <location filename="preferencesdialog.ui" line="211"/>
         <source>When Done</source>
         <translation>完了時</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="214"/>
+        <location filename="preferencesdialog.ui" line="219"/>
         <source>Do nothing</source>
         <translation>何もしない</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="219"/>
+        <location filename="preferencesdialog.ui" line="224"/>
         <source>Shutdown</source>
         <translation>シャットダウン</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="224"/>
+        <location filename="preferencesdialog.ui" line="229"/>
         <source>Sleep</source>
         <translation>スリープ</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="229"/>
+        <location filename="preferencesdialog.ui" line="234"/>
         <source>Hibernate</source>
         <translation>休止状態</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="239"/>
+        <location filename="preferencesdialog.ui" line="244"/>
         <source>Automatically show stats when processing begins</source>
         <translation>処理の開始時に状態を自動的に表示する</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="249"/>
+        <location filename="preferencesdialog.ui" line="254"/>
         <source>Remove finished tasks</source>
         <translation>完了したタスクを削除</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="286"/>
+        <location filename="preferencesdialog.ui" line="291"/>
         <source>Open Configuration File Directory</source>
         <translation>設定ファイルのディレクトリを開く</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.ui" line="293"/>
+        <location filename="preferencesdialog.ui" line="298"/>
         <source>Reset All Preferences</source>
         <translation>すべての設定をリセット</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="156"/>
+        <location filename="preferencesdialog.cpp" line="161"/>
         <source>Restore Default Settings</source>
         <translation>設定を既定に戻す</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="157"/>
+        <location filename="preferencesdialog.cpp" line="162"/>
         <source>Are you sure you want to erase all custom settings?</source>
         <translation>すべてのカスタム設定を消去してもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="166"/>
+        <location filename="preferencesdialog.cpp" line="171"/>
         <source>Default Settings Restored</source>
         <translation>既定の設定に戻しました</translation>
     </message>
     <message>
-        <location filename="preferencesdialog.cpp" line="167"/>
+        <location filename="preferencesdialog.cpp" line="172"/>
         <source>The default settings have been restored.
 Restart the application for changes to take effect.</source>
         <translation>既定の設定に戻しました。
@@ -602,8 +602,8 @@ Restart the application for changes to take effect.</source>
     </message>
     <message>
         <location filename="taskconfigdialog.ui" line="393"/>
-        <location filename="taskconfigdialog.ui" line="438"/>
-        <location filename="taskconfigdialog.ui" line="528"/>
+        <location filename="taskconfigdialog.ui" line="443"/>
+        <location filename="taskconfigdialog.ui" line="533"/>
         <source>Model</source>
         <translation>モデル</translation>
     </message>
@@ -643,210 +643,210 @@ Restart the application for changes to take effect.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する RealESRGAN モデルです。異なるモデルは特定のスケーリングレートをサポートします。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesr-animevideov3&lt;/span&gt;（2x、3x、4x）：アニメの動画に最適&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus-anime&lt;/span&gt;（4x）：アニメの動画用&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• realesrgan-plus&lt;/span&gt;（4x）：実写の動画用&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="430"/>
+        <location filename="taskconfigdialog.ui" line="435"/>
         <source>5. Real-CUGAN Options</source>
         <translation>5. Real-CUGAN のオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="474"/>
+        <location filename="taskconfigdialog.ui" line="479"/>
         <source>Threads</source>
         <translation>スレッド</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="495"/>
+        <location filename="taskconfigdialog.ui" line="500"/>
         <source>Sync Gap</source>
         <translation>同期ギャップ</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="502"/>
+        <location filename="taskconfigdialog.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the sync gap mode.&lt;/p&gt;&lt;p&gt;• 0: No sync&lt;br/&gt;• 1: Accurate sync&lt;br/&gt;• 2: Rough sync&lt;br/&gt;• 3: Very rough sync&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;同期ギャップモードを指定してください。&lt;/p&gt;&lt;p&gt;• 0：同期なし&lt;br/&gt;• 1：正確な同期&lt;br/&gt;• 2：大まかな同期&lt;br/&gt;• 3：非常に大まかな同期&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="520"/>
+        <location filename="taskconfigdialog.ui" line="525"/>
         <source>5. RIFE Options</source>
         <translation>5. RIFE のオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="535"/>
+        <location filename="taskconfigdialog.ui" line="540"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The RIFE model to use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用する RIFE モデルです。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="621"/>
+        <location filename="taskconfigdialog.ui" line="626"/>
         <source>Encoder Options</source>
         <translation>エンコーダーのオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="631"/>
+        <location filename="taskconfigdialog.ui" line="636"/>
         <source>Standard Options</source>
         <translation>標準のオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="667"/>
+        <location filename="taskconfigdialog.ui" line="672"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the output file suffix. This is used to determine the container format. Common options are:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;: The MP4 container format. Compatible with most video players.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;: The Matroska container format. Compatible with most video/audio codecs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;出力ファイルの接頭辞を設定してください。これによりコンテナの形式が決まります。一般的なオプションは以下の通りです:&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mp4&lt;/span&gt;：MP4 コンテナ形式です。ほとんどの動画プレーヤーと互換性があります。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;• .mkv&lt;/span&gt;：Matroska コンテナ形式です。ほとんどの動画とオーディオコーデックに互換性があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="694"/>
+        <location filename="taskconfigdialog.ui" line="699"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the codec for encoding or decoding media streams.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;メディアストリームをエンコードまたはデコードするためのコーデックを指定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="721"/>
+        <location filename="taskconfigdialog.ui" line="726"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the pixel format for video encoding or decoding (e.g., yuv420p, rgb24).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;動画のエンコードまたはデコード用のピクセル形式を設定してください（例：yuv420p, rgb24）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="742"/>
+        <location filename="taskconfigdialog.ui" line="747"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the target average bitrate for encoding in bits per second (e.g., 1000000 for 1 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードの目標平均ビットレートをビット/秒で設定してください（例：1000000 で 1 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="763"/>
+        <location filename="taskconfigdialog.ui" line="768"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the bitstream buffer size for encoding in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードのビットストリームバッファサイズをビット/秒で設定してください（例：500000 で 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="784"/>
+        <location filename="taskconfigdialog.ui" line="789"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum bitrate in bits per second (e.g., 500000 for 500 kbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小ビットレートをビット/秒で設定してください（例：500000 で 500 kbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="805"/>
+        <location filename="taskconfigdialog.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum bitrate in bits per second (e.g., 5000000 for 5 Mbps).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大ビットレートをビット/秒で設定してください（例：5000000 で 5 Mbps）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="826"/>
+        <location filename="taskconfigdialog.ui" line="831"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum quantizer, controlling the lowest compression level (smaller values produce higher quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小量子化の値を設定してください。これは最低圧縮レベルを制御します（値が小さいほど画質が向上します）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="853"/>
+        <location filename="taskconfigdialog.ui" line="858"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum quantizer, controlling the highest compression level (larger values produce lower quality).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最大の量子化値を設定してください。これは最高圧縮レベルを制御します（値が大きいほど画質が低下します）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="880"/>
+        <location filename="taskconfigdialog.ui" line="885"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the number of pictures in a group of pictures, specifying the number of frames between keyframes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ピクチャーグループ内の画像数を設定してください。これはキーフレーム間のフレーム数を指定します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="907"/>
+        <location filename="taskconfigdialog.ui" line="912"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of B-frames between non-B-frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;非 B フレーム間に挿入される最大 B フレーム数を設定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="934"/>
+        <location filename="taskconfigdialog.ui" line="939"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the minimum GOP size.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;最小 GOP サイズを設定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="961"/>
+        <location filename="taskconfigdialog.ui" line="966"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the maximum number of reference frames used for prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;予測に使用される参照フレームの最大数を設定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="988"/>
+        <location filename="taskconfigdialog.ui" line="993"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the number of threads for encoding or decoding (0 selects automatically).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;エンコードまたはデコードに使用するスレッド数を指定してください（0 を指定すると自動的に選択されます）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1009"/>
+        <location filename="taskconfigdialog.ui" line="1014"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify codec delay in frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;コーデックの遅延をフレーム単位で指定してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1039"/>
+        <location filename="taskconfigdialog.ui" line="1044"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable hardware acceleration, primarily for decoding. This option is not yet fully functional and should have insignificant impact on performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ハードウェアアクセラレーションを有効化します。主にデコード用です。このオプションはまだ完全には機能しておらず、パフォーマンスへの影響はほとんどありません。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1051"/>
+        <location filename="taskconfigdialog.ui" line="1056"/>
         <source>Copy audio and subtitle streams</source>
         <translation>オーディオストリームと字幕をコピー</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1066"/>
+        <location filename="taskconfigdialog.ui" line="1071"/>
         <source>Custom Options</source>
         <translation>カスタムオプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1087"/>
+        <location filename="taskconfigdialog.ui" line="1092"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1094"/>
+        <location filename="taskconfigdialog.ui" line="1099"/>
         <source>Remove Selected</source>
         <translation>選択項目を削除</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1113"/>
+        <location filename="taskconfigdialog.ui" line="1118"/>
         <source>Apply</source>
         <translation>適用</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.ui" line="1120"/>
+        <location filename="taskconfigdialog.ui" line="1125"/>
         <source>Cancel</source>
         <oldsource>Canacel</oldsource>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="49"/>
+        <location filename="taskconfigdialog.cpp" line="50"/>
         <source>Option</source>
         <translation>オプション</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="49"/>
+        <location filename="taskconfigdialog.cpp" line="50"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="213"/>
+        <location filename="taskconfigdialog.cpp" line="233"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="276"/>
+        <location filename="taskconfigdialog.cpp" line="301"/>
         <source>No GPUs with Vulkan support found!</source>
         <translation>Vulkan をサポートする GPU が見つかりませんでした！</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="741"/>
+        <location filename="taskconfigdialog.cpp" line="771"/>
         <source>Invalid noise level for Real-CUGAN model &apos;models-pro&apos;.
 Allowed values are -1, 0, and 3</source>
         <translation>Real-CUGAN モデル「models-pro」のノイズレベルが無効です。
 許容される値は -1、0、および 3</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="748"/>
+        <location filename="taskconfigdialog.cpp" line="778"/>
         <source>Invalid codec value: &apos;</source>
         <translation>無効な codec の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="755"/>
+        <location filename="taskconfigdialog.cpp" line="785"/>
         <source>Invalid pix_fmt value: &apos;</source>
         <translation>無効な pix_fmt の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="763"/>
+        <location filename="taskconfigdialog.cpp" line="793"/>
         <source>Invalid hwaccel value: &apos;</source>
         <translation>無効な hwaccel の値：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="772"/>
+        <location filename="taskconfigdialog.cpp" line="802"/>
         <source>libplacebo GLSL shader file not found: &apos;</source>
         <translation>libplacebo GLSL シェーダーファイルが見つかりません：&apos;</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="813"/>
+        <location filename="taskconfigdialog.cpp" line="843"/>
         <source>Select GLSL Shader</source>
         <translation>GLSL シェーダーを選択</translation>
     </message>
     <message>
-        <location filename="taskconfigdialog.cpp" line="815"/>
+        <location filename="taskconfigdialog.cpp" line="845"/>
         <source>GLSL Files (*.glsl);;All Files (*.*)</source>
         <translation>GLSL ファイル (*.glsl);;すべてのファイル (*.*)</translation>
     </message>
