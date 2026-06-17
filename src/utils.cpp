@@ -9,6 +9,9 @@
 #include <Windows.h>
 #include <powrprof.h>
 // #pragma comment(lib, "PowrProf.lib")
+#elif defined(__APPLE__)
+// macOS has no logind/DBus system bus; the power-management actions below
+// are compiled as no-ops.
 #else
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -76,6 +79,8 @@ void systemShutdown()
     } else {
         video2x::logger()->info("System shutdown initiated successfully.");
     }
+#elif defined(__APPLE__)
+    video2x::logger()->warn("Automatic system shutdown is not supported on macOS; skipping.");
 #else
     QDBusInterface interface("org.freedesktop.login1",
                              "/org/freedesktop/login1",
@@ -108,6 +113,8 @@ void systemSleep()
     } else {
         video2x::logger()->info("System sleep initiated successfully.");
     }
+#elif defined(__APPLE__)
+    video2x::logger()->warn("Automatic system sleep is not supported on macOS; skipping.");
 #else
     QDBusInterface interface("org.freedesktop.login1",
                              "/org/freedesktop/login1",
@@ -139,6 +146,8 @@ void systemHibernate()
     } else {
         video2x::logger()->info("System hibernation initiated successfully.");
     }
+#elif defined(__APPLE__)
+    video2x::logger()->warn("Automatic system hibernation is not supported on macOS; skipping.");
 #else
     QDBusInterface interface("org.freedesktop.login1",
                              "/org/freedesktop/login1",
