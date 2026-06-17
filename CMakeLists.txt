@@ -27,7 +27,11 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
         add_link_options(/LTCG /OPT:REF /OPT:ICF)
     elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         add_compile_options(-O3 -ffunction-sections -fdata-sections)
-        add_link_options(-Wl,-s -flto -Wl,--gc-sections)
+        if(APPLE)
+            add_link_options(-flto -Wl,-dead_strip)
+        else()
+            add_link_options(-Wl,-s -flto -Wl,--gc-sections)
+        endif()
     endif()
 endif()
 
@@ -36,7 +40,11 @@ if(VIDEO2X_ENABLE_NATIVE)
     if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         add_compile_options(/arch:NATIVE)
     elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-        add_compile_options(-march=native)
+        if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|AMD64|amd64")
+            add_compile_options(-march=native)
+        elseif(NOT APPLE)
+            add_compile_options(-mcpu=native)
+        endif()
     endif()
 elseif(VIDEO2X_ENABLE_X86_64_V4)
     if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
@@ -55,6 +63,7 @@ endif()
 # Define lists to store include directories and libraries
 set(VIDEO2X_QT6_INCLUDE_DIRS)
 set(VIDEO2X_QT6_LIBS)
+set(VIDEO2X_QT6_LIBDIRS)
 
 # Find the required Qt6 components
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Svg Network LinguistTools)
@@ -64,6 +73,8 @@ list(APPEND VIDEO2X_QT6_LIBS Qt6::Core Qt6::Widgets Qt6::Svg Qt6::Network)
 # Power management dependencies
 if(WIN32)
     list(APPEND VIDEO2X_QT6_LIBS PowrProf.lib)
+elseif(APPLE)
+    # macOS has no logind/DBus; power actions are compiled as no-ops.
 else()
     list(APPEND VIDEO2X_QT6_LIBS Qt6::DBus)
 endif()
@@ -91,6 +102,7 @@ else()
         pkg_check_modules(${PKG} REQUIRED ${PKG})
         list(APPEND VIDEO2X_QT6_INCLUDE_DIRS ${${PKG}_INCLUDE_DIRS})
         list(APPEND VIDEO2X_QT6_LIBS ${${PKG}_LIBRARIES})
+        list(APPEND VIDEO2X_QT6_LIBDIRS ${${PKG}_LIBRARY_DIRS})
     endforeach()
 endif()
 
@@ -196,13 +208,19 @@ target_include_directories(video2x-qt6 PRIVATE
     ${spdlog_INCLUDE_DIRS}
     ${VIDEO2X_QT6_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/third_party/video2x/include
 )
 
 if(NOT USE_EXTERNAL_VIDEO2X AND NOT USE_SHARED_VIDEO2X)
+    # Only the build-from-submodule path needs the submodule headers; an
+    # external/prebuilt libvideo2x provides its own (avoids stale headers).
+    target_include_directories(video2x-qt6 PRIVATE
+        ${CMAKE_SOURCE_DIR}/third_party/video2x/include
+    )
     add_dependencies(video2x-qt6 Video2X)
     if(WIN32)
         set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.lib)
+    elseif(APPLE)
+        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.dylib)
     else()
         set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.so)
     endif()
@@ -210,6 +228,7 @@ if(NOT USE_EXTERNAL_VIDEO2X AND NOT USE_SHARED_VIDEO2X)
 endif()
 
 target_link_libraries(video2x-qt6 PRIVATE ${VIDEO2X_QT6_LIBS})
+target_link_directories(video2x-qt6 PRIVATE ${VIDEO2X_QT6_LIBDIRS})
 
 include(GNUInstallDirs)
 
