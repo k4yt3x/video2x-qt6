@@ -14,6 +14,7 @@
 #include <QThread>
 #include <QTimer>
 #include <QUrl>
+#include <QVector>
 #include <QVersionNumber>
 
 #ifdef _WIN32
@@ -80,6 +81,10 @@ MainWindow::MainWindow(QWidget *parent)
             &FileDropTableView::filesDropped,
             this,
             &MainWindow::addFilesWithConfig);
+    connect(ui->tasksTableView,
+            &FileDropTableView::rowMoveRequested,
+            this,
+            &MainWindow::moveTaskRow);
 
     // Processing started signal handler
     connect(this, &MainWindow::processingStarted, this, [this]() {
@@ -89,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent)
         m_procAborted = false;
         m_hasErrors = false;
 
+        ui->tasksTableView->setDragEnabled(false);
         ui->startPushButton->setVisible(false);
         ui->pausePushButton->setVisible(true);
         ui->abortPushButton->setVisible(true);
@@ -173,6 +179,7 @@ MainWindow::MainWindow(QWidget *parent)
         m_procStarted = false;
         m_timer.stop();
 
+        ui->tasksTableView->setDragEnabled(true);
         ui->pausePushButton->setVisible(false);
         ui->resumePushButton->setVisible(false);
         ui->abortPushButton->setVisible(false);
@@ -543,6 +550,163 @@ bool MainWindow::changeLanguage(const QString &locale)
     return true;
 }
 
+void MainWindow::setTaskRowWidgets(int row, const TaskRowWidgetState &state)
+{
+    QStandardItem *fileNameItem = m_taskTableModel->item(row, FILE_NAME_COLUMN);
+    if (fileNameItem == nullptr) {
+        return;
+    }
+
+    QModelIndex progressIndex = m_taskTableModel->index(row, PROGRESS_BAR_COLUMN);
+    QProgressBar *progressBar = new QProgressBar(ui->tasksTableView);
+    if (state.progressFormat.isEmpty()) {
+        setDefaultProgressBarStyle(progressBar);
+    } else {
+        progressBar->setMinimum(state.progressMinimum);
+        progressBar->setMaximum(state.progressMaximum);
+        progressBar->setValue(state.progressValue);
+        progressBar->setFormat(state.progressFormat);
+        progressBar->setStyleSheet(state.progressStyleSheet);
+    }
+    ui->tasksTableView->setIndexWidget(progressIndex, progressBar);
+
+    QModelIndex editIndex = m_taskTableModel->index(row, EDIT_BUTTON_COLUMN);
+    QPushButton *editButton = new QPushButton(ui->tasksTableView);
+    editButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::MailMessageNew));
+    editButton->setIconSize(QSize(14, 14));
+    editButton->setFocusPolicy(Qt::NoFocus);
+    editButton->setEnabled(state.editEnabled);
+    ui->tasksTableView->setIndexWidget(editIndex, editButton);
+
+    QModelIndex deleteIndex = m_taskTableModel->index(row, DELETE_BUTTON_COLUMN);
+    QPushButton *deleteButton = new QPushButton(ui->tasksTableView);
+    deleteButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::EditDelete));
+    deleteButton->setIconSize(QSize(14, 14));
+    deleteButton->setFocusPolicy(Qt::NoFocus);
+    deleteButton->setEnabled(state.deleteEnabled);
+    ui->tasksTableView->setIndexWidget(deleteIndex, deleteButton);
+
+    connect(editButton, &QPushButton::clicked, this, [this, fileNameItem]() {
+        QModelIndex itemIndex = m_taskTableModel->indexFromItem(fileNameItem);
+        if (!itemIndex.isValid()) {
+            return;
+        }
+
+        QStandardItem *item = m_taskTableModel->item(itemIndex.row(), FILE_NAME_COLUMN);
+        if (item == nullptr) {
+            return;
+        }
+
+        QVariant var = item->data(Qt::UserRole + 1);
+        if (var.isValid()) {
+            TaskConfigDialog editDialog(this);
+            editDialog.setWindowTitle(tr("Edit Task"));
+
+            TaskConfig originalTaskConfig = var.value<TaskConfig>();
+            editDialog.setTaskConfig(originalTaskConfig);
+
+            if (editDialog.exec() != QDialog::Accepted) {
+                return;
+            }
+
+            auto updatedTaskOpt = editDialog.getTaskConfig();
+            if (!updatedTaskOpt.has_value()) {
+                execErrorMessage(tr("Failed to parse task configs."));
+                return;
+            }
+            TaskConfig updatedTask = updatedTaskOpt.value();
+            updatedTask.inFname = originalTaskConfig.inFname;
+            updatedTask.outFname = originalTaskConfig.outFname;
+
+            m_taskTableModel->item(itemIndex.row(), PROCESSOR_COLUMN)
+                ->setText(convertProcessorTypeToQString(updatedTask.procCfg.processor_type));
+
+            item->setData(QVariant::fromValue(updatedTask), Qt::UserRole + 1);
+        }
+    });
+
+    connect(deleteButton, &QPushButton::clicked, this, [this, fileNameItem]() {
+        QModelIndex itemIndex = m_taskTableModel->indexFromItem(fileNameItem);
+        if (!itemIndex.isValid()) {
+            return;
+        }
+
+        int rowIndex = itemIndex.row();
+        m_taskTableModel->removeRow(rowIndex);
+
+        if (rowIndex < m_currentVideoIndex) {
+            m_currentVideoIndex -= 1;
+        }
+    });
+}
+
+void MainWindow::moveTaskRow(int sourceRow, int destinationRow)
+{
+    if (m_procStarted || sourceRow < 0 || sourceRow >= m_taskTableModel->rowCount()) {
+        return;
+    }
+
+    if (destinationRow < 0 || destinationRow > m_taskTableModel->rowCount()
+        || destinationRow == sourceRow || destinationRow == sourceRow + 1) {
+        return;
+    }
+
+    QVector<TaskRowWidgetState> widgetStates;
+    widgetStates.reserve(m_taskTableModel->rowCount());
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        TaskRowWidgetState state;
+
+        QWidget *progressWidget = ui->tasksTableView->indexWidget(
+            m_taskTableModel->index(row, PROGRESS_BAR_COLUMN));
+        if (QProgressBar *progressBar = qobject_cast<QProgressBar *>(progressWidget)) {
+            state.progressMinimum = progressBar->minimum();
+            state.progressMaximum = progressBar->maximum();
+            state.progressValue = progressBar->value();
+            state.progressFormat = progressBar->format();
+            state.progressStyleSheet = progressBar->styleSheet();
+        }
+
+        QWidget *editWidget = ui->tasksTableView->indexWidget(
+            m_taskTableModel->index(row, EDIT_BUTTON_COLUMN));
+        if (QPushButton *editButton = qobject_cast<QPushButton *>(editWidget)) {
+            state.editEnabled = editButton->isEnabled();
+        }
+
+        QWidget *deleteWidget = ui->tasksTableView->indexWidget(
+            m_taskTableModel->index(row, DELETE_BUTTON_COLUMN));
+        if (QPushButton *deleteButton = qobject_cast<QPushButton *>(deleteWidget)) {
+            state.deleteEnabled = deleteButton->isEnabled();
+        }
+
+        widgetStates.append(state);
+    }
+
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        ui->tasksTableView->setIndexWidget(m_taskTableModel->index(row, PROGRESS_BAR_COLUMN),
+                                           nullptr);
+        ui->tasksTableView->setIndexWidget(m_taskTableModel->index(row, EDIT_BUTTON_COLUMN),
+                                           nullptr);
+        ui->tasksTableView->setIndexWidget(m_taskTableModel->index(row, DELETE_BUTTON_COLUMN),
+                                           nullptr);
+    }
+
+    int insertedRow = destinationRow;
+    QList<QStandardItem *> rowItems = m_taskTableModel->takeRow(sourceRow);
+    TaskRowWidgetState movedState = widgetStates.takeAt(sourceRow);
+    if (sourceRow < destinationRow) {
+        insertedRow -= 1;
+    }
+
+    m_taskTableModel->insertRow(insertedRow, rowItems);
+    widgetStates.insert(insertedRow, movedState);
+
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        setTaskRowWidgets(row, widgetStates[row]);
+    }
+
+    ui->tasksTableView->selectRow(insertedRow);
+}
+
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 {
     if (fileNames.isEmpty()) {
@@ -615,95 +779,7 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
         // Store the TaskConfigs object in the first column's item using a custom role
         fileNameItem->setData(QVariant::fromValue(taskConfig), Qt::UserRole + 1);
 
-        // Get the current row's persistent index
-        QPersistentModelIndex persistentIndex(
-            m_taskTableModel->index(m_taskTableModel->rowCount() - 1, 0));
-
-        // Add progress bar
-        QModelIndex progressIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
-                                                            PROGRESS_BAR_COLUMN);
-        QProgressBar *progressBar = new QProgressBar(ui->tasksTableView);
-        setDefaultProgressBarStyle(progressBar);
-        ui->tasksTableView->setIndexWidget(progressIndex, progressBar);
-
-        // Create an edit button
-        QModelIndex editIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
-                                                        EDIT_BUTTON_COLUMN);
-        QPushButton *editButton = new QPushButton(ui->tasksTableView);
-        editButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::MailMessageNew));
-        editButton->setIconSize(QSize(14, 14));
-        editButton->setFocusPolicy(Qt::NoFocus);
-
-        // Add the edit button to the table
-        ui->tasksTableView->setIndexWidget(editIndex, editButton);
-
-        // Create a delete button
-        QModelIndex deleteIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
-                                                          DELETE_BUTTON_COLUMN);
-        QPushButton *deleteButton = new QPushButton(ui->tasksTableView);
-        deleteButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::EditDelete));
-        deleteButton->setIconSize(QSize(14, 14));
-        deleteButton->setFocusPolicy(Qt::NoFocus);
-
-        // Add the delete button to the table
-        ui->tasksTableView->setIndexWidget(deleteIndex, deleteButton);
-
-        // Connect the edit button with an edit function
-        connect(editButton, &QPushButton::clicked, this, [this, persistentIndex]() {
-            if (!persistentIndex.isValid()) {
-                return;
-            }
-
-            QStandardItem *item = m_taskTableModel->item(persistentIndex.row(), 0);
-            if (item == nullptr) {
-                return;
-            }
-            QVariant var = item->data(Qt::UserRole + 1);
-            if (var.isValid()) {
-                // Open the dialog again for editing
-                TaskConfigDialog editDialog(this);
-                editDialog.setWindowTitle(tr("Edit Task"));
-
-                TaskConfig originalTaskConfig = var.value<TaskConfig>();
-                editDialog.setTaskConfig(originalTaskConfig);
-
-                // Do not apply anything if the user clickec cancel
-                if (editDialog.exec() != QDialog::Accepted) {
-                    return;
-                }
-
-                // Parse the GUI option into a TaskConfig
-                auto updatedTaskOpt = editDialog.getTaskConfig();
-                if (!updatedTaskOpt.has_value()) {
-                    execErrorMessage(tr("Failed to parse task configs."));
-                    return;
-                }
-                TaskConfig updatedTask = updatedTaskOpt.value();
-                updatedTask.inFname = originalTaskConfig.inFname;
-                updatedTask.outFname = originalTaskConfig.outFname;
-
-                // Update the processor column
-                m_taskTableModel->item(persistentIndex.row(), PROCESSOR_COLUMN)
-                    ->setText(convertProcessorTypeToQString(updatedTask.procCfg.processor_type));
-
-                // Store updated task
-                item->setData(QVariant::fromValue(updatedTask), Qt::UserRole + 1);
-            }
-        });
-
-        // Connect the delete button with a deletion function
-        connect(deleteButton, &QPushButton::clicked, this, [this, persistentIndex]() {
-            if (!persistentIndex.isValid()) {
-                return;
-            }
-
-            int rowIndex = persistentIndex.row();
-            m_taskTableModel->removeRow(rowIndex);
-
-            if (rowIndex < m_currentVideoIndex) {
-                m_currentVideoIndex -= 1;
-            }
-        });
+        setTaskRowWidgets(m_taskTableModel->rowCount() - 1);
     }
 
     // Increase the total number of tasks

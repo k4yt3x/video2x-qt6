@@ -7,6 +7,7 @@
 #include <QProgressBar>
 #include <QPushButton>
 #include <QStandardItemModel>
+#include <QString>
 #include <QTranslator>
 
 #include <libvideo2x/libvideo2x.h>
@@ -36,6 +37,17 @@ signals:
     void processingStopped();
 
 private:
+    struct TaskRowWidgetState
+    {
+        int progressMinimum = 0;
+        int progressMaximum = 1;
+        int progressValue = 0;
+        QString progressFormat;
+        QString progressStyleSheet;
+        bool editEnabled = true;
+        bool deleteEnabled = true;
+    };
+
     // Message boxes
     void execErrorMessage(const QString &message);
     void execWarningMessage(const QString &message);
@@ -45,6 +57,8 @@ private:
     bool changeLanguage(const QString &locale);
     void handleFilesDropped(const QStringList &fileNames);
     void addFilesWithConfig(const QStringList &fileNames);
+    void moveTaskRow(int sourceRow, int destinationRow);
+    void setTaskRowWidgets(int row, const TaskRowWidgetState &state = TaskRowWidgetState());
     void addTasks();
     void deleteTasks();
     void clearTasks();

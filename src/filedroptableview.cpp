@@ -1,6 +1,11 @@
 #include "filedroptableview.h"
 
+#include <QCollator>
+#include <QFileInfo>
+#include <QItemSelectionModel>
 #include <QPainter>
+
+#include <algorithm>
 
 FileDropTableView::FileDropTableView(QWidget *parent)
     : QTableView(parent)
@@ -8,7 +13,9 @@ FileDropTableView::FileDropTableView(QWidget *parent)
     setDragEnabled(true);
     setAcceptDrops(true);
     setDropIndicatorShown(true);
-    setDragDropMode(QAbstractItemView::DropOnly);
+    setDragDropMode(QAbstractItemView::DragDrop);
+    setDragDropOverwriteMode(false);
+    setDefaultDropAction(Qt::MoveAction);
 
     // Initialize the SVG renderer
     m_renderer = new QSvgRenderer(QString(":/images/drag-and-drop.svg"), this);
@@ -16,7 +23,9 @@ FileDropTableView::FileDropTableView(QWidget *parent)
 
 void FileDropTableView::dragEnterEvent(QDragEnterEvent *event)
 {
-    if (event->mimeData()->hasFormat("text/uri-list")) {
+    if (event->source() == this) {
+        QTableView::dragEnterEvent(event);
+    } else if (event->mimeData()->hasFormat("text/uri-list")) {
         event->acceptProposedAction();
     } else {
         event->ignore();
@@ -25,7 +34,9 @@ void FileDropTableView::dragEnterEvent(QDragEnterEvent *event)
 
 void FileDropTableView::dragMoveEvent(QDragMoveEvent *event)
 {
-    if (event->mimeData()->hasFormat("text/uri-list")) {
+    if (event->source() == this) {
+        QTableView::dragMoveEvent(event);
+    } else if (event->mimeData()->hasFormat("text/uri-list")) {
         event->acceptProposedAction();
     } else {
         event->ignore();
@@ -43,8 +54,71 @@ void FileDropTableView::dropEvent(QDropEvent *event)
             }
         }
 
+        QCollator collator;
+        collator.setNumericMode(true);
+        collator.setCaseSensitivity(Qt::CaseInsensitive);
+        std::sort(fileNames.begin(), fileNames.end(), [&collator](const QString &left,
+                                                                  const QString &right) {
+            const QString leftFileName = QFileInfo(left).fileName();
+            const QString rightFileName = QFileInfo(right).fileName();
+
+            const int fileNameCompare = collator.compare(leftFileName, rightFileName);
+            if (fileNameCompare != 0) {
+                return fileNameCompare < 0;
+            }
+
+            const int caseCompare = QString::compare(leftFileName, rightFileName, Qt::CaseSensitive);
+            if (caseCompare != 0) {
+                return caseCompare < 0;
+            }
+
+            return QString::compare(left, right, Qt::CaseSensitive) < 0;
+        });
+
         emit filesDropped(fileNames);
         event->acceptProposedAction();
+    } else if (event->source() == this) {
+        if (model() == nullptr || selectionModel() == nullptr) {
+            event->ignore();
+            return;
+        }
+
+        const QModelIndexList rows = selectionModel()->selectedRows();
+        if (rows.size() != 1) {
+            event->ignore();
+            return;
+        }
+
+        const int sourceRow = rows.first().row();
+        const QModelIndex dropIndex = indexAt(event->position().toPoint());
+        int destinationRow = model()->rowCount();
+
+        switch (dropIndicatorPosition()) {
+        case QAbstractItemView::AboveItem:
+        case QAbstractItemView::OnItem:
+            destinationRow = dropIndex.row();
+            break;
+        case QAbstractItemView::BelowItem:
+            destinationRow = dropIndex.row() + 1;
+            break;
+        case QAbstractItemView::OnViewport:
+            break;
+        }
+
+        if (destinationRow < 0 || destinationRow > model()->rowCount()) {
+            event->ignore();
+            return;
+        }
+
+        if (destinationRow == sourceRow || destinationRow == sourceRow + 1) {
+            event->setDropAction(Qt::CopyAction);
+            event->accept();
+            return;
+        }
+
+        emit rowMoveRequested(sourceRow, destinationRow);
+        event->setDropAction(Qt::CopyAction);
+        event->accept();
     } else {
         event->ignore();
     }
