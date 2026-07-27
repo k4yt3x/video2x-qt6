@@ -2,6 +2,7 @@
 #define TASKCONFIG_H
 
 #include <QString>
+#include <QMetaType>
 
 #include <libvideo2x/libvideo2x.h>
 
@@ -17,9 +18,12 @@ struct TaskConfig
     // VideoProcessor::process parameters
     std::filesystem::path inFname;
     std::filesystem::path outFname;
+    std::filesystem::path resumeArtifact;
 
     // Additional data for restoring the TaskConfigDialog
     QString outputSuffix;
 };
+
+Q_DECLARE_METATYPE(TaskConfig)
 
 #endif // TASKCONFIG_H

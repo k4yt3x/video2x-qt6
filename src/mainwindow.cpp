@@ -3,6 +3,9 @@
 
 #include <QDebug>
 #include <QDesktopServices>
+#include <QCollator>
+#include <QCloseEvent>
+#include <QDateTime>
 #include <QFileDialog>
 #include <QFont>
 #include <QJsonDocument>
@@ -14,9 +17,13 @@
 #include <QThread>
 #include <QTimer>
 #include <QUrl>
+#include <QVector>
 #include <QVersionNumber>
 
 #ifdef _WIN32
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
 #include <Windows.h>
 #endif
 
@@ -27,6 +34,7 @@ extern "C" {
 }
 
 #include <libvideo2x/logger_manager.h>
+#include <libvideo2x/resume.h>
 #include <libvideo2x/version.h>
 #include <vulkan/vulkan.h>
 
@@ -79,7 +87,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->tasksTableView,
             &FileDropTableView::filesDropped,
             this,
-            &MainWindow::addFilesWithConfig);
+            &MainWindow::handleFilesDropped);
+    connect(ui->tasksTableView,
+            &FileDropTableView::rowMoveRequested,
+            this,
+            &MainWindow::moveTaskRow);
 
     // Processing started signal handler
     connect(this, &MainWindow::processingStarted, this, [this]() {
@@ -89,6 +101,7 @@ MainWindow::MainWindow(QWidget *parent)
         m_procAborted = false;
         m_hasErrors = false;
 
+        ui->tasksTableView->setDragEnabled(false);
         ui->startPushButton->setVisible(false);
         ui->pausePushButton->setVisible(true);
         ui->abortPushButton->setVisible(true);
@@ -173,12 +186,16 @@ MainWindow::MainWindow(QWidget *parent)
         m_procStarted = false;
         m_timer.stop();
 
+        ui->tasksTableView->setDragEnabled(true);
         ui->pausePushButton->setVisible(false);
         ui->resumePushButton->setVisible(false);
         ui->abortPushButton->setVisible(false);
         ui->startPushButton->setVisible(true);
 
         ui->statusbar->showMessage(tr("Status: ") + tr("idle"));
+        if (m_closePending) {
+            QTimer::singleShot(0, this, &QWidget::close);
+        }
     });
 
     // Load the configs
@@ -250,6 +267,28 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (!m_procStarted) {
+        event->accept();
+        return;
+    }
+    if (!m_closePending
+        && QMessageBox::question(
+               this,
+               tr("Exit Video2X"),
+               tr("Processing is active. Stop after publishing a safe checkpoint and exit?"),
+               QMessageBox::Yes | QMessageBox::No,
+               QMessageBox::No)
+               != QMessageBox::Yes) {
+        event->ignore();
+        return;
+    }
+    m_closePending = true;
+    on_abortPushButton_clicked();
+    event->ignore();
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -543,6 +582,380 @@ bool MainWindow::changeLanguage(const QString &locale)
     return true;
 }
 
+void MainWindow::setTaskRowWidgets(int row, const TaskRowWidgetState &state)
+{
+    QStandardItem *fileNameItem = m_taskTableModel->item(row, FILE_NAME_COLUMN);
+    if (fileNameItem == nullptr) {
+        return;
+    }
+
+    QModelIndex progressIndex = m_taskTableModel->index(row, PROGRESS_BAR_COLUMN);
+    QProgressBar *progressBar = new QProgressBar(ui->tasksTableView);
+    if (state.progressFormat.isEmpty()) {
+        setDefaultProgressBarStyle(progressBar);
+    } else {
+        progressBar->setMinimum(state.progressMinimum);
+        progressBar->setMaximum(state.progressMaximum);
+        progressBar->setValue(state.progressValue);
+        progressBar->setFormat(state.progressFormat);
+        progressBar->setStyleSheet(state.progressStyleSheet);
+    }
+    ui->tasksTableView->setIndexWidget(progressIndex, progressBar);
+
+    QModelIndex editIndex = m_taskTableModel->index(row, EDIT_BUTTON_COLUMN);
+    QPushButton *editButton = new QPushButton(ui->tasksTableView);
+    editButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::MailMessageNew));
+    editButton->setIconSize(QSize(14, 14));
+    editButton->setFocusPolicy(Qt::NoFocus);
+    editButton->setEnabled(state.editEnabled);
+    ui->tasksTableView->setIndexWidget(editIndex, editButton);
+
+    QModelIndex deleteIndex = m_taskTableModel->index(row, DELETE_BUTTON_COLUMN);
+    QPushButton *deleteButton = new QPushButton(ui->tasksTableView);
+    deleteButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::EditDelete));
+    deleteButton->setIconSize(QSize(14, 14));
+    deleteButton->setFocusPolicy(Qt::NoFocus);
+    deleteButton->setEnabled(state.deleteEnabled);
+    ui->tasksTableView->setIndexWidget(deleteIndex, deleteButton);
+
+    connect(editButton, &QPushButton::clicked, this, [this, fileNameItem]() {
+        QModelIndex itemIndex = m_taskTableModel->indexFromItem(fileNameItem);
+        if (!itemIndex.isValid()) {
+            return;
+        }
+
+        QStandardItem *item = m_taskTableModel->item(itemIndex.row(), FILE_NAME_COLUMN);
+        if (item == nullptr) {
+            return;
+        }
+
+        QVariant var = item->data(Qt::UserRole + 1);
+        if (var.isValid()) {
+            TaskConfigDialog editDialog(this);
+            editDialog.setWindowTitle(tr("Edit Task"));
+
+            TaskConfig originalTaskConfig = var.value<TaskConfig>();
+            editDialog.setTaskConfig(originalTaskConfig);
+
+            if (editDialog.exec() != QDialog::Accepted) {
+                return;
+            }
+
+            auto updatedTaskOpt = editDialog.getTaskConfig();
+            if (!updatedTaskOpt.has_value()) {
+                execErrorMessage(tr("Failed to parse task configs."));
+                return;
+            }
+            TaskConfig updatedTask = updatedTaskOpt.value();
+            updatedTask.inFname = originalTaskConfig.inFname;
+            updatedTask.outFname = originalTaskConfig.outFname;
+
+            m_taskTableModel->item(itemIndex.row(), PROCESSOR_COLUMN)
+                ->setText(convertProcessorTypeToQString(updatedTask.procCfg.processor_type));
+
+            item->setData(QVariant::fromValue(updatedTask), Qt::UserRole + 1);
+        }
+    });
+
+    connect(deleteButton, &QPushButton::clicked, this, [this, fileNameItem]() {
+        QModelIndex itemIndex = m_taskTableModel->indexFromItem(fileNameItem);
+        if (!itemIndex.isValid()) {
+            return;
+        }
+
+        int rowIndex = itemIndex.row();
+        m_taskTableModel->removeRow(rowIndex);
+
+        if (rowIndex < m_currentVideoIndex) {
+            m_currentVideoIndex -= 1;
+        }
+    });
+}
+
+void MainWindow::moveTaskRow(int sourceRow, int destinationRow)
+{
+    if (m_procStarted || sourceRow < 0 || sourceRow >= m_taskTableModel->rowCount()) {
+        return;
+    }
+
+    if (destinationRow < 0 || destinationRow > m_taskTableModel->rowCount()
+        || destinationRow == sourceRow || destinationRow == sourceRow + 1) {
+        return;
+    }
+
+    QVector<TaskRowWidgetState> widgetStates;
+    widgetStates.reserve(m_taskTableModel->rowCount());
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        TaskRowWidgetState state;
+
+        QWidget *progressWidget = ui->tasksTableView->indexWidget(
+            m_taskTableModel->index(row, PROGRESS_BAR_COLUMN));
+        if (QProgressBar *progressBar = qobject_cast<QProgressBar *>(progressWidget)) {
+            state.progressMinimum = progressBar->minimum();
+            state.progressMaximum = progressBar->maximum();
+            state.progressValue = progressBar->value();
+            state.progressFormat = progressBar->format();
+            state.progressStyleSheet = progressBar->styleSheet();
+        }
+
+        QWidget *editWidget = ui->tasksTableView->indexWidget(
+            m_taskTableModel->index(row, EDIT_BUTTON_COLUMN));
+        if (QPushButton *editButton = qobject_cast<QPushButton *>(editWidget)) {
+            state.editEnabled = editButton->isEnabled();
+        }
+
+        QWidget *deleteWidget = ui->tasksTableView->indexWidget(
+            m_taskTableModel->index(row, DELETE_BUTTON_COLUMN));
+        if (QPushButton *deleteButton = qobject_cast<QPushButton *>(deleteWidget)) {
+            state.deleteEnabled = deleteButton->isEnabled();
+        }
+
+        widgetStates.append(state);
+    }
+
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        ui->tasksTableView->setIndexWidget(m_taskTableModel->index(row, PROGRESS_BAR_COLUMN),
+                                           nullptr);
+        ui->tasksTableView->setIndexWidget(m_taskTableModel->index(row, EDIT_BUTTON_COLUMN),
+                                           nullptr);
+        ui->tasksTableView->setIndexWidget(m_taskTableModel->index(row, DELETE_BUTTON_COLUMN),
+                                           nullptr);
+    }
+
+    int insertedRow = destinationRow;
+    QList<QStandardItem *> rowItems = m_taskTableModel->takeRow(sourceRow);
+    TaskRowWidgetState movedState = widgetStates.takeAt(sourceRow);
+    if (sourceRow < destinationRow) {
+        insertedRow -= 1;
+    }
+
+    m_taskTableModel->insertRow(insertedRow, rowItems);
+    widgetStates.insert(insertedRow, movedState);
+
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        setTaskRowWidgets(row, widgetStates[row]);
+    }
+
+    ui->tasksTableView->selectRow(insertedRow);
+}
+
+void MainWindow::handleFilesDropped(const QStringList &fileNames)
+{
+    QStringList resumeArtifacts;
+    QStringList mediaFiles;
+    for (const QString &fileName : fileNames) {
+        const std::filesystem::path path =
+#ifdef _WIN32
+            std::filesystem::path(fileName.toStdWString());
+#else
+            std::filesystem::path(fileName.toStdString());
+#endif
+        if (QFileInfo(fileName).suffix().compare("v2xresume", Qt::CaseInsensitive) == 0
+            || video2x::resume::is_resume_artifact(path)) {
+            resumeArtifacts.append(fileName);
+        } else {
+            mediaFiles.append(fileName);
+        }
+    }
+
+    if (!resumeArtifacts.isEmpty() && !mediaFiles.isEmpty()) {
+        execErrorMessage(tr("Resume artifacts and normal media files cannot be added together."));
+        return;
+    }
+    if (resumeArtifacts.size() > 1) {
+        execErrorMessage(tr("Add one resume artifact at a time."));
+        return;
+    }
+    if (resumeArtifacts.isEmpty()) {
+        QCollator collator;
+        collator.setNumericMode(true);
+        collator.setCaseSensitivity(Qt::CaseInsensitive);
+        std::sort(mediaFiles.begin(), mediaFiles.end(), [&collator](const QString &left,
+                                                                   const QString &right) {
+            const QString leftName = QFileInfo(left).fileName();
+            const QString rightName = QFileInfo(right).fileName();
+            const int naturalCompare = collator.compare(leftName, rightName);
+            if (naturalCompare != 0) {
+                return naturalCompare < 0;
+            }
+            const int caseCompare = QString::compare(leftName, rightName, Qt::CaseSensitive);
+            return caseCompare != 0 ? caseCompare < 0
+                                    : QString::compare(left, right, Qt::CaseSensitive) < 0;
+        });
+        addFilesWithConfig(mediaFiles);
+        return;
+    }
+
+    const QString artifactName = resumeArtifacts.constFirst();
+    const std::filesystem::path artifact =
+#ifdef _WIN32
+        std::filesystem::path(artifactName.toStdWString());
+#else
+        std::filesystem::path(artifactName.toStdString());
+#endif
+    video2x::resume::ResumeInfo info;
+    std::string error;
+    if (video2x::resume::inspect_resume_artifact(artifact, info, error) < 0) {
+        execErrorMessage(tr("Invalid Video2X resume artifact: ")
+                         + QString::fromStdString(error));
+        return;
+    }
+
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        QStandardItem *item = m_taskTableModel->item(row, FILE_NAME_COLUMN);
+        if (item == nullptr) {
+            continue;
+        }
+        QVariant value = item->data(Qt::UserRole + 1);
+        if (!value.isValid()) {
+            continue;
+        }
+        const std::filesystem::path queuedArtifact = value.value<TaskConfig>().resumeArtifact;
+        if (value.value<TaskConfig>().inFname == info.input_path) {
+            execWarningMessage(tr("A task for this original input is already queued."));
+            return;
+        }
+        std::error_code pathError;
+        const bool sameArtifact =
+            !queuedArtifact.empty()
+            && (queuedArtifact == info.artifact_path
+                || std::filesystem::equivalent(
+                    queuedArtifact, info.artifact_path, pathError));
+        if (sameArtifact) {
+            execWarningMessage(tr("This resume workspace is already queued."));
+            return;
+        }
+    }
+
+    if (info.status == video2x::resume::Status::Completed) {
+        execWarningMessage(tr("This resume workspace is already completed."));
+        return;
+    }
+
+    const int64_t totalOutputFrames =
+        info.processor_config.processor_type == video2x::processors::ProcessorType::RIFE
+            && info.total_source_frames > 0
+        ? info.total_source_frames
+              + (info.total_source_frames - 1)
+                    * (info.processor_config.frm_rate_mul - 1)
+        : info.total_source_frames;
+    const int64_t remainingFrames = std::max<int64_t>(
+        0, totalOutputFrames - info.completed_output_frames);
+    const QString inputPath =
+#ifdef _WIN32
+        QString::fromStdWString(info.input_path.wstring());
+#else
+        QString::fromStdString(info.input_path.string());
+#endif
+    const QString outputPath =
+#ifdef _WIN32
+        QString::fromStdWString(info.output_path.wstring());
+#else
+        QString::fromStdString(info.output_path.string());
+#endif
+    QString details =
+        tr("Original input: %1\n"
+           "Intended output: %2\n"
+           "Mode: %3\n"
+           "Processor: %4\n"
+           "Model: %5\n"
+           "Factor: %6\n"
+           "Completed output frames: %7\n"
+           "Remaining output frames: %8\n"
+           "Last valid source checkpoint: %9\n"
+           "Checkpoint time: %10")
+            .arg(inputPath,
+                 outputPath,
+                 info.processor_config.processor_type == video2x::processors::ProcessorType::RIFE
+                     ? tr("Interpolation")
+                     : tr("Upscaling"),
+                 QString::fromStdString(info.processor_name),
+                 QString::fromStdString(info.model_name),
+                 QString::number(
+                     info.processor_config.processor_type
+                             == video2x::processors::ProcessorType::RIFE
+                         ? info.processor_config.frm_rate_mul
+                         : info.processor_config.scaling_factor),
+                 QString::number(info.completed_output_frames),
+                 QString::number(remainingFrames),
+                 QString::number(info.completed_source_frames),
+                 QDateTime::fromSecsSinceEpoch(info.checkpoint_timestamp).toString(Qt::ISODate));
+
+    QMessageBox dialog(QMessageBox::Question,
+                       tr("Resume Video2X Task"),
+                       details,
+                       QMessageBox::NoButton,
+                       this);
+    QPushButton *resumeButton = dialog.addButton(tr("Resume"), QMessageBox::AcceptRole);
+    QPushButton *restartButton = dialog.addButton(tr("Restart"), QMessageBox::DestructiveRole);
+    QPushButton *cancelButton = dialog.addButton(tr("Cancel"), QMessageBox::RejectRole);
+    dialog.exec();
+    if (dialog.clickedButton() == nullptr || dialog.clickedButton() == cancelButton) {
+        return;
+    }
+    if (dialog.clickedButton() == restartButton) {
+        if (QMessageBox::question(
+                this,
+                tr("Restart Task"),
+                tr("Delete all saved checkpoints and restart this task from the beginning?"),
+                QMessageBox::Yes | QMessageBox::No,
+                QMessageBox::No)
+            != QMessageBox::Yes) {
+            return;
+        }
+        if (video2x::resume::restart_resume_artifact(artifact, info, error) < 0) {
+            execErrorMessage(tr("Failed to restart task: ") + QString::fromStdString(error));
+            return;
+        }
+    } else if (dialog.clickedButton() != resumeButton) {
+        return;
+    }
+
+    TaskConfig taskConfig;
+    taskConfig.procCfg = info.processor_config;
+    taskConfig.encCfg = info.encoder_config;
+    taskConfig.vkDeviceIndex = info.vk_device_index;
+    taskConfig.hwDeviceType = info.hw_device_type;
+    taskConfig.inFname = info.input_path;
+    taskConfig.outFname = info.output_path;
+    taskConfig.resumeArtifact = info.artifact_path;
+    taskConfig.outputSuffix =
+#ifdef _WIN32
+        QString::fromStdWString(info.output_path.extension().wstring());
+#else
+        QString::fromStdString(info.output_path.extension().string());
+#endif
+    addTask(taskConfig);
+}
+
+void MainWindow::addTask(const TaskConfig &taskConfig)
+{
+    const QString inputPath =
+#ifdef _WIN32
+        QString::fromStdWString(taskConfig.inFname.wstring());
+#else
+        QString::fromStdString(taskConfig.inFname.string());
+#endif
+    for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
+        QStandardItem *existingItem = m_taskTableModel->item(row, FILE_NAME_COLUMN);
+        if (existingItem && existingItem->data(Qt::UserRole + 1).value<TaskConfig>().inFname
+                                == taskConfig.inFname) {
+            return;
+        }
+    }
+
+    QStandardItem *fileNameItem = new QStandardItem(QFileInfo(inputPath).fileName());
+    QStandardItem *processorItem = new QStandardItem(
+        convertProcessorTypeToQString(taskConfig.procCfg.processor_type));
+    QStandardItem *progressItem = new QStandardItem("0%");
+    QStandardItem *editItem = new QStandardItem("Edit");
+    m_taskTableModel->appendRow({fileNameItem, processorItem, progressItem, editItem});
+    fileNameItem->setData(QVariant::fromValue(taskConfig), Qt::UserRole + 1);
+    TaskRowWidgetState state;
+    state.editEnabled = taskConfig.resumeArtifact.empty();
+    setTaskRowWidgets(m_taskTableModel->rowCount() - 1, state);
+}
+
 void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 {
     if (fileNames.isEmpty()) {
@@ -577,133 +990,13 @@ void MainWindow::addFilesWithConfig(const QStringList &fileNames)
 
     // Add each file into the table and attach the TaskConfig
     for (const QString &fileName : fileNames) {
-        // Check if this file is already in the model
-        bool alreadyExists = false;
-        for (int row = 0; row < m_taskTableModel->rowCount(); ++row) {
-            QStandardItem *existingItem = m_taskTableModel->item(row, 0);
-            if (existingItem && existingItem->text() == fileName) {
-                alreadyExists = true;
-                break;
-            }
-        }
-
-        if (alreadyExists) {
-            continue;
-        }
-
 // Set the input file name to the selected file
 #ifdef _WIN32
         taskConfig.inFname = std::filesystem::path(fileName.toStdWString());
-        QStandardItem *fileNameItem = new QStandardItem(
-            QString::fromStdWString(taskConfig.inFname.filename().wstring()));
 #else
         taskConfig.inFname = std::filesystem::path(fileName.toStdString());
-        QStandardItem *fileNameItem = new QStandardItem(
-            QString::fromStdString(taskConfig.inFname.filename().string()));
-
 #endif
-
-        // Create items for each column
-        QStandardItem *processorItem = new QStandardItem(
-            convertProcessorTypeToQString(taskConfig.procCfg.processor_type));
-        QStandardItem *progressItem = new QStandardItem("0%");
-        QStandardItem *editItem = new QStandardItem("Edit");
-
-        // Append the row
-        m_taskTableModel->appendRow({fileNameItem, processorItem, progressItem, editItem});
-
-        // Store the TaskConfigs object in the first column's item using a custom role
-        fileNameItem->setData(QVariant::fromValue(taskConfig), Qt::UserRole + 1);
-
-        // Get the current row's persistent index
-        QPersistentModelIndex persistentIndex(
-            m_taskTableModel->index(m_taskTableModel->rowCount() - 1, 0));
-
-        // Add progress bar
-        QModelIndex progressIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
-                                                            PROGRESS_BAR_COLUMN);
-        QProgressBar *progressBar = new QProgressBar(ui->tasksTableView);
-        setDefaultProgressBarStyle(progressBar);
-        ui->tasksTableView->setIndexWidget(progressIndex, progressBar);
-
-        // Create an edit button
-        QModelIndex editIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
-                                                        EDIT_BUTTON_COLUMN);
-        QPushButton *editButton = new QPushButton(ui->tasksTableView);
-        editButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::MailMessageNew));
-        editButton->setIconSize(QSize(14, 14));
-        editButton->setFocusPolicy(Qt::NoFocus);
-
-        // Add the edit button to the table
-        ui->tasksTableView->setIndexWidget(editIndex, editButton);
-
-        // Create a delete button
-        QModelIndex deleteIndex = m_taskTableModel->index(m_taskTableModel->rowCount() - 1,
-                                                          DELETE_BUTTON_COLUMN);
-        QPushButton *deleteButton = new QPushButton(ui->tasksTableView);
-        deleteButton->setIcon(QIcon::fromTheme(QIcon::ThemeIcon::EditDelete));
-        deleteButton->setIconSize(QSize(14, 14));
-        deleteButton->setFocusPolicy(Qt::NoFocus);
-
-        // Add the delete button to the table
-        ui->tasksTableView->setIndexWidget(deleteIndex, deleteButton);
-
-        // Connect the edit button with an edit function
-        connect(editButton, &QPushButton::clicked, this, [this, persistentIndex]() {
-            if (!persistentIndex.isValid()) {
-                return;
-            }
-
-            QStandardItem *item = m_taskTableModel->item(persistentIndex.row(), 0);
-            if (item == nullptr) {
-                return;
-            }
-            QVariant var = item->data(Qt::UserRole + 1);
-            if (var.isValid()) {
-                // Open the dialog again for editing
-                TaskConfigDialog editDialog(this);
-                editDialog.setWindowTitle(tr("Edit Task"));
-
-                TaskConfig originalTaskConfig = var.value<TaskConfig>();
-                editDialog.setTaskConfig(originalTaskConfig);
-
-                // Do not apply anything if the user clickec cancel
-                if (editDialog.exec() != QDialog::Accepted) {
-                    return;
-                }
-
-                // Parse the GUI option into a TaskConfig
-                auto updatedTaskOpt = editDialog.getTaskConfig();
-                if (!updatedTaskOpt.has_value()) {
-                    execErrorMessage(tr("Failed to parse task configs."));
-                    return;
-                }
-                TaskConfig updatedTask = updatedTaskOpt.value();
-                updatedTask.inFname = originalTaskConfig.inFname;
-                updatedTask.outFname = originalTaskConfig.outFname;
-
-                // Update the processor column
-                m_taskTableModel->item(persistentIndex.row(), PROCESSOR_COLUMN)
-                    ->setText(convertProcessorTypeToQString(updatedTask.procCfg.processor_type));
-
-                // Store updated task
-                item->setData(QVariant::fromValue(updatedTask), Qt::UserRole + 1);
-            }
-        });
-
-        // Connect the delete button with a deletion function
-        connect(deleteButton, &QPushButton::clicked, this, [this, persistentIndex]() {
-            if (!persistentIndex.isValid()) {
-                return;
-            }
-
-            int rowIndex = persistentIndex.row();
-            m_taskTableModel->removeRow(rowIndex);
-
-            if (rowIndex < m_currentVideoIndex) {
-                m_currentVideoIndex -= 1;
-            }
-        });
+        addTask(taskConfig);
     }
 
     // Increase the total number of tasks
@@ -910,7 +1203,7 @@ void MainWindow::on_videoProcessingFinished(bool retValue, std::filesystem::path
     processNextVideo();
 }
 
-void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
+void MainWindow::on_progressUpdate(int totalFrames, int processedFrames, int recoveredFrames)
 {
     video2x::logger()->debug("Processing frames: {}/{} ({:.2f}%).",
                              processedFrames,
@@ -925,14 +1218,21 @@ void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
     if (progressBar != nullptr) {
         progressBar->setMaximum(totalFrames);
         progressBar->setValue(processedFrames);
+        progressBar->setFormat(
+            recoveredFrames > 0
+                ? tr("Recovered %1 | %v/%m (%p%)").arg(recoveredFrames)
+                : QString("%v/%m (%p%)"));
     }
 
     // Get elapsed time
     int64_t elapsedMilliseconds = m_timer.getElapsedTime();
 
     // Calculate average frames per second
-    double elapsedSecondsPerFrame = processedFrames
-                                    / (static_cast<double>(elapsedMilliseconds) / 1000);
+    const int newlyProcessedFrames = std::max(0, processedFrames - recoveredFrames);
+    double elapsedSecondsPerFrame =
+        elapsedMilliseconds > 0
+            ? newlyProcessedFrames / (static_cast<double>(elapsedMilliseconds) / 1000)
+            : 0;
     QString elapsedSecondsString = QString::number(elapsedSecondsPerFrame, 'f', 4);
     ui->framesPerSecondLabel->setText(elapsedSecondsString);
 
@@ -951,19 +1251,23 @@ void MainWindow::on_progressUpdate(int totalFrames, int processedFrames)
     ui->timeElapsedLabel->setText(elapsedString);
 
     // Calculate average time per frame (in milliseconds)
-    double avgTimePerFrame = static_cast<double>(elapsedMilliseconds) / processedFrames;
+    double avgTimePerFrame = newlyProcessedFrames > 0
+                                 ? static_cast<double>(elapsedMilliseconds) / newlyProcessedFrames
+                                 : 0;
 
     // Calculate remaining frames
     int remainingFrames = totalFrames - processedFrames;
 
     // Estimate remaining time in milliseconds
-    double remainingMilliseconds = avgTimePerFrame * remainingFrames;
+    double remainingMilliseconds = newlyProcessedFrames > 0 ? avgTimePerFrame * remainingFrames : 0;
 
     // Check if remaining time is greater than one day or negative
     const double millisecondsInADay = 24 * 60 * 60 * 1000;
     QString remainingString;
 
-    if (remainingMilliseconds >= millisecondsInADay) {
+    if (newlyProcessedFrames == 0) {
+        remainingString = "?";
+    } else if (remainingMilliseconds >= millisecondsInADay) {
         // If remaining time is greater than one day
         int remainingDays = static_cast<int>(remainingMilliseconds / millisecondsInADay);
         if (remainingDays < 0) {
@@ -1044,20 +1348,26 @@ void MainWindow::processNextVideo()
 #endif
     ui->statusbar->showMessage(tr("Status: ") + tr("Processing file ") + inputFileName);
 
-    // Set the outFname
-    std::optional<QString> outputFilePath = generateNewFileName(inputFileName,
-                                                                taskConfig.procCfg.processor_type,
-                                                                taskConfig.outputSuffix);
-    if (!outputFilePath.has_value()) {
-        execErrorMessage(tr("Failed to generate output file name for file: ") + inputFileName);
-        return;
-    }
-
+    // Preserve the validated destination for resumed tasks.
+    if (taskConfig.outFname.empty()) {
+        std::optional<QString> outputFilePath = generateNewFileName(inputFileName,
+                                                                    taskConfig.procCfg.processor_type,
+                                                                    taskConfig.outputSuffix);
+        if (!outputFilePath.has_value()) {
+            execErrorMessage(tr("Failed to generate output file name for file: ") + inputFileName);
+            return;
+        }
 #ifdef _WIN32
-    taskConfig.outFname = std::filesystem::path(outputFilePath.value().toStdWString());
+        taskConfig.outFname = std::filesystem::path(outputFilePath.value().toStdWString());
 #else
-    taskConfig.outFname = std::filesystem::path(outputFilePath.value().toStdString());
+        taskConfig.outFname = std::filesystem::path(outputFilePath.value().toStdString());
 #endif
+    }
+    if (taskConfig.resumeArtifact.empty()) {
+        taskConfig.resumeArtifact = taskConfig.outFname;
+        taskConfig.resumeArtifact += video2x::resume::ARTIFACT_EXTENSION;
+    }
+    item->setData(QVariant::fromValue(taskConfig), Qt::UserRole + 1);
 
     // Create the worker and thread
     TaskProcessor *taskProcessor = new TaskProcessor(taskConfig);

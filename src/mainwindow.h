@@ -7,6 +7,7 @@
 #include <QProgressBar>
 #include <QPushButton>
 #include <QStandardItemModel>
+#include <QString>
 #include <QTranslator>
 
 #include <libvideo2x/libvideo2x.h>
@@ -29,6 +30,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 signals:
     void processingStarted();
     void processingPaused();
@@ -36,6 +40,17 @@ signals:
     void processingStopped();
 
 private:
+    struct TaskRowWidgetState
+    {
+        int progressMinimum = 0;
+        int progressMaximum = 1;
+        int progressValue = 0;
+        QString progressFormat;
+        QString progressStyleSheet;
+        bool editEnabled = true;
+        bool deleteEnabled = true;
+    };
+
     // Message boxes
     void execErrorMessage(const QString &message);
     void execWarningMessage(const QString &message);
@@ -45,6 +60,9 @@ private:
     bool changeLanguage(const QString &locale);
     void handleFilesDropped(const QStringList &fileNames);
     void addFilesWithConfig(const QStringList &fileNames);
+    void addTask(const TaskConfig &taskConfig);
+    void moveTaskRow(int sourceRow, int destinationRow);
+    void setTaskRowWidgets(int row, const TaskRowWidgetState &state = TaskRowWidgetState());
     void addTasks();
     void deleteTasks();
     void clearTasks();
@@ -71,11 +89,12 @@ private:
     bool m_procStarted = false;
     bool m_procAborted = false;
     bool m_hasErrors = false;
+    bool m_closePending = false;
     Timer m_timer;
 
 private slots:
     // Custom slots
-    void on_progressUpdate(int totalFrames, int processedFrames);
+    void on_progressUpdate(int totalFrames, int processedFrames, int recoveredFrames);
     void on_videoProcessingFinished(bool success, std::filesystem::path inputFilePath);
 
     // File menu

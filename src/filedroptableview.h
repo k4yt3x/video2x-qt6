@@ -15,6 +15,7 @@ public:
 
 signals:
     void filesDropped(const QStringList &fileNames);
+    void rowMoveRequested(int sourceRow, int destinationRow);
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;

@@ -475,7 +475,8 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
 
     // EncoderConfig
     taskConfig.outputSuffix = ui->suffixLineEdit->text();
-    taskConfig.encCfg.copy_streams = ui->copyStreamsCheckBox->isChecked();
+    taskConfig.encCfg.copy_audio_streams = ui->copyStreamsCheckBox->isChecked();
+    taskConfig.encCfg.copy_subtitle_streams = ui->copyStreamsCheckBox->isChecked();
 
     // Rate control and compression
     taskConfig.encCfg.bit_rate = ui->bitRateSpinBox->value();
@@ -681,7 +682,8 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     ui->suffixLineEdit->setText(taskConfig.outputSuffix);
 
     // copy_streams
-    ui->copyStreamsCheckBox->setChecked(taskConfig.encCfg.copy_streams);
+    ui->copyStreamsCheckBox->setChecked(taskConfig.encCfg.copy_audio_streams
+                                        && taskConfig.encCfg.copy_subtitle_streams);
 
     // frameRateMultiplier (only relevant if Interpolate)
     if (procMode == video2x::processors::ProcessingMode::Interpolate) {

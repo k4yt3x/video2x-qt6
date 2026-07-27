@@ -1,6 +1,8 @@
 #ifndef TASKPROCESSOR_H
 #define TASKPROCESSOR_H
 
+#include <atomic>
+
 #include <QObject>
 #include <QString>
 
@@ -18,10 +20,10 @@ public:
     const TaskConfig &getTaskConfigs() const { return m_taskConfigs; }
 
     // Getter for the video processor
-    video2x::VideoProcessor *getVideoProcessor() { return m_videoProcessor; }
+    video2x::VideoProcessor *getVideoProcessor() { return m_videoProcessor.load(); }
 
 signals:
-    void on_progressUpdated(int totalFrames, int processedFrames);
+    void on_progressUpdated(int totalFrames, int processedFrames, int recoveredFrames);
     void on_processingFinished(bool success, std::filesystem::path inputFilePath);
 
 public slots:
@@ -29,7 +31,7 @@ public slots:
 
 private:
     TaskConfig m_taskConfigs;
-    video2x::VideoProcessor *m_videoProcessor = nullptr;
+    std::atomic<video2x::VideoProcessor *> m_videoProcessor = nullptr;
 };
 
 #endif // TASKPROCESSOR_H
