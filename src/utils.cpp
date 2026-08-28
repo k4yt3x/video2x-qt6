@@ -3,12 +3,15 @@
 #include <QFileInfo>
 #include <QMap>
 #include <QMimeDatabase>
+#include <QStandardPaths>
 
 #ifdef _WIN32
 #include <QSettings>
 #include <Windows.h>
 #include <powrprof.h>
 // #pragma comment(lib, "PowrProf.lib")
+#elif __APPLE__
+#include <QProcess>
 #else
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -76,6 +79,12 @@ void systemShutdown()
     } else {
         video2x::logger()->info("System shutdown initiated successfully.");
     }
+#elif __APPLE__
+    if (!QProcess::startDetached(
+            "/usr/bin/osascript", {"-e", "tell application \"System Events\" to shut down"}
+        )) {
+        video2x::logger()->error("Failed to request macOS shutdown.");
+    }
 #else
     QDBusInterface interface("org.freedesktop.login1",
                              "/org/freedesktop/login1",
@@ -108,6 +117,10 @@ void systemSleep()
     } else {
         video2x::logger()->info("System sleep initiated successfully.");
     }
+#elif __APPLE__
+    if (!QProcess::startDetached("/usr/bin/pmset", {"sleepnow"})) {
+        video2x::logger()->error("Failed to request macOS sleep.");
+    }
 #else
     QDBusInterface interface("org.freedesktop.login1",
                              "/org/freedesktop/login1",
@@ -139,6 +152,9 @@ void systemHibernate()
     } else {
         video2x::logger()->info("System hibernation initiated successfully.");
     }
+#elif __APPLE__
+    video2x::logger()->warn("macOS does not expose a separate hibernate action; sleeping instead.");
+    systemSleep();
 #else
     QDBusInterface interface("org.freedesktop.login1",
                              "/org/freedesktop/login1",
@@ -172,6 +188,13 @@ std::optional<std::filesystem::path> getConfigDir()
         video2x::logger()->warn("Failed to retrieve LOCALAPPDATA environment variable.");
         return std::nullopt;
     }
+#elif __APPLE__
+    const QString configDir = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+    if (configDir.isEmpty()) {
+        video2x::logger()->warn("Failed to retrieve the macOS application configuration path.");
+        return std::nullopt;
+    }
+    return std::filesystem::path(configDir.toStdString());
 #else
     const char *xdgConfigHome = std::getenv("XDG_CONFIG_HOME");
     if (xdgConfigHome) {

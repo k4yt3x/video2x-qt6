@@ -304,6 +304,12 @@ void TaskConfigDialog::populateVulkanDevices()
     VkInstance instance;
     VkInstanceCreateInfo create_info{};
     create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
+#ifdef __APPLE__
+    const char* instance_extensions[] = {VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME};
+    create_info.flags |= VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
+    create_info.enabledExtensionCount = 1;
+    create_info.ppEnabledExtensionNames = instance_extensions;
+#endif
     if (vkCreateInstance(&create_info, nullptr, &instance) != VK_SUCCESS) {
         video2x::logger()->error("Failed to create Vulkan instance.");
         return;
@@ -475,7 +481,8 @@ std::optional<TaskConfig> TaskConfigDialog::getTaskConfig()
 
     // EncoderConfig
     taskConfig.outputSuffix = ui->suffixLineEdit->text();
-    taskConfig.encCfg.copy_streams = ui->copyStreamsCheckBox->isChecked();
+    taskConfig.encCfg.copy_audio_streams = ui->copyStreamsCheckBox->isChecked();
+    taskConfig.encCfg.copy_subtitle_streams = ui->copyStreamsCheckBox->isChecked();
 
     // Rate control and compression
     taskConfig.encCfg.bit_rate = ui->bitRateSpinBox->value();
@@ -681,7 +688,8 @@ void TaskConfigDialog::setTaskConfig(const TaskConfig &taskConfig)
     ui->suffixLineEdit->setText(taskConfig.outputSuffix);
 
     // copy_streams
-    ui->copyStreamsCheckBox->setChecked(taskConfig.encCfg.copy_streams);
+    ui->copyStreamsCheckBox->setChecked(taskConfig.encCfg.copy_audio_streams
+                                        && taskConfig.encCfg.copy_subtitle_streams);
 
     // frameRateMultiplier (only relevant if Interpolate)
     if (procMode == video2x::processors::ProcessingMode::Interpolate) {

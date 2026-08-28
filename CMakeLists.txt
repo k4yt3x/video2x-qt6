@@ -25,6 +25,9 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
     if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         add_compile_options(/Ox /Ot /GL /DNDEBUG)
         add_link_options(/LTCG /OPT:REF /OPT:ICF)
+    elseif(APPLE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        add_compile_options(-O3 -ffunction-sections -fdata-sections)
+        add_link_options(-flto -Wl,-dead_strip)
     elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         add_compile_options(-O3 -ffunction-sections -fdata-sections)
         add_link_options(-Wl,-s -flto -Wl,--gc-sections)
@@ -64,7 +67,8 @@ list(APPEND VIDEO2X_QT6_LIBS Qt6::Core Qt6::Widgets Qt6::Svg Qt6::Network)
 # Power management dependencies
 if(WIN32)
     list(APPEND VIDEO2X_QT6_LIBS PowrProf.lib)
-else()
+elseif(LINUX)
+    find_package(Qt6 REQUIRED COMPONENTS DBus)
     list(APPEND VIDEO2X_QT6_LIBS Qt6::DBus)
 endif()
 
@@ -90,6 +94,7 @@ else()
     foreach(PKG ${REQUIRED_PKGS})
         pkg_check_modules(${PKG} REQUIRED ${PKG})
         list(APPEND VIDEO2X_QT6_INCLUDE_DIRS ${${PKG}_INCLUDE_DIRS})
+        link_directories(${${PKG}_LIBRARY_DIRS})
         list(APPEND VIDEO2X_QT6_LIBS ${${PKG}_LIBRARIES})
     endforeach()
 endif()
@@ -175,13 +180,28 @@ set(PROJECT_SOURCES
 # Define the application resource file for Windows
 if(WIN32)
     set(APP_RESOURCE_FILE "${CMAKE_CURRENT_SOURCE_DIR}/src/resources.rc")
+elseif(APPLE)
+    set(APP_ICON_FILE "${CMAKE_CURRENT_SOURCE_DIR}/resources/icons/1024x1024/video2x.png")
+    set_source_files_properties(${APP_ICON_FILE} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
 endif()
 
 qt_add_executable(video2x-qt6
     WIN32 MACOSX_BUNDLE
     ${PROJECT_SOURCES}
     ${APP_RESOURCE_FILE}
+    ${APP_ICON_FILE}
 )
+
+if(APPLE)
+    set_target_properties(video2x-qt6 PROPERTIES
+        OUTPUT_NAME "Video2X"
+        MACOSX_BUNDLE_BUNDLE_NAME "Video2X"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.video2x.Video2X"
+        MACOSX_BUNDLE_ICON_FILE "video2x.png"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "6.4.0"
+        MACOSX_BUNDLE_BUNDLE_VERSION "6.4.0"
+    )
+endif()
 
 qt_add_resources(RESOURCES src/images.qrc)
 target_sources(video2x-qt6 PRIVATE ${RESOURCES})
@@ -196,13 +216,27 @@ target_include_directories(video2x-qt6 PRIVATE
     ${spdlog_INCLUDE_DIRS}
     ${VIDEO2X_QT6_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/third_party/video2x/include
 )
+
+if(APPLE AND USE_EXTERNAL_VIDEO2X AND DEFINED VIDEO2X_PREFIX)
+    # Keep Video2X's bundled spdlog/fmt headers ahead of Homebrew's Vulkan include root.
+    target_include_directories(video2x-qt6 SYSTEM BEFORE PRIVATE
+        "${VIDEO2X_PREFIX}/include"
+    )
+endif()
+
+if(NOT USE_EXTERNAL_VIDEO2X)
+    target_include_directories(video2x-qt6 PRIVATE
+        ${CMAKE_SOURCE_DIR}/third_party/video2x/include
+    )
+endif()
 
 if(NOT USE_EXTERNAL_VIDEO2X AND NOT USE_SHARED_VIDEO2X)
     add_dependencies(video2x-qt6 Video2X)
     if(WIN32)
         set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.lib)
+    elseif(APPLE)
+        set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/lib/libvideo2x.dylib)
     else()
         set(LIBVIDEO2X_LIB ${CMAKE_BINARY_DIR}/video2x-install/libvideo2x.so)
     endif()
@@ -220,6 +254,18 @@ install(TARGETS video2x-qt6
 )
 
 if(WIN32)
+    qt_generate_deploy_app_script(
+        TARGET video2x-qt6
+        OUTPUT_SCRIPT deploy_script
+        NO_UNSUPPORTED_PLATFORM_ERROR
+    )
+    install(SCRIPT ${deploy_script})
+elseif(APPLE)
+    if(USE_EXTERNAL_VIDEO2X AND DEFINED VIDEO2X_PREFIX)
+        install(DIRECTORY "${VIDEO2X_PREFIX}/share/video2x/models"
+            DESTINATION "Video2X.app/Contents/share/video2x"
+        )
+    endif()
     qt_generate_deploy_app_script(
         TARGET video2x-qt6
         OUTPUT_SCRIPT deploy_script

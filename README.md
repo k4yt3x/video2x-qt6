@@ -5,6 +5,21 @@
 
 The Qt6 graphical user interface for [Video2X](https://github.com/k4yt3x/video2x). You can download the releases on Video2X's [releases page](https://github.com/k4yt3x/video2x/releases). Build instructions and usages are available on the [documentation site](https://docs.video2x.org/).
 
+## Build on macOS
+
+The macOS app uses Qt 6 and the native Video2X core through MoltenVK. Build and install the
+macOS core first, then build the application bundle:
+
+```sh
+brew install qt spdlog cmake ninja pkgconf ffmpeg boost vulkan-headers vulkan-loader molten-vk
+../video2x/scripts/build-macos.sh
+./scripts/build-macos.sh
+open ./dist/macos-$(uname -m)/Video2X.app
+```
+
+The default layout assumes the `video2x` and `video2x-qt6` repositories are siblings. Set
+`VIDEO2X_PREFIX` to use a core installation in another location.
+
 ![6.3.0-screenshot](https://github.com/user-attachments/assets/c5442f84-5ffc-4476-915f-a0fc188a2cb3)
 
 ## Translations
